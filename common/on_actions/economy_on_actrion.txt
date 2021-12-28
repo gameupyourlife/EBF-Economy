@@ -3,7 +3,7 @@ on_actions = {
         effect = {
             every_country = {
                 set_variable = { ebf_economy_retirement_age = 65 }
-                set_variable = { ebf_economy_life_expectancy = 83 }
+                set_variable = { ebf_economy_life_expectancy = 80 }
                 set_variable = { ebf_economy_age_of_majority = 18 }
 
                 set_variable = { ebf_economy_unemployed_percentage = 0.03 }
