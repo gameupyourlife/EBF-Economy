@@ -1,0 +1,23 @@
+guiTypes = {
+	containerWindowType = {
+		name = "countryeconomyview_open"
+		position = { x=680 y=40}	
+
+		# background = {
+		#	name = "Background"
+		#	quadTextureSprite ="GFX_exercise_icon_bg"
+		# }
+
+		buttonType = {
+			name = "open_button"
+			position = { x = 0 y = 0 }
+			quadTextureSprite ="GFX_special_project_icon"
+			buttonFont = "Main_14_black"
+			shortcut = "ctrl+e"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+		}
+		
+		
+	}	
+}

@@ -1,0 +1,235 @@
+scripted_gui = {
+
+	economic_test_ui = {
+		context_type = player_context
+		window_name = "countryeconomyview"
+
+		visible = {
+			check_variable = { ebf_economy_show = 1 }
+			
+		}
+
+		effects = {
+            test_button_click = {
+				set_variable = { ebf_economy_income_tax_amount = ebf_economy_workforce }
+                multiply_variable = { ebf_economy_income_tax_amount = ebf_economy_income_tax }
+                round_variable = ebf_economy_income_tax_amount
+                multiply_variable = { ebf_economy_income_tax_amount = 0.2 }
+                round_variable = ebf_economy_income_tax_amount
+            }
+
+			reset_button_click = {
+                set_variable = { ebf_economy_income_tax_amount = 0 }
+            }
+
+			close_button_click = {
+                set_variable = { ebf_economy_show = 0 }
+            }
+
+			### Income Tax Percentage Click
+			income_tax_percentage_sub_1x_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_income_tax < 0.01 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_income_tax = 0.01 }
+					country_event = { id = ebf_economy_event.2 }
+				}
+            }
+			income_tax_percentage_add_1x_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_income_tax > 0.99 }
+						}
+					}
+					add_to_variable = { ebf_economy_income_tax = 0.01 }
+					country_event = { id = ebf_economy_event.2 }
+				}
+            }
+
+			income_tax_percentage_sub_1x_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_income_tax < 0.05 }
+					}
+					set_variable = { ebf_economy_income_tax = 0.00 }
+					country_event = { id = ebf_economy_event.2 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_income_tax < 0.05 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_income_tax = 0.05 }
+					country_event = { id = ebf_economy_event.2 }
+				}
+            }
+			income_tax_percentage_add_1x_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_income_tax > 0.95 }
+					}
+					set_variable = { ebf_economy_income_tax = 1.00 }
+					country_event = { id = ebf_economy_event.2 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_income_tax > 0.95 }
+						}
+					}
+					add_to_variable = { ebf_economy_income_tax = 0.05 }
+					country_event = { id = ebf_economy_event.2 }
+				}
+            }
+
+			income_tax_percentage_sub_1x_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_income_tax < 0.1 }
+					}
+					set_variable = { ebf_economy_income_tax = 0.00 }
+					country_event = { id = ebf_economy_event.2 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_income_tax < 0.1 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_income_tax = 0.1 }
+					country_event = { id = ebf_economy_event.2 }
+				}
+            }
+			income_tax_percentage_add_1x_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_income_tax > 0.90 }
+					}
+					set_variable = { ebf_economy_income_tax = 1.00 }
+					country_event = { id = ebf_economy_event.2 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_income_tax > 0.90 }
+						}
+					}
+					add_to_variable = { ebf_economy_income_tax = 0.1 }
+					country_event = { id = ebf_economy_event.2 }
+				}
+            }
+
+
+
+
+
+
+
+
+
+			### Consumtion Tax Percentage Click
+			consumtion_tax_percentage_add_1x_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_consumtion_tax < 0.01 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_consumtion_tax = 0.01 }
+					country_event = { id = ebf_economy_event.3 }
+				}
+            }
+			consumtion_tax_percentage_add_1x_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_consumtion_tax > 0.99 }
+						}
+					}
+					add_to_variable = { ebf_economy_consumtion_tax = 0.01 }
+					country_event = { id = ebf_economy_event.3 }
+				}
+            }
+
+			consumtion_tax_percentage_sub_1x_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_consumtion_tax < 0.05 }
+					}
+					set_variable = { ebf_economy_consumtion_tax = 0.00 }
+					country_event = { id = ebf_economy_event.3 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_consumtion_tax < 0.05 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_consumtion_tax = 0.05 }
+					country_event = { id = ebf_economy_event.3 }
+				}
+            }
+			consumtion_tax_percentage_add_1x_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_consumtion_tax > 0.95 }
+					}
+					set_variable = { ebf_economy_consumtion_tax = 1.00 }
+					country_event = { id = ebf_economy_event.3 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_consumtion_tax > 0.95 }
+						}
+					}
+					add_to_variable = { ebf_economy_consumtion_tax = 0.05 }
+					country_event = { id = ebf_economy_event.3 }
+				}
+            }
+
+			consumtion_tax_percentage_sub_1x_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_consumtion_tax < 0.1 }
+					}
+					set_variable = { ebf_economy_consumtion_tax = 0.00 }
+					country_event = { id = ebf_economy_event.3 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_consumtion_tax < 0.1 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_consumtion_tax = 0.1 }
+					country_event = { id = ebf_economy_event.3 }
+				}
+            }
+			consumtion_tax_percentage_add_1x_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_consumtion_tax > 0.90 }
+					}
+					set_variable = { ebf_economy_consumtion_tax = 1.00 }
+					country_event = { id = ebf_economy_event.3 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_consumtion_tax > 0.90 }
+						}
+					}
+					add_to_variable = { ebf_economy_consumtion_tax = 0.1 }
+					country_event = { id = ebf_economy_event.3 }
+				}
+            }
+        }
+	}
+}
+

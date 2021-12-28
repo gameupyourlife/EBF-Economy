@@ -1,0 +1,474 @@
+@prod_sub_pos_x = 199
+@prod_add_pos_x = 273
+@prod_nof_pos_x = 223
+
+guiTypes = {
+
+	containerWindowType = {
+		name = "countryeconomyview"
+		position = { x=-606 y=78}	
+		show_position = { x=-6 y =78 }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300	
+		size = { width=550 height=100%% }
+		
+		#hide_sound = menu_close_window
+		show_sound = menu_open_window
+		
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_1b_border"
+		}
+
+		iconType ={
+			name ="production_header_bg"
+			spriteType = "GFX_header_bg"
+			position = { x= 5 y = 07 }
+			Orientation = "UPPER_LEFT"
+		}	
+
+		instantTextboxType = {
+			name = "economy_title"
+			position = { x = 45 y = 8 }
+			textureFile = ""
+			font = "hoi_36header"
+			borderSize = {x = 0 y = 0}
+			text = "ECONOMY_ECONOMY"
+			maxWidth = 400
+			maxHeight = 20
+			fixedsize = yes
+		}		
+
+
+
+		instantTextboxType = {
+			name = "population"
+			position = { x = 245 y = 308 }
+			textureFile = ""
+			#font = "hoi_36header"
+			borderSize = {x = 0 y = 0}
+			text = "EBF_ECONOMY_POPULATION"
+			maxWidth = 400
+			maxHeight = 200
+			fixedsize = yes
+		}	
+
+
+
+		buttonType = {
+			name = "close_button"
+			position = { x = -42 y = 9 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+
+		buttonType = {
+			name = "test_button"
+			position = {x=17 y=400}
+			quadTextureSprite ="GFX_trade_filter_btn_country"
+			clicksound = click_scroll
+		}
+
+		buttonType = {
+			name = "reset_button"
+			position = {x=17 y=450}
+			quadTextureSprite ="GFX_trade_filter_btn_country"
+			clicksound = click_scroll
+		}
+
+
+		containerWindowType = {
+			name = "management"
+			position = { x = 0 y = 44 }
+			size = { width=100%% height=100%% }
+			verticalScrollbar = "right_vertical_slider"
+			scroll_wheel_factor = 40
+			smooth_scrolling = yes
+			margin = { top = 0 bottom = 13}
+		
+			
+			
+			containerWindowType = {
+				name = "economy_win_top"
+				position = { x = 0 y = 0 }
+				size = { width = 100% height = 80% }
+				verticalScrollbar = "right_vertical_slider"
+
+				
+				iconType = {
+					name = "economy_header"
+					position = { x = 12 y = 0 }
+					quadTextureSprite = "GFX_trade_header"
+				}
+
+				#################################
+				iconType = {
+					name = "money_amount_icon"
+					position = { x=22 y=7 }
+					spriteType = "GFX_balance_icon"
+				}
+
+				instantTextboxType = {
+					name = "money_amount_value"
+					position = { x = 52 y = 7 }
+					textureFile = ""
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y = 0}
+					text = "900B"
+					maxWidth = 50
+					maxHeight = 20
+					format = left
+				}
+				#################################
+				iconType = {
+					name = "income_amount_icon"
+					position = { x=108 y=6 }
+					spriteType = "GFX_div_deploy_priority_icon_strip"
+					frame = 3
+				}
+
+				instantTextboxType = {
+					name = "income_amount_value"
+					position = { x = 137 y = 7 }
+					textureFile = ""
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y = 0}
+					text = "100M"
+					maxWidth = 50
+					maxHeight = 20
+					format = left
+				}
+				#################################
+				iconType = {
+					name = "expenses_amount_icon"
+					position = { x=199 y=-23 }
+					spriteType = "GFX_div_deploy_priority_icon_strip"
+					frame = 1
+				}
+
+				instantTextboxType = {
+					name = "expenses_amount_value"
+					position = { x = 227 y = 7 }
+					textureFile = ""
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y = 0}
+					text = "80M"
+					maxWidth = 50
+					maxHeight = 20
+					format = left
+				}
+				#################################
+				iconType = {
+					name = "loan_amount_icon"
+					position = { x=275 y=3 }
+					spriteType = "GFX_pol_power_icon"
+					# frame = 4
+				}
+
+				instantTextboxType = {
+					name = "loan_amount_value"
+					position = { x = 309 y = 7 }
+					textureFile = ""
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y = 0}
+					text = "100K"
+					maxWidth = 50
+					maxHeight = 20
+					format = left
+				}
+				#################################
+				iconType = {
+					name = "inflation_amount_icon"
+					position = { x=366 y=7 }
+					quadTextureSprite  = "GFX_production_efficiency_loss_icon" 
+					# spriteType = "GFX_efficiency_icon"
+				}
+
+				instantTextboxType = {
+					name = "inflation_amount_value"
+					position = { x = 396 y = 7 }
+					textureFile = ""
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y = 0}
+					text = "4%"
+					maxWidth = 50
+					maxHeight = 20
+					format = left
+				}
+				#################################
+				iconType = {
+					name = "happines_amount_icon"
+					position = { x=442	 y=2 }
+					spriteType = "GFX_population_icon"
+				}
+
+				instantTextboxType = {
+					name = "happines_amount_value"
+					position = { x = 475 y = 7 }
+					textureFile = ""
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y = 0}
+					text = "83"
+					maxWidth = 50
+					maxHeight = 20
+					format = left
+				}
+				#################################
+			}
+
+			########################################################################################
+			########################################################################################
+			########################################################################################
+
+			containerWindowType = {
+				name = "tax_management_category_entry"
+				position = { x = 20 y = 30 }
+				size = { width=100% height = 202 }
+				clipping = no
+				
+				iconType ={
+					name ="category_header"
+					spriteType = "GFX_category_header"
+					position = { x=-5 y=2 }
+					Orientation = "UPPER_LEFT"
+				}
+				iconType ={
+					name ="category_icon"
+					spriteType = "GFX_idea_categories"
+					position = { x=4 y=8 }
+					frame = 3
+					Orientation = "UPPER_LEFT"
+				}
+				
+				
+				instantTextboxType = {
+					name = "name"
+					position = { x = 70 y = 14 }
+					font = "hoi_20b"
+					text = "ECONOMY_TAX_MANAGEMENT"
+					maxWidth = 300
+					maxHeight = 20
+				}
+
+				containerWindowType = {
+					name = "income_tax_adjuster"
+					position = { x=0 y=46 }
+					size = { width = 100% height = 52 }
+					clipping = no
+			
+					background = {
+						name = "Background"
+						quadTextureSprite ="GFX_adjustment_window_right_bg"
+					}
+					
+					instantTextboxType = {
+						name = "name"
+						position = { x = 20 y = 16 }
+						textureFile = ""
+						font = "hoi_18mbs"
+						borderSize = {x = 0 y = 0}
+						text = "ECONOMY_INCOME_TAX"
+						maxWidth = 150
+						maxHeight = 20
+						format = left
+						vertical_alignment = center 
+						
+						alwaystransparent = yes
+					}
+					
+					instantTextboxType = {
+						name = "income_tax_amount"
+						position = { x = 340 y = 17 }
+						textureFile = ""
+						font = "hoi_18b"
+						text = "ECONOMY_INCOME_TAX_AMOUNT"
+						maxWidth = 130
+						maxHeight = 20
+						format = center
+						
+						alwaystransparent = yes
+					}		
+
+
+					instantTextboxType = {
+						name = "income_tax_percentage_used_txt"
+						position = { x=@prod_nof_pos_x y=19 }
+						font = "hoi_18b"
+						borderSize = {x = 0 y = 0}
+						text = "ECONOMY_INCOME_TAX_PERCENTAGE"
+						maxWidth = 50
+						maxHeight = 25
+						fixedsize = yes
+						format = center
+						alwaystransparent = yes
+					}
+					buttonType = {
+						name = "income_tax_percentage_sub_1x"
+						position = { x=@prod_sub_pos_x y=15 }
+						quadTextureSprite = "GFX_subtract_one"
+						font = "hoi_16mbs"
+						clicksound = click_default
+						tooltip = "INCOME_TAX_PERCENTAGE_SUB_1X_TEXT"
+					}
+					buttonType = {
+						name = "income_tax_percentage_add_1x"
+						position = { x=@prod_add_pos_x y=15 }
+						quadTextureSprite = "GFX_add_one"
+						font = "hoi_16mbs"
+						clicksound = click_default
+						tooltip  = "INCOME_TAX_PERCENTAGE_ADD_1X_TEXT"
+					}
+				}
+
+				containerWindowType = {
+					name = "consumtion_tax_adjuster"
+					position = { x=0 y=98 }
+					size = { width = 100% height = 52 }
+					clipping = no
+			
+					background = {
+						name = "Background"
+						quadTextureSprite ="GFX_adjustment_window_right_bg"
+					}
+					
+					instantTextboxType = {
+						name = "name"
+						position = { x = 20 y = 16 }
+						textureFile = ""
+						font = "hoi_18mbs"
+						borderSize = {x = 0 y = 0}
+						text = "ECONOMY_CONSUMTION_TAX"
+						maxWidth = 150
+						maxHeight = 20
+						format = left
+						vertical_alignment = center 
+						
+						alwaystransparent = yes
+					}
+					
+					instantTextboxType = {
+						name = "consumtion_tax_amount"
+						position = { x = 340 y = 17 }
+						textureFile = ""
+						font = "hoi_18b"
+						text = "ECONOMY_CONSUMTION_TAX_AMOUNT"
+						maxWidth = 130
+						maxHeight = 20
+						format = center
+						
+						alwaystransparent = yes
+					}		
+
+
+					instantTextboxType = {
+						name = "consumtion_tax_percentage_used_txt"
+						position = { x=@prod_nof_pos_x y=19 }
+						font = "hoi_18b"
+						borderSize = {x = 0 y = 0}
+						text = "ECONOMY_CONSUMTION_TAX_PERCENTAGE"
+						maxWidth = 50
+						maxHeight = 25
+						fixedsize = yes
+						format = center
+						alwaystransparent = yes
+					}
+					buttonType = {
+						name = "consumtion_tax_percentage_sub_1x"
+						position = { x=@prod_sub_pos_x y=15 }
+						quadTextureSprite = "GFX_subtract_one"
+						font = "hoi_16mbs"
+						clicksound = click_default
+						tooltip = "CONSUMTION_TAX_PERCENTAGE_SUB_1X_TEXT"
+					}
+					buttonType = {
+						name = "consumtion_tax_percentage_add_1x"
+						position = { x=@prod_add_pos_x y=15 }
+						quadTextureSprite = "GFX_add_one"
+						font = "hoi_16mbs"
+						clicksound = click_default
+						tooltip  = "CONSUMTION_TAX_PERCENTAGE_ADD_1X_TEXT"
+					}
+				}
+
+				containerWindowType = {
+					name = "wealth_tax_adjuster"
+					position = { x=0 y=150 }
+					size = { width = 100% height = 52 }
+					clipping = no
+			
+					background = {
+						name = "Background"
+						quadTextureSprite ="GFX_adjustment_window_right_bg"
+					}
+					
+					instantTextboxType = {
+						name = "name"
+						position = { x = 20 y = 16 }
+						textureFile = ""
+						font = "hoi_18mbs"
+						borderSize = {x = 0 y = 0}
+						text = "ECONOMY_WEALTH_TAX"
+						maxWidth = 150
+						maxHeight = 20
+						format = left
+						vertical_alignment = center 
+						
+						alwaystransparent = yes
+					}
+					
+					instantTextboxType = {
+						name = "wealth_tax_amount"
+						position = { x = 340 y = 17 }
+						textureFile = ""
+						font = "hoi_18b"
+						text = "ECONOMY_WEALTH_TAX_AMOUNT"
+						maxWidth = 130
+						maxHeight = 20
+						format = center
+						
+						alwaystransparent = yes
+					}		
+
+
+					instantTextboxType = {
+						name = "wealth_tax_percentage_used_txt"
+						position = { x=@prod_nof_pos_x y=19 }
+						font = "hoi_18b"
+						borderSize = {x = 0 y = 0}
+						text = "ECONOMY_WEALTH_TAX_PERCENTAGE"
+						maxWidth = 50
+						maxHeight = 25
+						fixedsize = yes
+						format = center
+						alwaystransparent = yes
+					}
+					buttonType = {
+						name = "wealth_tax_percentage_sub_1x"
+						position = { x=@prod_sub_pos_x y=15 }
+						quadTextureSprite = "GFX_subtract_one"
+						font = "hoi_16mbs"
+						clicksound = click_default
+						tooltip = "WEALTH_TAX_PERCENTAGE_SUB_1X_TEXT"
+					}
+					buttonType = {
+						name = "wealth_tax_percentage_add_1x"
+						position = { x=@prod_add_pos_x y=15 }
+						quadTextureSprite = "GFX_add_one"
+						font = "hoi_16mbs"
+						clicksound = click_default
+						tooltip  = "WEALTH_TAX_PERCENTAGE_ADD_1X_TEXT"
+					}
+				}
+
+				
+
+			}
+
+		}
+	}
+}

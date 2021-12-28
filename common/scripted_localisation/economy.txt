@@ -1,0 +1,15 @@
+defined_text = {
+	name = GetSliderValueEBF
+	text = {
+		trigger = {
+			check_variable = { testasd = 1 }
+		}
+		localization_key = Test123
+	}
+	text = {
+		trigger = {
+			Not = { check_variable = { testasd = 1 } }
+		}
+		localization_key = Test1234
+	}
+}

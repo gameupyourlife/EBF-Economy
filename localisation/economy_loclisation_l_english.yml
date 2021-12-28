@@ -1,0 +1,35 @@
+﻿l_english:
+ TEST_KEY_EBF: "[GetSliderValueEBF]"
+
+ Test123:0 "check_variable = { testasd = 1 }"
+ Test1234:0 "Not = { check_variable = { testasd = 1 } }"
+ asghgdhhgdhsgf:0 "saasfgdsgfsg"
+
+ ###
+ # Buttons
+ ###
+ INCOME_TAX_PERCENTAGE_ADD_1X_TEXT:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
+ INCOME_TAX_PERCENTAGE_SUB_1X_TEXT:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
+
+  ######
+
+ EBF_ECONOMY_POPULATION:0 "[?ebf_economy_workforce]"
+
+
+ ###
+ #
+ ###
+ ECONOMY_ECONOMY:0 "Economy"
+ ECONOMY_TAX_MANAGEMENT:0 "Tax Management"
+
+ ECONOMY_INCOME_TAX:0 "Income Tax"
+ ECONOMY_INCOME_TAX_PERCENTAGE: "[?ebf_economy_income_tax|%0]"
+ ECONOMY_INCOME_TAX_AMOUNT: "[?ebf_economy_income_tax_amount]M $"
+
+ ECONOMY_CONSUMTION_TAX:0 "Consumtion Tax"
+ ECONOMY_CONSUMTION_TAX_PERCENTAGE: "[?ebf_economy_consumtion_tax|%0]"
+ ECONOMY_CONSUMTION_TAX_AMOUNT: "[?ebf_economy_consumtion_tax_amount]M $" 
+
+ ECONOMY_WEALTH_TAX:0 "Wealth Tax"
+ ECONOMY_WEALTH_TAX_PERCENTAGE: "[?ebf_economy_wealth_tax|%0]"
+ ECONOMY_WEALTH_TAX_AMOUNT: "[?ebf_economy_wealth_tax_amount]M $"

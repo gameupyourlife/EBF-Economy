@@ -1,0 +1,103 @@
+add_namespace = ebf_economy_event
+
+country_event = {
+	id = ebf_economy_event.1
+	title = ebf_economy_event.1.t
+	desc = ebf_economy_event.1.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	
+    immediate = {
+		set_variable = { ebf_economy_population = 0 }
+		set_variable = { ebf_economy_adult_population = 1 }
+		set_variable = { ebf_economy_pensioner_population = 1 } 
+		set_variable = { ebf_economy_unemployed_population = 1 }
+		set_variable = { ebf_economy_workforce = 0 }
+		### Population
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+			}
+			add_to_variable = { ROOT.ebf_economy_population = state_population_k } #PREV.state_population
+		}
+		round_variable = ebf_economy_population
+		# Adult Population
+		set_temp_variable = { ebf_economy_child_ratio = ebf_economy_age_of_majority }
+		divide_temp_variable  = { ebf_economy_child_ratio = ebf_economy_life_expectancy }
+		set_temp_variable = { ebf_economy_adult_ratio = 1 }
+		subtract_from_temp_variable = { ebf_economy_adult_ratio = ebf_economy_child_ratio }
+		multiply_variable = { ebf_economy_adult_population = ebf_economy_adult_ratio }
+		multiply_variable = { ebf_economy_adult_population = ebf_economy_population }
+		# Pensioner
+		set_temp_variable = { ebf_economy_pensioner_ratio = ebf_economy_life_expectancy }
+		subtract_from_temp_variable = { ebf_economy_pensioner_ratio = ebf_economy_retirement_age }
+		divide_temp_variable  = { ebf_economy_pensioner_ratio = ebf_economy_life_expectancy }
+		set_temp_variable = { ebf_economy_worker_ratio = 1 }
+		subtract_from_temp_variable = { ebf_economy_worker_ratio = ebf_economy_pensioner_ratio }
+		multiply_variable = { ebf_economy_pensioner_population = ebf_economy_pensioner_ratio }
+		multiply_variable = { ebf_economy_pensioner_population = ebf_economy_population }
+		# Unemployed
+		set_variable = { ebf_economy_unemployed_population = ebf_economy_adult_population }
+		subtract_from_variable = { ebf_economy_unemployed_population = ebf_economy_pensioner_population }
+		multiply_variable = { ebf_economy_unemployed_population = ebf_economy_unemployed_percentage }
+		# Workforce
+		set_variable = { ebf_economy_workforce = ebf_economy_adult_population }
+		subtract_from_variable = { ebf_economy_workforce = ebf_economy_pensioner_population }
+		subtract_from_variable = { ebf_economy_workforce = ebf_economy_unemployed_population }
+    }
+
+    option = { # Help
+		name = ebf_economy_event.1.a
+		
+    }
+
+	option = { # close
+		name = ebf_economy_event.1.b
+		
+    }
+	
+}
+
+#Income Tax
+country_event = {
+	id = ebf_economy_event.2
+	title = ebf_economy_event.2.t
+	desc = ebf_economy_event.2.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		### Income Tax
+		set_variable = { ebf_economy_income_tax_amount = ebf_economy_workforce }
+		multiply_variable = { ebf_economy_income_tax_amount = ebf_economy_income_tax }
+		round_variable = ebf_economy_income_tax_amount
+		multiply_variable = { ebf_economy_income_tax_amount = ebf_economy_average_income }
+		round_variable = ebf_economy_income_tax_amount
+                
+    }
+}
+
+#Consumtion Tax
+country_event = {
+	id = ebf_economy_event.3
+	title = ebf_economy_event.3.t
+	desc = ebf_economy_event.3.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		### Consumtion Tax
+		set_variable = { ebf_economy_consumtion_tax = consumtion }
+		set_variable = { ebf_economy_consumtion_tax_amount = consumer_goods_factor }
+		multiply_variable = { ebf_economy_consumtion_tax_amount = ebf_economy_population }
+		multiply_variable = { ebf_economy_consumtion_tax_amount = ebf_economy_consumtion_tax }
+		round_variable = ebf_economy_consumtion_tax_amount
+                
+    }
+}
+
