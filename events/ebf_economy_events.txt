@@ -1,5 +1,7 @@
 add_namespace = ebf_economy_event
 
+### Population is in 1.000.000
+
 country_event = {
 	id = ebf_economy_event.1
 	title = ebf_economy_event.1.t
@@ -9,17 +11,19 @@ country_event = {
 	is_triggered_only = yes
 	
     immediate = {
-		set_variable = { ebf_economy_population = 0 }
-		set_variable = { ebf_economy_adult_population = 1 }
-		set_variable = { ebf_economy_pensioner_population = 1 } 
-		set_variable = { ebf_economy_unemployed_population = 1 }
-		set_variable = { ebf_economy_workforce = 0 }
+
 		### Population
 		every_state = {
 			limit = {
 				is_owned_and_controlled_by = ROOT
 			}
-			add_to_variable = { ROOT.ebf_economy_population = state_population_k } #PREV.state_population
+			set_temp_variable = {
+				ebf_economy_state_population_M = state_population_k
+			}
+			divide_temp_variable = {
+				ebf_economy_state_population_M = 1000
+			}
+			add_to_variable = { ROOT.ebf_economy_population = ebf_economy_state_population_M } #PREV.state_population
 		}
 		round_variable = ebf_economy_population
 		# Adult Population
@@ -45,6 +49,28 @@ country_event = {
 		set_variable = { ebf_economy_workforce = ebf_economy_adult_population }
 		subtract_from_variable = { ebf_economy_workforce = ebf_economy_pensioner_population }
 		subtract_from_variable = { ebf_economy_workforce = ebf_economy_unemployed_population }
+		### New
+		# Rich People
+		set_temp_variable = { ebf_economy_inversed_income_tax = 1 }
+		subtract_from_temp_variable = { ebf_economy_inversed_income_tax = ebf_economy_income_tax }
+		set_temp_variable = {ebf_economy_inversed_wealth_tax = 1 }
+		subtract_from_temp_variable = { ebf_economy_inversed_wealth_tax = ebf_economy_wealth_tax }
+ 
+		set_variable = { ebf_economy_theoratical_rich = ebf_economy_adult_population }
+		multiply_variable = { ebf_economy_theoratical_rich = ebf_economy_rich_base_rate }
+		multiply_variable = { ebf_economy_theoratical_rich = ebf_economy_inversed_income_tax }
+		multiply_variable = { ebf_economy_theoratical_rich = ebf_economy_inversed_wealth_tax }
+		
+		set_variable = { ebf_economy_rich = ebf_economy_theoratical_rich }
+
+		if = {
+			limit = {
+				check_variable = { ebf_economy_theoratical_rich > ebf_economy_population }
+			}
+			set_variable = { ebf_economy_rich = ebf_economy_population }
+		}
+
+
     }
 
     option = { # Help
@@ -59,7 +85,8 @@ country_event = {
 	
 }
 
-#Income Tax
+
+#Rich People 
 country_event = {
 	id = ebf_economy_event.2
 	title = ebf_economy_event.2.t
@@ -70,34 +97,23 @@ country_event = {
 	hidden = yes
 
     immediate = {
-		### Income Tax
-		set_variable = { ebf_economy_income_tax_amount = ebf_economy_workforce }
-		multiply_variable = { ebf_economy_income_tax_amount = ebf_economy_income_tax }
-		round_variable = ebf_economy_income_tax_amount
-		multiply_variable = { ebf_economy_income_tax_amount = ebf_economy_average_income }
-		round_variable = ebf_economy_income_tax_amount
-                
+		set_temp_variable = { ebf_economy_inversed_income_tax = 1 }
+		subtract_from_temp_variable = { ebf_economy_inversed_income_tax = ebf_economy_income_tax }
+		set_temp_variable = {ebf_economy_inversed_wealth_tax = 1 }
+		subtract_from_temp_variable = { ebf_economy_inversed_wealth_tax = ebf_economy_wealth_tax }
+ 
+		set_variable = { ebf_economy_theoratical_rich = ebf_economy_adult_population }
+		multiply_variable = { ebf_economy_theoratical_rich = ebf_economy_rich_base_rate }
+		multiply_variable = { ebf_economy_theoratical_rich = ebf_economy_inversed_income_tax }
+		multiply_variable = { ebf_economy_theoratical_rich = ebf_economy_inversed_wealth_tax }
+		
+		set_variable = { ebf_economy_rich = ebf_economy_theoratical_rich }
+
+		if = {
+			limit = {
+				check_variable = { ebf_economy_theoratical_rich > ebf_economy_population }
+			}
+			set_variable = { ebf_economy_rich = ebf_economy_population }
+		}
     }
 }
-
-#Consumtion Tax
-country_event = {
-	id = ebf_economy_event.3
-	title = ebf_economy_event.3.t
-	desc = ebf_economy_event.3.d
-	picture = GFX_report_event_soviet_soldiers
-	
-	is_triggered_only = yes
-	hidden = yes
-
-    immediate = {
-		### Consumtion Tax
-		set_variable = { ebf_economy_consumtion_tax = consumtion }
-		set_variable = { ebf_economy_consumtion_tax_amount = consumer_goods_factor }
-		multiply_variable = { ebf_economy_consumtion_tax_amount = ebf_economy_population }
-		multiply_variable = { ebf_economy_consumtion_tax_amount = ebf_economy_consumtion_tax }
-		round_variable = ebf_economy_consumtion_tax_amount
-                
-    }
-}
-

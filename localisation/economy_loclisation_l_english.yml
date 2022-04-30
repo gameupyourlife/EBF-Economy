@@ -13,7 +13,7 @@
 
   ######
 
- EBF_ECONOMY_POPULATION:0 "[?ebf_economy_workforce]"
+ EBF_ECONOMY_POPULATION:0 "[?ebf_economy_population]"
 
 
  ###
@@ -33,3 +33,7 @@
  ECONOMY_WEALTH_TAX:0 "Wealth Tax"
  ECONOMY_WEALTH_TAX_PERCENTAGE: "[?ebf_economy_wealth_tax|%0]"
  ECONOMY_WEALTH_TAX_AMOUNT: "[?ebf_economy_wealth_tax_amount]M $"
+
+ ECONOMY_TRADE_TAX:0 "Trade Tax"
+ ECONOMY_TRADE_TAX_PERCENTAGE: "[?ebf_economy_trade_tax|%0]"
+ ECONOMY_TRADE_TAX_AMOUNT: "[?ebf_economy_trade_tax_amount]M $"

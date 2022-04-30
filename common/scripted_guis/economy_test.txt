@@ -35,7 +35,7 @@ scripted_gui = {
 						}
 					}
 					subtract_from_variable = { ebf_economy_income_tax = 0.01 }
-					country_event = { id = ebf_economy_event.2 }
+					country_event = { id = ebf_economy_tax_event.1 }
 				}
             }
 			income_tax_percentage_add_1x_click = {
@@ -46,7 +46,7 @@ scripted_gui = {
 						}
 					}
 					add_to_variable = { ebf_economy_income_tax = 0.01 }
-					country_event = { id = ebf_economy_event.2 }
+					country_event = { id = ebf_economy_tax_event.1 }
 				}
             }
 
@@ -56,7 +56,7 @@ scripted_gui = {
 						check_variable = { ebf_economy_income_tax < 0.05 }
 					}
 					set_variable = { ebf_economy_income_tax = 0.00 }
-					country_event = { id = ebf_economy_event.2 }
+					country_event = { id = ebf_economy_tax_event.1 }
 				}
 				if = {
 					limit = {
@@ -65,7 +65,7 @@ scripted_gui = {
 						}
 					}
 					subtract_from_variable = { ebf_economy_income_tax = 0.05 }
-					country_event = { id = ebf_economy_event.2 }
+					country_event = { id = ebf_economy_tax_event.1 }
 				}
             }
 			income_tax_percentage_add_1x_control_click = {
@@ -74,7 +74,7 @@ scripted_gui = {
 						check_variable = { ebf_economy_income_tax > 0.95 }
 					}
 					set_variable = { ebf_economy_income_tax = 1.00 }
-					country_event = { id = ebf_economy_event.2 }
+					country_event = { id = ebf_economy_tax_event.1 }
 				}
 				if = {
 					limit = {
@@ -83,7 +83,7 @@ scripted_gui = {
 						}
 					}
 					add_to_variable = { ebf_economy_income_tax = 0.05 }
-					country_event = { id = ebf_economy_event.2 }
+					country_event = { id = ebf_economy_tax_event.1 }
 				}
             }
 
@@ -93,7 +93,7 @@ scripted_gui = {
 						check_variable = { ebf_economy_income_tax < 0.1 }
 					}
 					set_variable = { ebf_economy_income_tax = 0.00 }
-					country_event = { id = ebf_economy_event.2 }
+					country_event = { id = ebf_economy_tax_event.1 }
 				}
 				if = {
 					limit = {
@@ -102,7 +102,7 @@ scripted_gui = {
 						}
 					}
 					subtract_from_variable = { ebf_economy_income_tax = 0.1 }
-					country_event = { id = ebf_economy_event.2 }
+					country_event = { id = ebf_economy_tax_event.1 }
 				}
             }
 			income_tax_percentage_add_1x_shift_click = {
@@ -111,7 +111,7 @@ scripted_gui = {
 						check_variable = { ebf_economy_income_tax > 0.90 }
 					}
 					set_variable = { ebf_economy_income_tax = 1.00 }
-					country_event = { id = ebf_economy_event.2 }
+					country_event = { id = ebf_economy_tax_event.1 }
 				}
 				if = {
 					limit = {
@@ -120,7 +120,7 @@ scripted_gui = {
 						}
 					}
 					add_to_variable = { ebf_economy_income_tax = 0.1 }
-					country_event = { id = ebf_economy_event.2 }
+					country_event = { id = ebf_economy_tax_event.1 }
 				}
             }
 
@@ -133,7 +133,7 @@ scripted_gui = {
 
 
 			### Consumtion Tax Percentage Click
-			consumtion_tax_percentage_add_1x_click = {
+			consumtion_tax_percentage_sub_1x_click = {
 				if = {
 					limit = {
 						NOT = {
@@ -141,7 +141,7 @@ scripted_gui = {
 						}
 					}
 					subtract_from_variable = { ebf_economy_consumtion_tax = 0.01 }
-					country_event = { id = ebf_economy_event.3 }
+					country_event = { id = ebf_economy_tax_event.2 }
 				}
             }
 			consumtion_tax_percentage_add_1x_click = {
@@ -152,7 +152,7 @@ scripted_gui = {
 						}
 					}
 					add_to_variable = { ebf_economy_consumtion_tax = 0.01 }
-					country_event = { id = ebf_economy_event.3 }
+					country_event = { id = ebf_economy_tax_event.2 }
 				}
             }
 
@@ -162,7 +162,7 @@ scripted_gui = {
 						check_variable = { ebf_economy_consumtion_tax < 0.05 }
 					}
 					set_variable = { ebf_economy_consumtion_tax = 0.00 }
-					country_event = { id = ebf_economy_event.3 }
+					country_event = { id = ebf_economy_tax_event.2 }
 				}
 				if = {
 					limit = {
@@ -171,7 +171,7 @@ scripted_gui = {
 						}
 					}
 					subtract_from_variable = { ebf_economy_consumtion_tax = 0.05 }
-					country_event = { id = ebf_economy_event.3 }
+					country_event = { id = ebf_economy_tax_event.2 }
 				}
             }
 			consumtion_tax_percentage_add_1x_control_click = {
@@ -180,7 +180,7 @@ scripted_gui = {
 						check_variable = { ebf_economy_consumtion_tax > 0.95 }
 					}
 					set_variable = { ebf_economy_consumtion_tax = 1.00 }
-					country_event = { id = ebf_economy_event.3 }
+					country_event = { id = ebf_economy_tax_event.2 }
 				}
 				if = {
 					limit = {
@@ -189,7 +189,7 @@ scripted_gui = {
 						}
 					}
 					add_to_variable = { ebf_economy_consumtion_tax = 0.05 }
-					country_event = { id = ebf_economy_event.3 }
+					country_event = { id = ebf_economy_tax_event.2 }
 				}
             }
 
@@ -199,7 +199,7 @@ scripted_gui = {
 						check_variable = { ebf_economy_consumtion_tax < 0.1 }
 					}
 					set_variable = { ebf_economy_consumtion_tax = 0.00 }
-					country_event = { id = ebf_economy_event.3 }
+					country_event = { id = ebf_economy_tax_event.2 }
 				}
 				if = {
 					limit = {
@@ -208,7 +208,7 @@ scripted_gui = {
 						}
 					}
 					subtract_from_variable = { ebf_economy_consumtion_tax = 0.1 }
-					country_event = { id = ebf_economy_event.3 }
+					country_event = { id = ebf_economy_tax_event.2 }
 				}
             }
 			consumtion_tax_percentage_add_1x_shift_click = {
@@ -217,7 +217,7 @@ scripted_gui = {
 						check_variable = { ebf_economy_consumtion_tax > 0.90 }
 					}
 					set_variable = { ebf_economy_consumtion_tax = 1.00 }
-					country_event = { id = ebf_economy_event.3 }
+					country_event = { id = ebf_economy_tax_event.2 }
 				}
 				if = {
 					limit = {
@@ -226,7 +226,110 @@ scripted_gui = {
 						}
 					}
 					add_to_variable = { ebf_economy_consumtion_tax = 0.1 }
-					country_event = { id = ebf_economy_event.3 }
+					country_event = { id = ebf_economy_tax_event.2 }
+				}
+            }
+
+
+
+
+
+
+			### Wealth Tax Percentage Click
+			wealth_tax_percentage_sub_1x_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_wealth_tax < 0.01 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_wealth_tax = 0.01 }
+					country_event = { id = ebf_economy_tax_event.3 }
+				}
+            }
+			wealth_tax_percentage_add_1x_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_wealth_tax > 0.99 }
+						}
+					}
+					add_to_variable = { ebf_economy_wealth_tax = 0.01 }
+					country_event = { id = ebf_economy_tax_event.3 }
+				}
+            }
+
+			wealth_tax_percentage_sub_1x_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_wealth_tax < 0.05 }
+					}
+					set_variable = { ebf_economy_wealth_tax = 0.00 }
+					country_event = { id = ebf_economy_tax_event.3 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_wealth_tax < 0.05 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_wealth_tax = 0.05 }
+					country_event = { id = ebf_economy_tax_event.3 }
+				}
+            }
+			wealth_tax_percentage_add_1x_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_wealth_tax > 0.95 }
+					}
+					set_variable = { ebf_economy_wealth_tax = 1.00 }
+					country_event = { id = ebf_economy_tax_event.3 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_wealth_tax > 0.95 }
+						}
+					}
+					add_to_variable = { ebf_economy_wealth_tax = 0.05 }
+					country_event = { id = ebf_economy_tax_event.3 }
+				}
+            }
+
+			wealth_tax_percentage_sub_1x_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_wealth_tax < 0.1 }
+					}
+					set_variable = { ebf_economy_wealth_tax = 0.00 }
+					country_event = { id = ebf_economy_tax_event.3 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_wealth_tax < 0.1 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_wealth_tax = 0.1 }
+					country_event = { id = ebf_economy_tax_event.3 }
+				}
+            }
+			wealth_tax_percentage_add_1x_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_wealth_tax > 0.90 }
+					}
+					set_variable = { ebf_economy_wealth_tax = 1.00 }
+					country_event = { id = ebf_economy_tax_event.3 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_wealth_tax > 0.90 }
+						}
+					}
+					add_to_variable = { ebf_economy_wealth_tax = 0.1 }
+					country_event = { id = ebf_economy_tax_event.3 }
 				}
             }
         }

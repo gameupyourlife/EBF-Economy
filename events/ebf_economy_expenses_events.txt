@@ -1,0 +1,127 @@
+add_namespace = ebf_economy_expenses_event
+
+# Healthcare Expenses
+country_event = {
+	id = ebf_economy_expenses_event.1
+	title = ebf_economy_expenses_event.1.t
+	desc = ebf_economy_expenses_event.1.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_healtcare_expenses = ebf_economy_healtcare_rate }
+		multiply_variable = { ebf_economy_healtcare_expenses = ebf_economy_population }
+		
+		set_temp_variable = { ebf_economy_healtcare_expenses_temp = ebf_economy_soldiers_healtcare_rate }
+		multiply_temp_variable = { ebf_economy_healtcare_expenses_temp = manpower }
+	
+		add_to_variable = {
+			ebf_economy_healtcare_expenses = ebf_economy_healtcare_expenses_temp
+		}
+		multiply_variable = {
+			ebf_economy_healtcare_expenses = ebf_economy_inflation
+		}
+	}
+}
+
+# Pension Expenses
+country_event = {
+	id = ebf_economy_expenses_event.2
+	title = ebf_economy_expenses_event.2.t
+	desc = ebf_economy_expenses_event.2.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = {
+			ebf_economy_pension_expenses = ebf_economy_pension_rate
+		}
+		multiply_variable = {
+			ebf_economy_pension_expenses = ebf_economy_pensioner_population
+		}
+		multiply_variable = {
+			ebf_economy_pension_expenses = ebf_economy_inflation
+		}
+	}
+}
+
+# Saleries Expenses
+country_event = {
+	id = ebf_economy_expenses_event.3
+	title = ebf_economy_expenses_event.3.t
+	desc = ebf_economy_expenses_event.3.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = {
+			ebf_economy_saleries_expenses = ebf_economy_workforce
+		}
+		multiply_variable = {
+			ebf_economy_saleries_expenses = 0.01
+		}
+		set_temp_variable = { ebf_economy_soldiers = manpower_k }
+		divide_temp_variable = { ebf_economy_soldiers = 1000 }
+		add_to_variable = {
+			ebf_economy_saleries_expenses = ebf_economy_soldiers
+		}
+		multiply_variable = {
+			ebf_economy_saleries_expenses = ebf_economy_saleries_rate
+		}
+		multiply_variable = {
+			ebf_economy_saleries_expenses = ebf_economy_inflation
+		}
+	}
+}
+
+# Social Welfare Expenses
+country_event = {
+	id = ebf_economy_expenses_event.4
+	title = ebf_economy_expenses_event.4.t
+	desc = ebf_economy_expenses_event.4.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = {
+			ebf_economy_social_welfare_expenses = ebf_economy_social_welfare_rate
+		}
+		multiply_variable = {
+			ebf_economy_social_welfare_expenses = ebf_economy_unemployed_population
+		}
+		multiply_variable = {
+			ebf_economy_social_welfare_expenses = ebf_economy_inflation
+		}
+	}
+}
+
+# Buildings Expenses
+country_event = {
+	id = ebf_economy_expenses_event.5
+	title = ebf_economy_expenses_event.5.t
+	desc = ebf_economy_expenses_event.5.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = {
+			ebf_economy_social_welfare_expenses = ebf_economy_social_welfare_rate
+		}
+		multiply_variable = {
+			ebf_economy_social_welfare_expenses = ebf_economy_unemployed_population
+		}
+		multiply_variable = {
+			ebf_economy_social_welfare_expenses = ebf_economy_inflation
+		}
+	}
+}
