@@ -1,0 +1,70 @@
+add_namespace = ebf_economy_building_expenses_event
+
+country_event = {
+	id = ebf_economy_building_expenses_event.1
+	title = ebf_economy_building_expenses_event.1.t
+	desc = ebf_economy_building_expenses_event.1.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		### Infrastructure
+		set_variable = { ebf_economy_infrastructure_combined_monthly_cost = 1 }
+		set_variable = { ebf_economy_infrastructure_limit = 0 }
+
+		country_event = { id = ebf_economy_building_expenses_event.2 }
+		
+
+		
+	}
+}
+
+country_event = {
+	id = ebf_economy_building_expenses_event.2
+	title = ebf_economy_building_expenses_event.2.t
+	desc = ebf_economy_building_expenses_event.2.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+			}
+			if = {
+				limit = {
+					infrastructure > ebf_economy_infrastructure_limit
+
+				}
+				add_to_variable = { ROOT.ebf_economy_infrastructure_combined_monthly_cost = 1 } #PREV.state_population
+			}
+		}
+		
+		add_to_variable = { ebf_economy_infrastructure_limit = 1 }
+
+		if = {
+			limit = {
+				check_variable = { ebf_economy_infrastructure_limit < 5 }
+			}
+			country_event = { id = ebf_economy_building_expenses_event.2 }
+		}
+	}
+}
+
+country_event = {
+	id = ebf_economy_building_expenses_event.3
+	title = ebf_economy_building_expenses_event.3.t
+	desc = ebf_economy_building_expenses_event.3.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		
+	}
+}

@@ -40,22 +40,6 @@ guiTypes = {
 			fixedsize = yes
 		}		
 
-
-
-		instantTextboxType = {
-			name = "population"
-			position = { x = 245 y = 308 }
-			textureFile = ""
-			#font = "hoi_36header"
-			borderSize = {x = 0 y = 0}
-			text = "EBF_ECONOMY_POPULATION"
-			maxWidth = 400
-			maxHeight = 200
-			fixedsize = yes
-		}	
-
-
-
 		buttonType = {
 			name = "close_button"
 			position = { x = -42 y = 9 }
@@ -65,20 +49,6 @@ guiTypes = {
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			pdx_tooltip = "CLOSE"
-		}
-
-		buttonType = {
-			name = "test_button"
-			position = {x=17 y=400}
-			quadTextureSprite ="GFX_trade_filter_btn_country"
-			clicksound = click_scroll
-		}
-
-		buttonType = {
-			name = "reset_button"
-			position = {x=17 y=450}
-			quadTextureSprite ="GFX_trade_filter_btn_country"
-			clicksound = click_scroll
 		}
 
 
@@ -157,7 +127,7 @@ guiTypes = {
 					textureFile = ""
 					font = "hoi_18mbs"
 					borderSize = {x = 0 y = 0}
-					text = "80M"
+					text = "ECONOMY_EXPENSES_AMOUNT"
 					maxWidth = 50
 					maxHeight = 20
 					format = left
@@ -195,7 +165,7 @@ guiTypes = {
 					textureFile = ""
 					font = "hoi_18mbs"
 					borderSize = {x = 0 y = 0}
-					text = "[?ebf_economy_inflation|%1]"
+					text = "[?ebf_economy_real_inflation|%1]"
 					maxWidth = 50
 					maxHeight = 20
 					format = left
@@ -534,10 +504,346 @@ guiTypes = {
 						tooltip  = "TRADE_TAX_PERCENTAGE_ADD_1X_TEXT"
 					}
 				}
-
-				
 			}
 
+
+
+			########################################################################################
+			########################################################################################
+			########################################################################################
+
+			containerWindowType = {
+				name = "expenses_management_category_entry"
+				position = { x = 20 y = 286 } 
+				size = { width=100% height = 202 }
+				clipping = no
+				
+				iconType ={
+					name ="category_header"
+					spriteType = "GFX_category_header"
+					position = { x=-5 y=2 }
+					Orientation = "UPPER_LEFT"
+				}
+				iconType ={
+					name ="category_icon"
+					spriteType = "GFX_idea_categories"
+					position = { x=4 y=8 }
+					frame = 3
+					Orientation = "UPPER_LEFT"
+				}
+				
+				
+				instantTextboxType = {
+					name = "name"
+					position = { x = 70 y = 14 }
+					font = "hoi_20b"
+					text = "ECONOMY_EXPENSES_MANAGEMENT"
+					maxWidth = 300
+					maxHeight = 20
+				}
+
+				containerWindowType = {
+					name = "healthcare_expenses_adjuster"
+					position = { x=0 y=46 }
+					size = { width = 100% height = 52 }
+					clipping = no
+			
+					background = {
+						name = "Background"
+						quadTextureSprite ="GFX_adjustment_window_right_bg"
+					}
+
+					instantTextboxType = {
+						name = "name"
+						position = { x = 20 y = 16 }
+						textureFile = ""
+						font = "hoi_18mbs"
+						borderSize = {x = 0 y = 0}
+						text = "ECONOMY_HEALTHCARE_EXPENSES"
+						maxWidth = 150
+						maxHeight = 20
+						format = left
+						vertical_alignment = center 
+						
+						alwaystransparent = yes
+					}
+					
+					instantTextboxType = {
+						name = "healthcare_expenses_amount"
+						position = { x = 340 y = 17 }
+						textureFile = ""
+						font = "hoi_18b"
+						text = "ECONOMY_HEALTHCARE_EXPENSES_AMOUNT"
+						maxWidth = 130
+						maxHeight = 20
+						format = center
+						
+						alwaystransparent = yes
+					}		
+
+
+
+					containerWindowType = {
+						name = "healthcare_rate_adjuster"
+						position = { x=-2 y=52 }
+						size = { width = 100% height = 32 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_ebf_economy_expenses_sub_adjustment"
+						}
+
+						instantTextboxType = {
+							name = "name"
+							position = { x = 20 y = 4 }
+							textureFile = ""
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_HEALTHCARE_RATE_NAME"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+
+						instantTextboxType = {
+							name = "healthcare_rate_used_txt"
+							position = { x=@prod_nof_pos_x y=4 }
+							font = "hoi_18b"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_HEALTHCARE_RATE"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+						buttonType = {
+							name = "healthcare_rate_sub_1x"
+							position = { x=@prod_sub_pos_x y=2 }
+							quadTextureSprite = "GFX_subtract_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip = "HEALTHCARE_RATE_SUB_1X_TEXT"
+						}
+						buttonType = {
+							name = "healthcare_rate_add_1x"
+							position = { x=@prod_add_pos_x y=2 }
+							quadTextureSprite = "GFX_add_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip  = "HEALTHCARE_RATE_ADD_1X_TEXT"
+						}
+
+						instantTextboxType = {
+							name = "healthcare_rate_amount"
+							position = { x = 340 y = 5 }
+							textureFile = ""
+							font = "hoi_18b"
+							text = "HEALTHCARE_RATE_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							format = center
+							
+							alwaystransparent = yes
+						}
+					}
+
+
+
+					containerWindowType = {
+						name = "soldier_healthcare_rate_adjuster"
+						position = { x=-2 y=84 }
+						size = { width = 100% height = 52 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_ebf_economy_expenses_sub_adjustment"
+						}
+
+						instantTextboxType = {
+							name = "name"
+							position = { x = 20 y = 4 }
+							textureFile = ""
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_SOLDIER_HEALTHCARE_RATE_NAME"
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+
+						instantTextboxType = {
+							name = "soldier_healthcare_rate_used_txt"
+							position = { x=@prod_nof_pos_x y=4 }
+							font = "hoi_18b"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_SOLDIER_HEALTHCARE_RATE"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+						buttonType = {
+							name = "soldier_healthcare_rate_sub_1x"
+							position = { x=@prod_sub_pos_x y=2 }
+							quadTextureSprite = "GFX_subtract_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip = "SOLDIER_HEALTHCARE_RATE_SUB_1X_TEXT"
+						}
+						buttonType = {
+							name = "soldier_healthcare_rate_add_1x"
+							position = { x=@prod_add_pos_x y=2 }
+							quadTextureSprite = "GFX_add_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip  = "SOLDIER_HEALTHCARE_RATE_ADD_1X_TEXT"
+						}
+
+						instantTextboxType = {
+							name = "soldier_healthcare_rate_amount"
+							position = { x = 340 y = 5 }
+							textureFile = ""
+							font = "hoi_18b"
+							text = "SOLDIER_HEALTHCARE_RATE_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							format = center
+							
+							alwaystransparent = yes
+						}
+					}
+				}
+
+
+
+				containerWindowType = {
+					name = "pension_expenses_adjuster"
+					position = { x=0 y=164 }
+					size = { width = 100% height = 52 }
+					clipping = no
+			
+					background = {
+						name = "Background"
+						quadTextureSprite ="GFX_adjustment_window_right_bg"
+					}
+
+					instantTextboxType = {
+						name = "name"
+						position = { x = 20 y = 16 }
+						textureFile = ""
+						font = "hoi_18mbs"
+						borderSize = {x = 0 y = 0}
+						text = "ECONOMY_PENSION_EXPENSES"
+						maxWidth = 150
+						maxHeight = 20
+						format = left
+						vertical_alignment = center 
+						
+						alwaystransparent = yes
+					}
+					
+					instantTextboxType = {
+						name = "pension_expenses_amount"
+						position = { x = 340 y = 17 }
+						textureFile = ""
+						font = "hoi_18b"
+						text = "ECONOMY_PENSION_EXPENSES_AMOUNT"
+						maxWidth = 130
+						maxHeight = 20
+						format = center
+						
+						alwaystransparent = yes
+					}		
+
+
+
+					containerWindowType = {
+						name = "pension_rate_adjuster"
+						position = { x=-2 y=52 }
+						size = { width = 100% height = 32 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_ebf_economy_expenses_sub_adjustment"
+						}
+
+						instantTextboxType = {
+							name = "name"
+							position = { x = 20 y = 4 }
+							textureFile = ""
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_PENSION_RATE_NAME"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+
+						instantTextboxType = {
+							name = "pension_rate_used_txt"
+							position = { x=@prod_nof_pos_x y=4 }
+							font = "hoi_18b"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_PENSION_RATE"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+						buttonType = {
+							name = "pension_rate_sub_1x"
+							position = { x=@prod_sub_pos_x y=2 }
+							quadTextureSprite = "GFX_subtract_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip = "PENSION_RATE_SUB_1X_TEXT"
+						}
+						buttonType = {
+							name = "pension_rate_add_1x"
+							position = { x=@prod_add_pos_x y=2 }
+							quadTextureSprite = "GFX_add_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip  = "PENSION_RATE_ADD_1X_TEXT"
+						}
+
+						instantTextboxType = {
+							name = "pension_rate_amount"
+							position = { x = 340 y = 5 }
+							textureFile = ""
+							font = "hoi_18b"
+							text = "PENSION_RATE_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							format = center
+							
+							alwaystransparent = yes
+						}
+					}
+				}
+
+
+			}
+
+
+
+
+
+			
 		}
 	}
 }

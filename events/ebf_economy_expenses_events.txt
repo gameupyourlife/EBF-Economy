@@ -11,17 +11,27 @@ country_event = {
 	hidden = yes
 
     immediate = {
-		set_variable = { ebf_economy_healtcare_expenses = ebf_economy_healtcare_rate }
-		multiply_variable = { ebf_economy_healtcare_expenses = ebf_economy_population }
+		set_variable = { ebf_economy_non_soilders_healtcare_expenses = ebf_economy_healtcare_rate }
+		multiply_variable = { ebf_economy_non_soilders_healtcare_expenses = ebf_economy_population }
 		
-		set_temp_variable = { ebf_economy_healtcare_expenses_temp = ebf_economy_soldiers_healtcare_rate }
-		multiply_temp_variable = { ebf_economy_healtcare_expenses_temp = manpower }
+		set_variable = { ebf_economy_soldiers_healtcare_expenses = ebf_economy_soldiers_healtcare_rate }
+		multiply_variable = { ebf_economy_soldiers_healtcare_expenses = manpower_k }
+		divide_variable = { ebf_economy_soldiers_healtcare_expenses = 1000 }
+		round_variable = ebf_economy_soldiers_healtcare_expenses
 	
+		set_variable = {
+			ebf_economy_healtcare_expenses = ebf_economy_non_soilders_healtcare_expenses
+		}
 		add_to_variable = {
-			ebf_economy_healtcare_expenses = ebf_economy_healtcare_expenses_temp
+			ebf_economy_healtcare_expenses = ebf_economy_soldiers_healtcare_expenses
 		}
 		multiply_variable = {
 			ebf_economy_healtcare_expenses = ebf_economy_inflation
+		}
+		round_variable = ebf_economy_healtcare_expenses
+
+		country_event = {
+			id = ebf_economy_expenses_event.6
 		}
 	}
 }
@@ -46,6 +56,7 @@ country_event = {
 		multiply_variable = {
 			ebf_economy_pension_expenses = ebf_economy_inflation
 		}
+		round_variable = ebf_economy_pension_expenses
 	}
 }
 
@@ -77,6 +88,11 @@ country_event = {
 		multiply_variable = {
 			ebf_economy_saleries_expenses = ebf_economy_inflation
 		}
+		round_variable = ebf_economy_saleries_expenses
+
+		country_event = {
+			id = ebf_economy_expenses_event.6
+		}
 	}
 }
 
@@ -100,6 +116,11 @@ country_event = {
 		multiply_variable = {
 			ebf_economy_social_welfare_expenses = ebf_economy_inflation
 		}
+		round_variable = ebf_economy_social_welfare_expenses
+
+		country_event = {
+			id = ebf_economy_expenses_event.6
+		}
 	}
 }
 
@@ -114,14 +135,55 @@ country_event = {
 	hidden = yes
 
     immediate = {
+		 
+		country_event = {
+			id = ebf_economy_expenses_event.6
+		}
+	}
+}
+
+# Total Expenses
+country_event = {
+	id = ebf_economy_expenses_event.6
+	title = ebf_economy_expenses_event.6.t
+	desc = ebf_economy_expenses_event.6.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		# country_event = {
+		# 	id = ebf_economy_expenses_event.1
+		# }
+		# country_event = {
+		# 	id = ebf_economy_expenses_event.2
+		# }
+		# country_event = {
+		# 	id = ebf_economy_expenses_event.3
+		# }
+		# country_event = {
+		# 	id = ebf_economy_expenses_event.4
+		# }
+		# country_event = {
+		# 	id = ebf_economy_expenses_event.5
+		# }
+
 		set_variable = {
-			ebf_economy_social_welfare_expenses = ebf_economy_social_welfare_rate
+			ebf_economy_total_expenses = ebf_economy_healtcare_expenses
 		}
-		multiply_variable = {
-			ebf_economy_social_welfare_expenses = ebf_economy_unemployed_population
+		set_variable = {
+			ebf_economy_total_expenses = ebf_economy_pension_expenses
 		}
-		multiply_variable = {
-			ebf_economy_social_welfare_expenses = ebf_economy_inflation
+		set_variable = {
+			ebf_economy_total_expenses = ebf_economy_saleries_expenses
 		}
+		set_variable = {
+			ebf_economy_total_expenses = ebf_economy_social_welfare_expenses
+		}
+		# set_variable = {
+		# 	ebf_economy_total_expenses = ebf_economy_healtcare_expenses
+		# }
+		round_variable = ebf_economy_total_expenses
 	}
 }

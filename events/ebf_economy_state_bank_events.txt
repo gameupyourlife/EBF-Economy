@@ -1,10 +1,10 @@
-add_namespace = ebf_economy_loan_event
+add_namespace = ebf_economy_state_bank_event
 
 # Money Printing Inflation
 country_event = {
-	id = ebf_economy_loan_event.1
-	title = ebf_economy_loan_event.1.t
-	desc = ebf_economy_loan_event.1.d
+	id = ebf_economy_state_bank_event.1
+	title = ebf_economy_state_bank_event.1.t
+	desc = ebf_economy_state_bank_event.1.d
 	picture = GFX_report_event_soviet_soldiers
 	
 	is_triggered_only = yes
@@ -25,9 +25,9 @@ country_event = {
 
 # National Economy Money
 country_event = {
-	id = ebf_economy_loan_event.2
-	title = ebf_economy_loan_event.2.t
-	desc = ebf_economy_loan_event.2.d
+	id = ebf_economy_state_bank_event.2
+	title = ebf_economy_state_bank_event.2.t
+	desc = ebf_economy_state_bank_event.2.d
 	picture = GFX_report_event_soviet_soldiers
 	
 	is_triggered_only = yes
@@ -52,9 +52,9 @@ country_event = {
 
 # Money Printing Amount
 country_event = {
-	id = ebf_economy_loan_event.3
-	title = ebf_economy_loan_event.3.t
-	desc = ebf_economy_loan_event.3.d
+	id = ebf_economy_state_bank_event.3
+	title = ebf_economy_state_bank_event.3.t
+	desc = ebf_economy_state_bank_event.3.d
 	picture = GFX_report_event_soviet_soldiers
 	
 	is_triggered_only = yes
@@ -71,9 +71,9 @@ country_event = {
 
 # Money Printing Income
 country_event = {
-	id = ebf_economy_loan_event.4
-	title = ebf_economy_loan_event.4.t
-	desc = ebf_economy_loan_event.4.d
+	id = ebf_economy_state_bank_event.4
+	title = ebf_economy_state_bank_event.4.t
+	desc = ebf_economy_state_bank_event.4.d
 	picture = GFX_report_event_soviet_soldiers
 	
 	is_triggered_only = yes

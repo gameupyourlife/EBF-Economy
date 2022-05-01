@@ -14,7 +14,6 @@ country_event = {
 		### Income Tax
 		set_variable = { ebf_economy_income_tax_amount = ebf_economy_workforce }
 		multiply_variable = { ebf_economy_income_tax_amount = ebf_economy_income_tax }
-		round_variable = ebf_economy_income_tax_amount
 		multiply_variable = { ebf_economy_income_tax_amount = ebf_economy_average_income }
 		round_variable = ebf_economy_income_tax_amount
                 
@@ -57,7 +56,9 @@ country_event = {
 		set_variable = { ebf_economy_wealth_tax_amount = ebf_economy_rich }
         multiply_variable = { ebf_economy_wealth_tax_amount = ebf_economy_rich_wealth }
 		multiply_variable = { ebf_economy_wealth_tax_amount = ebf_economy_wealth_tax }
-		round_variable = wealth_tax_amount 
+		#round_variable = wealth_tax_amount 
+
+		
     }
 }
 
