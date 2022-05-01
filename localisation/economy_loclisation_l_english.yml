@@ -72,4 +72,12 @@
  ECONOMY_PENSION_RATE:0 "[?ebf_economy_pension_rate]"
  PENSION_RATE_AMOUNT:0 "[?ebf_economy_pension_expenses] M $"
 
+ #
+ ECONOMY_SALERIES_EXPENSES:0 "Saleries Expenses"
+ ECONOMY_SALERIES_EXPENSES_AMOUNT: "[?ebf_economy_saleries_expenses] M $"
+
+ ECONOMY_SALERIES_RATE_NAME:0 "Saleries Rate"
+ ECONOMY_SALERIES_RATE:0 "[?ebf_economy_saleries_rate]"
+ SALERIES_RATE_AMOUNT:0 "[?ebf_economy_saleries_expenses] M $"
+
 

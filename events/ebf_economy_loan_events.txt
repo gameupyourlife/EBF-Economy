@@ -1,0 +1,55 @@
+add_namespace = ebf_economy_loan_events
+
+country_event = {
+	id = ebf_economy_loan_events.1
+	title = ebf_economy_loan_events.1.t
+	desc = ebf_economy_loan_events.1.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		country_event = {
+			id = ebf_economy_tax_event.5
+		}
+		country_event = {
+			id = ebf_economy_resources_event.1
+		}
+		country_event = {
+			id = ebf_economy_state_bank_event.4
+		}
+		set_variable = {
+			ebf_economy_monthly_income = ebf_economy_combined_tax_amount
+		}
+		add_to_variable = {
+			ebf_economy_monthly_income = ebf_economy_resources_exported_amount
+		}
+		add_to_variable = {
+			ebf_economy_monthly_income = ebf_economy_money_printing_income
+		}
+		
+		
+	}
+}
+
+
+country_event = {
+	id = ebf_economy_loan_events.2
+	title = ebf_economy_loan_events.2.t
+	desc = ebf_economy_loan_events.2.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = {
+			ebf_economy_loan_income_ratio = ebf_economy_loans_amount
+		}
+		set_variable = {
+			ebf_economy_yearly_income = ebf_economy_monthly_income
+		}
+		
+	}
+}

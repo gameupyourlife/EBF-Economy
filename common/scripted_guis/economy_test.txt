@@ -643,6 +643,73 @@ scripted_gui = {
 				country_event = { id = ebf_economy_expenses_event.2 }
 				
             }
+
+			### saleries Rate Click
+			saleries_rate_sub_1x_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_saleries_rate < 1 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_saleries_rate = 1 }
+					country_event = { id = ebf_economy_expenses_event.3 }
+				}
+            }
+			saleries_rate_add_1x_click = {
+				
+				add_to_variable = { ebf_economy_saleries_rate = 1 }
+				country_event = { id = ebf_economy_expenses_event.3 }
+				
+            }
+
+			saleries_rate_sub_1x_control_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_saleries_rate < 10 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_saleries_rate = 10 }
+					country_event = { id = ebf_economy_expenses_event.3 }
+				}
+				else = {
+					set_variable = {
+						ebf_economy_saleries_rate = 0
+					}
+					country_event = { id = ebf_economy_expenses_event.3 }
+				}
+            }
+			saleries_rate_add_1x_control_click = {
+				
+				add_to_variable = { ebf_economy_saleries_rate = 10 }
+				country_event = { id = ebf_economy_expenses_event.3 }
+				
+            }
+
+			saleries_rate_sub_1x_shift_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_saleries_rate < 100 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_saleries_rate = 100 }
+					country_event = { id = ebf_economy_expenses_event.3 }
+				}
+				else = {
+					set_variable = {
+						ebf_economy_saleries_rate = 0
+					}
+					country_event = { id = ebf_economy_expenses_event.3 }
+				}
+            }
+			saleries_rate_add_1x_shift_click = {
+				
+				add_to_variable = { ebf_economy_saleries_rate = 100 }
+				country_event = { id = ebf_economy_expenses_event.3 }
+				
+            }
 			
         }
 	}

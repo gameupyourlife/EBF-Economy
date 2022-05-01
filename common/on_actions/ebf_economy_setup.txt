@@ -87,7 +87,7 @@ on_actions = {
 				}
 				
 				### Loans
-				set_variable = { ebf_economy_loans = 0 }
+				set_variable = { ebf_economy_loans_amount = 0 }
 				set_variable = { ebf_economy_loan_ratio = 0 }
 				set_variable = { ebf_economy_intrest_rate = 0 }
 				

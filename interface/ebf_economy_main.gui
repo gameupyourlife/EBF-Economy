@@ -727,7 +727,7 @@ guiTypes = {
 
 				containerWindowType = {
 					name = "pension_expenses_adjuster"
-					position = { x=0 y=164 }
+					position = { x=0 y=162 }
 					size = { width = 100% height = 52 }
 					clipping = no
 			
@@ -835,6 +835,233 @@ guiTypes = {
 						}
 					}
 				}
+
+
+
+				containerWindowType = {
+					name = "saleries_expenses_adjuster"
+					position = { x=0 y=246 }
+					size = { width = 100% height = 52 }
+					clipping = no
+			
+					background = {
+						name = "Background"
+						quadTextureSprite ="GFX_adjustment_window_right_bg"
+					}
+
+					instantTextboxType = {
+						name = "name"
+						position = { x = 20 y = 16 }
+						textureFile = ""
+						font = "hoi_18mbs"
+						borderSize = {x = 0 y = 0}
+						text = "ECONOMY_SALERIES_EXPENSES"
+						maxWidth = 150
+						maxHeight = 20
+						format = left
+						vertical_alignment = center 
+						
+						alwaystransparent = yes
+					}
+					
+					instantTextboxType = {
+						name = "saleries_expenses_amount"
+						position = { x = 340 y = 17 }
+						textureFile = ""
+						font = "hoi_18b"
+						text = "ECONOMY_SALERIES_EXPENSES_AMOUNT"
+						maxWidth = 130
+						maxHeight = 20
+						format = center
+						
+						alwaystransparent = yes
+					}		
+
+
+
+					containerWindowType = {
+						name = "saleries_rate_adjuster"
+						position = { x=-2 y=52 }
+						size = { width = 100% height = 32 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_ebf_economy_expenses_sub_adjustment"
+						}
+
+						instantTextboxType = {
+							name = "name"
+							position = { x = 20 y = 4 }
+							textureFile = ""
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_SALERIES_RATE_NAME"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+
+						instantTextboxType = {
+							name = "saleries_rate_used_txt"
+							position = { x=@prod_nof_pos_x y=4 }
+							font = "hoi_18b"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_SALERIES_RATE"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+						buttonType = {
+							name = "saleries_rate_sub_1x"
+							position = { x=@prod_sub_pos_x y=2 }
+							quadTextureSprite = "GFX_subtract_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip = "SALERIES_RATE_SUB_1X_TEXT"
+						}
+						buttonType = {
+							name = "saleries_rate_add_1x"
+							position = { x=@prod_add_pos_x y=2 }
+							quadTextureSprite = "GFX_add_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip  = "SALERIES_RATE_ADD_1X_TEXT"
+						}
+
+						instantTextboxType = {
+							name = "saleries_rate_amount"
+							position = { x = 340 y = 5 }
+							textureFile = ""
+							font = "hoi_18b"
+							text = "SALERIES_RATE_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							format = center
+							
+							alwaystransparent = yes
+						}
+					}
+				}
+
+
+
+				containerWindowType = {
+					name = "social_welfare_expenses_adjuster"
+					position = { x=0 y=330 }
+					size = { width = 100% height = 52 }
+					clipping = no
+			
+					background = {
+						name = "Background"
+						quadTextureSprite ="GFX_adjustment_window_right_bg"
+					}
+
+					instantTextboxType = {
+						name = "name"
+						position = { x = 20 y = 16 }
+						textureFile = ""
+						font = "hoi_18mbs"
+						borderSize = {x = 0 y = 0}
+						text = "ECONOMY_SALERIES_EXPENSES"
+						maxWidth = 150
+						maxHeight = 20
+						format = left
+						vertical_alignment = center 
+						
+						alwaystransparent = yes
+					}
+					
+					instantTextboxType = {
+						name = "saleries_expenses_amount"
+						position = { x = 340 y = 17 }
+						textureFile = ""
+						font = "hoi_18b"
+						text = "ECONOMY_SALERIES_EXPENSES_AMOUNT"
+						maxWidth = 130
+						maxHeight = 20
+						format = center
+						
+						alwaystransparent = yes
+					}		
+
+
+
+					containerWindowType = {
+						name = "social_welfare_rate_adjuster"
+						position = { x=-2 y=52 }
+						size = { width = 100% height = 32 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_ebf_economy_expenses_sub_adjustment"
+						}
+
+						instantTextboxType = {
+							name = "name"
+							position = { x = 20 y = 4 }
+							textureFile = ""
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_SALERIES_RATE_NAME"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+
+						instantTextboxType = {
+							name = "saleries_rate_used_txt"
+							position = { x=@prod_nof_pos_x y=4 }
+							font = "hoi_18b"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_SALERIES_RATE"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+						buttonType = {
+							name = "saleries_rate_sub_1x"
+							position = { x=@prod_sub_pos_x y=2 }
+							quadTextureSprite = "GFX_subtract_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip = "SALERIES_RATE_SUB_1X_TEXT"
+						}
+						buttonType = {
+							name = "saleries_rate_add_1x"
+							position = { x=@prod_add_pos_x y=2 }
+							quadTextureSprite = "GFX_add_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip  = "SALERIES_RATE_ADD_1X_TEXT"
+						}
+
+						instantTextboxType = {
+							name = "saleries_rate_amount"
+							position = { x = 340 y = 5 }
+							textureFile = ""
+							font = "hoi_18b"
+							text = "SALERIES_RATE_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							format = center
+							
+							alwaystransparent = yes
+						}
+					}
+				}
+
 
 
 			}
