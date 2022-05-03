@@ -2,6 +2,9 @@ on_actions = {
 	on_startup = {
 		effect = {
 			every_country = {
+
+				set_global_flag = ebf_economy_is_active
+
 				set_variable = {
 					ebf_economy_ = 0
 				}
@@ -182,6 +185,9 @@ on_actions = {
 				set_variable = { ebf_economy_resources_exported_rate = 9000 }
 				set_variable = { ebf_economy_resources_imported_rate = 11000 }
 
+				country_event = {
+					id = ebf_economy_building_expenses_event.1
+				}
 
 			}
 		}

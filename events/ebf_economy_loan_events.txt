@@ -50,6 +50,12 @@ country_event = {
 		set_variable = {
 			ebf_economy_yearly_income = ebf_economy_monthly_income
 		}
+		multiply_variable = {
+			ebf_economy_yearly_income = 12
+		}
+		divide_variable = {
+			ebf_economy_loan_income_ratio = ebf_economy_yearly_income
+		}
 		
 	}
 }
