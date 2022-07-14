@@ -99,6 +99,9 @@ on_actions = {
 				set_variable = { ebf_economy_pension_rate = 1000 }
 				set_variable = { ebf_economy_saleries_rate = 2000 }
 				set_variable = { ebf_economy_social_welfare_rate = 1000 }
+				set_variable = { ebf_economy_resources_exporting_price = 9000}
+				set_variable = { ebf_economy_resources_importing_price = 11000}
+
 
 				### Buildings
 				set_variable = { ebf_economy_infrastructure_monthly_cost = 10 }

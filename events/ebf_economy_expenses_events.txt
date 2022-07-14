@@ -104,6 +104,7 @@ country_event = {
 }
 
 # Buildings Expenses
+### TODO
 country_event = {
 	id = ebf_economy_expenses_event.5
 	title = ebf_economy_expenses_event.5.t
@@ -123,5 +124,31 @@ country_event = {
 		multiply_variable = {
 			ebf_economy_social_welfare_expenses = ebf_economy_inflation
 		}
+	}
+}
+
+# Resources/Trading Expenses
+#ToDo
+country_event = {
+	id = ebf_economy_expenses_event.6
+	title = ebf_economy_expenses_event.6.t
+	desc = ebf_economy_expenses_event.6.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_resources_trading_expenses = resource_imported }
+		multiply_variable = { ebf_economy_resources_trading_expenses = ebf_economy_resources_exporting_price }
+		multiply_variable = { ebf_economy_resources_trading_expenses = ebf_economy_inflation }
+
+		set_variable = { ebf_economy_resources_trading_income = resource_exported }
+		multiply_variable = { ebf_economy_resources_trading_income = ebf_economy_resources_exporting_price }
+		multiply_variable = { ebf_economy_resources_trading_income = ebf_economy_inflation }
+
+		set_variable = { ebf_economy_resources_trading_net = ebf_economy_resources_trading_income }
+		subtract_from_variable = { ebf_economy_resources_trading_net = ebf_economy_resources_trading_expenses }
+		
 	}
 }
