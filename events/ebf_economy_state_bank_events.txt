@@ -1,54 +1,81 @@
+<<<<<<<< HEAD:events/ebf_economy_state_bank_events.txt
 add_namespace = ebf_economy_state_bank_event
+========
+add_namespace = ebf_economy_loan_events
+>>>>>>>> 0285bf3a8407d8a73ae6de5e92ef09b5802a8255:events/ebf_economy_loan_events.txt
 
-# Money Printing Inflation
 country_event = {
+<<<<<<<< HEAD:events/ebf_economy_state_bank_events.txt
 	id = ebf_economy_state_bank_event.1
 	title = ebf_economy_state_bank_event.1.t
 	desc = ebf_economy_state_bank_event.1.d
+========
+	id = ebf_economy_loan_events.1
+	title = ebf_economy_loan_events.1.t
+	desc = ebf_economy_loan_events.1.d
+>>>>>>>> 0285bf3a8407d8a73ae6de5e92ef09b5802a8255:events/ebf_economy_loan_events.txt
 	picture = GFX_report_event_soviet_soldiers
 	
 	is_triggered_only = yes
 	hidden = yes
 
     immediate = {
-		set_variable = { ebf_economy_relative_money_printing_rate = ebf_economy_money_printing_rate }
-		divide_variable = { ebf_economy_relative_money_printing_rate = ebf_economy_money_decay_rate }
-
-		set_variable = { ebf_economy_money_printing_inflation 	= ebf_economy_relative_money_printing_rate }
-		subtract_from_variable = { ebf_economy_money_printing_inflation = 1 }
-		set_temp_variable = { ebf_economy_money_printing_inflation_temp = ebf_economy_money_printing_inflation }
-		multiply_variable = { ebf_economy_money_printing_inflation = ebf_economy_money_printing_inflation_temp }
-		multiply_variable = { ebf_economy_money_printing_inflation = ebf_economy_money_printing_inflation_temp }
-		divide_variable = { ebf_economy_money_printing_inflation = 100 }
-    }
+		country_event = {
+			id = ebf_economy_tax_event.5
+		}
+		country_event = {
+			id = ebf_economy_resources_event.1
+		}
+		country_event = {
+			id = ebf_economy_state_bank_event.4
+		}
+		set_variable = {
+			ebf_economy_monthly_income = ebf_economy_combined_tax_amount
+		}
+		add_to_variable = {
+			ebf_economy_monthly_income = ebf_economy_resources_exported_amount
+		}
+		add_to_variable = {
+			ebf_economy_monthly_income = ebf_economy_money_printing_income
+		}
+		
+		
+	}
 }
 
-# National Economy Money
+
 country_event = {
+<<<<<<<< HEAD:events/ebf_economy_state_bank_events.txt
 	id = ebf_economy_state_bank_event.2
 	title = ebf_economy_state_bank_event.2.t
 	desc = ebf_economy_state_bank_event.2.d
+========
+	id = ebf_economy_loan_events.2
+	title = ebf_economy_loan_events.2.t
+	desc = ebf_economy_loan_events.2.d
+>>>>>>>> 0285bf3a8407d8a73ae6de5e92ef09b5802a8255:events/ebf_economy_loan_events.txt
 	picture = GFX_report_event_soviet_soldiers
 	
 	is_triggered_only = yes
 	hidden = yes
 
     immediate = {
-		set_temp_variable = { ebf_economy_civilian_economy_money = num_of_civilian_factories }
-		multiply_temp_variable = { ebf_economy_civilian_economy_money = 10000000 }
-
-		set_temp_variable = { ebf_economy_people_without_rich_economy_money = ebf_economy_population }
-		subtract_from_temp_variable = { ebf_economy_people_without_rich_economy_money = ebf_economy_rich }
-		multiply_temp_variable = { ebf_economy_people_without_rich_economy_money = 10000 }
-
-		set_temp_variable = { ebf_economy_rich_economy_money = ebf_economy_rich }
-		multiply_temp_variable = { ebf_economy_rich_economy_money = 1000000 }
-
-		set_variable = { ebf_economy_national_economy_money = ebf_economy_civilian_economy_money }
-		add_to_variable = { ebf_economy_national_economy_money = ebf_economy_people_without_rich_economy_money }
-		add_to_variable = { ebf_economy_national_economy_money = ebf_economy_rich_economy_money }
-    }
+		set_variable = {
+			ebf_economy_loan_income_ratio = ebf_economy_loans_amount
+		}
+		set_variable = {
+			ebf_economy_yearly_income = ebf_economy_monthly_income
+		}
+		multiply_variable = {
+			ebf_economy_yearly_income = 12
+		}
+		divide_variable = {
+			ebf_economy_loan_income_ratio = ebf_economy_yearly_income
+		}
+		
+	}
 }
+<<<<<<<< HEAD:events/ebf_economy_state_bank_events.txt
 
 # Money Printing Amount
 country_event = {
@@ -90,3 +117,5 @@ country_event = {
     }
 }
 
+========
+>>>>>>>> 0285bf3a8407d8a73ae6de5e92ef09b5802a8255:events/ebf_economy_loan_events.txt

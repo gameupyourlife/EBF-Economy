@@ -11,10 +11,19 @@
  INCOME_TAX_PERCENTAGE_ADD_1X_TEXT:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
  INCOME_TAX_PERCENTAGE_SUB_1X_TEXT:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
 
+ CONSUMTION_TAX_PERCENTAGE_ADD_1X_TEXT:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
+ CONSUMTION_TAX_PERCENTAGE_SUB_1X_TEXT:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
+
+ WEALTH_TAX_PERCENTAGE_ADD_1X_TEXT:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
+ WEALTH_TAX_PERCENTAGE_SUB_1X_TEXT:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
+
+ TRADE_TAX_PERCENTAGE_ADD_1X_TEXT:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
+ TRADE_TAX_PERCENTAGE_SUB_1X_TEXT:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
+
   ######
 
  EBF_ECONOMY_POPULATION:0 "[?ebf_economy_population]"
-
+ ECONOMY_EXPENSES_AMOUNT:0 "[?ebf_economy_total_expenses]"
 
  ###
  #
@@ -24,16 +33,51 @@
 
  ECONOMY_INCOME_TAX:0 "Income Tax"
  ECONOMY_INCOME_TAX_PERCENTAGE: "[?ebf_economy_income_tax|%0]"
- ECONOMY_INCOME_TAX_AMOUNT: "[?ebf_economy_income_tax_amount]M $"
+ ECONOMY_INCOME_TAX_AMOUNT: "[?ebf_economy_income_tax_amount] M $"
 
  ECONOMY_CONSUMTION_TAX:0 "Consumtion Tax"
  ECONOMY_CONSUMTION_TAX_PERCENTAGE: "[?ebf_economy_consumtion_tax|%0]"
- ECONOMY_CONSUMTION_TAX_AMOUNT: "[?ebf_economy_consumtion_tax_amount]M $" 
+ ECONOMY_CONSUMTION_TAX_AMOUNT: "[?ebf_economy_consumtion_tax_amount] M $" 
 
  ECONOMY_WEALTH_TAX:0 "Wealth Tax"
  ECONOMY_WEALTH_TAX_PERCENTAGE: "[?ebf_economy_wealth_tax|%0]"
- ECONOMY_WEALTH_TAX_AMOUNT: "[?ebf_economy_wealth_tax_amount]M $"
+ ECONOMY_WEALTH_TAX_AMOUNT: "[?ebf_economy_wealth_tax_amount] M $"
 
  ECONOMY_TRADE_TAX:0 "Trade Tax"
- ECONOMY_TRADE_TAX_PERCENTAGE: "[?ebf_economy_trade_tax|%0]"
- ECONOMY_TRADE_TAX_AMOUNT: "[?ebf_economy_trade_tax_amount]M $"
+ ECONOMY_TRADE_TAX_PERCENTAGE: "[?ebf_economy_trade_tax|%0y]"
+ ECONOMY_TRADE_TAX_AMOUNT: "[?ebf_economy_trade_tax_amount] M $"
+
+ ###
+ #
+ ###
+ ECONOMY_EXPENSES_MANAGEMENT:0 "Expenses Management"
+
+ #
+ ECONOMY_HEALTHCARE_EXPENSES:0 "Healthcare Expenses"
+ ECONOMY_HEALTHCARE_EXPENSES_AMOUNT: "[?ebf_economy_healtcare_expenses] M $"
+
+ ECONOMY_HEALTHCARE_RATE_NAME:0 "Healthcare Rate"
+ ECONOMY_HEALTHCARE_RATE:0 "[?ebf_economy_healtcare_rate]"
+ HEALTHCARE_RATE_AMOUNT:0 "[?ebf_economy_non_soilders_healtcare_expenses] M $"
+
+ ECONOMY_SOLDIER_HEALTHCARE_RATE_NAME:0 "Soldiers Healthcare Rate"
+ ECONOMY_SOLDIER_HEALTHCARE_RATE:0 "[?ebf_economy_soldiers_healtcare_rate]"
+ SOLDIER_HEALTHCARE_RATE_AMOUNT:0 "[?ebf_economy_soldiers_healtcare_expenses] M $"
+
+ #
+ ECONOMY_PENSION_EXPENSES:0 "Healthcare Expenses"
+ ECONOMY_PENSION_EXPENSES_AMOUNT: "[?ebf_economy_pension_expenses] M $"
+
+ ECONOMY_PENSION_RATE_NAME:0 "Pension Rate"
+ ECONOMY_PENSION_RATE:0 "[?ebf_economy_pension_rate]"
+ PENSION_RATE_AMOUNT:0 "[?ebf_economy_pension_expenses] M $"
+
+ #
+ ECONOMY_SALERIES_EXPENSES:0 "Saleries Expenses"
+ ECONOMY_SALERIES_EXPENSES_AMOUNT: "[?ebf_economy_saleries_expenses] M $"
+
+ ECONOMY_SALERIES_RATE_NAME:0 "Saleries Rate"
+ ECONOMY_SALERIES_RATE:0 "[?ebf_economy_saleries_rate]"
+ SALERIES_RATE_AMOUNT:0 "[?ebf_economy_saleries_expenses] M $"
+
+

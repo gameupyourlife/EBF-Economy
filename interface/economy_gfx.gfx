@@ -15,4 +15,9 @@ spriteTypes = {
 		name = "GFX_adjustment_window_right_bg"
 		texturefile = "gfx/interface/adjustment_window_right_bg.dds"
 	}
+	spriteType = {
+		name = "GFX_ebf_economy_expenses_sub_adjustment"
+		texturefile = "gfx/interface/ebf_economy_expenses_sub_adjustment.dds"
+	}
+	
 }

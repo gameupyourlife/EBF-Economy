@@ -1,0 +1,275 @@
+add_namespace = ebf_economy_building_expenses_event
+
+#building_level@arms_factory
+
+country_event = {
+	id = ebf_economy_building_expenses_event.1
+	title = ebf_economy_building_expenses_event.1.t
+	desc = ebf_economy_building_expenses_event.1.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		### Infrastructure
+		set_variable = { ebf_economy_infrastructure_combined_monthly_cost = 0 }
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+			}
+			add_to_variable = { ROOT.ebf_economy_infrastructure_combined_monthly_cost = building_level@infrastructure }
+		}
+
+		### Arms Factory
+		set_variable = { ebf_economy_arms_factory_combined_monthly_cost = 0 }
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+			}
+			add_to_variable = { ROOT.ebf_economy_arms_factory_combined_monthly_cost = building_level@arms_factory }
+		}
+		
+		### Industrial Complex
+		set_variable = { ebf_economy_industrial_complex_combined_monthly_cost = 0 }
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+			}
+			add_to_variable = { ROOT.ebf_economy_industrial_complex_combined_monthly_cost = building_level@industrial_complex }
+		}
+
+		### Air Base
+		set_variable = { ebf_economy_air_base_combined_monthly_cost = 0 }
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+			}
+			add_to_variable = { ROOT.ebf_economy_air_base_combined_monthly_cost = building_level@air_base }
+		}
+
+		### Supply Node
+		set_variable = { ebf_economy_supply_node_combined_monthly_cost = 0 }
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+			}
+			add_to_variable = { ROOT.ebf_economy_supply_node_combined_monthly_cost = building_level@supply_node }
+		}
+
+		### Rail Way
+		set_variable = { ebf_economy_rail_way_combined_monthly_cost = 0 }
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+			}
+			add_to_variable = { ROOT.ebf_economy_rail_way_combined_monthly_cost = building_level@rail_way }
+		}
+
+		### Naval Base
+		set_variable = { ebf_economy_naval_base_combined_monthly_cost = 0 }
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+			}
+			add_to_variable = { ROOT.ebf_economy_naval_base_combined_monthly_cost = building_level@naval_base }
+		}
+
+		### Bunker
+		set_variable = { ebf_economy_bunker_combined_monthly_cost = 0 }
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+			}
+			add_to_variable = { ROOT.ebf_economy_bunker_combined_monthly_cost = building_level@bunker }
+		}
+
+		### Coastal Bunker
+		set_variable = { ebf_economy_coastal_bunker_combined_monthly_cost = 0 }
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+			}
+			add_to_variable = { ROOT.ebf_economy_coastal_bunker_combined_monthly_cost = building_level@coastal_bunker }
+		}
+
+		### Dockyard
+		set_variable = { ebf_economy_dockyard_combined_monthly_cost = 0 }
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+			}
+			add_to_variable = { ROOT.ebf_economy_dockyard_combined_monthly_cost = building_level@dockyard }
+		}
+
+		### Anti Air
+		set_variable = { ebf_economy_anti_air_building_combined_monthly_cost = 0 }
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+			}
+			add_to_variable = { ROOT.ebf_economy_anti_air_building_combined_monthly_cost = building_level@anti_air_building }
+		}
+
+		### Synthetic Refinery
+		set_variable = { ebf_economy_synthetic_refinery_building_combined_monthly_cost = 0 }
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+			}
+			add_to_variable = { ROOT.ebf_economy_synthetic_refinery_building_combined_monthly_cost = building_level@synthetic_refinery }
+		}
+
+		### Fuel Silo
+		set_variable = { ebf_economy_fuel_silo_building_combined_monthly_cost = 0 }
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+			}
+			add_to_variable = { ROOT.ebf_economy_fuel_silo_building_combined_monthly_cost = building_level@fuel_silo }
+		}
+
+		### Radar
+		set_variable = { ebf_economy_radar_station_building_combined_monthly_cost = 0 }
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+			}
+			add_to_variable = { ROOT.ebf_economy_radar_station_building_combined_monthly_cost = building_level@radar_station }
+		}
+
+		### Rocket
+		set_variable = { ebf_economy_rocket_site_building_combined_monthly_cost = 0 }
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+			}
+			add_to_variable = { ROOT.ebf_economy_rocket_site_building_combined_monthly_cost = building_level@rocket_site }
+		}
+
+		### Nuclear Reactor
+		set_variable = { ebf_economy_nuclear_reactor_building_combined_monthly_cost = 0 }
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+			}
+			add_to_variable = { ROOT.ebf_economy_nuclear_reactor_building_combined_monthly_cost = building_level@nuclear_reactor }
+		}
+
+		### Steel Mill
+		if = {
+			limit = {
+				has_global_flag = ebf_is_active
+			}
+			set_variable = { ebf_economy_steel_mill_building_combined_monthly_cost = 0 }
+			every_state = {
+				limit = {
+					is_owned_and_controlled_by = ROOT
+				}
+				add_to_variable = { ROOT.ebf_economy_steel_mill_building_combined_monthly_cost = building_level@steel_mill }
+			}
+		}
+
+		### Grain Farm
+		if = {
+			limit = {
+				has_global_flag = ebf_is_active
+			}
+			set_variable = { ebf_economy_grain_farm_building_combined_monthly_cost = 0 }
+			every_state = {
+				limit = {
+					is_owned_and_controlled_by = ROOT
+				}
+				add_to_variable = { ROOT.ebf_economy_grain_farm_building_combined_monthly_cost = building_level@grain_farm }
+			}
+		}
+
+		### Lumber Mill
+		if = {
+			limit = {
+				has_global_flag = ebf_is_active
+			}
+			set_variable = { ebf_economy_lumber_mill_building_combined_monthly_cost = 0 }
+			every_state = {
+				limit = {
+					is_owned_and_controlled_by = ROOT
+				}
+				add_to_variable = { ROOT.ebf_economy_lumber_mill_building_combined_monthly_cost = building_level@lumber_mill }
+			}
+		}
+
+		### Steel Mill Inactive
+		if = {
+			limit = {
+				has_global_flag = ebf_is_active
+			}
+			set_variable = { ebf_economy_steel_mill_inactive_building_combined_monthly_cost = 0 }
+			every_state = {
+				limit = {
+					is_owned_and_controlled_by = ROOT
+				}
+				add_to_variable = { ROOT.ebf_economy_steel_mill_inactive_building_combined_monthly_cost = building_level@steel_mill_inactive }
+			}
+		}
+
+		### Grain Farm Inactive
+		if = {
+			limit = {
+				has_global_flag = ebf_is_active
+			}
+			set_variable = { ebf_economy_grain_farm_inactive_building_combined_monthly_cost = 0 }
+			every_state = {
+				limit = {
+					is_owned_and_controlled_by = ROOT
+				}
+				add_to_variable = { ROOT.ebf_economy_grain_farm_inactive_building_combined_monthly_cost = building_level@grain_farm_inactive }
+			}
+		}
+
+		### Lumber Mill Inactive
+		if = {
+			limit = {
+				has_global_flag = ebf_is_active
+			}
+			set_variable = { ebf_economy_lumber_mill_inactive_building_combined_monthly_cost = 0 }
+			every_state = {
+				limit = {
+					is_owned_and_controlled_by = ROOT
+				}
+				add_to_variable = { ROOT.ebf_economy_lumber_mill_inactive_building_combined_monthly_cost = building_level@lumber_mill_inactive }
+			}
+		}
+		
+		print_variables = {
+			file = ebf_economy_building_expenses_event
+			var_list = {
+				ebf_economy_infrastructure_combined_monthly_cost
+				ebf_economy_arms_factory_combined_monthly_cost
+				ebf_economy_industrial_complex_combined_monthly_cost
+				ebf_economy_air_base_combined_monthly_cost
+				ebf_economy_supply_node_combined_monthly_cost
+				ebf_economy_rail_way_combined_monthly_cost
+				ebf_economy_naval_base_combined_monthly_cost
+				ebf_economy_bunker_combined_monthly_cost
+				ebf_economy_coastal_bunker_combined_monthly_cost
+				ebf_economy_dockyard_combined_monthly_cost
+				ebf_economy_anti_air_building_combined_monthly_cost
+				ebf_economy_synthetic_refinery_building_combined_monthly_cost
+				ebf_economy_fuel_silo_building_combined_monthly_cost
+				ebf_economy_radar_station_building_combined_monthly_cost
+				ebf_economy_rocket_site_building_combined_monthly_cost
+				ebf_economy_nuclear_reactor_building_combined_monthly_cost
+				ebf_economy_steel_mill_building_combined_monthly_cost
+				ebf_economy_grain_farm_building_combined_monthly_cost
+				ebf_economy_lumber_mill_building_combined_monthly_cost
+				ebf_economy_steel_mill_inactive_building_combined_monthly_cost
+				ebf_economy_grain_farm_inactive_building_combined_monthly_cost
+				ebf_economy_lumber_mill_inactive_building_combined_monthly_cost
+			}
+		}
+
+
+
+		
+	}
+}
