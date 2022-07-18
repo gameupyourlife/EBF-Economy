@@ -1,0 +1,97 @@
+add_namespace = ebf_economy_inflation_event
+
+### Inflation Rate
+country_event = {
+	id = ebf_economy_inflation_event.1
+	title = ebf_economy_inflation_event.1.t
+	desc = ebf_economy_inflation_event.1.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	
+    immediate = {
+		set_variable = { ebf_economy_inflation_rate = ebf_economy_printing_inflation }
+		add_to_variable = { ebf_economy_inflation_rate = ebf_economy_economic_inflation }
+		add_to_variable = { ebf_economy_inflation_rate = ebf_economy_loan_inflation }
+		add_to_variable = { ebf_economy_inflation_rate = ebf_economy_printing_inflation }
+    }
+}
+
+### Economic Inflation
+country_event = {
+	id = ebf_economy_inflation_event.2
+	title = ebf_economy_inflation_event.2.t
+	desc = ebf_economy_inflation_event.2.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	
+    immediate = {
+		set_variable = { ebf_economy_economic_inflation = num_of_civilian_factories }
+		add_to_variable = { ebf_economy_economic_inflation = num_of_military_factories }
+		multiply_variable = { ebf_economy_economic_inflation = 2 }
+		divide_variable = { ebf_economy_economic_inflation = num_of_civilian_factories }
+		set_temp_variable = { ebf_economy_inflation_perc = 1 }
+		divide_temp_variable = { ebf_economy_inflation_perc = 100 }
+		subtract_from_variable = { ebf_economy_economic_inflation = ebf_economy_inflation_perc }
+    }
+}
+
+
+
+### Investment Inflation
+country_event = {
+	id = ebf_economy_inflation_event.3
+	title = ebf_economy_inflation_event.3.t
+	desc = ebf_economy_inflation_event.3.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	
+    immediate = {
+	
+    }
+}
+
+### Loan Inflation
+country_event = {
+	id = ebf_economy_inflation_event.4
+	title = ebf_economy_inflation_event.4.t
+	desc = ebf_economy_inflation_event.4.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	
+    immediate = {
+		set_variable = { ebf_economy_loan_inflation = ebf_economy_loans_amount }
+		set_temp_variable = { ebf_economy_loan_inflation_temp = ebf_economy_monthly_income }
+		set_temp_variable = { ebf_economy_loan_inflation_temp = 12 }
+		divide_variable = { ebf_economy_loan_inflation = ebf_economy_loan_inflation_temp }
+		divide_variable = { ebf_economy_loan_inflation = 50 }
+
+		
+    }
+}
+
+
+### Prining Inflation
+country_event = {
+	id = ebf_economy_inflation_event.5
+	title = ebf_economy_inflation_event.5.t
+	desc = ebf_economy_inflation_event.5.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	
+    immediate = {
+		# Calls relative printing rate
+		# country_event = { id = ebf_economy_state_bank_event.5 }s
+
+		set_variable = { ebf_economy_printing_inflation = ebf_economy_money_relative_printing_rate }
+		subtract_from_variable = { ebf_economy_printing_inflation = 1 }
+		set_temp_variable = { ebf_economy_printing_inflation_temp = ebf_economy_money_relative_printing_rate }
+		multiply_variable = { ebf_economy_printing_inflation = ebf_economy_printing_inflation_temp }
+		multiply_variable = { ebf_economy_printing_inflation = ebf_economy_printing_inflation_temp }
+		divide_variable = { ebf_economy_printing_inflation = 100 }
+    }
+}

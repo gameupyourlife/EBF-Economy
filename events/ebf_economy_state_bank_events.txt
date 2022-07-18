@@ -117,5 +117,21 @@ country_event = {
     }
 }
 
+# Money Relative Priniting Rate
+country_event = {
+	id = ebf_economy_state_bank_event.5
+	title = ebf_economy_state_bank_event.5.t
+	desc = ebf_economy_state_bank_event.5.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_money_relative_printing_rate = ebf_economy_money_printing_rate }
+		divide_variable = { ebf_economy_money_relative_printing_rate = ebf_economy_money_decay_rate }
+    }
+}
+
 ========
 >>>>>>>> 0285bf3a8407d8a73ae6de5e92ef09b5802a8255:events/ebf_economy_loan_events.txt

@@ -1,0 +1,42 @@
+add_namespace = ebf_economy_war_exhaustion_event
+
+#Adjusted casualties
+country_event = {
+	id = ebf_economy_war_exhaustion_event.1
+	title = ebf_economy_war_exhaustion_event.1.t
+	desc = ebf_economy_war_exhaustion_event.1.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_adjusted_casualties = casualties }
+		multiply_variable = { ebf_economy_adjusted_casualties = 2 }
+		divide_variable = { ebf_economy_adjusted_casualties = manpower_k }
+    }
+}
+
+#Casualtie Ratio
+country_event = {
+	id = ebf_economy_war_exhaustion_event.1
+	title = ebf_economy_war_exhaustion_event.1.t
+	desc = ebf_economy_war_exhaustion_event.1.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_casualtie_ratio = casualties }
+		every_country = {
+			limit = {
+				has_war_with = ROOT
+			}
+			add_to_array = {
+				array = x
+			}
+		}
+		divide_variable = { ebf_economy_casualtie_ratio = manpower_k }
+    }
+}

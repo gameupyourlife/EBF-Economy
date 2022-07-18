@@ -144,7 +144,6 @@ country_event = {
 }
 
 # Resources/Trading Expenses
-#ToDo
 country_event = {
 	id = ebf_economy_expenses_event.6
 	title = ebf_economy_expenses_event.6.t
