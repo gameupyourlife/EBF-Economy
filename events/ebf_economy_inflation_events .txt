@@ -6,7 +6,7 @@ country_event = {
 	title = ebf_economy_inflation_event.1.t
 	desc = ebf_economy_inflation_event.1.d
 	picture = GFX_report_event_soviet_soldiers
-	
+	hidden = yes
 	is_triggered_only = yes
 	
     immediate = {
@@ -23,6 +23,7 @@ country_event = {
 	title = ebf_economy_inflation_event.2.t
 	desc = ebf_economy_inflation_event.2.d
 	picture = GFX_report_event_soviet_soldiers
+	hidden = yes
 	
 	is_triggered_only = yes
 	
@@ -45,6 +46,7 @@ country_event = {
 	title = ebf_economy_inflation_event.3.t
 	desc = ebf_economy_inflation_event.3.d
 	picture = GFX_report_event_soviet_soldiers
+	hidden = yes
 	
 	is_triggered_only = yes
 	
@@ -59,6 +61,7 @@ country_event = {
 	title = ebf_economy_inflation_event.4.t
 	desc = ebf_economy_inflation_event.4.d
 	picture = GFX_report_event_soviet_soldiers
+	hidden = yes
 	
 	is_triggered_only = yes
 	
@@ -80,6 +83,7 @@ country_event = {
 	title = ebf_economy_inflation_event.5.t
 	desc = ebf_economy_inflation_event.5.d
 	picture = GFX_report_event_soviet_soldiers
+	hidden = yes
 	
 	is_triggered_only = yes
 	
