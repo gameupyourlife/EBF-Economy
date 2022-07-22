@@ -1,19 +1,10 @@
-<<<<<<<< HEAD:events/ebf_economy_state_bank_events.txt
 add_namespace = ebf_economy_state_bank_event
-========
-add_namespace = ebf_economy_loan_events
->>>>>>>> 0285bf3a8407d8a73ae6de5e92ef09b5802a8255:events/ebf_economy_loan_events.txt
 
+# Monthly Income
 country_event = {
-<<<<<<<< HEAD:events/ebf_economy_state_bank_events.txt
 	id = ebf_economy_state_bank_event.1
 	title = ebf_economy_state_bank_event.1.t
 	desc = ebf_economy_state_bank_event.1.d
-========
-	id = ebf_economy_loan_events.1
-	title = ebf_economy_loan_events.1.t
-	desc = ebf_economy_loan_events.1.d
->>>>>>>> 0285bf3a8407d8a73ae6de5e92ef09b5802a8255:events/ebf_economy_loan_events.txt
 	picture = GFX_report_event_soviet_soldiers
 	
 	is_triggered_only = yes
@@ -43,17 +34,11 @@ country_event = {
 	}
 }
 
-
+# Loan Income Ratio
 country_event = {
-<<<<<<<< HEAD:events/ebf_economy_state_bank_events.txt
 	id = ebf_economy_state_bank_event.2
 	title = ebf_economy_state_bank_event.2.t
 	desc = ebf_economy_state_bank_event.2.d
-========
-	id = ebf_economy_loan_events.2
-	title = ebf_economy_loan_events.2.t
-	desc = ebf_economy_loan_events.2.d
->>>>>>>> 0285bf3a8407d8a73ae6de5e92ef09b5802a8255:events/ebf_economy_loan_events.txt
 	picture = GFX_report_event_soviet_soldiers
 	
 	is_triggered_only = yes
@@ -75,7 +60,7 @@ country_event = {
 		
 	}
 }
-<<<<<<<< HEAD:events/ebf_economy_state_bank_events.txt
+
 
 # Money Printing Amount
 country_event = {
@@ -133,5 +118,52 @@ country_event = {
     }
 }
 
-========
->>>>>>>> 0285bf3a8407d8a73ae6de5e92ef09b5802a8255:events/ebf_economy_loan_events.txt
+# National Economy Money
+country_event = {
+	id = ebf_economy_state_bank_event.6
+	title = ebf_economy_state_bank_event.6.t
+	desc = ebf_economy_state_bank_event.6.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_national_economy_money = modifier@num_of_civilian_factories }
+		multiply_variable = { ebf_economy_national_economy_money = 10000000000 }
+
+		set_temp_variable = { ebf_economy_national_economy_money_temp = ebf_economy_population }
+		subtract_from_temp_variable = { ebf_economy_national_economy_money_temp = ebf_economy_rich }
+		multiply_temp_variable = { ebf_economy_national_economy_money_temp = 10000 }
+
+		add_to_variable = { ebf_economy_national_economy_money = ebf_economy_national_economy_money_temp }
+
+		set_temp_variable = { ebf_economy_national_economy_money_temp = ebf_economy_rich }
+		multiply_temp_variable = { ebf_economy_national_economy_money_temp = 1000000 }
+
+		add_to_variable = { ebf_economy_national_economy_money = ebf_economy_national_economy_money_temp }
+    }
+}
+
+# Loan Intrest Rate
+country_event = {
+	id = ebf_economy_state_bank_event.7
+	title = ebf_economy_state_bank_event.7.t
+	desc = ebf_economy_state_bank_event.7.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_loan_intrest_rate = -0.1 }
+		multiply_variable = { ebf_economy_loan_intrest_rate = ebf_economy_loan_income_ratio } 
+		add_to_variable = { ebf_economy_loan_intrest_rate = 10 }
+
+		clamp_variable = {
+			var = ebf_economy_loan_intrest_rate
+			min = 1
+			max = 10
+		}
+    }
+}

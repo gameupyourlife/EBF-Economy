@@ -1,0 +1,286 @@
+add_namespace = ebf_economy_happines_events
+
+# War Happines Effekt
+country_event = {
+	id = ebf_economy_happines_events.1
+	title = ebf_economy_happines_events.1.t
+	desc = ebf_economy_happines_events.1.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_happines_war_effect = 1.1 }
+		subtract_from_variable = { ebf_economy_happines_war_effect = ebf_economy_war_exhaustion }
+    }
+}
+
+# Income Tax Happines Effekt
+country_event = {
+	id = ebf_economy_happines_events.2
+	title = ebf_economy_happines_events.2.t
+	desc = ebf_economy_happines_events.2.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_happines_income_tax_effect = 1.1 }
+		subtract_from_variable = { ebf_economy_happines_income_tax_effect = ebf_economy_income_tax }
+    }
+}
+ 
+# Consumtion Tax Happines Effekt
+country_event = {
+	id = ebf_economy_happines_events.3
+	title = ebf_economy_happines_events.3.t
+	desc = ebf_economy_happines_events.3.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_happines_consumtion_tax_effect = 1  }
+		set_temp_variable = { ebf_economy_happines_consumtion_tax_effect_temp = 0.3 }
+		multiply_temp_variable = { ebf_economy_happines_consumtion_tax_effect_temp = ebf_economy_consumtion_tax }
+		subtract_from_variable = { ebf_economy_happines_consumtion_tax_effect = ebf_economy_happines_consumtion_tax_effect_temp }
+    }
+}
+
+# Inflation Rate Happines Effekt
+country_event = {
+	id = ebf_economy_happines_events.4
+	title = ebf_economy_happines_events.4.t
+	desc = ebf_economy_happines_events.4.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_happines_inflation_rate_effect = 1.1 }
+		subtract_from_variable = { ebf_economy_happines_inflation_rate_effect = ebf_economy_inflation_rate }
+		set_temp_variable = { ebf_economy_happines_inflation_rate_effect_temp = ebf_economy_happines_inflation_rate_effect }
+		multiply_variable = { ebf_economy_happines_inflation_rate_effect = ebf_economy_happines_inflation_rate_effect_temp }
+		multiply_variable = { ebf_economy_happines_inflation_rate_effect = ebf_economy_happines_inflation_rate_effect_temp }
+		multiply_variable = { ebf_economy_happines_inflation_rate_effect = ebf_economy_happines_inflation_rate_effect_temp }
+    }
+}
+
+
+# Total Inflation Happines Effekt
+country_event = {
+	id = ebf_economy_happines_events.5
+	title = ebf_economy_happines_events.5.t
+	desc = ebf_economy_happines_events.5.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_happines_inflation_effect = 1 }
+		divide_variable = { ebf_economy_happines_inflation_effect = ebf_economy_inflation }
+	}
+}
+
+
+# Healthcare Happines Effekt
+country_event = {
+	id = ebf_economy_happines_events.6
+	title = ebf_economy_happines_events.6.t
+	desc = ebf_economy_happines_events.6.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_happines_healthcare_effect = ebf_economy_healtcare_rate }
+		divide_variable = { ebf_economy_happines_healthcare_effect = ebf_economy_recommended_healtcare_rate }
+	}
+}
+
+
+# Soilders Healthcare Happines Effekt
+country_event = {
+	id = ebf_economy_happines_events.7
+	title = ebf_economy_happines_events.7.t
+	desc = ebf_economy_happines_events.7.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_happines_soldiers_healthcare_effect = ebf_economy_soldiers_healtcare_rate }
+		divide_variable = { ebf_economy_happines_soldiers_healthcare_effect = ebf_economy_recommended_soldiers_healtcare_rate }
+	}
+}
+
+
+
+# Pension Happines Effekt
+country_event = {
+	id = ebf_economy_happines_events.8
+	title = ebf_economy_happines_events.8.t
+	desc = ebf_economy_happines_events.8.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_happines_pension_effect = ebf_economy_pension_rate }
+		divide_variable = { ebf_economy_happines_pension_effect = ebf_economy_recommended_pension_rate }
+	}
+}
+
+
+
+# Saleries Happines Effekt
+country_event = {
+	id = ebf_economy_happines_events.9
+	title = ebf_economy_happines_events.9.t
+	desc = ebf_economy_happines_events.9.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_happines_saleries_effect = ebf_economy_saleries_rate }
+		divide_variable = { ebf_economy_happines_saleries_effect = ebf_economy_recommended_saleries_rate }
+	}
+}
+
+
+
+# Social Welfare Happines Effekt
+country_event = {
+	id = ebf_economy_happines_events.10
+	title = ebf_economy_happines_events.10.t
+	desc = ebf_economy_happines_events.10.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_happines_social_welfare_effect = ebf_economy_social_welfare_rate}
+		divide_variable = { ebf_economy_happines_social_welfare_effect = ebf_economy_recommended_social_welfare_rate }
+	}
+}
+
+
+# Expenses Happines Effekt
+# (0,3 * Healthcare Happines Effekt) + (0,4 * Soilders Healthcare Effekt) + (1,35 * Pension Happines Effekt) + (1,7 * Saleries Happines Effekt) + (1,35 * Socila Welfare Happines Effekt)
+country_event = {
+	id = ebf_economy_happines_events.11
+	title = ebf_economy_happines_events.11.t
+	desc = ebf_economy_happines_events.11.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_happines_expenses_effect = 0.3 }
+		multiply_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_healthcare_effect }
+		
+		set_temp_variable = { ebf_economy_happines_expenses_effect_temp = 0.4 }
+		multiply_temp_variable = { ebf_economy_happines_expenses_effect_temp = ebf_economy_happines_soldiers_healthcare_effect }
+		multiply_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_expenses_effect_temp }
+
+		set_temp_variable = { ebf_economy_happines_expenses_effect_temp = 1.35 }
+		multiply_temp_variable = { ebf_economy_happines_expenses_effect_temp = ebf_economy_happines_pension_effect }
+		multiply_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_expenses_effect_temp }
+
+		set_temp_variable = { ebf_economy_happines_expenses_effect_temp = 1.7 }
+		multiply_temp_variable = { ebf_economy_happines_expenses_effect_temp = ebf_economy_happines_saleries_effect }
+		multiply_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_expenses_effect_temp }
+		
+		set_temp_variable = { ebf_economy_happines_expenses_effect_temp = 1.35 }
+		multiply_temp_variable = { ebf_economy_happines_expenses_effect_temp = ebf_economy_happines_social_welfare_effect }
+		multiply_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_expenses_effect_temp }
+	}
+}
+
+# Total Happines Effekt
+# (0,3 * Healthcare Happines Effekt) + (0,4 * Soilders Healthcare Effekt) + (1,35 * Pension Happines Effekt) + (1,7 * Saleries Happines Effekt) + (1,35 * Socila Welfare Happines Effekt)
+country_event = {
+	id = ebf_economy_happines_events.12
+	title = ebf_economy_happines_events.12.t
+	desc = ebf_economy_happines_events.12.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_happines = ebf_economy_happines_war_effect }
+		multiply_variable = { ebf_economy_happines = ebf_economy_happines_income_tax_effect }
+		multiply_variable = { ebf_economy_happines = ebf_economy_happines_consumtion_tax_effect }
+		multiply_variable = { ebf_economy_happines = ebf_economy_happines_inflation_rate_effect }
+		multiply_variable = { ebf_economy_happines = ebf_economy_happines_inflation_effect }
+		multiply_variable = { ebf_economy_happines = ebf_economy_happines_expenses_effect }
+		# Calls the function to calculate the total happines effect
+		country_event = { id = ebf_economy_happines_events.13 }
+	}
+}
+
+
+# Happines Effekt
+country_event = {
+	id = ebf_economy_happines_events.13
+	title = ebf_economy_happines_events.13.t
+	desc = ebf_economy_happines_events.13.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		if = {
+			limit = { 
+				check_variable = { ebf_economy_happines  > 0.7 }
+			}
+			set_variable = { ebf_economy_happines_war_support_rate = 0 }
+			set_variable = { ebf_economy_happines_stability_rate = 0 }
+		}
+		else_if = {
+			limit = {
+				check_variable = { ebf_economy_happines  > 0.5 } 
+			}
+			set_variable = { ebf_economy_happines_national_unrest_rate = 0 }
+			set_variable = { ebf_economy_happines_war_support_rate = -0.05 }
+			set_variable = { ebf_economy_happines_stability_rate = -0.05 }
+		}
+		else_if = {
+			limit = {
+				check_variable = { ebf_economy_happines  > 0.3 } 
+			}
+			set_variable = { ebf_economy_happines_national_unrest_rate = 0.02 }
+			set_variable = { ebf_economy_happines_war_support_rate = -0.05 }
+			set_variable = { ebf_economy_happines_stability_rate = -0.05 }
+		}
+		else_if = {
+			limit = {
+				check_variable = { ebf_economy_happines  > 0.1 } 
+			}
+			set_variable = { ebf_economy_happines_national_unrest_rate = 0.05 }
+			set_variable = { ebf_economy_happines_war_support_rate = -0.1 }
+			set_variable = { ebf_economy_happines_stability_rate = -0.1 }
+			set_variable = { ebf_economy_happines_consumer_goods_rate = 0 }
+		}
+		else = {
+			set_variable = { ebf_economy_happines_national_unrest_rate = 0.1 }
+			set_variable = { ebf_economy_happines_war_support_rate = -0.1 }
+			set_variable = { ebf_economy_happines_stability_rate = -0.1 }
+			set_variable = { ebf_economy_happines_consumer_goods_rate = 0.05 }
+		}
+	}
+}

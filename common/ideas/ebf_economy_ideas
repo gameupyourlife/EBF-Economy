@@ -1,0 +1,88 @@
+ideas = {
+	country = {
+		ebf_economy_national_unrest1 = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = mtth:ebf_economy_test_mtth
+			}
+		}
+
+		ebf_economy_national_unrest2 = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = mtth:ebf_economy_test_mtth
+			}
+		}
+
+		ebf_economy_national_unrest3 = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = mtth:ebf_economy_test_mtth
+			}
+		}
+
+		ebf_economy_national_unrest4 = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = mtth:ebf_economy_test_mtth
+			}
+		}
+
+		ebf_economy_national_unrest5 = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = mtth:ebf_economy_test_mtth
+			}
+		}
+	}
+}

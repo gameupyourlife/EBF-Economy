@@ -3,8 +3,11 @@ on_actions = {
 		effect = {
 			every_country = {
 
+				add_ideas = ebf_economy_national_unrest
 				set_global_flag = ebf_economy_is_active
+				set_country_flag = crisis_in_progress
 
+				set_variable = { ebf_economy_test = 0.1 }
 				set_variable = {
 					ebf_economy_ = 0
 				}
@@ -119,7 +122,13 @@ on_actions = {
 				set_variable = { ebf_economy_social_welfare_rate = 1000 }
 				set_variable = { ebf_economy_resources_exporting_price = 9000}
 				set_variable = { ebf_economy_resources_importing_price = 11000}
-
+				
+				# Rate at which the happines effect is 1 aka no effect
+				set_variable = { ebf_economy_recommended_healtcare_rate = 150 }
+				set_variable = { ebf_economy_recommended_soldiers_healtcare_rate = 100 }
+				set_variable = { ebf_economy_recommended_pension_rate = 1000 }
+				set_variable = { ebf_economy_recommended_saleries_rate = 2000 }
+				set_variable = { ebf_economy_recommended_social_welfare_rate = 1000 }
 
 				country_event = { 
 					id = ebf_economy_expenses_event.1 
