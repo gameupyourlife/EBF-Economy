@@ -11,3 +11,12 @@
 # 		add = 50
 # 	}
 # }
+
+ebf_economy_test_mtth = {
+	base = 0.1
+	
+	modifier = {
+		tag = GER
+		add = 0.1
+	}
+}

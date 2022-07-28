@@ -1,0 +1,25 @@
+add_namespace = ebf_economy_help_events
+
+country_event = {
+	id = ebf_economy_help_events.1
+	title = ebf_economy_help_events.1.t
+	desc = ebf_economy_help_events.1.d
+	picture = GFX_report_event_soviet_soldiers
+	is_triggered_only = yes
+	
+    immediate = {
+
+
+    }
+
+    option = { # Help
+		name = ebf_economy_event.1.a
+		
+    }
+
+	option = { # close
+		name = ebf_economy_event.1.b
+		
+    }
+	
+}

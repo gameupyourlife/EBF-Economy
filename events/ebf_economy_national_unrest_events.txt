@@ -1,14 +1,155 @@
 add_namespace = ebf_economy_national_unrest_events
 
+# Calculate new national unrest 
 country_event = {
 	id = ebf_economy_national_unrest_events.1
 	title = ebf_economy_national_unrest_events.1.t
 	desc = ebf_economy_national_unrest_events.1.d
 	picture = GFX_report_event_soviet_soldiers
-	
+	hidden = yes
 	is_triggered_only = yes
 	
     immediate = {
+		add_to_variable = { ebf_economy_national_unrest = ebf_economy_happines_national_unrest_rate }
+		set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 3 }
+		if = {
+			limit = {
+				check_variable = { ebf_economy_national_unrest > 0.99 }
+			}
+			# Civil War / Uprising
+			set_country_flag = ebf_economy_national_unrest_uprising_imminent
+		}
+		else_if = {
+			limit = {
+				check_variable = { ebf_economy_national_unrest > 0.8 }
+			}
+			# -0.1 weekly stability | Weapons are goining missing (Event like Builidings)
+			set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 7 }
+			add_ideas = ebf_economy_national_unrest_effect4
+			clr_ideas = ebf_economy_national_unrest_effect3
+			set_country_flag = ebf_economy_national_unrest_steel_weapons_events
+		}
+		else_if = {
+			limit = {
+				check_variable = { ebf_economy_national_unrest > 0.7 }
+			}
+			# Less Resources
+			set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 6 }
+			add_ideas = ebf_economy_national_unrest_effect3
+			clr_ideas = ebf_economy_national_unrest_effect2
+			clr_ideas = ebf_economy_national_unrest_effect4
+			clr_country_flag = ebf_economy_national_unrest_steel_weapons_events
+
+		}
+		else_if = {
+			limit = {
+				check_variable = { ebf_economy_national_unrest > 0.6 }
+			}
+			# Larger Destruction | -4% Rec
+			set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 5 }
+			add_ideas = ebf_economy_national_unrest_effect2
+			clr_ideas = ebf_economy_national_unrest_effect
+			clr_ideas = ebf_economy_national_unrest_effect3
+		}
+		else_if = {
+			limit = {
+				check_variable = { ebf_economy_national_unrest > 0.4 }
+			}
+			# Buildings are beeing damaged
+			set_country_flag = ebf_economy_national_unrest_buildings_damage_events			
+			clr_ideas = ebf_economy_national_unrest_effect2
+			add_ideas = ebf_economy_national_unrest_effect
+		}
+		else_if = {
+			limit = {
+				check_variable = { ebf_economy_national_unrest > 0.2 }
+			}
+			add_ideas = ebf_economy_national_unrest_effect
+			clr_country_flag = ebf_economy_national_unrest_buildings_damage_events
+		}
+		else = {
+			remove_ideas = ebf_economy_national_unrest_effect
+			clr_country_flag = ebf_economy_national_unrest_buildings_damage_events
+		}
+		set_variable = { ebf_economy_national_unrest_building_damage = ebf_economy_national_unrest }
+		multiply_variable = { ebf_economy_national_unrest_building_damage = ebf_economy_national_unrest_building_damage_multiplier }
+	}
+}
+
+# Damagning buildings | Random Event
+country_event = {
+	id = ebf_economy_national_unrest_events.2
+	title = ebf_economy_national_unrest_events.2.t
+	desc = ebf_economy_national_unrest_events.2.d
+	picture = GFX_report_event_soviet_soldiers
+	hidden = yes
+	is_triggered_only = yes
+	
+    immediate = {
+		random_owned_controlled_state = {
+			set_state_flag = ebf_economy_state_damaged_building
+			damage_building = { type = industrial_complex damage = var:ebf_economy_national_unrest_building_damage }
+			damage_building = { type = arms_factory damage = var:ebf_economy_national_unrest_building_damage }
+			damage_building = { type = infrastructure damage = var:ebf_economy_national_unrest_building_damage }
+		}
+	}
+
+	option = {
+		effect_tooltip = {
+			random_owned_controlled_state = {
+				limit = {
+					has_state_flag = ebf_economy_state_damaged_building
+				}
+				damage_building = { type = industrial_complex damage = var:ebf_economy_national_unrest_building_damage }
+				damage_building = { type = arms_factory damage = var:ebf_economy_national_unrest_building_damage }
+				damage_building = { type = infrastructure damage = var:ebf_economy_national_unrest_building_damage }
+			}
+		}
+		hidden_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					has_state_flag = ebf_economy_state_damaged_building
+				}
+				clr_state_flag = ebf_economy_state_damaged_building
+			}
+		}
+	}
+}
+
+# Steel Weapons | Random Event
+country_event = {
+	id = ebf_economy_national_unrest_events.3
+	title = ebf_economy_national_unrest_events.3.t
+	desc = ebf_economy_national_unrest_events.3.d
+	picture = GFX_report_event_soviet_soldiers
+	is_triggered_only = yes
+	
+    immediate = {
+		randomize_temp_variable = {
+			var = ebf_economy_national_unrest_steel_weapons_amount
+			distribution = binomial
+			min = 10
+			max = 1000
+		}
+		set_variable = { ebf_economy_national_unrest_steel_weapons_amount_test = -1 }
+		multiply_variable = { ebf_economy_national_unrest_steel_weapons_amount_test = ebf_economy_national_unrest_steel_weapons_amount }
 		
-    }
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = ebf_economy_national_unrest_steel_weapons_amount_test
+			producer = GER
+		}
+	}
+
+	option = {
+		effect_tooltip = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = ebf_economy_national_unrest_steel_weapons_amount_test
+				producer = GER
+			}
+		}
+		hidden_effect = {
+		}
+	}
 }

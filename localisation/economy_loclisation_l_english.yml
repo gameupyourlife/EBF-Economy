@@ -11,8 +11,8 @@
  INCOME_TAX_PERCENTAGE_ADD_1X_TEXT:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
  INCOME_TAX_PERCENTAGE_SUB_1X_TEXT:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
 
- CONSUMTION_TAX_PERCENTAGE_ADD_1X_TEXT:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
- CONSUMTION_TAX_PERCENTAGE_SUB_1X_TEXT:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
+ CONSUMPTION_TAX_PERCENTAGE_ADD_1X_TEXT:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
+ CONSUMPTION_TAX_PERCENTAGE_SUB_1X_TEXT:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
 
  WEALTH_TAX_PERCENTAGE_ADD_1X_TEXT:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
  WEALTH_TAX_PERCENTAGE_SUB_1X_TEXT:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
@@ -20,7 +20,13 @@
  TRADE_TAX_PERCENTAGE_ADD_1X_TEXT:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
  TRADE_TAX_PERCENTAGE_SUB_1X_TEXT:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
 
-  ######
+
+ FULL_AGE_PERCENTAGE_SUB_1X_TEXT:0 ""
+ FULL_AGE_PERCENTAGE_ADD_1X_TEXT:0 ""
+
+ RETIREMENT_AGE_PERCENTAGE_SUB_1X_TEXT:0 ""
+ RETIREMENT_AGE_PERCENTAGE_ADD_1X_TEXT:0 ""
+ ######
 
  EBF_ECONOMY_POPULATION:0 "[?ebf_economy_population]"
  ECONOMY_EXPENSES_AMOUNT:0 "[?ebf_economy_total_expenses]"
@@ -35,9 +41,9 @@
  ECONOMY_INCOME_TAX_PERCENTAGE: "[?ebf_economy_income_tax|%0]"
  ECONOMY_INCOME_TAX_AMOUNT: "[?ebf_economy_income_tax_amount] M $"
 
- ECONOMY_CONSUMTION_TAX:0 "Consumtion Tax"
- ECONOMY_CONSUMTION_TAX_PERCENTAGE: "[?ebf_economy_consumtion_tax|%0]"
- ECONOMY_CONSUMTION_TAX_AMOUNT: "[?ebf_economy_consumtion_tax_amount] M $" 
+ ECONOMY_CONSUMPTION_TAX:0 "Consumtion Tax"
+ ECONOMY_CONSUMPTION_TAX_PERCENTAGE: "[?ebf_economy_consumption_tax|%0]"
+ ECONOMY_CONSUMPTION_TAX_AMOUNT: "[?ebf_economy_consumption_tax_amount] M $" 
 
  ECONOMY_WEALTH_TAX:0 "Wealth Tax"
  ECONOMY_WEALTH_TAX_PERCENTAGE: "[?ebf_economy_wealth_tax|%0]"
@@ -65,7 +71,7 @@
  SOLDIER_HEALTHCARE_RATE_AMOUNT:0 "[?ebf_economy_soldiers_healtcare_expenses] M $"
 
  #
- ECONOMY_PENSION_EXPENSES:0 "Healthcare Expenses"
+ ECONOMY_PENSION_EXPENSES:0 "Pension Expenses"
  ECONOMY_PENSION_EXPENSES_AMOUNT: "[?ebf_economy_pension_expenses] M $"
 
  ECONOMY_PENSION_RATE_NAME:0 "Pension Rate"
@@ -79,5 +85,23 @@
  ECONOMY_SALERIES_RATE_NAME:0 "Saleries Rate"
  ECONOMY_SALERIES_RATE:0 "[?ebf_economy_saleries_rate]"
  SALERIES_RATE_AMOUNT:0 "[?ebf_economy_saleries_expenses] M $"
+ 
+ #
+ ECONOMY_SOCIAL_WELFARE_EXPENSES:0 "Social Welfare Expenses"
+ ECONOMY_SOCIAL_WELFARE_EXPENSES_AMOUNT: "[?ebf_economy_social_welfare_expenses] M $"
 
+ ECONOMY_SOCIAL_WELFARE_RATE_NAME:0 "Social Welfare Rate"
+ ECONOMY_SOCIAL_WELFARE_RATE:0 "[?ebf_economy_social_welfare_rate]"
+ SOCIAL_WELFARE_RATE_AMOUNT:0 "[?ebf_economy_social_welfare_expenses] M $"
 
+ #
+ SOCIAL_NORMS_MANAGEMENT:0 "Social Norms Management"
+ #
+ ECONOMY_FULL_AGE_ADJUSTER_NAME:0 "Full Age"
+ ECONOMY_FULL_AGE_AMOUNT:0 "[?ebf_economy_adult_population]"
+ ECONOMY_FULL_AGE_PERCENTAGE:0 "[?ebf_economy_age_of_majority]"
+
+ #
+ ECONOMY_RETIREMENT_AGE:0 "Retirement Age"
+ ECONOMY_RETIREMENT_AGE_AMOUNT:0 "[?ebf_economy_pensioner_population]"
+ ECONOMY_RETIREMENT_AGE_PERCENTAGE:0 "[?ebf_economy_retirement_age]"

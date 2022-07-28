@@ -1,6 +1,7 @@
 ideas = {
 	country = {
-		ebf_economy_national_unrest1 = {
+		# Happines Effect 
+		ebf_economy_happines_effect_positive = {
 			
 			allowed = {
 				always = yes
@@ -13,11 +14,65 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = mtth:ebf_economy_test_mtth
+				war_support_factor = 0.05
+				stability_factor = 0.05
+			}
+		}
+		ebf_economy_happines_effect = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = -0.05
+				stability_factor = -0.05
+			}
+		}
+		ebf_economy_happines_effect1 = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = -0.1
+				stability_factor = -0.1
+			}
+		}
+		ebf_economy_happines_effect2 = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = -0.1
+				stability_factor = -0.1
+				consumer_goods_factor = 0.05
 			}
 		}
 
-		ebf_economy_national_unrest2 = {
+		# National Unrest Effect 
+		ebf_economy_national_unrest_effect = {
 			
 			allowed = {
 				always = yes
@@ -30,11 +85,10 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = mtth:ebf_economy_test_mtth
+				recruitable_population = -0.02
 			}
 		}
-
-		ebf_economy_national_unrest3 = {
+		ebf_economy_national_unrest_effect2 = {
 			
 			allowed = {
 				always = yes
@@ -47,11 +101,10 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = mtth:ebf_economy_test_mtth
+				recruitable_population = -0.04
 			}
 		}
-
-		ebf_economy_national_unrest4 = {
+		ebf_economy_national_unrest_effect3 = {
 			
 			allowed = {
 				always = yes
@@ -64,11 +117,11 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = mtth:ebf_economy_test_mtth
+				recruitable_population = -0.04
+				local_resources_factor = -0.1
 			}
 		}
-
-		ebf_economy_national_unrest5 = {
+		ebf_economy_national_unrest_effect3 = {
 			
 			allowed = {
 				always = yes
@@ -81,7 +134,9 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = mtth:ebf_economy_test_mtth
+				recruitable_population = -0.04
+				local_resources_factor = -0.1
+				stability_weekly = -0.01
 			}
 		}
 	}

@@ -106,3 +106,28 @@ country_event = {
 		multiply_variable = { ebf_economy_war_exhaustion = ebf_economy_war_duration }
 	}
 }
+
+# War Duartion
+country_event = {
+	id = ebf_economy_war_exhaustion_event.5
+	title = ebf_economy_war_exhaustion_event.5.t
+	desc = ebf_economy_war_exhaustion_event.5.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		every_country = {
+			if = {
+				limit = {
+					has_war	= yes
+				}
+				add_to_variable = { ebf_economy_war_duration = 1 }
+			}
+			else = {
+				set_variable = { ebf_economy_war_duration = 0 }
+			}
+		}
+	}
+}

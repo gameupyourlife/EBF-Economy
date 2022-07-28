@@ -8,16 +8,8 @@ on_actions = {
 	}
 	on_monthly = {
 		effect = {
-			every_country = {
-				if = {
-					limit = {
-						has_war	= yes
-					}
-					add_to_variable = { ebf_economy_war_duration = 1 }
-				}
-				else = {
-					set_variable = { ebf_economy_war_duration = 0 }
-				}
+			country_event = {
+				id = ebf_economy_war_exhaustion_event.5
 			}
 		}
 	}

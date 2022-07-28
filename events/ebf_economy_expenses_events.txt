@@ -136,10 +136,7 @@ country_event = {
 	hidden = yes
 
     immediate = {
-		 
-		country_event = {
-			id = ebf_economy_expenses_event.6
-		}
+		 set_variable = { ebf_economy_buildings_expenses = 0 }
 	}
 }
 
@@ -164,6 +161,27 @@ country_event = {
 
 		set_variable = { ebf_economy_resources_trading_net = ebf_economy_resources_trading_income }
 		subtract_from_variable = { ebf_economy_resources_trading_net = ebf_economy_resources_trading_expenses }
+		
+	}
+}
+
+# Resources/Trading Expenses
+country_event = {
+	id = ebf_economy_expenses_event.7
+	title = ebf_economy_expenses_event.7.t
+	desc = ebf_economy_expenses_event.7.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_total_expenses = ebf_economy_resources_trading_expenses }
+		add_to_variable = { ebf_economy_total_expenses = ebf_economy_pension_expenses }
+		add_to_variable = { ebf_economy_total_expenses = ebf_economy_saleries_expenses }
+		add_to_variable = { ebf_economy_total_expenses = ebf_economy_social_welfare_expenses }
+		add_to_variable = { ebf_economy_total_expenses = ebf_economy_buildings_expenses }
+		
 		
 	}
 }

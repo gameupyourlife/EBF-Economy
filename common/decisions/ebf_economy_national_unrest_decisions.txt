@@ -1,7 +1,5 @@
-### has_country_flag = crisis_in_progress
-### has to be implemented
 political_actions = {
-    national_unrest_civil_war_imminent = {
+	national_unrest_civil_war_imminent = {
 
 		priority = 100
 
@@ -11,18 +9,16 @@ political_actions = {
 			hidden_trigger = { always = no }
 		}
 
-		days_mission_timeout = 7
+		days_mission_timeout = 70
 
 		fire_only_once = no
 
 		activation = {
-			always = no
+			has_country_flag = ebf_economy_national_unrest_uprising_imminent
 		}
 
 		visible = {
-			### Has to be implemented
-			always = yes
-			# check_variable = { ebf_economy_national_unrest?1 > 0.99 }
+			has_country_flag = ebf_economy_national_unrest_uprising_imminent
 		}
 
 		cancel_if_not_visible = yes
@@ -32,17 +28,17 @@ political_actions = {
 		timeout_effect = {
 			if = {
 				limit = {
-					ideology = fascism
+					has_government = fascism
 				}
 				start_civil_war = {
 					ideology = communism
-					size = 0.35
+					size = 0.5
 				}
 			}
 			else = {
 				start_civil_war = {
 					ideology = fascism
-					size = 0.35
+					size = 0.5
 				}
 			}
 			add_stability = -0.15	

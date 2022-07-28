@@ -1,27 +1,26 @@
-add_namespace = ebf_economy_resources_event
+# add_namespace = ebf_economy_resources_event
 
-country_event = {
-	id = ebf_economy_resources_event.1
-	title = ebf_economy_resources_event.1.t
-	desc = ebf_economy_resources_event.1.d
-	picture = GFX_report_event_soviet_soldiers
+# country_event = {
+# 	id = ebf_economy_resources_event.1
+# 	title = ebf_economy_resources_event.1.t
+# 	desc = ebf_economy_resources_event.1.d
+# 	picture = GFX_report_event_soviet_soldiers
 	
-	is_triggered_only = yes
-	hidden = yes
+# 	is_triggered_only = yes
+# 	hidden = yes
 
-    immediate = {
-
-		set_variable = { ebf_economy_inflation = 1 }
+#     immediate = {
 
 
-		set_variable = { ebf_economy_resources_exported_amount = 1 }
-		set_variable = { ebf_economy_resources_imported_amount = 1 }
-		multiply_variable = { ebf_economy_resources_exported_amount = ebf_economy_resources_exported_rate }
-		multiply_variable = { ebf_economy_resources_imported_amount = ebf_economy_resources_imported_rate }
-		multiply_variable = { ebf_economy_resources_exported_amount = ebf_economy_inflation }
-		multiply_variable = { ebf_economy_resources_imported_amount = ebf_economy_inflation }
+
+# 		set_variable = { ebf_economy_resources_exported_amount = 1 }
+# 		set_variable = { ebf_economy_resources_imported_amount = 1 }
+# 		multiply_variable = { ebf_economy_resources_exported_amount = ebf_economy_resources_exported_rate }
+# 		multiply_variable = { ebf_economy_resources_imported_amount = ebf_economy_resources_imported_rate }
+# 		multiply_variable = { ebf_economy_resources_exported_amount = ebf_economy_inflation }
+# 		multiply_variable = { ebf_economy_resources_imported_amount = ebf_economy_inflation }
 
 		
-    }
+#     }
 
-}
+# }

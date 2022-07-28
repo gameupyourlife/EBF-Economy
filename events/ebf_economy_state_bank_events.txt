@@ -24,7 +24,7 @@ country_event = {
 			ebf_economy_monthly_income = ebf_economy_combined_tax_amount
 		}
 		add_to_variable = {
-			ebf_economy_monthly_income = ebf_economy_resources_exported_amount
+			ebf_economy_monthly_income = ebf_economy_resources_trading_income
 		}
 		add_to_variable = {
 			ebf_economy_monthly_income = ebf_economy_money_printing_income
@@ -130,16 +130,16 @@ country_event = {
 
     immediate = {
 		set_variable = { ebf_economy_national_economy_money = modifier@num_of_civilian_factories }
-		multiply_variable = { ebf_economy_national_economy_money = 10000000000 }
+		multiply_variable = { ebf_economy_national_economy_money = ebf_economy_national_economy_civilian_factory_money }
 
 		set_temp_variable = { ebf_economy_national_economy_money_temp = ebf_economy_population }
 		subtract_from_temp_variable = { ebf_economy_national_economy_money_temp = ebf_economy_rich }
-		multiply_temp_variable = { ebf_economy_national_economy_money_temp = 10000 }
+		multiply_temp_variable = { ebf_economy_national_economy_money_temp = ebf_economy_national_economy_pop_money }
 
 		add_to_variable = { ebf_economy_national_economy_money = ebf_economy_national_economy_money_temp }
 
 		set_temp_variable = { ebf_economy_national_economy_money_temp = ebf_economy_rich }
-		multiply_temp_variable = { ebf_economy_national_economy_money_temp = 1000000 }
+		multiply_temp_variable = { ebf_economy_national_economy_money_temp = ebf_economy_national_economy_rich_pop_money }
 
 		add_to_variable = { ebf_economy_national_economy_money = ebf_economy_national_economy_money_temp }
     }
@@ -165,5 +165,40 @@ country_event = {
 			min = 1
 			max = 10
 		}
+    }
+}
+
+# One Time Repay Penalty
+country_event = {
+	id = ebf_economy_state_bank_event.8
+	title = ebf_economy_state_bank_event.8.t
+	desc = ebf_economy_state_bank_event.8.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_one_time_repay_amount }
+		multiply_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_income_ratio } 
+		divide_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loans_amount }
+		multiply_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_one_time_repay_amount } 
+    }
+}
+
+# One Time Repay Combined
+country_event = {
+	id = ebf_economy_state_bank_event.9
+	title = ebf_economy_state_bank_event.9.t
+	desc = ebf_economy_state_bank_event.9.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		set_variable = { ebf_economy_loan_one_time_repay_combined = ebf_economy_loan_one_time_repay_amount }
+		add_to_variable = { ebf_economy_loan_one_time_repay_combined = ebf_economy_loan_one_time_repay_penalty }
+		multiply_variable = { ebf_economy_loan_one_time_repay_combined = ebf_economy_inflation }
     }
 }

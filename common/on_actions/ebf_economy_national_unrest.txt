@@ -1,0 +1,18 @@
+on_actions = {
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = ebf_economy_national_unrest_buildings_damage_events
+				}
+				country_event = ebf_economy_national_unrest_events.2
+			}
+			if = {
+				limit = {
+					has_country_flag = ebf_economy_national_unrest_steel_weapons_events
+				}
+				country_event = ebf_economy_national_unrest_events.3
+			}
+		}
+	}
+}

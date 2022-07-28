@@ -3,11 +3,12 @@ on_actions = {
 		effect = {
 			every_country = {
 
-				add_ideas = ebf_economy_national_unrest
+				add_ideas = ebf_economy_national_unrest1
 				set_global_flag = ebf_economy_is_active
 				set_country_flag = crisis_in_progress
 
 				set_variable = { ebf_economy_test = 0.1 }
+
 				set_variable = {
 					ebf_economy_ = 0
 				}
@@ -43,7 +44,7 @@ on_actions = {
 				}
 				# Per 1k People in M
 				set_variable = {
-					ebf_economy_consumtion_money = 1600
+					ebf_economy_consumption_money = 1600
 				}
 				set_variable = {
 					ebf_economy_rich_wealth = 100000
@@ -72,7 +73,7 @@ on_actions = {
 				}
 				### Consumtion Tax
 				set_variable = {
-					ebf_economy_consumtion_tax = 0.18
+					ebf_economy_consumption_tax = 0.18
 				}
 				country_event = {
 					id = ebf_economy_tax_event.2
@@ -100,6 +101,11 @@ on_actions = {
 				### State Bank
 				set_variable = { ebf_economy_money_printing_rate = 0.02 }				#The input the player makes to change how much money is created
 				set_variable = { ebf_economy_money_decay_rate = 0.02 }
+				set_variable = { ebf_economy_loan_one_time_repay_amount = 0 }
+
+				set_variable = { ebf_economy_national_economy_civilian_factory_money = 10000000000 }
+				set_variable = { ebf_economy_national_economy_pop_money = 10000 }
+				set_variable = { ebf_economy_national_economy_rich_pop_money = 1000000 }
 
 				country_event = {
 					id = ebf_economy_state_bank_event.1
@@ -197,8 +203,18 @@ on_actions = {
 				set_variable = { ebf_economy_resources_exported_rate = 9000 }
 				set_variable = { ebf_economy_resources_imported_rate = 11000 }
 
+				### National Unrest and Happiness
+				set_variable = { ebf_economy_national_unrest = 0 }
+
+				
 				country_event = {
 					id = ebf_economy_building_expenses_event.1
+				}
+
+
+				### Inital Welcome Event => References Help Event
+				country_event = {
+					id = ebf_economy_help_events.1
 				}
 
 			}

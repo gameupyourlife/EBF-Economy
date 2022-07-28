@@ -13,7 +13,7 @@ country_event = {
 		set_variable = { ebf_economy_inflation_rate = ebf_economy_printing_inflation }
 		add_to_variable = { ebf_economy_inflation_rate = ebf_economy_economic_inflation }
 		add_to_variable = { ebf_economy_inflation_rate = ebf_economy_loan_inflation }
-		add_to_variable = { ebf_economy_inflation_rate = ebf_economy_printing_inflation }
+		add_to_variable = { ebf_economy_inflation_rate = ebf_economy_investment_inflation }
     }
 }
 
@@ -41,6 +41,7 @@ country_event = {
 
 
 ### Investment Inflation
+### ToDo
 country_event = {
 	id = ebf_economy_inflation_event.3
 	title = ebf_economy_inflation_event.3.t
@@ -51,7 +52,7 @@ country_event = {
 	is_triggered_only = yes
 	
     immediate = {
-	
+		set_variable = { ebf_economy_investment_inflation = 0 }
     }
 }
 
@@ -97,5 +98,20 @@ country_event = {
 		multiply_variable = { ebf_economy_printing_inflation = ebf_economy_printing_inflation_temp }
 		multiply_variable = { ebf_economy_printing_inflation = ebf_economy_printing_inflation_temp }
 		divide_variable = { ebf_economy_printing_inflation = 100 }
+    }
+}
+
+### Total Inflation
+country_event = {
+	id = ebf_economy_inflation_event.6
+	title = ebf_economy_inflation_event.6.t
+	desc = ebf_economy_inflation_event.6.d
+	picture = GFX_report_event_soviet_soldiers
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+    immediate = {
+		add_to_variable = { ebf_economy_inflation  = ebf_economy_inflation_rate }
     }
 }

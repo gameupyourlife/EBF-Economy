@@ -32,11 +32,11 @@ country_event = {
 
     immediate = {
 		### Consumtion Tax
-		set_variable = { ebf_economy_consumtion_tax_amount = modifier@consumer_goods_factor }
-		multiply_variable = { ebf_economy_consumtion_tax_amount = ebf_economy_population }
-		multiply_variable = { ebf_economy_consumtion_tax_amount = ebf_economy_consumtion_tax }
-		multiply_variable = { ebf_economy_consumtion_tax_amount = ebf_economy_consumtion_money }
-		round_variable = ebf_economy_consumtion_tax_amount
+		set_variable = { ebf_economy_consumption_tax_amount = modifier@consumer_goods_factor }
+		multiply_variable = { ebf_economy_consumption_tax_amount = ebf_economy_population }
+		multiply_variable = { ebf_economy_consumption_tax_amount = ebf_economy_consumption_tax }
+		multiply_variable = { ebf_economy_consumption_tax_amount = ebf_economy_consumption_money }
+		round_variable = ebf_economy_consumption_tax_amount
                 
     }
 }
@@ -93,7 +93,7 @@ country_event = {
     immediate = {
 		set_variable = { ebf_economy_combined_tax_amount = ebf_economy_trade_tax_amount }
         add_to_variable = { ebf_economy_combined_tax_amount = ebf_economy_wealth_tax_amount }
-        add_to_variable = { ebf_economy_combined_tax_amount = ebf_economy_consumtion_tax_amount }
+        add_to_variable = { ebf_economy_combined_tax_amount = ebf_economy_consumption_tax_amount }
         add_to_variable = { ebf_economy_combined_tax_amount = ebf_economy_income_tax_amount }
 		round_variable = ebf_economy_combined_tax_amount
     }
