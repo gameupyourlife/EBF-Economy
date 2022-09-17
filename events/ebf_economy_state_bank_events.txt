@@ -27,7 +27,7 @@ country_event = {
 			ebf_economy_monthly_income = ebf_economy_resources_trading_income
 		}
 		add_to_variable = {
-			ebf_economy_monthly_income = ebf_economy_money_printing_income
+			ebf_economy_monthly_income = ebf_economy_money_printing_amount
 		}
 		
 		
@@ -46,7 +46,7 @@ country_event = {
 
     immediate = {
 		set_variable = {
-			ebf_economy_loan_income_ratio = ebf_economy_loans_amount
+			ebf_economy_loan_income_ratio = ebf_economy_loan_amount
 		}
 		set_variable = {
 			ebf_economy_yearly_income = ebf_economy_monthly_income
@@ -75,32 +75,47 @@ country_event = {
     immediate = {
 		set_variable = { ebf_economy_money_printing_amount = ebf_economy_money_printing_rate }
 		add_to_variable = { ebf_economy_money_printing_amount = 1 }
-		subtract_from_variable = { ebf_economy_money_printing_amount = ebf_economy_money_decay_rate }
+		
 		multiply_variable = { ebf_economy_money_printing_amount = ebf_economy_national_economy_money }
 		subtract_from_variable = { ebf_economy_money_printing_amount = ebf_economy_national_economy_money }
     }
 }
 
-# Money Printing Income
-country_event = {
-	id = ebf_economy_state_bank_event.4
-	title = ebf_economy_state_bank_event.4.t
-	desc = ebf_economy_state_bank_event.4.d
-	picture = GFX_report_event_soviet_soldiers
+# # Money Decay Amount
+# country_event = {
+# 	id = ebf_economy_state_bank_event.31
+# 	title = ebf_economy_state_bank_event.31.t
+# 	desc = ebf_economy_state_bank_event.31.d
+# 	picture = GFX_report_event_soviet_soldiers
 	
-	is_triggered_only = yes
-	hidden = yes
+# 	is_triggered_only = yes
+# 	hidden = yes
 
-    immediate = {
-		set_temp_variable = { ebf_economy_money_printing_income_temp = ebf_economy_money_decay_rate }
-		add_to_temp_variable = { ebf_economy_money_printing_income_temp = 1 }
-		multiply_temp_variable = { ebf_economy_money_printing_income_temp = ebf_economy_national_economy_money }
+#     immediate = {
+# 		set_variable = { ebf_economy_money_decay_amount = ebf_economy_money_decay_rate }
+# 		add_to_variable = { ebf_economy_money_decay_amount = 1 }
+		
+# 		multiply_variable = { ebf_economy_money_decay_amount = ebf_economy_national_economy_money }
+# 		subtract_from_variable = { ebf_economy_money_decay_amount = ebf_economy_national_economy_money }
+#     }
+# }
 
-		set_variable = { ebf_economy_money_printing_income = ebf_economy_money_printing_amount }
-		subtract_from_variable = { ebf_economy_money_printing_income = ebf_economy_money_printing_income_temp }
-		subtract_from_variable = { ebf_economy_money_printing_income = ebf_economy_national_economy_money }
-    }
-}
+
+# # Money Printing Income
+# country_event = {
+# 	id = ebf_economy_state_bank_event.4
+# 	title = ebf_economy_state_bank_event.4.t
+# 	desc = ebf_economy_state_bank_event.4.d
+# 	picture = GFX_report_event_soviet_soldiers
+	
+# 	is_triggered_only = yes
+# 	hidden = yes
+
+#     immediate = {
+# 		set_variable = { ebf_economy_money_net_printing_amount = ebf_economy_money_printing_amount }
+# 		subtract_from_variable = { ebf_economy_money_net_printing_amount = ebf_economy_money_decay_amount }
+#     }
+# }
 
 # Money Relative Priniting Rate
 country_event = {
@@ -181,7 +196,7 @@ country_event = {
     immediate = {
 		set_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_one_time_repay_amount }
 		multiply_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_income_ratio } 
-		divide_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loans_amount }
+		divide_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_amount }
 		multiply_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_one_time_repay_amount } 
     }
 }
@@ -199,6 +214,61 @@ country_event = {
     immediate = {
 		set_variable = { ebf_economy_loan_one_time_repay_combined = ebf_economy_loan_one_time_repay_amount }
 		add_to_variable = { ebf_economy_loan_one_time_repay_combined = ebf_economy_loan_one_time_repay_penalty }
-		multiply_variable = { ebf_economy_loan_one_time_repay_combined = ebf_economy_inflation }
+		# multiply_variable = { ebf_economy_loan_one_time_repay_combined = ebf_economy_inflation }
+    }
+}
+
+# Pay One Time
+country_event = {
+	id = ebf_economy_state_bank_event.10
+	title = ebf_economy_state_bank_event.10.t
+	desc = ebf_economy_state_bank_event.10.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		if = {
+			limit = {
+				OR = {
+					check_variable = { ebf_economy_money > ebf_economy_loan_one_time_repay_combined }
+					check_variable = { ebf_economy_money = ebf_economy_loan_one_time_repay_combined }
+				}
+			}
+			subtract_from_variable = { ebf_economy_loan_amount = ebf_economy_loan_one_time_repay_combined }
+			subtract_from_variable = { ebf_economy_money = ebf_economy_loan_one_time_repay_combined }
+		}
+		else = {
+			# Not possible
+		}
+    }
+}
+
+# Repay Loan Monthly
+country_event = {
+	id = ebf_economy_state_bank_event.11
+	title = ebf_economy_state_bank_event.11.t
+	desc = ebf_economy_state_bank_event.11.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		if = {
+			limit = {
+				OR = {
+					check_variable = { ebf_economy_money > ebf_economy_loan_monthly_repay_amount }
+					check_variable = { ebf_economy_money = ebf_economy_loan_monthly_repay_amount }
+				}
+			}
+			subtract_from_variable = { ebf_economy_loan_amount = ebf_economy_loan_monthly_repay_amount }
+			subtract_from_variable = { ebf_economy_money = ebf_economy_loan_monthly_repay_amount }
+		}
+		else = {
+			subtract_from_variable = { ebf_economy_loan_amount = ebf_economy_money }
+			set_variable = { ebf_economy_money = 0 }
+		}
     }
 }

@@ -1,0 +1,81 @@
+add_namespace = ebf_economy_bankrupt_events
+
+# Print the needed amount of money
+country_event = {
+	id = ebf_economy_bankrupt_events.1
+	title = ebf_economy_bankrupt_events.1.t
+	desc = ebf_economy_bankrupt_events.1.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+
+    immediate = {
+		# Takes over the negative monthly balance so no need of removing money
+		set_variable = { ebf_economy_bankrupt_emergency_printing_amount = ebf_economy_monthly_balance }
+
+		set_variable = { ebf_economy_bankrupt_emergency_printing_income_ratio = ebf_economy_bankrupt_emergency_print_amount }
+		divide_variable = { ebf_economy_bankrupt_emergency_printing_income_ratio = ebf_economy_monthly_income }
+		
+		set_variable = { ebf_economy_bankrupt_emergency_printing_inflation = ebf_economy_bankrupt_emergency_printing_income_ratio }
+		divide_variable = { ebf_economy_bankrupt_emergency_printing_inflation = 100 }
+		# Static inflation penalty of 5%
+		add_to_variable = { ebf_economy_bankrupt_emergency_printing_inflation = 0.05 }
+
+		# More Penaltys for not managing the economy correctly
+		add_to_variable = { ebf_economy_national_unrest = 0.05 }		
+		add_stability = -0.05
+		add_war_support = -0.05
+
+		
+    }
+
+	option = { # Cut Expenses
+		name = ebf_economy_bankrupt_events.1.a
+		
+		divide_variable = { ebf_economy_healtcare_rate = 2 }
+		divide_variable = { ebf_economy_soldiers_healtcare_rate = 2 }
+		divide_variable = { ebf_economy_pension_rate = 2 }
+		divide_variable = { ebf_economy_saleries_rate = 2 }
+		divide_variable = { ebf_economy_social_welfare_rate = 2 }
+    }
+
+	option = { # Set Expenses 0
+		name = ebf_economy_bankrupt_events.1.b
+		
+		set_variable = { ebf_economy_healtcare_rate = 0 }
+		set_variable = { ebf_economy_soldiers_healtcare_rate = 0 }
+		set_variable = { ebf_economy_pension_rate = 0 }
+		set_variable = { ebf_economy_saleries_rate = 0 }
+		set_variable = { ebf_economy_social_welfare_rate = 0 }
+    }
+
+	option = { # Do nothing
+		name = ebf_economy_bankrupt_events.1.c
+		trigger = {
+			NOT = {
+				has_country_flag = ebf_economy_bankrupt_did_nothing	
+			}
+		}
+		hidden_effect = {
+			set_country_flag = ebf_economy_bankrupt_did_nothing	
+		}
+	}
+}
+
+# Inform the player that monthly loan repament is set to 0 because he does not have enough money to pay it
+country_event = {
+	id = ebf_economy_bankrupt_events.2
+	title = ebf_economy_bankrupt_events.2.t
+	desc = ebf_economy_bankrupt_events.2.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+
+    immediate = {
+		
+    }
+
+	option = {
+		name = ebf_economy_bankrupt_events.1.a
+    }
+}

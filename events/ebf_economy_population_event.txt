@@ -27,33 +27,27 @@ country_event = {
 		}
 		round_variable = ebf_economy_population
 		# Adult Population
-		set_temp_variable = { ebf_economy_child_ratio = ebf_economy_age_of_majority }
-		divide_temp_variable  = { ebf_economy_child_ratio = ebf_economy_life_expectancy }
-		set_temp_variable = { ebf_economy_adult_ratio = 1 }
-		subtract_from_temp_variable = { ebf_economy_adult_ratio = ebf_economy_child_ratio }
-		multiply_variable = { ebf_economy_adult_population = ebf_economy_adult_ratio }
-		multiply_variable = { ebf_economy_adult_population = ebf_economy_population }
+		
     }
 }
 
 
 # Adults Adult Population
 country_event = {
-	id = ebf_economy_population_event.3
-	title = ebf_economy_population_event.3.t
-	desc = ebf_economy_population_event.3.d
+	id = ebf_economy_population_event.2
+	title = ebf_economy_population_event.2.t
+	desc = ebf_economy_population_event.2.d
 	picture = GFX_report_event_soviet_soldiers
 	hidden = yes
 	is_triggered_only = yes
 	
     immediate = {
-		set_temp_variable = { ebf_economy_pensioner_ratio = ebf_economy_life_expectancy }
-		subtract_from_temp_variable = { ebf_economy_pensioner_ratio = ebf_economy_retirement_age }
-		divide_temp_variable  = { ebf_economy_pensioner_ratio = ebf_economy_life_expectancy }
-		set_temp_variable = { ebf_economy_worker_ratio = 1 }
-		subtract_from_temp_variable = { ebf_economy_worker_ratio = ebf_economy_pensioner_ratio }
-		multiply_variable = { ebf_economy_pensioner_population = ebf_economy_pensioner_ratio }
-		multiply_variable = { ebf_economy_pensioner_population = ebf_economy_population }
+		set_variable = { ebf_economy_child_ratio = ebf_economy_age_of_majority }
+		divide_variable  = { ebf_economy_child_ratio = ebf_economy_life_expectancy }
+		set_variable = { ebf_economy_adult_ratio = 1 }
+		subtract_from_variable = { ebf_economy_adult_ratio = ebf_economy_child_ratio }
+		set_variable = { ebf_economy_adult_population = ebf_economy_adult_ratio }
+		multiply_variable = { ebf_economy_adult_population = ebf_economy_population }
     }
 }
 
@@ -72,8 +66,14 @@ country_event = {
 		divide_temp_variable  = { ebf_economy_pensioner_ratio = ebf_economy_life_expectancy }
 		set_temp_variable = { ebf_economy_worker_ratio = 1 }
 		subtract_from_temp_variable = { ebf_economy_worker_ratio = ebf_economy_pensioner_ratio }
-		multiply_variable = { ebf_economy_pensioner_population = ebf_economy_pensioner_ratio }
+		set_variable = { ebf_economy_pensioner_population = ebf_economy_pensioner_ratio }
 		multiply_variable = { ebf_economy_pensioner_population = ebf_economy_population }
+		if = {
+			limit = {
+				check_variable = { ebf_economy_pensioner_population < 0 }
+			}
+			set_variable = { ebf_economy_pensioner_population = 0 }
+		}
     }
 }
 

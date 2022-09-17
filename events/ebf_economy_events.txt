@@ -11,6 +11,7 @@ country_event = {
 	is_triggered_only = yes
 	
     immediate = {
+		set_variable = { ebf_economy_population = 0 }
 
 		### Population
 		every_state = {

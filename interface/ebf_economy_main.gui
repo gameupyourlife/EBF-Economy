@@ -1,6 +1,7 @@
 @prod_sub_pos_x = 199
 @prod_add_pos_x = 273
 @prod_nof_pos_x = 223
+@test = 100%%
 
 guiTypes = {
 
@@ -12,6 +13,9 @@ guiTypes = {
 		hide_animation_type = accelerated
 		animation_time = 300	
 		size = { width=550 height=100%% }
+		# verticalScrollbar = "right_vertical_slider"
+		# scroll_wheel_factor = 40
+		# smooth_scrolling = yes
 		
 		#hide_sound = menu_close_window
 		show_sound = menu_open_window
@@ -50,25 +54,1102 @@ guiTypes = {
 			clicksound = click_close
 			pdx_tooltip = "CLOSE"
 		}
-
-
+		
 		containerWindowType = {
 			name = "management"
 			position = { x = 0 y = 44 }
 			size = { width=100%% height=100%% }
-			verticalScrollbar = "right_vertical_slider"
-			scroll_wheel_factor = 40
-			smooth_scrolling = yes
 			margin = { top = 0 bottom = 13}
-		
+			# verticalScrollbar = "right_vertical_slider"
+			# scroll_wheel_factor = 40
+			# smooth_scrolling = yes
+
+			 
+
 			
+
+			containerWindowType = {
+				name = "body_management"
+				position = { x = 0 y = 0 }
+				size = { width=100%% height=100%% }
+				verticalScrollbar = "right_vertical_slider"
+				scroll_wheel_factor = 40
+				smooth_scrolling = yes
+		
+				background = {
+					name = "Background"
+					quadTextureSprite = "GFX_tiled_window_1b_thin_border"
+				} 
+
+				
+
+				########################################################################################
+				########################################################################################
+				########################################################################################
+
+				containerWindowType = {
+					name = "tax_management_category_entry"
+					position = { x = 20 y = 30 }
+					size = { width=100% height = 202 }
+					clipping = no
+					
+					iconType ={
+						name ="category_header"
+						spriteType = "GFX_category_header"
+						position = { x=-5 y=2 }
+						Orientation = "UPPER_LEFT"
+					}
+					iconType ={
+						name ="category_icon"
+						spriteType = "GFX_idea_categories"
+						position = { x=4 y=8 }
+						frame = 3
+						Orientation = "UPPER_LEFT"
+					}
+					
+					
+					instantTextboxType = {
+						name = "name"
+						position = { x = 70 y = 14 }
+						font = "hoi_20b"
+						text = "ECONOMY_TAX_MANAGEMENT"
+						maxWidth = 300
+						maxHeight = 20
+					}
+
+					containerWindowType = {
+						name = "income_tax_adjuster"
+						position = { x=0 y=46 }
+						size = { width = 100% height = 52 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_adjustment_window_right_bg"
+						}
+						
+						instantTextboxType = {
+							name = "name"
+							position = { x = 20 y = 16 }
+							textureFile = ""
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_INCOME_TAX"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "income_tax_amount"
+							position = { x = 340 y = 17 }
+							textureFile = ""
+							font = "hoi_18b"
+							text = "ECONOMY_INCOME_TAX_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							format = center
+							
+							alwaystransparent = yes
+						}		
+
+
+						instantTextboxType = {
+							name = "income_tax_percentage_used_txt"
+							position = { x=@prod_nof_pos_x y=19 }
+							font = "hoi_18b"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_INCOME_TAX_PERCENTAGE"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+						buttonType = {
+							name = "income_tax_percentage_sub_1x"
+							position = { x=@prod_sub_pos_x y=15 }
+							quadTextureSprite = "GFX_subtract_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip = "INCOME_TAX_PERCENTAGE_SUB_1X_TEXT"
+						}
+						buttonType = {
+							name = "income_tax_percentage_add_1x"
+							position = { x=@prod_add_pos_x y=15 }
+							quadTextureSprite = "GFX_add_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip  = "INCOME_TAX_PERCENTAGE_ADD_1X_TEXT"
+						}
+					}
+
+					containerWindowType = {
+						name = "consumption_tax_adjuster"
+						position = { x=0 y=98 }
+						size = { width = 100% height = 52 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_adjustment_window_right_bg"
+						}
+						
+						instantTextboxType = {
+							name = "name"
+							position = { x = 20 y = 16 }
+							textureFile = ""
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_CONSUMPTION_TAX"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "consumption_tax_amount"
+							position = { x = 340 y = 17 }
+							textureFile = ""
+							font = "hoi_18b"
+							text = "ECONOMY_CONSUMPTION_TAX_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							format = center
+							
+							alwaystransparent = yes
+						}		
+
+
+						instantTextboxType = {
+							name = "consumption_tax_percentage_used_txt"
+							position = { x=@prod_nof_pos_x y=19 }
+							font = "hoi_18b"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_CONSUMPTION_TAX_PERCENTAGE"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+						buttonType = {
+							name = "consumption_tax_percentage_sub_1x"
+							position = { x=@prod_sub_pos_x y=15 }
+							quadTextureSprite = "GFX_subtract_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip = "CONSUMPTION_TAX_PERCENTAGE_SUB_1X_TEXT"
+						}
+						buttonType = {
+							name = "consumption_tax_percentage_add_1x"
+							position = { x=@prod_add_pos_x y=15 }
+							quadTextureSprite = "GFX_add_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip  = "CONSUMPTION_TAX_PERCENTAGE_ADD_1X_TEXT"
+						}
+					}
+
+					containerWindowType = {
+						name = "wealth_tax_adjuster"
+						position = { x=0 y=150 }
+						size = { width = 100% height = 52 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_adjustment_window_right_bg"
+						}
+						
+						instantTextboxType = {
+							name = "name"
+							position = { x = 20 y = 16 }
+							textureFile = ""
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_WEALTH_TAX"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "wealth_tax_amount"
+							position = { x = 340 y = 17 }
+							textureFile = ""
+							font = "hoi_18b"
+							text = "ECONOMY_WEALTH_TAX_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							format = center
+							
+							alwaystransparent = yes
+						}		
+
+
+						instantTextboxType = {
+							name = "wealth_tax_percentage_used_txt"
+							position = { x=@prod_nof_pos_x y=19 }
+							font = "hoi_18b"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_WEALTH_TAX_PERCENTAGE"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+						buttonType = {
+							name = "wealth_tax_percentage_sub_1x"
+							position = { x=@prod_sub_pos_x y=15 }
+							quadTextureSprite = "GFX_subtract_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip = "WEALTH_TAX_PERCENTAGE_SUB_1X_TEXT"
+						}
+						buttonType = {
+							name = "wealth_tax_percentage_add_1x"
+							position = { x=@prod_add_pos_x y=15 }
+							quadTextureSprite = "GFX_add_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip  = "WEALTH_TAX_PERCENTAGE_ADD_1X_TEXT"
+						}
+					}
+
+					containerWindowType = {
+						name = "trade_tax_adjuster"
+						position = { x=0 y=202 }
+						size = { width = 100% height = 52 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_adjustment_window_right_bg"
+						}
+						
+						instantTextboxType = {
+							name = "name"
+							position = { x = 20 y = 16 }
+							textureFile = ""
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_TRADE_TAX"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "trade_tax_amount"
+							position = { x = 340 y = 17 }
+							textureFile = ""
+							font = "hoi_18b"
+							text = "ECONOMY_TRADE_TAX_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							format = center
+							
+							alwaystransparent = yes
+						}		
+
+
+						instantTextboxType = {
+							name = "trade_tax_percentage_used_txt"
+							position = { x=@prod_nof_pos_x y=19 }
+							font = "hoi_18b"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_TRADE_TAX_PERCENTAGE"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+						buttonType = {
+							name = "trade_tax_percentage_sub_1x"
+							position = { x=@prod_sub_pos_x y=15 }
+							quadTextureSprite = "GFX_subtract_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip = "TRADE_TAX_PERCENTAGE_SUB_1X_TEXT"
+						}
+						buttonType = {
+							name = "trade_tax_percentage_add_1x"
+							position = { x=@prod_add_pos_x y=15 }
+							quadTextureSprite = "GFX_add_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip  = "TRADE_TAX_PERCENTAGE_ADD_1X_TEXT"
+						}
+					}
+				}
+
+
+
+				########################################################################################
+				########################################################################################
+				########################################################################################
+
+				containerWindowType = {
+					name = "expenses_management_category_entry"
+					position = { x = 20 y = 286 } 
+					size = { width=100% height = 202 }
+					clipping = no
+					
+					iconType ={
+						name ="category_header"
+						spriteType = "GFX_category_header"
+						position = { x=-5 y=2 }
+						Orientation = "UPPER_LEFT"
+					}
+					iconType ={
+						name ="category_icon"
+						spriteType = "GFX_idea_categories"
+						position = { x=4 y=8 }
+						frame = 3
+						Orientation = "UPPER_LEFT"
+					}
+					
+					
+					instantTextboxType = {
+						name = "name"
+						position = { x = 70 y = 14 }
+						font = "hoi_20b"
+						text = "ECONOMY_EXPENSES_MANAGEMENT"
+						maxWidth = 300
+						maxHeight = 20
+					}
+
+					containerWindowType = {
+						name = "healthcare_expenses_adjuster"
+						position = { x=0 y=46 }
+						size = { width = 100% height = 52 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_adjustment_window_right_bg"
+						}
+
+						instantTextboxType = {
+							name = "name"
+							position = { x = 20 y = 16 }
+							textureFile = ""
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_HEALTHCARE_EXPENSES"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "healthcare_expenses_amount"
+							position = { x = 340 y = 17 }
+							textureFile = ""
+							font = "hoi_18b"
+							text = "ECONOMY_HEALTHCARE_EXPENSES_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							format = center
+							
+							alwaystransparent = yes
+						}		
+
+
+
+						containerWindowType = {
+							name = "healthcare_rate_adjuster"
+							position = { x=-2 y=52 }
+							size = { width = 100% height = 32 }
+							clipping = no
+					
+							background = {
+								name = "Background"
+								quadTextureSprite ="GFX_ebf_economy_expenses_sub_adjustment"
+							}
+
+							instantTextboxType = {
+								name = "name"
+								position = { x = 20 y = 4 }
+								textureFile = ""
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_HEALTHCARE_RATE_NAME"
+								maxWidth = 150
+								maxHeight = 20
+								format = left
+								vertical_alignment = center 
+								
+								alwaystransparent = yes
+							}
+
+							instantTextboxType = {
+								name = "healthcare_rate_used_txt"
+								position = { x=@prod_nof_pos_x y=4 }
+								font = "hoi_18b"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_HEALTHCARE_RATE"
+								maxWidth = 50
+								maxHeight = 25
+								fixedsize = yes
+								format = center
+								alwaystransparent = yes
+							}
+							buttonType = {
+								name = "healthcare_rate_sub_1x"
+								position = { x=@prod_sub_pos_x y=2 }
+								quadTextureSprite = "GFX_subtract_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip = "HEALTHCARE_RATE_SUB_1X_TEXT"
+							}
+							buttonType = {
+								name = "healthcare_rate_add_1x"
+								position = { x=@prod_add_pos_x y=2 }
+								quadTextureSprite = "GFX_add_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip  = "HEALTHCARE_RATE_ADD_1X_TEXT"
+							}
+
+							instantTextboxType = {
+								name = "healthcare_rate_amount"
+								position = { x = 340 y = 5 }
+								textureFile = ""
+								font = "hoi_18b"
+								text = "HEALTHCARE_RATE_AMOUNT"
+								maxWidth = 130
+								maxHeight = 20
+								format = center
+								
+								alwaystransparent = yes
+							}
+						}
+
+
+
+						containerWindowType = {
+							name = "soldier_healthcare_rate_adjuster"
+							position = { x=-2 y=84 }
+							size = { width = 100% height = 52 }
+							clipping = no
+					
+							background = {
+								name = "Background"
+								quadTextureSprite ="GFX_ebf_economy_expenses_sub_adjustment"
+							}
+
+							instantTextboxType = {
+								name = "name"
+								position = { x = 20 y = 4 }
+								textureFile = ""
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_SOLDIER_HEALTHCARE_RATE_NAME"
+								maxHeight = 20
+								format = left
+								vertical_alignment = center 
+								
+								alwaystransparent = yes
+							}
+
+							instantTextboxType = {
+								name = "soldier_healthcare_rate_used_txt"
+								position = { x=@prod_nof_pos_x y=4 }
+								font = "hoi_18b"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_SOLDIER_HEALTHCARE_RATE"
+								maxWidth = 50
+								maxHeight = 25
+								fixedsize = yes
+								format = center
+								alwaystransparent = yes
+							}
+							buttonType = {
+								name = "soldier_healthcare_rate_sub_1x"
+								position = { x=@prod_sub_pos_x y=2 }
+								quadTextureSprite = "GFX_subtract_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip = "SOLDIER_HEALTHCARE_RATE_SUB_1X_TEXT"
+							}
+							buttonType = {
+								name = "soldier_healthcare_rate_add_1x"
+								position = { x=@prod_add_pos_x y=2 }
+								quadTextureSprite = "GFX_add_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip  = "SOLDIER_HEALTHCARE_RATE_ADD_1X_TEXT"
+							}
+
+							instantTextboxType = {
+								name = "soldier_healthcare_rate_amount"
+								position = { x = 340 y = 5 }
+								textureFile = ""
+								font = "hoi_18b"
+								text = "SOLDIER_HEALTHCARE_RATE_AMOUNT"
+								maxWidth = 130
+								maxHeight = 20
+								format = center
+								
+								alwaystransparent = yes
+							}
+						}
+					}
+
+
+
+					containerWindowType = {
+						name = "pension_expenses_adjuster"
+						position = { x=0 y=162 }
+						size = { width = 100% height = 52 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_adjustment_window_right_bg"
+						}
+
+						instantTextboxType = {
+							name = "name"
+							position = { x = 20 y = 16 }
+							textureFile = ""
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_PENSION_EXPENSES"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "pension_expenses_amount"
+							position = { x = 340 y = 17 }
+							textureFile = ""
+							font = "hoi_18b"
+							text = "ECONOMY_PENSION_EXPENSES_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							format = center
+							
+							alwaystransparent = yes
+						}		
+
+
+
+						containerWindowType = {
+							name = "pension_rate_adjuster"
+							position = { x=-2 y=52 }
+							size = { width = 100% height = 32 }
+							clipping = no
+					
+							background = {
+								name = "Background"
+								quadTextureSprite ="GFX_ebf_economy_expenses_sub_adjustment"
+							}
+
+							instantTextboxType = {
+								name = "name"
+								position = { x = 20 y = 4 }
+								textureFile = ""
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_PENSION_RATE_NAME"
+								maxWidth = 150
+								maxHeight = 20
+								format = left
+								vertical_alignment = center 
+								
+								alwaystransparent = yes
+							}
+
+							instantTextboxType = {
+								name = "pension_rate_used_txt"
+								position = { x=@prod_nof_pos_x y=4 }
+								font = "hoi_18b"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_PENSION_RATE"
+								maxWidth = 50
+								maxHeight = 25
+								fixedsize = yes
+								format = center
+								alwaystransparent = yes
+							}
+							buttonType = {
+								name = "pension_rate_sub_1x"
+								position = { x=@prod_sub_pos_x y=2 }
+								quadTextureSprite = "GFX_subtract_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip = "PENSION_RATE_SUB_1X_TEXT"
+							}
+							buttonType = {
+								name = "pension_rate_add_1x"
+								position = { x=@prod_add_pos_x y=2 }
+								quadTextureSprite = "GFX_add_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip  = "PENSION_RATE_ADD_1X_TEXT"
+							}
+
+							instantTextboxType = {
+								name = "pension_rate_amount"
+								position = { x = 340 y = 5 }
+								textureFile = ""
+								font = "hoi_18b"
+								text = "PENSION_RATE_AMOUNT"
+								maxWidth = 130
+								maxHeight = 20
+								format = center
+								
+								alwaystransparent = yes
+							}
+						}
+					}
+
+
+
+					containerWindowType = {
+						name = "saleries_expenses_adjuster"
+						position = { x=0 y=246 }
+						size = { width = 100% height = 52 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_adjustment_window_right_bg"
+						}
+
+						instantTextboxType = {
+							name = "name"
+							position = { x = 20 y = 16 }
+							textureFile = ""
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_SALERIES_EXPENSES"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "saleries_expenses_amount"
+							position = { x = 340 y = 17 }
+							textureFile = ""
+							font = "hoi_18b"
+							text = "ECONOMY_SALERIES_EXPENSES_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							format = center
+							
+							alwaystransparent = yes
+						}		
+
+
+
+						containerWindowType = {
+							name = "saleries_rate_adjuster"
+							position = { x=-2 y=52 }
+							size = { width = 100% height = 32 }
+							clipping = no
+					
+							background = {
+								name = "Background"
+								quadTextureSprite ="GFX_ebf_economy_expenses_sub_adjustment"
+							}
+
+							instantTextboxType = {
+								name = "name"
+								position = { x = 20 y = 4 }
+								textureFile = ""
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_SALERIES_RATE_NAME"
+								maxWidth = 150
+								maxHeight = 20
+								format = left
+								vertical_alignment = center 
+								
+								alwaystransparent = yes
+							}
+
+							instantTextboxType = {
+								name = "saleries_rate_used_txt"
+								position = { x=@prod_nof_pos_x y=4 }
+								font = "hoi_18b"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_SALERIES_RATE"
+								maxWidth = 50
+								maxHeight = 25
+								fixedsize = yes
+								format = center
+								alwaystransparent = yes
+							}
+							buttonType = {
+								name = "saleries_rate_sub_1x"
+								position = { x=@prod_sub_pos_x y=2 }
+								quadTextureSprite = "GFX_subtract_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip = "SALERIES_RATE_SUB_1X_TEXT"
+							}
+							buttonType = {
+								name = "saleries_rate_add_1x"
+								position = { x=@prod_add_pos_x y=2 }
+								quadTextureSprite = "GFX_add_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip  = "SALERIES_RATE_ADD_1X_TEXT"
+							}
+
+							instantTextboxType = {
+								name = "saleries_rate_amount"
+								position = { x = 340 y = 5 }
+								textureFile = ""
+								font = "hoi_18b"
+								text = "SALERIES_RATE_AMOUNT"
+								maxWidth = 130
+								maxHeight = 20
+								format = center
+								
+								alwaystransparent = yes
+							}
+						}
+					}
+
+
+
+					containerWindowType = {
+						name = "social_welfare_expenses_adjuster"
+						position = { x=0 y=330 }
+						size = { width = 100% height = 52 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_adjustment_window_right_bg"
+						}
+
+						instantTextboxType = {
+							name = "name"
+							position = { x = 20 y = 16 }
+							textureFile = ""
+							font = "hoi_16mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_SOCIAL_WELFARE_EXPENSES"
+							maxWidth = 250
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "social_welfare_expenses_amount"
+							position = { x = 340 y = 17 }
+							textureFile = ""
+							font = "hoi_18b"
+							text = "ECONOMY_SOCIAL_WELFARE_EXPENSES_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							format = center
+							
+							alwaystransparent = yes
+						}		
+
+
+
+						containerWindowType = {
+							name = "social_welfare_rate_adjuster"
+							position = { x=-2 y=52 }
+							size = { width = 100% height = 32 }
+							clipping = no
+					
+							background = {
+								name = "Background"
+								quadTextureSprite ="GFX_ebf_economy_expenses_sub_adjustment"
+							}
+
+							instantTextboxType = {
+								name = "name"
+								position = { x = 20 y = 4 }
+								textureFile = ""
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_SOCIAL_WELFARE_RATE_NAME"
+								maxWidth = 150
+								maxHeight = 20
+								format = left
+								vertical_alignment = center 
+								
+								alwaystransparent = yes
+							}
+
+							instantTextboxType = {
+								name = "social_welfare_rate_used_txt"
+								position = { x=@prod_nof_pos_x y=4 }
+								font = "hoi_18b"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_SOCIAL_WELFARE_RATE"
+								maxWidth = 50
+								maxHeight = 25
+								fixedsize = yes
+								format = center
+								alwaystransparent = yes
+							}
+							buttonType = {
+								name = "social_welfare_rate_sub_1x"
+								position = { x=@prod_sub_pos_x y=2 }
+								quadTextureSprite = "GFX_subtract_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip = "SOCIAL_WELFARE_RATE_SUB_1X_TEXT"
+							}
+							buttonType = {
+								name = "social_welfare_rate_add_1x"
+								position = { x=@prod_add_pos_x y=2 }
+								quadTextureSprite = "GFX_add_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip  = "SOCIAL_WELFARE_RATE_ADD_1X_TEXT"
+							}
+
+							instantTextboxType = {
+								name = "social_welfare_rate_amount"
+								position = { x = 340 y = 5 }
+								textureFile = ""
+								font = "hoi_18b"
+								text = "SOCIAL_WELFARE_RATE_AMOUNT"
+								maxWidth = 130
+								maxHeight = 20
+								format = center
+								
+								alwaystransparent = yes
+							}
+						}
+					}
+				}
+
+				########################################################################################
+				########################################################################################
+				########################################################################################
+
+				containerWindowType = {
+					name = "social_norms_management_category_entry"
+					position = { x = 20 y = 700 }
+					size = { width=100% height = 202 }
+					clipping = no
+					verticalScrollbar = "right_vertical_slider"
+					scroll_wheel_factor = 40
+					smooth_scrolling = yes
+					
+					iconType ={
+						name ="category_header"
+						spriteType = "GFX_category_header"
+						position = { x=-5 y=2 }
+						Orientation = "UPPER_LEFT"
+					}
+					iconType ={
+						name ="category_icon"
+						spriteType = "GFX_idea_categories"
+						position = { x=4 y=8 }
+						frame = 3
+						Orientation = "UPPER_LEFT"
+					}
+					
+					
+					instantTextboxType = {
+						name = "name"
+						position = { x = 70 y = 14 }
+						font = "hoi_20b"
+						text = "SOCIAL_NORMS_MANAGEMENT"
+						maxWidth = 300
+						maxHeight = 20
+					}
+
+					containerWindowType = {
+						name = "full_age_adjuster"
+						position = { x=0 y=46 }
+						size = { width = 100% height = 52 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_adjustment_window_right_bg"
+						}
+						
+						instantTextboxType = {
+							name = "name"
+							position = { x = 20 y = 16 }
+							textureFile = ""
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_FULL_AGE_ADJUSTER_NAME"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "full_age_amount"
+							position = { x = 340 y = 17 }
+							textureFile = ""
+							font = "hoi_18b"
+							text = "ECONOMY_FULL_AGE_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							format = center
+							
+							alwaystransparent = yes
+						}		
+
+
+						instantTextboxType = {
+							name = "full_age_used_txt"
+							position = { x=@prod_nof_pos_x y=19 }
+							font = "hoi_18b"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_FULL_AGE_PERCENTAGE"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+						buttonType = {
+							name = "full_age_sub_1x"
+							position = { x=@prod_sub_pos_x y=15 }
+							quadTextureSprite = "GFX_subtract_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip = "FULL_AGE_PERCENTAGE_SUB_1X_TEXT"
+						}
+						buttonType = {
+							name = "full_age_add_1x"
+							position = { x=@prod_add_pos_x y=15 }
+							quadTextureSprite = "GFX_add_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip  = "FULL_AGE_PERCENTAGE_ADD_1X_TEXT"
+						}
+					}
+
+					containerWindowType = {
+						name = "retirement_age_adjuster"
+						position = { x=0 y=98 }
+						size = { width = 100% height = 52 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_adjustment_window_right_bg"
+						}
+						
+						instantTextboxType = {
+							name = "name"
+							position = { x = 20 y = 16 }
+							textureFile = ""
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_RETIREMENT_AGE"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "retirement_age_amount"
+							position = { x = 340 y = 17 }
+							textureFile = ""
+							font = "hoi_18b"
+							text = "ECONOMY_RETIREMENT_AGE_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							format = center
+							
+							alwaystransparent = yes
+						}		
+
+
+						instantTextboxType = {
+							name = "retirement_age_used_txt"
+							position = { x=@prod_nof_pos_x y=19 }
+							font = "hoi_18b"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_RETIREMENT_AGE_PERCENTAGE"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+						buttonType = {
+							name = "retirement_age_sub_1x"
+							position = { x=@prod_sub_pos_x y=15 }
+							quadTextureSprite = "GFX_subtract_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip = "RETIREMENT_AGE_PERCENTAGE_SUB_1X_TEXT"
+						}
+						buttonType = {
+							name = "retirement_age_add_1x"
+							position = { x=@prod_add_pos_x y=15 }
+							quadTextureSprite = "GFX_add_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip  = "RETIREMENT_AGE_PERCENTAGE_ADD_1X_TEXT"
+						}
+
+						instantTextBoxType = {
+							name ="war_support"
+							position = { x= 0 y = 100 }
+							font = "hoi_18mbs"
+							text = "asfffffffffffff"
+							format = right
+							fixedsize = yes
+						}
+					}
+				}
+			}
 			
 			containerWindowType = {
 				name = "economy_win_top"
 				position = { x = 0 y = 0 }
-				size = { width = 100% height = 80% }
-				verticalScrollbar = "right_vertical_slider"
+				size = { width = 100% height = 40 }
+				
 
+				
 				
 				iconType = {
 					name = "economy_header"
@@ -89,7 +1170,7 @@ guiTypes = {
 					textureFile = ""
 					font = "hoi_18mbs"
 					borderSize = {x = 0 y = 0}
-					text = "[?ebf_economy_money]"
+					text = "ECONOMY_MONEY_AMOUNT"
 					maxWidth = 50
 					maxHeight = 20
 					format = left
@@ -108,7 +1189,7 @@ guiTypes = {
 					textureFile = ""
 					font = "hoi_18mbs"
 					borderSize = {x = 0 y = 0}
-					text = "100M"
+					text = "ECONOMY_INCOME_AMOUNT"
 					maxWidth = 50
 					maxHeight = 20
 					format = left
@@ -146,7 +1227,7 @@ guiTypes = {
 					textureFile = ""
 					font = "hoi_18mbs"
 					borderSize = {x = 0 y = 0}
-					text = "100K"
+					text = "ECONOMY_LOAN_AMOUNT"
 					maxWidth = 50
 					maxHeight = 20
 					format = left
@@ -165,7 +1246,7 @@ guiTypes = {
 					textureFile = ""
 					font = "hoi_18mbs"
 					borderSize = {x = 0 y = 0}
-					text = "[?ebf_economy_real_inflation|%1]"
+					text = "ECONOMY_INFLATION_AMOUNT"
 					maxWidth = 50
 					maxHeight = 20
 					format = left
@@ -183,7 +1264,7 @@ guiTypes = {
 					textureFile = ""
 					font = "hoi_18mbs"
 					borderSize = {x = 0 y = 0}
-					text = "83"
+					text = "ECONOMY_HAPPINESS_AMOUNT"
 					maxWidth = 50
 					maxHeight = 20
 					format = left
@@ -191,1060 +1272,282 @@ guiTypes = {
 				#################################
 			}
 
-			########################################################################################
-			########################################################################################
-			########################################################################################
+		}
+
+
+		
+
+
+	}
+
+
+	
+		
+	containerWindowType = {
+		name = "loans"
+		position = { x = 110 y = -300 }
+
+		# position = { x = 110 y = -70 }
+		# show_position = { x = 0 y = -300 }
+		size = { width=100%% height= 300 }
+		verticalScrollbar = "right_vertical_slider"
+		scroll_wheel_factor = 40
+		smooth_scrolling = yes
+		orientation = LOWER_LEFT
+
+		containerWindowType = {
+			name = "body"
+			position = { x = 0 y = -50 }
+			size = { width=100%% height=100%% }
+			verticalScrollbar = "right_vertical_slider"
+			scroll_wheel_factor = 40
+			smooth_scrolling = yes
+			background = {
+				name = "Background" 
+				# quadTextureSprite ="GFX_tiled_bg"
+				quadTextureSprite ="GFX_tiled_window_1b_border"
+			}
 
 			containerWindowType = {
-				name = "tax_management_category_entry"
-				position = { x = 20 y = 30 }
-				size = { width=100% height = 202 }
-				clipping = no
+				name = "Loan_Info"
+				position = { x = 10 y = 10 }
+				size = { width=518 height=133 }
+				verticalScrollbar = "right_vertical_slider"
+				scroll_wheel_factor = 40
+				smooth_scrolling = yes
+	
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_mini_tooltip"
+				}
+
+				iconType = {
+					name = "loan_amount_and_cap_bg"
+					position = { x = 180 y = 10 }
+					quadTextureSprite ="GFX_ebf_economy_loan_amount_and_cap"
+				}
+
+				instantTextBoxType = {
+					name ="loan_amount_and_cap"
+					position = { x= 180 y = 13 }
+					font = "hoi_18mbs"
+					text = "LOAN_AMOUNT_AND_CAP"
+					format = center
+					maxWidth = 314
+					maxHeight = 27
+					fixedsize = yes
+				}
+
+				iconType = {
+					name = "3"
+					position = { x = 30 y = 11 }
+					quadTextureSprite ="GFX_generic_box_125"
+				}
+
 				
-				iconType ={
-					name ="category_header"
-					spriteType = "GFX_category_header"
-					position = { x=-5 y=2 }
-					Orientation = "UPPER_LEFT"
+				instantTextBoxType = {
+					name ="loan_amount_and_cap_title"
+					position = { x=30 y=14 }
+					font = "hoi_18mbs"
+					text = "Amount / Cap"
+					format = center
+					maxWidth = 125
+					maxHeight = 27
+					fixedsize = yes
 				}
-				iconType ={
-					name ="category_icon"
-					spriteType = "GFX_idea_categories"
-					position = { x=4 y=8 }
-					frame = 3
-					Orientation = "UPPER_LEFT"
-				}
+
+				###
+
 				
-				
-				instantTextboxType = {
-					name = "name"
-					position = { x = 70 y = 14 }
-					font = "hoi_20b"
-					text = "ECONOMY_TAX_MANAGEMENT"
-					maxWidth = 300
-					maxHeight = 20
+				iconType = {
+					name = "4"
+					position = { x = 180 y = 51 }
+					quadTextureSprite ="GFX_generic_text_bg_154"
 				}
 
-				containerWindowType = {
-					name = "income_tax_adjuster"
-					position = { x=0 y=46 }
-					size = { width = 100% height = 52 }
-					clipping = no
-			
-					background = {
-						name = "Background"
-						quadTextureSprite ="GFX_adjustment_window_right_bg"
-					}
-					
-					instantTextboxType = {
-						name = "name"
-						position = { x = 20 y = 16 }
-						textureFile = ""
-						font = "hoi_18mbs"
-						borderSize = {x = 0 y = 0}
-						text = "ECONOMY_INCOME_TAX"
-						maxWidth = 150
-						maxHeight = 20
-						format = left
-						vertical_alignment = center 
-						
-						alwaystransparent = yes
-					}
-					
-					instantTextboxType = {
-						name = "income_tax_amount"
-						position = { x = 340 y = 17 }
-						textureFile = ""
-						font = "hoi_18b"
-						text = "ECONOMY_INCOME_TAX_AMOUNT"
-						maxWidth = 130
-						maxHeight = 20
-						format = center
-						
-						alwaystransparent = yes
-					}		
-
-
-					instantTextboxType = {
-						name = "income_tax_percentage_used_txt"
-						position = { x=@prod_nof_pos_x y=19 }
-						font = "hoi_18b"
-						borderSize = {x = 0 y = 0}
-						text = "ECONOMY_INCOME_TAX_PERCENTAGE"
-						maxWidth = 50
-						maxHeight = 25
-						fixedsize = yes
-						format = center
-						alwaystransparent = yes
-					}
-					buttonType = {
-						name = "income_tax_percentage_sub_1x"
-						position = { x=@prod_sub_pos_x y=15 }
-						quadTextureSprite = "GFX_subtract_one"
-						font = "hoi_16mbs"
-						clicksound = click_default
-						tooltip = "INCOME_TAX_PERCENTAGE_SUB_1X_TEXT"
-					}
-					buttonType = {
-						name = "income_tax_percentage_add_1x"
-						position = { x=@prod_add_pos_x y=15 }
-						quadTextureSprite = "GFX_add_one"
-						font = "hoi_16mbs"
-						clicksound = click_default
-						tooltip  = "INCOME_TAX_PERCENTAGE_ADD_1X_TEXT"
-					}
+				buttonType = {
+					name = "pay_amount_add"
+					position = { x=464 y=54 }
+					quadTextureSprite = "GFX_add_one"
+					font = "hoi_16mbs"
+					clicksound = click_default
+					scale = 0.9
 				}
 
-				containerWindowType = {
-					name = "consumption_tax_adjuster"
-					position = { x=0 y=98 }
-					size = { width = 100% height = 52 }
-					clipping = no
-			
-					background = {
-						name = "Background"
-						quadTextureSprite ="GFX_adjustment_window_right_bg"
-					}
-					
-					instantTextboxType = {
-						name = "name"
-						position = { x = 20 y = 16 }
-						textureFile = ""
-						font = "hoi_18mbs"
-						borderSize = {x = 0 y = 0}
-						text = "ECONOMY_CONSUMPTION_TAX"
-						maxWidth = 150
-						maxHeight = 20
-						format = left
-						vertical_alignment = center 
-						
-						alwaystransparent = yes
-					}
-					
-					instantTextboxType = {
-						name = "consumption_tax_amount"
-						position = { x = 340 y = 17 }
-						textureFile = ""
-						font = "hoi_18b"
-						text = "ECONOMY_CONSUMPTION_TAX_AMOUNT"
-						maxWidth = 130
-						maxHeight = 20
-						format = center
-						
-						alwaystransparent = yes
-					}		
-
-
-					instantTextboxType = {
-						name = "consumption_tax_percentage_used_txt"
-						position = { x=@prod_nof_pos_x y=19 }
-						font = "hoi_18b"
-						borderSize = {x = 0 y = 0}
-						text = "ECONOMY_CONSUMPTION_TAX_PERCENTAGE"
-						maxWidth = 50
-						maxHeight = 25
-						fixedsize = yes
-						format = center
-						alwaystransparent = yes
-					}
-					buttonType = {
-						name = "consumption_tax_percentage_sub_1x"
-						position = { x=@prod_sub_pos_x y=15 }
-						quadTextureSprite = "GFX_subtract_one"
-						font = "hoi_16mbs"
-						clicksound = click_default
-						tooltip = "CONSUMPTION_TAX_PERCENTAGE_SUB_1X_TEXT"
-					}
-					buttonType = {
-						name = "consumption_tax_percentage_add_1x"
-						position = { x=@prod_add_pos_x y=15 }
-						quadTextureSprite = "GFX_add_one"
-						font = "hoi_16mbs"
-						clicksound = click_default
-						tooltip  = "CONSUMPTION_TAX_PERCENTAGE_ADD_1X_TEXT"
-					}
+				buttonType = {
+					name = "pay_amount_sub"
+					position = { x=344 y=54 }
+					quadTextureSprite = "GFX_subtract_one"
+					font = "hoi_16mbs"
+					clicksound = click_default
+					scale = 0.9
 				}
 
-				containerWindowType = {
-					name = "wealth_tax_adjuster"
-					position = { x=0 y=150 }
-					size = { width = 100% height = 52 }
-					clipping = no
-			
-					background = {
-						name = "Background"
-						quadTextureSprite ="GFX_adjustment_window_right_bg"
-					}
-					
-					instantTextboxType = {
-						name = "name"
-						position = { x = 20 y = 16 }
-						textureFile = ""
-						font = "hoi_18mbs"
-						borderSize = {x = 0 y = 0}
-						text = "ECONOMY_WEALTH_TAX"
-						maxWidth = 150
-						maxHeight = 20
-						format = left
-						vertical_alignment = center 
-						
-						alwaystransparent = yes
-					}
-					
-					instantTextboxType = {
-						name = "wealth_tax_amount"
-						position = { x = 340 y = 17 }
-						textureFile = ""
-						font = "hoi_18b"
-						text = "ECONOMY_WEALTH_TAX_AMOUNT"
-						maxWidth = 130
-						maxHeight = 20
-						format = center
-						
-						alwaystransparent = yes
-					}		
-
-
-					instantTextboxType = {
-						name = "wealth_tax_percentage_used_txt"
-						position = { x=@prod_nof_pos_x y=19 }
-						font = "hoi_18b"
-						borderSize = {x = 0 y = 0}
-						text = "ECONOMY_WEALTH_TAX_PERCENTAGE"
-						maxWidth = 50
-						maxHeight = 25
-						fixedsize = yes
-						format = center
-						alwaystransparent = yes
-					}
-					buttonType = {
-						name = "wealth_tax_percentage_sub_1x"
-						position = { x=@prod_sub_pos_x y=15 }
-						quadTextureSprite = "GFX_subtract_one"
-						font = "hoi_16mbs"
-						clicksound = click_default
-						tooltip = "WEALTH_TAX_PERCENTAGE_SUB_1X_TEXT"
-					}
-					buttonType = {
-						name = "wealth_tax_percentage_add_1x"
-						position = { x=@prod_add_pos_x y=15 }
-						quadTextureSprite = "GFX_add_one"
-						font = "hoi_16mbs"
-						clicksound = click_default
-						tooltip  = "WEALTH_TAX_PERCENTAGE_ADD_1X_TEXT"
-					}
+				iconType = {
+					name = "take_loan_title_bg"
+					position = { x = 30 y = 52 }
+					quadTextureSprite ="GFX_generic_box_125"
 				}
 
-				containerWindowType = {
-					name = "trade_tax_adjuster"
-					position = { x=0 y=202 }
-					size = { width = 100% height = 52 }
-					clipping = no
-			
-					background = {
-						name = "Background"
-						quadTextureSprite ="GFX_adjustment_window_right_bg"
-					}
-					
-					instantTextboxType = {
-						name = "name"
-						position = { x = 20 y = 16 }
-						textureFile = ""
-						font = "hoi_18mbs"
-						borderSize = {x = 0 y = 0}
-						text = "ECONOMY_TRADE_TAX"
-						maxWidth = 150
-						maxHeight = 20
-						format = left
-						vertical_alignment = center 
-						
-						alwaystransparent = yes
-					}
-					
-					instantTextboxType = {
-						name = "trade_tax_amount"
-						position = { x = 340 y = 17 }
-						textureFile = ""
-						font = "hoi_18b"
-						text = "ECONOMY_TRADE_TAX_AMOUNT"
-						maxWidth = 130
-						maxHeight = 20
-						format = center
-						
-						alwaystransparent = yes
-					}		
+				instantTextBoxType = {
+					name ="take_loan_title"
+					position = { x=30 y=55 }
+					font = "hoi_18mbs"
+					text = "Take Loan"
+					format = center
+					maxWidth = 125
+					maxHeight = 27
+					fixedsize = yes
+				}
 
 
-					instantTextboxType = {
-						name = "trade_tax_percentage_used_txt"
-						position = { x=@prod_nof_pos_x y=19 }
-						font = "hoi_18b"
-						borderSize = {x = 0 y = 0}
-						text = "ECONOMY_TRADE_TAX_PERCENTAGE"
-						maxWidth = 50
-						maxHeight = 25
-						fixedsize = yes
-						format = center
-						alwaystransparent = yes
-					}
-					buttonType = {
-						name = "trade_tax_percentage_sub_1x"
-						position = { x=@prod_sub_pos_x y=15 }
-						quadTextureSprite = "GFX_subtract_one"
-						font = "hoi_16mbs"
-						clicksound = click_default
-						tooltip = "TRADE_TAX_PERCENTAGE_SUB_1X_TEXT"
-					}
-					buttonType = {
-						name = "trade_tax_percentage_add_1x"
-						position = { x=@prod_add_pos_x y=15 }
-						quadTextureSprite = "GFX_add_one"
-						font = "hoi_16mbs"
-						clicksound = click_default
-						tooltip  = "TRADE_TAX_PERCENTAGE_ADD_1X_TEXT"
-					}
+				###
+
+				iconType = {
+					name = "7"
+					position = { x = 180 y = 92 }
+					quadTextureSprite ="GFX_generic_text_bg_154"
+				}
+
+				iconType = {
+					name = "8"
+					position = { x = 340 y = 92 }
+					quadTextureSprite ="GFX_generic_text_bg_154"
+				}
+
+				iconType = {
+					name = "d"
+					position = { x = 30 y = 93 }
+					quadTextureSprite ="GFX_generic_box_125"
 				}
 			}
 
+			
 
 
-			########################################################################################
-			########################################################################################
-			########################################################################################
+
 
 			containerWindowType = {
-				name = "expenses_management_category_entry"
-				position = { x = 20 y = 286 } 
-				size = { width=100% height = 202 }
-				clipping = no
-				
-				iconType ={
-					name ="category_header"
-					spriteType = "GFX_category_header"
-					position = { x=-5 y=2 }
-					Orientation = "UPPER_LEFT"
-				}
-				iconType ={
-					name ="category_icon"
-					spriteType = "GFX_idea_categories"
-					position = { x=4 y=8 }
-					frame = 3
-					Orientation = "UPPER_LEFT"
-				}
-				
-				
-				instantTextboxType = {
-					name = "name"
-					position = { x = 70 y = 14 }
-					font = "hoi_20b"
-					text = "ECONOMY_EXPENSES_MANAGEMENT"
-					maxWidth = 300
-					maxHeight = 20
-				}
-
-				containerWindowType = {
-					name = "healthcare_expenses_adjuster"
-					position = { x=0 y=46 }
-					size = { width = 100% height = 52 }
-					clipping = no
+				name = "Loan_Repay"
+				position = { x = 10 y = 140 }
+				size = { width=518 height=100 }
+				verticalScrollbar = "right_vertical_slider"
+				scroll_wheel_factor = 40
+				smooth_scrolling = yes
 			
-					background = {
-						name = "Background"
-						quadTextureSprite ="GFX_adjustment_window_right_bg"
-					}
+				# iconType = {
+				# 	name = "loan_repay_bg"
+				# 	position = { x = 15 y = 298 }
+				# 	quadTextureSprite ="GFX_ebf_economy_loan_repay_bg"
+				# }
 
-					instantTextboxType = {
-						name = "name"
-						position = { x = 20 y = 16 }
-						textureFile = ""
-						font = "hoi_18mbs"
-						borderSize = {x = 0 y = 0}
-						text = "ECONOMY_HEALTHCARE_EXPENSES"
-						maxWidth = 150
-						maxHeight = 20
-						format = left
-						vertical_alignment = center 
-						
-						alwaystransparent = yes
-					}
-					
-					instantTextboxType = {
-						name = "healthcare_expenses_amount"
-						position = { x = 340 y = 17 }
-						textureFile = ""
-						font = "hoi_18b"
-						text = "ECONOMY_HEALTHCARE_EXPENSES_AMOUNT"
-						maxWidth = 130
-						maxHeight = 20
-						format = center
-						
-						alwaystransparent = yes
-					}		
-
-
-
-					containerWindowType = {
-						name = "healthcare_rate_adjuster"
-						position = { x=-2 y=52 }
-						size = { width = 100% height = 32 }
-						clipping = no
-				
-						background = {
-							name = "Background"
-							quadTextureSprite ="GFX_ebf_economy_expenses_sub_adjustment"
-						}
-
-						instantTextboxType = {
-							name = "name"
-							position = { x = 20 y = 4 }
-							textureFile = ""
-							font = "hoi_18mbs"
-							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_HEALTHCARE_RATE_NAME"
-							maxWidth = 150
-							maxHeight = 20
-							format = left
-							vertical_alignment = center 
-							
-							alwaystransparent = yes
-						}
-
-						instantTextboxType = {
-							name = "healthcare_rate_used_txt"
-							position = { x=@prod_nof_pos_x y=4 }
-							font = "hoi_18b"
-							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_HEALTHCARE_RATE"
-							maxWidth = 50
-							maxHeight = 25
-							fixedsize = yes
-							format = center
-							alwaystransparent = yes
-						}
-						buttonType = {
-							name = "healthcare_rate_sub_1x"
-							position = { x=@prod_sub_pos_x y=2 }
-							quadTextureSprite = "GFX_subtract_one"
-							font = "hoi_16mbs"
-							clicksound = click_default
-							tooltip = "HEALTHCARE_RATE_SUB_1X_TEXT"
-						}
-						buttonType = {
-							name = "healthcare_rate_add_1x"
-							position = { x=@prod_add_pos_x y=2 }
-							quadTextureSprite = "GFX_add_one"
-							font = "hoi_16mbs"
-							clicksound = click_default
-							tooltip  = "HEALTHCARE_RATE_ADD_1X_TEXT"
-						}
-
-						instantTextboxType = {
-							name = "healthcare_rate_amount"
-							position = { x = 340 y = 5 }
-							textureFile = ""
-							font = "hoi_18b"
-							text = "HEALTHCARE_RATE_AMOUNT"
-							maxWidth = 130
-							maxHeight = 20
-							format = center
-							
-							alwaystransparent = yes
-						}
-					}
-
-
-
-					containerWindowType = {
-						name = "soldier_healthcare_rate_adjuster"
-						position = { x=-2 y=84 }
-						size = { width = 100% height = 52 }
-						clipping = no
-				
-						background = {
-							name = "Background"
-							quadTextureSprite ="GFX_ebf_economy_expenses_sub_adjustment"
-						}
-
-						instantTextboxType = {
-							name = "name"
-							position = { x = 20 y = 4 }
-							textureFile = ""
-							font = "hoi_18mbs"
-							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_SOLDIER_HEALTHCARE_RATE_NAME"
-							maxHeight = 20
-							format = left
-							vertical_alignment = center 
-							
-							alwaystransparent = yes
-						}
-
-						instantTextboxType = {
-							name = "soldier_healthcare_rate_used_txt"
-							position = { x=@prod_nof_pos_x y=4 }
-							font = "hoi_18b"
-							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_SOLDIER_HEALTHCARE_RATE"
-							maxWidth = 50
-							maxHeight = 25
-							fixedsize = yes
-							format = center
-							alwaystransparent = yes
-						}
-						buttonType = {
-							name = "soldier_healthcare_rate_sub_1x"
-							position = { x=@prod_sub_pos_x y=2 }
-							quadTextureSprite = "GFX_subtract_one"
-							font = "hoi_16mbs"
-							clicksound = click_default
-							tooltip = "SOLDIER_HEALTHCARE_RATE_SUB_1X_TEXT"
-						}
-						buttonType = {
-							name = "soldier_healthcare_rate_add_1x"
-							position = { x=@prod_add_pos_x y=2 }
-							quadTextureSprite = "GFX_add_one"
-							font = "hoi_16mbs"
-							clicksound = click_default
-							tooltip  = "SOLDIER_HEALTHCARE_RATE_ADD_1X_TEXT"
-						}
-
-						instantTextboxType = {
-							name = "soldier_healthcare_rate_amount"
-							position = { x = 340 y = 5 }
-							textureFile = ""
-							font = "hoi_18b"
-							text = "SOLDIER_HEALTHCARE_RATE_AMOUNT"
-							maxWidth = 130
-							maxHeight = 20
-							format = center
-							
-							alwaystransparent = yes
-						}
-					}
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_mini_tooltip"
 				}
 
+				###
 
-
-				containerWindowType = {
-					name = "pension_expenses_adjuster"
-					position = { x=0 y=162 }
-					size = { width = 100% height = 52 }
-					clipping = no
-			
-					background = {
-						name = "Background"
-						quadTextureSprite ="GFX_adjustment_window_right_bg"
-					}
-
-					instantTextboxType = {
-						name = "name"
-						position = { x = 20 y = 16 }
-						textureFile = ""
-						font = "hoi_18mbs"
-						borderSize = {x = 0 y = 0}
-						text = "ECONOMY_PENSION_EXPENSES"
-						maxWidth = 150
-						maxHeight = 20
-						format = left
-						vertical_alignment = center 
-						
-						alwaystransparent = yes
-					}
-					
-					instantTextboxType = {
-						name = "pension_expenses_amount"
-						position = { x = 340 y = 17 }
-						textureFile = ""
-						font = "hoi_18b"
-						text = "ECONOMY_PENSION_EXPENSES_AMOUNT"
-						maxWidth = 130
-						maxHeight = 20
-						format = center
-						
-						alwaystransparent = yes
-					}		
-
-
-
-					containerWindowType = {
-						name = "pension_rate_adjuster"
-						position = { x=-2 y=52 }
-						size = { width = 100% height = 32 }
-						clipping = no
-				
-						background = {
-							name = "Background"
-							quadTextureSprite ="GFX_ebf_economy_expenses_sub_adjustment"
-						}
-
-						instantTextboxType = {
-							name = "name"
-							position = { x = 20 y = 4 }
-							textureFile = ""
-							font = "hoi_18mbs"
-							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_PENSION_RATE_NAME"
-							maxWidth = 150
-							maxHeight = 20
-							format = left
-							vertical_alignment = center 
-							
-							alwaystransparent = yes
-						}
-
-						instantTextboxType = {
-							name = "pension_rate_used_txt"
-							position = { x=@prod_nof_pos_x y=4 }
-							font = "hoi_18b"
-							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_PENSION_RATE"
-							maxWidth = 50
-							maxHeight = 25
-							fixedsize = yes
-							format = center
-							alwaystransparent = yes
-						}
-						buttonType = {
-							name = "pension_rate_sub_1x"
-							position = { x=@prod_sub_pos_x y=2 }
-							quadTextureSprite = "GFX_subtract_one"
-							font = "hoi_16mbs"
-							clicksound = click_default
-							tooltip = "PENSION_RATE_SUB_1X_TEXT"
-						}
-						buttonType = {
-							name = "pension_rate_add_1x"
-							position = { x=@prod_add_pos_x y=2 }
-							quadTextureSprite = "GFX_add_one"
-							font = "hoi_16mbs"
-							clicksound = click_default
-							tooltip  = "PENSION_RATE_ADD_1X_TEXT"
-						}
-
-						instantTextboxType = {
-							name = "pension_rate_amount"
-							position = { x = 340 y = 5 }
-							textureFile = ""
-							font = "hoi_18b"
-							text = "PENSION_RATE_AMOUNT"
-							maxWidth = 130
-							maxHeight = 20
-							format = center
-							
-							alwaystransparent = yes
-						}
-					}
+				iconType = {
+					name = "payment_penalty_bg"
+					position = { x = 180 y = 13 }
+					quadTextureSprite ="GFX_generic_text_bg_154"
 				}
 
-
-
-				containerWindowType = {
-					name = "saleries_expenses_adjuster"
-					position = { x=0 y=246 }
-					size = { width = 100% height = 52 }
-					clipping = no
-			
-					background = {
-						name = "Background"
-						quadTextureSprite ="GFX_adjustment_window_right_bg"
-					}
-
-					instantTextboxType = {
-						name = "name"
-						position = { x = 20 y = 16 }
-						textureFile = ""
-						font = "hoi_18mbs"
-						borderSize = {x = 0 y = 0}
-						text = "ECONOMY_SALERIES_EXPENSES"
-						maxWidth = 150
-						maxHeight = 20
-						format = left
-						vertical_alignment = center 
-						
-						alwaystransparent = yes
-					}
-					
-					instantTextboxType = {
-						name = "saleries_expenses_amount"
-						position = { x = 340 y = 17 }
-						textureFile = ""
-						font = "hoi_18b"
-						text = "ECONOMY_SALERIES_EXPENSES_AMOUNT"
-						maxWidth = 130
-						maxHeight = 20
-						format = center
-						
-						alwaystransparent = yes
-					}		
-
-
-
-					containerWindowType = {
-						name = "saleries_rate_adjuster"
-						position = { x=-2 y=52 }
-						size = { width = 100% height = 32 }
-						clipping = no
-				
-						background = {
-							name = "Background"
-							quadTextureSprite ="GFX_ebf_economy_expenses_sub_adjustment"
-						}
-
-						instantTextboxType = {
-							name = "name"
-							position = { x = 20 y = 4 }
-							textureFile = ""
-							font = "hoi_18mbs"
-							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_SALERIES_RATE_NAME"
-							maxWidth = 150
-							maxHeight = 20
-							format = left
-							vertical_alignment = center 
-							
-							alwaystransparent = yes
-						}
-
-						instantTextboxType = {
-							name = "saleries_rate_used_txt"
-							position = { x=@prod_nof_pos_x y=4 }
-							font = "hoi_18b"
-							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_SALERIES_RATE"
-							maxWidth = 50
-							maxHeight = 25
-							fixedsize = yes
-							format = center
-							alwaystransparent = yes
-						}
-						buttonType = {
-							name = "saleries_rate_sub_1x"
-							position = { x=@prod_sub_pos_x y=2 }
-							quadTextureSprite = "GFX_subtract_one"
-							font = "hoi_16mbs"
-							clicksound = click_default
-							tooltip = "SALERIES_RATE_SUB_1X_TEXT"
-						}
-						buttonType = {
-							name = "saleries_rate_add_1x"
-							position = { x=@prod_add_pos_x y=2 }
-							quadTextureSprite = "GFX_add_one"
-							font = "hoi_16mbs"
-							clicksound = click_default
-							tooltip  = "SALERIES_RATE_ADD_1X_TEXT"
-						}
-
-						instantTextboxType = {
-							name = "saleries_rate_amount"
-							position = { x = 340 y = 5 }
-							textureFile = ""
-							font = "hoi_18b"
-							text = "SALERIES_RATE_AMOUNT"
-							maxWidth = 130
-							maxHeight = 20
-							format = center
-							
-							alwaystransparent = yes
-						}
-					}
+				iconType = {
+					name = "repay_amount_bg"
+					position = { x = 30 y = 14 }
+					quadTextureSprite ="GFX_generic_box_125"
 				}
 
+				buttonType = {
+					name = "pay_amount_add"
+					position = { x=466 y=16 }
+					quadTextureSprite = "GFX_add_one"
+					font = "hoi_16mbs"
+					clicksound = click_default
+					scale = 0.9
+				}
 
+				buttonType = {
+					name = "pay_amount_sub"
+					position = { x=346 y=16 }
+					quadTextureSprite = "GFX_subtract_one"
+					font = "hoi_16mbs"
+					clicksound = click_default
+					scale = 0.9
+				}
 
-				containerWindowType = {
-					name = "social_welfare_expenses_adjuster"
-					position = { x=0 y=330 }
-					size = { width = 100% height = 52 }
-					clipping = no
-			
-					background = {
-						name = "Background"
-						quadTextureSprite ="GFX_adjustment_window_right_bg"
-					}
+				buttonType = {
+					name = "pay_now_button"
+					position = { x=370 y=12 }
+					quadTextureSprite = "GFX_button_94x31"
+					font = "hoi_16mbs"
+					clicksound = click_default
+					text = "Pay Now"
+				}
 
-					instantTextboxType = {
-						name = "name"
-						position = { x = 20 y = 16 }
-						textureFile = ""
-						font = "hoi_16mbs"
-						borderSize = {x = 0 y = 0}
-						text = "ECONOMY_SOCIAL_WELFARE_EXPENSES"
-						maxWidth = 250
-						maxHeight = 20
-						format = left
-						vertical_alignment = center 
-						
-						alwaystransparent = yes
-					}
-					
-					instantTextboxType = {
-						name = "social_welfare_expenses_amount"
-						position = { x = 340 y = 17 }
-						textureFile = ""
-						font = "hoi_18b"
-						text = "ECONOMY_SOCIAL_WELFARE_EXPENSES_AMOUNT"
-						maxWidth = 130
-						maxHeight = 20
-						format = center
-						
-						alwaystransparent = yes
-					}		
+				###
 
+				iconType = {
+					name = "payment_penalty_bg2"
+					position = { x = 180 y = 54 }
+					quadTextureSprite ="GFX_generic_text_bg_154"
+				}
 
+				iconType = {
+					name = "payment_amount_bg2"
+					position = { x = 340 y = 54 }
+					quadTextureSprite ="GFX_generic_text_bg_154"
+				}
 
-					containerWindowType = {
-						name = "social_welfare_rate_adjuster"
-						position = { x=-2 y=52 }
-						size = { width = 100% height = 32 }
-						clipping = no
-				
-						background = {
-							name = "Background"
-							quadTextureSprite ="GFX_ebf_economy_expenses_sub_adjustment"
-						}
-
-						instantTextboxType = {
-							name = "name"
-							position = { x = 20 y = 4 }
-							textureFile = ""
-							font = "hoi_18mbs"
-							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_SOCIAL_WELFARE_RATE_NAME"
-							maxWidth = 150
-							maxHeight = 20
-							format = left
-							vertical_alignment = center 
-							
-							alwaystransparent = yes
-						}
-
-						instantTextboxType = {
-							name = "social_welfare_rate_used_txt"
-							position = { x=@prod_nof_pos_x y=4 }
-							font = "hoi_18b"
-							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_SOCIAL_WELFARE_RATE"
-							maxWidth = 50
-							maxHeight = 25
-							fixedsize = yes
-							format = center
-							alwaystransparent = yes
-						}
-						buttonType = {
-							name = "social_welfare_rate_sub_1x"
-							position = { x=@prod_sub_pos_x y=2 }
-							quadTextureSprite = "GFX_subtract_one"
-							font = "hoi_16mbs"
-							clicksound = click_default
-							tooltip = "SOCIAL_WELFARE_RATE_SUB_1X_TEXT"
-						}
-						buttonType = {
-							name = "social_welfare_rate_add_1x"
-							position = { x=@prod_add_pos_x y=2 }
-							quadTextureSprite = "GFX_add_one"
-							font = "hoi_16mbs"
-							clicksound = click_default
-							tooltip  = "SOCIAL_WELFARE_RATE_ADD_1X_TEXT"
-						}
-
-						instantTextboxType = {
-							name = "social_welfare_rate_amount"
-							position = { x = 340 y = 5 }
-							textureFile = ""
-							font = "hoi_18b"
-							text = "SOCIAL_WELFARE_RATE_AMOUNT"
-							maxWidth = 130
-							maxHeight = 20
-							format = center
-							
-							alwaystransparent = yes
-						}
-					}
+				iconType = {
+					name = "repay_amount_bg2"
+					position = { x = 30 y = 55 }
+					quadTextureSprite ="GFX_generic_box_125"
 				}
 			}
+		}
 
-			########################################################################################
-			########################################################################################
-			########################################################################################
+		containerWindowType = {
+			name = "header"
+			position = { x = 10 y = 20 }
+			size = { width=518 height=133 }
+			verticalScrollbar = "right_vertical_slider"
+			scroll_wheel_factor = 40
+			smooth_scrolling = yes
 
-			containerWindowType = {
-				name = "social_norms_management_category_entry"
-				position = { x = 20 y = 700 }
-				size = { width=100% height = 202 }
-				clipping = no
-				
-				iconType ={
-					name ="category_header"
-					spriteType = "GFX_category_header"
-					position = { x=-5 y=2 }
-					Orientation = "UPPER_LEFT"
-				}
-				iconType ={
-					name ="category_icon"
-					spriteType = "GFX_idea_categories"
-					position = { x=4 y=8 }
-					frame = 3
-					Orientation = "UPPER_LEFT"
-				}
-				
-				
-				instantTextboxType = {
-					name = "name"
-					position = { x = 70 y = 14 }
-					font = "hoi_20b"
-					text = "SOCIAL_NORMS_MANAGEMENT"
-					maxWidth = 300
-					maxHeight = 20
-				}
-
-				containerWindowType = {
-					name = "full_age_adjuster"
-					position = { x=0 y=46 }
-					size = { width = 100% height = 52 }
-					clipping = no
-			
-					background = {
-						name = "Background"
-						quadTextureSprite ="GFX_adjustment_window_right_bg"
-					}
-					
-					instantTextboxType = {
-						name = "name"
-						position = { x = 20 y = 16 }
-						textureFile = ""
-						font = "hoi_18mbs"
-						borderSize = {x = 0 y = 0}
-						text = "ECONOMY_FULL_AGE_ADJUSTER_NAME"
-						maxWidth = 150
-						maxHeight = 20
-						format = left
-						vertical_alignment = center 
-						
-						alwaystransparent = yes
-					}
-					
-					instantTextboxType = {
-						name = "full_age_amount"
-						position = { x = 340 y = 17 }
-						textureFile = ""
-						font = "hoi_18b"
-						text = "ECONOMY_FULL_AGE_AMOUNT"
-						maxWidth = 130
-						maxHeight = 20
-						format = center
-						
-						alwaystransparent = yes
-					}		
-
-
-					instantTextboxType = {
-						name = "full_age_used_txt"
-						position = { x=@prod_nof_pos_x y=19 }
-						font = "hoi_18b"
-						borderSize = {x = 0 y = 0}
-						text = "ECONOMY_FULL_AGE_PERCENTAGE"
-						maxWidth = 50
-						maxHeight = 25
-						fixedsize = yes
-						format = center
-						alwaystransparent = yes
-					}
-					buttonType = {
-						name = "full_age_sub_1x"
-						position = { x=@prod_sub_pos_x y=15 }
-						quadTextureSprite = "GFX_subtract_one"
-						font = "hoi_16mbs"
-						clicksound = click_default
-						tooltip = "FULL_AGE_PERCENTAGE_SUB_1X_TEXT"
-					}
-					buttonType = {
-						name = "full_age_add_1x"
-						position = { x=@prod_add_pos_x y=15 }
-						quadTextureSprite = "GFX_add_one"
-						font = "hoi_16mbs"
-						clicksound = click_default
-						tooltip  = "FULL_AGE_PERCENTAGE_ADD_1X_TEXT"
-					}
-				}
-
-				containerWindowType = {
-					name = "retirement_age_adjuster"
-					position = { x=0 y=98 }
-					size = { width = 100% height = 52 }
-					clipping = no
-			
-					background = {
-						name = "Background"
-						quadTextureSprite ="GFX_adjustment_window_right_bg"
-					}
-					
-					instantTextboxType = {
-						name = "name"
-						position = { x = 20 y = 16 }
-						textureFile = ""
-						font = "hoi_18mbs"
-						borderSize = {x = 0 y = 0}
-						text = "ECONOMY_RETIREMENT_AGE"
-						maxWidth = 150
-						maxHeight = 20
-						format = left
-						vertical_alignment = center 
-						
-						alwaystransparent = yes
-					}
-					
-					instantTextboxType = {
-						name = "retirement_age_amount"
-						position = { x = 340 y = 17 }
-						textureFile = ""
-						font = "hoi_18b"
-						text = "ECONOMY_RETIREMENT_AGE_AMOUNT"
-						maxWidth = 130
-						maxHeight = 20
-						format = center
-						
-						alwaystransparent = yes
-					}		
-
-
-					instantTextboxType = {
-						name = "retirement_age_used_txt"
-						position = { x=@prod_nof_pos_x y=19 }
-						font = "hoi_18b"
-						borderSize = {x = 0 y = 0}
-						text = "ECONOMY_RETIREMENT_AGE_PERCENTAGE"
-						maxWidth = 50
-						maxHeight = 25
-						fixedsize = yes
-						format = center
-						alwaystransparent = yes
-					}
-					buttonType = {
-						name = "retirement_age_sub_1x"
-						position = { x=@prod_sub_pos_x y=15 }
-						quadTextureSprite = "GFX_subtract_one"
-						font = "hoi_16mbs"
-						clicksound = click_default
-						tooltip = "RETIREMENT_AGE_PERCENTAGE_SUB_1X_TEXT"
-					}
-					buttonType = {
-						name = "retirement_age_add_1x"
-						position = { x=@prod_add_pos_x y=15 }
-						quadTextureSprite = "GFX_add_one"
-						font = "hoi_16mbs"
-						clicksound = click_default
-						tooltip  = "RETIREMENT_AGE_PERCENTAGE_ADD_1X_TEXT"
-					}
-				}
-
+			iconType = {
+				name = "loan_management_title_bg"
+				position = { x = 105 y = 0 }
+				quadTextureSprite ="GFX_conference_action_header"
 			}
-			
 
+			instantTextBoxType = {
+				name ="loan_management_title"
+				position = { x=105 y=11 }
+				font = "hoi_20b"
+				text = "LOAN_MANAGEMENT_TITLE"
+				format = center
+				maxWidth = 319
+				maxHeight = 49
+				fixedsize = yes
+			}
 
+			iconType = {
+				name = "left_eagle_icon"
+				position = { x = -10 y = -5 }
+				quadTextureSprite ="GFX_conference_top_right"
+				scale = 0.6
+			}
 
+			iconType = {
+				name = "right_eagle_icon"
+				position = { x = 340 y = -5 }
+				quadTextureSprite ="GFX_conference_top_left"
+				scale = 0.6
+			}
 
-
-			
 		}
 	}
 }

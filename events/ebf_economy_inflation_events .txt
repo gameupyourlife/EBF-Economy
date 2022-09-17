@@ -40,42 +40,42 @@ country_event = {
 
 
 
-### Investment Inflation
-### ToDo
-country_event = {
-	id = ebf_economy_inflation_event.3
-	title = ebf_economy_inflation_event.3.t
-	desc = ebf_economy_inflation_event.3.d
-	picture = GFX_report_event_soviet_soldiers
-	hidden = yes
+# ### Investment Inflation
+# ### ToDo
+# country_event = {
+# 	id = ebf_economy_inflation_event.3
+# 	title = ebf_economy_inflation_event.3.t
+# 	desc = ebf_economy_inflation_event.3.d
+# 	picture = GFX_report_event_soviet_soldiers
+# 	hidden = yes
 	
-	is_triggered_only = yes
+# 	is_triggered_only = yes
 	
-    immediate = {
-		set_variable = { ebf_economy_investment_inflation = 0 }
-    }
-}
+#     immediate = {
+# 		set_variable = { ebf_economy_investment_inflation = 0 }
+#     }
+# }
 
-### Loan Inflation
-country_event = {
-	id = ebf_economy_inflation_event.4
-	title = ebf_economy_inflation_event.4.t
-	desc = ebf_economy_inflation_event.4.d
-	picture = GFX_report_event_soviet_soldiers
-	hidden = yes
+# ### Loan Inflation
+# country_event = {
+# 	id = ebf_economy_inflation_event.4
+# 	title = ebf_economy_inflation_event.4.t
+# 	desc = ebf_economy_inflation_event.4.d
+# 	picture = GFX_report_event_soviet_soldiers
+# 	hidden = yes
 	
-	is_triggered_only = yes
+# 	is_triggered_only = yes
 	
-    immediate = {
-		set_variable = { ebf_economy_loan_inflation = ebf_economy_loans_amount }
-		set_temp_variable = { ebf_economy_loan_inflation_temp = ebf_economy_monthly_income }
-		set_temp_variable = { ebf_economy_loan_inflation_temp = 12 }
-		divide_variable = { ebf_economy_loan_inflation = ebf_economy_loan_inflation_temp }
-		divide_variable = { ebf_economy_loan_inflation = 50 }
+#     immediate = {
+# 		set_variable = { ebf_economy_loan_inflation = ebf_economy_loan_amount }
+# 		set_temp_variable = { ebf_economy_loan_inflation_temp = ebf_economy_monthly_income }
+# 		set_temp_variable = { ebf_economy_loan_inflation_temp = 12 }
+# 		divide_variable = { ebf_economy_loan_inflation = ebf_economy_loan_inflation_temp }
+# 		divide_variable = { ebf_economy_loan_inflation = 50 }
 
 		
-    }
-}
+#     }
+# }
 
 
 ### Prining Inflation

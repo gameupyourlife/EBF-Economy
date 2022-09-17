@@ -105,7 +105,7 @@ country_event = {
 }
 
 
-# Soilders Healthcare Happines Effekt
+# soldiers Healthcare Happines Effekt
 country_event = {
 	id = ebf_economy_happines_events.7
 	title = ebf_economy_happines_events.7.t
@@ -177,7 +177,7 @@ country_event = {
 
 
 # Expenses Happines Effekt
-# (0,3 * Healthcare Happines Effekt) + (0,4 * Soilders Healthcare Effekt) + (1,35 * Pension Happines Effekt) + (1,7 * Saleries Happines Effekt) + (1,35 * Socila Welfare Happines Effekt)
+# (0,3 * Healthcare Happines Effekt) + (0,4 * soldiers Healthcare Effekt) + (1,35 * Pension Happines Effekt) + (1,7 * Saleries Happines Effekt) + (1,35 * Socila Welfare Happines Effekt)
 country_event = {
 	id = ebf_economy_happines_events.11
 	title = ebf_economy_happines_events.11.t
@@ -193,24 +193,23 @@ country_event = {
 		
 		set_temp_variable = { ebf_economy_happines_expenses_effect_temp = 0.4 }
 		multiply_temp_variable = { ebf_economy_happines_expenses_effect_temp = ebf_economy_happines_soldiers_healthcare_effect }
-		multiply_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_expenses_effect_temp }
+		add_to_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_expenses_effect_temp }
 
 		set_temp_variable = { ebf_economy_happines_expenses_effect_temp = 1.35 }
 		multiply_temp_variable = { ebf_economy_happines_expenses_effect_temp = ebf_economy_happines_pension_effect }
-		multiply_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_expenses_effect_temp }
+		add_to_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_expenses_effect_temp }
 
 		set_temp_variable = { ebf_economy_happines_expenses_effect_temp = 1.7 }
 		multiply_temp_variable = { ebf_economy_happines_expenses_effect_temp = ebf_economy_happines_saleries_effect }
-		multiply_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_expenses_effect_temp }
-		
+		add_to_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_expenses_effect_temp }
+
 		set_temp_variable = { ebf_economy_happines_expenses_effect_temp = 1.35 }
 		multiply_temp_variable = { ebf_economy_happines_expenses_effect_temp = ebf_economy_happines_social_welfare_effect }
-		multiply_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_expenses_effect_temp }
+		add_to_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_expenses_effect_temp }
 	}
 }
 
 # Total Happines
-# (0,3 * Healthcare Happines Effekt) + (0,4 * Soilders Healthcare Effekt) + (1,35 * Pension Happines Effekt) + (1,7 * Saleries Happines Effekt) + (1,35 * Socila Welfare Happines Effekt)
 country_event = {
 	id = ebf_economy_happines_events.12
 	title = ebf_economy_happines_events.12.t
@@ -222,11 +221,11 @@ country_event = {
 
     immediate = {
 		set_variable = { ebf_economy_happines = ebf_economy_happines_war_effect }
-		multiply_variable = { ebf_economy_happines = ebf_economy_happines_income_tax_effect }
-		multiply_variable = { ebf_economy_happines = ebf_economy_happines_consumption_tax_effect }
-		multiply_variable = { ebf_economy_happines = ebf_economy_happines_inflation_rate_effect }
-		multiply_variable = { ebf_economy_happines = ebf_economy_happines_inflation_effect }
-		multiply_variable = { ebf_economy_happines = ebf_economy_happines_expenses_effect }
+		add_to_variable = { ebf_economy_happines = ebf_economy_happines_income_tax_effect }
+		add_to_variable = { ebf_economy_happines = ebf_economy_happines_consumption_tax_effect }
+		add_to_variable = { ebf_economy_happines = ebf_economy_happines_inflation_rate_effect }
+		add_to_variable = { ebf_economy_happines = ebf_economy_happines_inflation_effect }
+		add_to_variable = { ebf_economy_happines = ebf_economy_happines_expenses_effect }
 		# Calls the function to calculate the total happines effects
 		# country_event = { id = ebf_economy_happines_events.13 }
 	}

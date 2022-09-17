@@ -11,8 +11,8 @@ country_event = {
 	hidden = yes
 
     immediate = {
-		set_variable = { ebf_economy_non_soilders_healtcare_expenses = ebf_economy_healtcare_rate }
-		multiply_variable = { ebf_economy_non_soilders_healtcare_expenses = ebf_economy_population }
+		set_variable = { ebf_economy_non_soldiers_healtcare_expenses = ebf_economy_healtcare_rate }
+		multiply_variable = { ebf_economy_non_soldiers_healtcare_expenses = ebf_economy_population }
 		
 		set_variable = { ebf_economy_soldiers_healtcare_expenses = ebf_economy_soldiers_healtcare_rate }
 		multiply_variable = { ebf_economy_soldiers_healtcare_expenses = manpower_k }
@@ -20,7 +20,7 @@ country_event = {
 		round_variable = ebf_economy_soldiers_healtcare_expenses
 	
 		set_variable = {
-			ebf_economy_healtcare_expenses = ebf_economy_non_soilders_healtcare_expenses
+			ebf_economy_healtcare_expenses = ebf_economy_non_soldiers_healtcare_expenses
 		}
 		add_to_variable = {
 			ebf_economy_healtcare_expenses = ebf_economy_soldiers_healtcare_expenses
@@ -165,7 +165,7 @@ country_event = {
 	}
 }
 
-# Resources/Trading Expenses
+# Total Expenses
 country_event = {
 	id = ebf_economy_expenses_event.7
 	title = ebf_economy_expenses_event.7.t

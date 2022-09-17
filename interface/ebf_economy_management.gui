@@ -1,0 +1,195 @@
+@prod_sub_pos_x = 199
+@prod_add_pos_x = 273
+@prod_nof_pos_x = 223
+
+guiTypes = {
+	containerWindowType = {
+		name = "countryeconomyview"
+		position = { x=-606 y=78}	
+		show_position = { x=-6 y =78 }
+		size = { width=550 height=100%% }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300	
+		hide_sound = menu_close_window
+		show_sound = menu_open_window
+		
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_1b_border"
+		}
+
+		containerWindowType = {
+			name = "header"
+			position = { x = 0 y = 0 }
+			size = { width = 100% height = 40 }
+
+			iconType = {
+				name = "economy_header"
+				position = { x = 12 y = 0 }
+				quadTextureSprite = "GFX_trade_header"
+			}
+
+			containerWindowType = {
+				name = "stats"
+				position = { x = 0 y = 0 }
+				size = { width = 100% height = 40 }
+
+				iconType = {
+					name = "money_amount_icon"
+					position = { x=22 y=7 }
+					spriteType = "GFX_balance_icon"
+				}
+
+				instantTextboxType = {
+					name = "money_amount_value"
+					position = { x = 52 y = 7 }
+					textureFile = ""
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y = 0}
+					text = "ECONOMY_MONEY_AMOUNT"
+					maxWidth = 50
+					maxHeight = 20
+					format = left
+				}
+				
+				
+
+				iconType = {
+					name = "income_amount_icon"
+					position = { x=108 y=6 }
+					spriteType = "GFX_div_deploy_priority_icon_strip"
+					frame = 3
+				}
+
+				instantTextboxType = {
+					name = "income_amount_value"
+					position = { x = 137 y = 7 }
+					textureFile = ""
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y = 0}
+					text = "ECONOMY_INCOME_AMOUNT"
+					maxWidth = 50
+					maxHeight = 20
+					format = left
+				}
+				
+				
+
+				iconType = {
+					name = "expenses_amount_icon"
+					position = { x=199 y=-23 }
+					spriteType = "GFX_div_deploy_priority_icon_strip"
+					frame = 1
+				}
+
+				instantTextboxType = {
+					name = "expenses_amount_value"
+					position = { x = 227 y = 7 }
+					textureFile = ""
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y = 0}
+					text = "ECONOMY_EXPENSES_AMOUNT"
+					maxWidth = 50
+					maxHeight = 20
+					format = left
+				}
+				
+				
+
+				iconType = {
+					name = "loan_amount_icon"
+					position = { x=275 y=3 }
+					spriteType = "GFX_pol_power_icon"
+					# frame = 4
+				}
+
+				instantTextboxType = {
+					name = "loan_amount_value"
+					position = { x = 309 y = 7 }
+					textureFile = ""
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y = 0}
+					text = "ECONOMY_LOAN_AMOUNT"
+					maxWidth = 50
+					maxHeight = 20
+					format = left
+				}
+				
+				
+
+				iconType = {
+					name = "inflation_amount_icon"
+					position = { x=366 y=7 }
+					quadTextureSprite  = "GFX_production_efficiency_loss_icon" 
+					# spriteType = "GFX_efficiency_icon"
+				}
+
+				instantTextboxType = {
+					name = "inflation_amount_value"
+					position = { x = 396 y = 7 }
+					textureFile = ""
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y = 0}
+					text = "ECONOMY_INFLATION_AMOUNT"
+					maxWidth = 50
+					maxHeight = 20
+					format = left
+				}
+				
+				
+
+				iconType = {
+					name = "happines_amount_icon"
+					position = { x=442	 y=2 }
+					spriteType = "GFX_population_icon"
+				}
+
+				instantTextboxType = {
+					name = "happines_amount_value"
+					position = { x = 475 y = 7 }
+					textureFile = ""
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y = 0}
+					text = "ECONOMY_HAPPINESS_AMOUNT"
+					maxWidth = 50
+					maxHeight = 20
+					format = left
+				}
+			}
+
+			iconType ={
+				name ="production_header_bg"
+				spriteType = "GFX_header_bg"
+				position = { x= 5 y = 07 }
+				Orientation = "UPPER_LEFT"
+			}	
+	
+			instantTextboxType = {
+				name = "economy_title"
+				position = { x = 45 y = 8 }
+				textureFile = ""
+				font = "hoi_36header"
+				borderSize = {x = 0 y = 0}
+				text = "ECONOMY_ECONOMY"
+				maxWidth = 400
+				maxHeight = 20
+				fixedsize = yes
+			}		
+	
+			buttonType = {
+				name = "close_button"
+				position = { x = -42 y = 9 }
+				quadTextureSprite ="GFX_closebutton"
+				buttonFont = "Main_14_black"
+				shortcut = "ESCAPE"
+				Orientation = "UPPER_RIGHT"
+				clicksound = click_close
+				pdx_tooltip = "CLOSE"
+			}
+		}
+
+
+		
+	}
+}

@@ -93,15 +93,19 @@ on_actions = {
 					id = ebf_economy_tax_event.4
 				}
 				
-				### Loans
-				set_variable = { ebf_economy_loans_amount = 0 }
+				### loan
+				set_variable = { ebf_economy_loan_amount = 0 }
 				set_variable = { ebf_economy_loan_ratio = 0 }
 				set_variable = { ebf_economy_intrest_rate = 0 }
+				set_variable = { ebf_economy_loan_cap_factor = 10 }
+				set_variable = { ebf_economy_loan_max_intrest_rate = 0.03 }
+
 				
 				### State Bank
 				set_variable = { ebf_economy_money_printing_rate = 0.02 }				#The input the player makes to change how much money is created
-				set_variable = { ebf_economy_money_decay_rate = 0.02 }
+				set_variable = { ebf_economy_money_decay_rate = 0.002 }
 				set_variable = { ebf_economy_loan_one_time_repay_amount = 0 }
+				set_variable = { ebf_economy_loan_monthly_repay_amount = 0 }
 
 				set_variable = { ebf_economy_national_economy_civilian_factory_money = 10000000000 }
 				set_variable = { ebf_economy_national_economy_pop_money = 10000 }

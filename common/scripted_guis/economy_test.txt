@@ -787,12 +787,14 @@ scripted_gui = {
 						}
 					}
 					subtract_from_variable = { ebf_economy_age_of_majority = 1 }
-					country_event = { id = ebf_economy_event.1 }
+					country_event = ebf_economy_population_event.2
 				}
             }
-			full_age_add_1x = {
+			full_age_add_1x_click = {
 				add_to_variable = { ebf_economy_age_of_majority = 1 }
-				country_event = { id = ebf_economy_event.1 }
+				
+
+				country_event = ebf_economy_population_event.2 
             }
 
 			full_age_sub_1x_control_click = {
@@ -803,18 +805,18 @@ scripted_gui = {
 						}
 					}
 					subtract_from_variable = { ebf_economy_age_of_majority = 5 }
-					country_event = { id = ebf_economy_event.1 }
+					country_event = ebf_economy_population_event.2
 				}
 				else = {
 					set_variable = {
 						ebf_economy_age_of_majority = 0
 					}
-					country_event = { id = ebf_economy_event.1 }
+					country_event = ebf_economy_population_event.2
 				}
             }
 			full_age_add_1x_control_click = {
 				add_to_variable = { ebf_economy_age_of_majority = 5 }
-				country_event = { id = ebf_economy_event.1 }
+				country_event = ebf_economy_population_event.2
             }
 
 			full_age_sub_1x_shift_click = {
@@ -825,20 +827,107 @@ scripted_gui = {
 						}
 					}
 					subtract_from_variable = { ebf_economy_age_of_majority = 10 }
-					country_event = { id = ebf_economy_event.1 }
+					country_event = ebf_economy_population_event.2
 				}
 				else = {
 					set_variable = {
 						ebf_economy_age_of_majority = 0
 					}
-					country_event = { id = ebf_economy_event.1 }
+					country_event = ebf_economy_population_event.2
 				}
             }
 			full_age_add_1x_shift_click = {
 				add_to_variable = { ebf_economy_age_of_majority = 10 }
-				country_event = { id = ebf_economy_event.1 }
+				country_event = ebf_economy_population_event.2
             }
-        }
+
+			### Retirement Age
+			retirement_age_sub_1x_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_retirement_age < 1 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_retirement_age = 1 }
+					country_event = ebf_economy_population_event.3
+				}
+            }
+			retirement_age_add_1x_click = {
+				add_to_variable = { ebf_economy_retirement_age = 1 }
+				country_event = ebf_economy_population_event.3
+            }
+
+			retirement_age_sub_1x_control_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_retirement_age < 5 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_retirement_age = 5 }
+					country_event = ebf_economy_population_event.3
+				}
+				else = {
+					set_variable = {
+						ebf_economy_retirement_age = 0
+					}
+					country_event = ebf_economy_population_event.3
+				}
+            }
+			retirement_age_add_1x_control_click = {
+				add_to_variable = { ebf_economy_retirement_age = 5 }
+				country_event = ebf_economy_population_event.3
+            }
+
+			retirement_age_sub_1x_shift_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_retirement_age < 10 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_retirement_age = 10 }
+					country_event = ebf_economy_population_event.3
+				}
+				else = {
+					set_variable = {
+						ebf_economy_retirement_age = 0
+					}
+					country_event = ebf_economy_population_event.3
+				}
+            }
+			retirement_age_add_1x_shift_click = {
+				add_to_variable = { ebf_economy_retirement_age = 10 }
+				country_event = ebf_economy_population_event.3
+            }
+
+
+			############
+			### Loans
+			########
+
+			# header_click = {
+			# 	if = {
+			# 		limit = {
+			# 			check_variable = { ebf_economy_show_loans = 0 }
+			# 		}
+			# 		set_variable = { ebf_economy_show_loans = 1 }
+			# 	}
+			# 	else = {
+			# 		set_variable = { ebf_economy_show_loans = 0 }
+			# 	}
+            # }
+		}
+
+		# triggers = {
+        #     # <element>_click_enabled = {
+        #     #     <triggers>
+        #     # }
+        #     # loans_visible = {
+        #     #     check_variable = { ebf_economy_show_loans = 0 }
+        #     # }
+        # }
 	}
 }
 
