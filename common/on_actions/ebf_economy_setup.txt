@@ -2,6 +2,17 @@ on_actions = {
 	on_startup = {
 		effect = {
 			every_country = {
+				set_variable = {
+					ebf_economy_currency = 0
+				}
+				set_variable = {
+					ebf_economy_factor = 1
+				}
+
+				set_variable = {
+					ebf_economy_cg1 = modifier@consumer_goods_factor
+				}
+
 
 				add_ideas = ebf_economy_national_unrest1
 				set_global_flag = ebf_economy_is_active
@@ -96,9 +107,9 @@ on_actions = {
 				### loan
 				set_variable = { ebf_economy_loan_amount = 0 }
 				set_variable = { ebf_economy_loan_ratio = 0 }
-				set_variable = { ebf_economy_intrest_rate = 0 }
+				set_variable = { ebf_economy_loan_interest_rate = 0 }
 				set_variable = { ebf_economy_loan_cap_factor = 10 }
-				set_variable = { ebf_economy_loan_max_intrest_rate = 0.03 }
+				set_variable = { ebf_economy_loan_max_interest_rate = 0.03 }
 
 				
 				### State Bank
@@ -130,8 +141,8 @@ on_actions = {
 				set_variable = { ebf_economy_pension_rate = 1000 }
 				set_variable = { ebf_economy_saleries_rate = 2000 }
 				set_variable = { ebf_economy_social_welfare_rate = 1000 }
-				set_variable = { ebf_economy_resources_exporting_price = 9000}
-				set_variable = { ebf_economy_resources_importing_price = 11000}
+				set_variable = { ebf_economy_resources_exporting_price = 900}
+				set_variable = { ebf_economy_resources_importing_price = 1100}
 				
 				# Rate at which the happines effect is 1 aka no effect
 				set_variable = { ebf_economy_recommended_healtcare_rate = 150 }

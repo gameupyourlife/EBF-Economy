@@ -1,126 +1,212 @@
 ﻿l_english:
- TEST_KEY_EBF: "[GetSliderValueEBF]"
+#  TEST_KEY_EBF: "[GetSliderValueEBF]"
 
- Test123:0 "check_variable = { testasd = 1 }"
- Test1234:0 "Not = { check_variable = { testasd = 1 } }"
- asghgdhhgdhsgf:0 "saasfgdsgfsg"
+#  Test123:0 "check_variable = { testasd = 1 }"
+#  Test1234:0 "Not = { check_variable = { testasd = 1 } }"
+#  asghgdhhgdhsgf:0 "saasfgdsgfsg"
 
  ###
  # Header in Economy Tab
  ###
 
- ECONOMY_MONEY_AMOUNT:0 "[?ebf_economy_money]"
- ECONOMY_INCOME_AMOUNT:0 "[?ebf_economy_monthly_income]"
- ECONOMY_EXPENSES_AMOUNT:0 "[?ebf_economy_monthly_spendings]"
- ECONOMY_LOAN_AMOUNT:0 "[?ebf_economy_loan_amount]"
- ECONOMY_INFLATION_AMOUNT:0 "[?ebf_economy_inflation]"
- ECONOMY_HAPPINESS_AMOUNT:0 "[?ebf_economy_happines]"
+#  ECONOMY_MONEY_AMOUNT:0 "[?ebf_economy_money]"
+#  ECONOMY_INCOME_AMOUNT:0 "[?ebf_economy_monthly_income]"
+#  ECONOMY_EXPENSES_AMOUNT:0 "[?ebf_economy_monthly_spendings]"
+#  ECONOMY_LOAN_AMOUNT:0 "[?ebf_economy_loan_amount]"
+#  ECONOMY_INFLATION_AMOUNT:0 "[?ebf_economy_inflation]"
+#  ECONOMY_HAPPINESS_AMOUNT:0 "[?ebf_economy_happines]"
 
  ###
  # Buttons
  ###
- INCOME_TAX_PERCENTAGE_ADD_1X_TEXT:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
- INCOME_TAX_PERCENTAGE_SUB_1X_TEXT:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
+#  INCOME_TAX_PERCENTAGE_ADD_1X_TEXT:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
+#  INCOME_TAX_PERCENTAGE_SUB_1X_TEXT:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
 
- CONSUMPTION_TAX_PERCENTAGE_ADD_1X_TEXT:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
- CONSUMPTION_TAX_PERCENTAGE_SUB_1X_TEXT:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
+#  CONSUMPTION_TAX_PERCENTAGE_ADD_1X_TEXT:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
+#  CONSUMPTION_TAX_PERCENTAGE_SUB_1X_TEXT:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
 
- WEALTH_TAX_PERCENTAGE_ADD_1X_TEXT:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
- WEALTH_TAX_PERCENTAGE_SUB_1X_TEXT:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
+#  WEALTH_TAX_PERCENTAGE_ADD_1X_TEXT:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
+#  WEALTH_TAX_PERCENTAGE_SUB_1X_TEXT:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
 
- TRADE_TAX_PERCENTAGE_ADD_1X_TEXT:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
- TRADE_TAX_PERCENTAGE_SUB_1X_TEXT:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
+#  TRADE_TAX_PERCENTAGE_ADD_1X_TEXT:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
+#  TRADE_TAX_PERCENTAGE_SUB_1X_TEXT:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
 
 
- FULL_AGE_PERCENTAGE_SUB_1X_TEXT:0 ""
- FULL_AGE_PERCENTAGE_ADD_1X_TEXT:0 ""
+#  FULL_AGE_PERCENTAGE_SUB_1X_TEXT:0 ""
+#  FULL_AGE_PERCENTAGE_ADD_1X_TEXT:0 ""
 
- RETIREMENT_AGE_PERCENTAGE_SUB_1X_TEXT:0 ""
- RETIREMENT_AGE_PERCENTAGE_ADD_1X_TEXT:0 ""
+#  RETIREMENT_AGE_PERCENTAGE_SUB_1X_TEXT:0 ""
+#  RETIREMENT_AGE_PERCENTAGE_ADD_1X_TEXT:0 ""
 
  ###
  #
- ###
+#  ###
+#  ECONOMY_ECONOMY:0 "Economy"
+#  ECONOMY_TAX_MANAGEMENT:0 "Tax Management"
+
+
+#  ECONOMY_WEALTH_TAX:0 "Wealth Tax"
+#  ECONOMY_WEALTH_TAX_PERCENTAGE: "[?ebf_economy_wealth_tax|%0]"
+#  ECONOMY_WEALTH_TAX_AMOUNT: "[?ebf_economy_wealth_tax_amount] M $"
+
+#  ECONOMY_TRADE_TAX:0 "Trade Tax"
+#  ECONOMY_TRADE_TAX_PERCENTAGE: "[?ebf_economy_trade_tax|%0y]"
+#  ECONOMY_TRADE_TAX_AMOUNT: "[?ebf_economy_trade_tax_amount] M $"
+
+#  ###
+#  #
+#  ###
+#  ECONOMY_EXPENSES_MANAGEMENT:0 "Expenses Management"
+
+#  #
+#  ECONOMY_HEALTHCARE_EXPENSES:0 "Healthcare Expenses"
+#  ECONOMY_HEALTHCARE_EXPENSES_AMOUNT: "[?ebf_economy_healtcare_expenses] M $"
+
+#  ECONOMY_HEALTHCARE_RATE_NAME:0 "Healthcare Rate"
+#  ECONOMY_HEALTHCARE_RATE:0 "[?ebf_economy_healtcare_rate]"
+#  HEALTHCARE_RATE_AMOUNT:0 "[?ebf_economy_non_soldiers_healtcare_expenses] M $"
+
+#  ECONOMY_SOLDIER_HEALTHCARE_RATE_NAME:0 "Soldiers Healthcare Rate"
+#  ECONOMY_SOLDIER_HEALTHCARE_RATE:0 "[?ebf_economy_soldiers_healtcare_rate]"
+#  SOLDIER_HEALTHCARE_RATE_AMOUNT:0 "[?ebf_economy_soldiers_healtcare_expenses] M $"
+
+#  #
+#  ECONOMY_PENSION_EXPENSES:0 "Pension Expenses"
+#  ECONOMY_PENSION_EXPENSES_AMOUNT: "[?ebf_economy_pension_expenses] M $"
+
+#  ECONOMY_PENSION_RATE_NAME:0 "Pension Rate"
+#  ECONOMY_PENSION_RATE:0 "[?ebf_economy_pension_rate]"
+#  PENSION_RATE_AMOUNT:0 "[?ebf_economy_pension_expenses] M $"
+
+#  #
+#  ECONOMY_SALERIES_EXPENSES:0 "Saleries Expenses"
+#  ECONOMY_SALERIES_EXPENSES_AMOUNT: "[?ebf_economy_saleries_expenses] M $"
+
+#  ECONOMY_SALERIES_RATE_NAME:0 "Saleries Rate"
+#  ECONOMY_SALERIES_RATE:0 "[?ebf_economy_saleries_rate]"
+#  SALERIES_RATE_AMOUNT:0 "[?ebf_economy_saleries_expenses] M $"
+ 
+#  #
+#  ECONOMY_SOCIAL_WELFARE_EXPENSES:0 "Social Welfare Expenses"
+#  ECONOMY_SOCIAL_WELFARE_EXPENSES_AMOUNT: "[?ebf_economy_social_welfare_expenses] M $"
+
+#  ECONOMY_SOCIAL_WELFARE_RATE_NAME:0 "Social Welfare Rate"
+#  ECONOMY_SOCIAL_WELFARE_RATE:0 "[?ebf_economy_social_welfare_rate]"
+#  SOCIAL_WELFARE_RATE_AMOUNT:0 "[?ebf_economy_social_welfare_expenses] M $"
+
+#  #
+#  SOCIAL_NORMS_MANAGEMENT:0 "Social Norms Management"
+#  #
+#  ECONOMY_FULL_AGE_ADJUSTER_NAME:0 "Age of Majority"
+#  ECONOMY_FULL_AGE_AMOUNT:0 "[?ebf_economy_adult_population]"
+#  ECONOMY_FULL_AGE_PERCENTAGE:0 "[?ebf_economy_age_of_majority]"
+
+#  #
+#  ECONOMY_RETIREMENT_AGE:0 "Retirement Age"
+#  ECONOMY_RETIREMENT_AGE_AMOUNT:0 "[?ebf_economy_pensioner_population]"
+#  ECONOMY_RETIREMENT_AGE_PERCENTAGE:0 "[?ebf_economy_retirement_age]"
+
+#  asfffffffffffff:0 "[?ebf_economy_loan_one_time_repay_combined|+*]"
+
+#  #######################
+#  ### Loan Management ###
+#  #######################
+
+#  LOAN_AMOUNT_AND_CAP:0 "[?ebf_economy_loan_amount] / [?ebf_economy_loan_cap]"
+#  LOAN_MANAGEMENT_TITLE:0 "Loan Management"
+
+ ###############################################
+ #  [GETEBF_ECONOMY_CURRENCY] "$", "€"
+ #  [GETEBF_ECONOMY_FACTOR] - "", "K", "M", "B"
+ # 2.0
+ ###############################################
+ ADD_BUTTON_TOOLTIP:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
+ SUB_BUTTON_TOOLTIP:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
+
+ # Custom
+
  ECONOMY_ECONOMY:0 "Economy"
- ECONOMY_TAX_MANAGEMENT:0 "Tax Management"
+ ECONOMY_BALANCE_TITLE:0 "Balance"
+
+ ECONOMY_INCOME_TITLE:0 "Income"
+ ECONOMY_INCOME_AMOUNT:0 "§[?ebf_economy_monthly_income|=0]§! [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
  ECONOMY_INCOME_TAX:0 "Income Tax"
- ECONOMY_INCOME_TAX_PERCENTAGE: "[?ebf_economy_income_tax|%0]"
- ECONOMY_INCOME_TAX_AMOUNT: "[?ebf_economy_income_tax_amount] M $"
+ ECONOMY_INCOME_TAX_HAPPINESS:0 "[?ebf_economy_happines_income_tax_effect|%0]"
+ ECONOMY_INCOME_TAX_PERCENTAGE:0 "[?ebf_economy_income_tax|%0]"
+ ECONOMY_INCOME_TAX_AMOUNT:0 "[?ebf_economy_income_tax_amount] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
- ECONOMY_CONSUMPTION_TAX:0 "Consumtion Tax"
- ECONOMY_CONSUMPTION_TAX_PERCENTAGE: "[?ebf_economy_consumption_tax|%0]"
- ECONOMY_CONSUMPTION_TAX_AMOUNT: "[?ebf_economy_consumption_tax_amount] M $" 
+ ECONOMY_CONSUMPTION_TAX:0 "Consumption Tax"
+ ECONOMY_CONSUMPTION_TAX_HAPPINESS:0 "[?ebf_economy_happines_consumption_tax_effect|%0]"
+ ECONOMY_CONSUMPTION_TAX_PERCENTAGE:0 "[?ebf_economy_consumption_tax|%0]"
+ ECONOMY_CONSUMPTION_TAX_AMOUNT:0 "[?ebf_economy_consumption_tax_amount] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
  ECONOMY_WEALTH_TAX:0 "Wealth Tax"
- ECONOMY_WEALTH_TAX_PERCENTAGE: "[?ebf_economy_wealth_tax|%0]"
- ECONOMY_WEALTH_TAX_AMOUNT: "[?ebf_economy_wealth_tax_amount] M $"
+ ECONOMY_WEALTH_TAX_HAPPINESS:0 "[?ebf_economy_rich_ratio|%1]"
+ ECONOMY_WEALTH_TAX_PERCENTAGE:0 "[?ebf_economy_wealth_tax|%0]"
+ ECONOMY_WEALTH_TAX_AMOUNT:0 "[?ebf_economy_wealth_tax_amount] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
  ECONOMY_TRADE_TAX:0 "Trade Tax"
- ECONOMY_TRADE_TAX_PERCENTAGE: "[?ebf_economy_trade_tax|%0y]"
- ECONOMY_TRADE_TAX_AMOUNT: "[?ebf_economy_trade_tax_amount] M $"
+ ECONOMY_TRADE_TAX_HAPPINESS:0 "null"
+ ECONOMY_TRADE_TAX_PERCENTAGE:0 "[?ebf_economy_trade_tax|%0]"
+ ECONOMY_TRADE_TAX_AMOUNT:0 "[?ebf_economy_trade_tax_amount] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
- ###
- #
- ###
- ECONOMY_EXPENSES_MANAGEMENT:0 "Expenses Management"
+ ECONOMY_MONEY_PRINTING:0 "Money Printing"
+ ECONOMY_MONEY_PRINTING_HAPPINESS:0 "[?ebf_economy_printing_inflation|%0]"
+ ECONOMY_MONEY_PRINTING_PERCENTAGE:0 "[?ebf_economy_money_printing_rate|%0]"
+ ECONOMY_MONEY_PRINTING_AMOUNT:0 "[?ebf_economy_money_printing_amount] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
- #
- ECONOMY_HEALTHCARE_EXPENSES:0 "Healthcare Expenses"
- ECONOMY_HEALTHCARE_EXPENSES_AMOUNT: "[?ebf_economy_healtcare_expenses] M $"
+ ECONOMY_RESOURCES_EXPORTING:0 "Resources Trading"
+ ECONOMY_RESOURCES_EXPORTING_AMOUNT:0 "[?ebf_economy_resources_trading_income] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ ECONOMY_RESOURCES_EXPORTING_CALCULATION:0 "[?ebf_economy_resources_exporting] £resources_to_market_icon  x [?ebf_economy_resources_exporting_price] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
- ECONOMY_HEALTHCARE_RATE_NAME:0 "Healthcare Rate"
+ ECONOMY_EXPENSES_TITLE:0 "Expenses"
+ ECONOMY_EXPENSES_AMOUNT:0 "§[?ebf_economy_monthly_spendings|=0]§! [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+
+ ECONOMY_RESOURCES_INCOME_OIL:0 "[?resource_exported@oil]"
+ ECONOMY_RESOURCES_INCOME_ALU:0 "[?resource_exported@aluminium]"
+ ECONOMY_RESOURCES_INCOME_RUBBER:0 "[?resource_exported@rubber]"
+ ECONOMY_RESOURCES_INCOME_TUNGSTEN:0 "[?resource_exported@tungsten]"
+ ECONOMY_RESOURCES_INCOME_STEEL:0 "[?resource_exported@steel]"
+ ECONOMY_RESOURCES_INCOME_CHROM:0 "[?resource_exported@chromium]"
+
+ ECONOMY_HEALTHCARE:0 "Civilian Healthcare"
+ ECONOMY_HEALTHCARE_HAPPINESS:0 "[?ebf_economy_happines_healthcare_effect|%0]"
  ECONOMY_HEALTHCARE_RATE:0 "[?ebf_economy_healtcare_rate]"
- HEALTHCARE_RATE_AMOUNT:0 "[?ebf_economy_non_soldiers_healtcare_expenses] M $"
+ ECONOMY_HEALTHCARE_AMOUNT:0 "[?ebf_economy_non_soldiers_healtcare_expenses] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
- ECONOMY_SOLDIER_HEALTHCARE_RATE_NAME:0 "Soldiers Healthcare Rate"
- ECONOMY_SOLDIER_HEALTHCARE_RATE:0 "[?ebf_economy_soldiers_healtcare_rate]"
- SOLDIER_HEALTHCARE_RATE_AMOUNT:0 "[?ebf_economy_soldiers_healtcare_expenses] M $"
+ ECONOMY_SOLDIERS_HEALTHCARE:0 "Military Healthcare"
+ ECONOMY_SOLDIERS_HEALTHCARE_HAPPINESS:0 "[?ebf_economy_happines_soldiers_healthcare_effect|%0]"
+ ECONOMY_SOLDIERS_HEALTHCARE_RATE:0 "[?ebf_economy_soldiers_healtcare_rate]"
+ ECONOMY_SOLDIERS_HEALTHCARE_AMOUNT:0 "[?ebf_economy_soldiers_healtcare_expenses] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
- #
- ECONOMY_PENSION_EXPENSES:0 "Pension Expenses"
- ECONOMY_PENSION_EXPENSES_AMOUNT: "[?ebf_economy_pension_expenses] M $"
-
- ECONOMY_PENSION_RATE_NAME:0 "Pension Rate"
+ ECONOMY_PENSION:0 "Pension"
+ ECONOMY_PENSION_HAPPINESS:0 "[?ebf_economy_happines_pension_effect|%0]"
  ECONOMY_PENSION_RATE:0 "[?ebf_economy_pension_rate]"
- PENSION_RATE_AMOUNT:0 "[?ebf_economy_pension_expenses] M $"
+ ECONOMY_PENSION_AMOUNT:0 "[?ebf_economy_pension_expenses] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
- #
- ECONOMY_SALERIES_EXPENSES:0 "Saleries Expenses"
- ECONOMY_SALERIES_EXPENSES_AMOUNT: "[?ebf_economy_saleries_expenses] M $"
-
- ECONOMY_SALERIES_RATE_NAME:0 "Saleries Rate"
+ ECONOMY_SALERIES:0 "Saleries"
+ ECONOMY_SALERIES_HAPPINESS:0 "[?ebf_economy_happines_saleries_effect|%0]"
  ECONOMY_SALERIES_RATE:0 "[?ebf_economy_saleries_rate]"
- SALERIES_RATE_AMOUNT:0 "[?ebf_economy_saleries_expenses] M $"
- 
- #
- ECONOMY_SOCIAL_WELFARE_EXPENSES:0 "Social Welfare Expenses"
- ECONOMY_SOCIAL_WELFARE_EXPENSES_AMOUNT: "[?ebf_economy_social_welfare_expenses] M $"
+ ECONOMY_SALERIES_AMOUNT:0 "[?ebf_economy_saleries_expenses] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
- ECONOMY_SOCIAL_WELFARE_RATE_NAME:0 "Social Welfare Rate"
+ ECONOMY_SOCIAL_WELFARE:0 "Social Welfare"
+ ECONOMY_SOCIAL_WELFARE_HAPPINESS:0 "[?ebf_economy_happines_social_welfare_effect|%0]"
  ECONOMY_SOCIAL_WELFARE_RATE:0 "[?ebf_economy_social_welfare_rate]"
- SOCIAL_WELFARE_RATE_AMOUNT:0 "[?ebf_economy_social_welfare_expenses] M $"
+ ECONOMY_SOCIAL_WELFARE_AMOUNT:0 "[?ebf_economy_social_welfare_expenses] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
- #
- SOCIAL_NORMS_MANAGEMENT:0 "Social Norms Management"
- #
- ECONOMY_FULL_AGE_ADJUSTER_NAME:0 "Age of Majority"
- ECONOMY_FULL_AGE_AMOUNT:0 "[?ebf_economy_adult_population]"
- ECONOMY_FULL_AGE_PERCENTAGE:0 "[?ebf_economy_age_of_majority]"
+ ECONOMY_RESOURCES_IMPORTING:0 "Resources Trading"
+ ECONOMY_RESOURCES_IMPORTING_AMOUNT:0 "[?ebf_economy_resources_trading_expenses] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ ECONOMY_RESOURCES_IMPORTING_CALCULATION:0 "[?ebf_economy_resources_importing] £resources_to_market_icon  x [?ebf_economy_resources_importing_price] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
- #
- ECONOMY_RETIREMENT_AGE:0 "Retirement Age"
- ECONOMY_RETIREMENT_AGE_AMOUNT:0 "[?ebf_economy_pensioner_population]"
- ECONOMY_RETIREMENT_AGE_PERCENTAGE:0 "[?ebf_economy_retirement_age]"
+ ECONOMY_LOAN_INTREST:0 "Lona Intrest"
+ ECONOMY_LOAN_INTREST_AMOUNT:0 "[?ebf_economy_monthly_loan_monthly_interest_amount] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ ECONOMY_LOAN_INTREST_RATE:0 "[?ebf_economy_loan_interest_rate|%]"
 
- asfffffffffffff:0 "[?ebf_economy_loan_one_time_repay_combined|+*]"
+ ECONOMY_LOAN_REPAYMENT:0 "Loan Repayment"
+ ECONOMY_LOAN_REPAYMENT_RATIO:0 "[?ebf_economy_repayment_loan_ratio|%]"
+ ECONOMY_LOAN_REPAYMENT_RATE:0 "[?ebf_economy_loan_monthly_repay_amount]"
+ ECONOMY_LOAN_REPAYMENT_AMOUNT:0 "[?ebf_economy_loan_monthly_repay_combined] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
- #######################
- ### Loan Management ###
- #######################
 
- LOAN_AMOUNT_AND_CAP:0 "[?ebf_economy_loan_amount] / [?ebf_economy_loan_cap]"
- LOAN_MANAGEMENT_TITLE:0 "Loan Management"
-
- 
- 
+ ECONOMY_LOANS_TITLEyy:0 "Loans"

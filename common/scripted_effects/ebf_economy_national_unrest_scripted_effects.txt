@@ -1,0 +1,87 @@
+#	Example:
+#
+#	example_effect = {
+#		add_political_power = 66
+#		add_popularity = {
+#			ideology = fascism
+#			popularity = 0.33
+#		}
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		example_effect = yes
+#	}
+#
+
+#####################################
+### emergency_factory_conversion ####
+#####################################
+
+national_unrest = {
+	add_to_variable = { ebf_economy_national_unrest = ebf_economy_happines_national_unrest_rate }
+	set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 3 }
+	if = {
+		limit = {
+			check_variable = { ebf_economy_national_unrest > 0.99 }
+		}
+		# Civil War / Uprising
+		set_country_flag = ebf_economy_national_unrest_uprising_imminent
+	}
+	else_if = {
+		limit = {
+			check_variable = { ebf_economy_national_unrest > 0.8 }
+		}
+		# -0.1 weekly stability | Weapons are goining missing (Event like Builidings)
+		set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 7 }
+		add_ideas = ebf_economy_national_unrest_effect4
+		clr_ideas = ebf_economy_national_unrest_effect3
+		set_country_flag = ebf_economy_national_unrest_steel_weapons_events
+	}
+	else_if = {
+		limit = {
+			check_variable = { ebf_economy_national_unrest > 0.7 }
+		}
+		# Less Resources
+		set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 6 }
+		add_ideas = ebf_economy_national_unrest_effect3
+		clr_ideas = ebf_economy_national_unrest_effect2
+		clr_ideas = ebf_economy_national_unrest_effect4
+		clr_country_flag = ebf_economy_national_unrest_steel_weapons_events
+
+	}
+	else_if = {
+		limit = {
+			check_variable = { ebf_economy_national_unrest > 0.6 }
+		}
+		# Larger Destruction | -4% Rec
+		set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 5 }
+		add_ideas = ebf_economy_national_unrest_effect2
+		clr_ideas = ebf_economy_national_unrest_effect
+		clr_ideas = ebf_economy_national_unrest_effect3
+	}
+	else_if = {
+		limit = {
+			check_variable = { ebf_economy_national_unrest > 0.4 }
+		}
+		# Buildings are beeing damaged
+		set_country_flag = ebf_economy_national_unrest_buildings_damage_events			
+		clr_ideas = ebf_economy_national_unrest_effect2
+		add_ideas = ebf_economy_national_unrest_effect
+	}
+	else_if = {
+		limit = {
+			check_variable = { ebf_economy_national_unrest > 0.2 }
+		}
+		add_ideas = ebf_economy_national_unrest_effect
+		clr_country_flag = ebf_economy_national_unrest_buildings_damage_events
+	}
+	else = {
+		remove_ideas = ebf_economy_national_unrest_effect
+		clr_country_flag = ebf_economy_national_unrest_buildings_damage_events
+	}
+	set_variable = { ebf_economy_national_unrest_building_damage = ebf_economy_national_unrest }
+	multiply_variable = { ebf_economy_national_unrest_building_damage = ebf_economy_national_unrest_building_damage_multiplier }
+}

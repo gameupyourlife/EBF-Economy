@@ -1,0 +1,51 @@
+#	Example:
+#
+#	example_effect = {
+#		add_political_power = 66
+#		add_popularity = {
+#			ideology = fascism
+#			popularity = 0.33
+#		}
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		example_effect = yes
+#	}
+#
+inflation_rate = {
+	economic_inflation = yes
+	printing_inflation = yes
+	set_variable = { ebf_economy_inflation_rate = ebf_economy_printing_inflation }
+	add_to_variable = { ebf_economy_inflation_rate = ebf_economy_economic_inflation }
+	add_to_variable = { ebf_economy_inflation_rate = ebf_economy_loan_inflation } # Not Used
+	add_to_variable = { ebf_economy_inflation_rate = ebf_economy_investment_inflation } # Not Used
+}
+
+economic_inflation = {
+	set_variable = { ebf_economy_economic_inflation = num_of_civilian_factories }
+	add_to_variable = { ebf_economy_economic_inflation = num_of_military_factories }
+	multiply_variable = { ebf_economy_economic_inflation = 2 }
+	divide_variable = { ebf_economy_economic_inflation = num_of_civilian_factories }
+	set_temp_variable = { ebf_economy_inflation_perc = 1 }
+	divide_temp_variable = { ebf_economy_inflation_perc = 100 }
+	subtract_from_variable = { ebf_economy_economic_inflation = ebf_economy_inflation_perc }
+}
+
+printing_inflation = {
+	# Calls relative printing rate
+	# country_event = { id = ebf_economy_state_bank_event.5 }s
+
+	set_variable = { ebf_economy_printing_inflation = ebf_economy_money_relative_printing_rate }
+	subtract_from_variable = { ebf_economy_printing_inflation = 1 }
+	set_temp_variable = { ebf_economy_printing_inflation_temp = ebf_economy_money_relative_printing_rate }
+	multiply_variable = { ebf_economy_printing_inflation = ebf_economy_printing_inflation_temp }
+	multiply_variable = { ebf_economy_printing_inflation = ebf_economy_printing_inflation_temp }
+	divide_variable = { ebf_economy_printing_inflation = 100 }
+}
+
+inflation = {
+	add_to_variable = { ebf_economy_inflation  = ebf_economy_inflation_rate }
+}

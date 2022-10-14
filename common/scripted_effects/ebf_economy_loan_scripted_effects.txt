@@ -1,0 +1,125 @@
+#	Example:
+#
+#	example_effect = {
+#		add_political_power = 66
+#		add_popularity = {
+#			ideology = fascism
+#			popularity = 0.33
+#		}
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		example_effect = yes
+#	}
+#
+
+#####################################
+### emergency_factory_conversion ####
+#####################################
+
+
+
+repayment_loan_ratio = {
+	set_variable = { ebf_economy_repayment_loan_ratio = ebf_economy_loan_monthly_repay_amount }
+	divide_variable = { ebf_economy_repayment_loan_ratio = ebf_economy_loan_amount }
+}
+
+loan_income_ratio = {
+	set_variable = { ebf_economy_loan_income_ratio = ebf_economy_loan_amount }
+	set_variable = { ebf_economy_yearly_income = ebf_economy_monthly_income }
+	multiply_variable = { ebf_economy_yearly_income = 12 }
+	divide_variable = { ebf_economy_loan_income_ratio = ebf_economy_yearly_income }
+}
+
+interest_rate = {
+	set_variable = { ebf_economy_loan_interest_rate = 0.002 }
+	multiply_variable = { ebf_economy_loan_interest_rate = ebf_economy_loan_income_ratio } 
+	add_to_variable = { ebf_economy_loan_interest_rate = 0.01 }
+}
+
+interest_amount = {
+	set_variable = { ebf_economy_monthly_loan_monthly_interest_amount = ebf_economy_loan_interest_rate }
+	multiply_variable = { ebf_economy_monthly_loan_monthly_interest_amount = ebf_economy_loan_amount }
+}
+
+loan_cap = {
+	set_variable = { ebf_economy_loan_cap = ebf_economy_monthly_income }
+	multiply_variable = { ebf_economy_loan_cap = 12 }
+	multiply_variable = { ebf_economy_loan_cap = ebf_economy_loan_cap_factor }
+}
+
+monthly_repay_penalty = {
+		
+	set_variable = { ebf_economy_loan_monthly_repay_penalty_temp = 1 }
+	add_to_variable = { ebf_economy_loan_monthly_repay_penalty_temp = ebf_economy_loan_max_interest_rate }
+	# ebf_economy_loan_monthly_repay_penalty ^ 12
+	set_variable = { ebf_economy_loan_monthly_repay_penalty = ebf_economy_loan_monthly_repay_penalty_temp }
+	multiply_variable = { ebf_economy_loan_monthly_repay_penalty = ebf_economy_loan_monthly_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_monthly_repay_penalty = ebf_economy_loan_monthly_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_monthly_repay_penalty = ebf_economy_loan_monthly_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_monthly_repay_penalty = ebf_economy_loan_monthly_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_monthly_repay_penalty = ebf_economy_loan_monthly_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_monthly_repay_penalty = ebf_economy_loan_monthly_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_monthly_repay_penalty = ebf_economy_loan_monthly_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_monthly_repay_penalty = ebf_economy_loan_monthly_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_monthly_repay_penalty = ebf_economy_loan_monthly_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_monthly_repay_penalty = ebf_economy_loan_monthly_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_monthly_repay_penalty = ebf_economy_loan_monthly_repay_penalty_temp } 
+
+	multiply_variable = { ebf_economy_loan_monthly_repay_penalty = ebf_economy_loan_monthly_repay_amount } 
+	subtract_from_variable = { ebf_economy_loan_monthly_repay_penalty = ebf_economy_loan_monthly_repay_amount }
+}
+
+monthly_repay_amount = {
+	monthly_repay_penalty = yes
+	set_variable = { ebf_economy_loan_monthly_repay_combined = ebf_economy_loan_monthly_repay_amount }
+	add_to_variable = { ebf_economy_loan_monthly_repay_combined = ebf_economy_loan_monthly_repay_penalty }
+}
+
+
+one_time_repay_penalty = {
+	set_variable = { ebf_economy_loan_one_time_repay_penalty_temp = 1 }
+	add_to_variable = { ebf_economy_loan_one_time_repay_penalty_temp = ebf_economy_loan_max_interest_rate }
+	# ebf_economy_loan_one_time_repay_penalty ^ 12
+	set_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_one_time_repay_penalty_temp }
+	multiply_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_one_time_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_one_time_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_one_time_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_one_time_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_one_time_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_one_time_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_one_time_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_one_time_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_one_time_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_one_time_repay_penalty_temp } 
+	multiply_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_one_time_repay_penalty_temp } 
+
+	multiply_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_one_time_repay_amount } 
+	subtract_from_variable = { ebf_economy_loan_one_time_repay_penalty = ebf_economy_loan_one_time_repay_amount }
+}
+
+one_time_repay_amount = {
+	one_time_repay_penalty = yes
+	set_variable = { ebf_economy_loan_one_time_repay_combined = ebf_economy_loan_one_time_repay_amount }
+	add_to_variable = { ebf_economy_loan_one_time_repay_combined = ebf_economy_loan_one_time_repay_penalty }
+}
+
+pay_one_time = {
+	# Check wether you have enough money to pay the one time repay
+	if = {
+		limit = {
+			OR = {
+				check_variable = { ebf_economy_money > ebf_economy_loan_one_time_repay_combined }
+				check_variable = { ebf_economy_money = ebf_economy_loan_one_time_repay_combined }
+			}
+		}
+		subtract_from_variable = { ebf_economy_loan_amount = ebf_economy_loan_one_time_repay_combined }
+		subtract_from_variable = { ebf_economy_money = ebf_economy_loan_one_time_repay_combined }
+	}
+	else = {
+		# Not possible
+	}
+}

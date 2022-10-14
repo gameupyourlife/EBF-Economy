@@ -1,134 +1,132 @@
-scripted_gui = {
+# scripted_gui = {
 
-	economic_test_ui = {
-		context_type = player_context
-		window_name = "countryeconomyview"
+# 	economic_test_ui = {
+# 		context_type = player_context
+# 		window_name = "countryeconomyview"
 
-		visible = {
-			check_variable = { ebf_economy_show = 1 }
+# 		visible = {
+# 			check_variable = { ebf_economy_show = 1 }
 			
-		}
+# 		}
 
-		effects = {
-            test_button_click = {
-				country_event = { id = ebf_economy_resources_event.1 }
-            }
+# 		effects = {
+#             test_button_click = {
+# 				country_event = { id = ebf_economy_resources_event.1 }
+#             }
 
-			reset_button_click = {
-                add_to_variable = { int_test = 1000 }
-            }
+# 			reset_button_click = {
+#                 add_to_variable = { int_test = 1000 }
+#             }
 
-			reset_button_shift_click = {
-                add_to_variable = { int_test = 100000 }
-            }
+# 			reset_button_shift_click = {
+#                 add_to_variable = { int_test = 100000 }
+#             }
 
-			reset_button_control_click = {
-                subtract_from_variable = { int_test = 10000 }
-            }
+# 			reset_button_control_click = {
+#                 subtract_from_variable = { int_test = 10000 }
+#             }
 
-			close_button_click = {
-                set_variable = { ebf_economy_show = 0 }
-            }
+# 			close_button_click = {
+#                 set_variable = { ebf_economy_show = 0 }
+#             }
 
-			### Income Tax Percentage Click
-			income_tax_percentage_sub_1x_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_income_tax < 0.01 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_income_tax = 0.01 }
-					country_event = { id = ebf_economy_tax_event.1 }
-				}
-            }
-			income_tax_percentage_add_1x_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_income_tax > 0.99 }
-						}
-					}
-					add_to_variable = { ebf_economy_income_tax = 0.01 }
-					country_event = { id = ebf_economy_tax_event.1 }
-				}
-            }
+# 			### Income Tax Percentage Click
+# 			income_tax_percentage_sub_1x_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_income_tax < 0.01 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_income_tax = 0.01 }
+# 					country_event = { id = ebf_economy_tax_event.1 }
+# 				}
+#             }
+# 			income_tax_percentage_add_1x_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_income_tax > 0.99 }
+# 						}
+# 					}
+# 					add_to_variable = { ebf_economy_income_tax = 0.01 }
+# 					country_event = { id = ebf_economy_tax_event.1 }
+# 				}
+#             }
 
-			income_tax_percentage_sub_1x_control_click = {
-				if = {
-					limit = {
-						check_variable = { ebf_economy_income_tax < 0.05 }
-					}
-					set_variable = { ebf_economy_income_tax = 0.00 }
-					country_event = { id = ebf_economy_tax_event.1 }
-				}
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_income_tax < 0.05 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_income_tax = 0.05 }
-					country_event = { id = ebf_economy_tax_event.1 }
-				}
-            }
-			income_tax_percentage_add_1x_control_click = {
-				if = {
-					limit = {
-						check_variable = { ebf_economy_income_tax > 0.95 }
-					}
-					set_variable = { ebf_economy_income_tax = 1.00 }
-					country_event = { id = ebf_economy_tax_event.1 }
-				}
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_income_tax > 0.95 }
-						}
-					}
-					add_to_variable = { ebf_economy_income_tax = 0.05 }
-					country_event = { id = ebf_economy_tax_event.1 }
-				}
-            }
+# 			income_tax_percentage_sub_1x_control_click = {
+# 				if = {
+# 					limit = {
+# 						check_variable = { ebf_economy_income_tax < 0.05 }
+# 					}
+# 					set_variable = { ebf_economy_income_tax = 0.00 }
+# 					country_event = { id = ebf_economy_tax_event.1 }
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_income_tax < 0.05 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_income_tax = 0.05 }
+# 					country_event = { id = ebf_economy_tax_event.1 }
+# 				}
+#             }
+# 			income_tax_percentage_add_1x_control_click = {
+# 				if = {
+# 					limit = {
+# 						check_variable = { ebf_economy_income_tax > 0.95 }
+# 					}
+# 					set_variable = { ebf_economy_income_tax = 1.00 }
+# 					country_event = { id = ebf_economy_tax_event.1 }
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_income_tax > 0.95 }
+# 						}
+# 					}
+# 					add_to_variable = { ebf_economy_income_tax = 0.05 }
+# 					country_event = { id = ebf_economy_tax_event.1 }
+# 				}
+#             }
 
-			income_tax_percentage_sub_1x_shift_click = {
-				if = {
-					limit = {
-						check_variable = { ebf_economy_income_tax < 0.1 }
-					}
-					set_variable = { ebf_economy_income_tax = 0.00 }
-					country_event = { id = ebf_economy_tax_event.1 }
-				}
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_income_tax < 0.1 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_income_tax = 0.1 }
-					country_event = { id = ebf_economy_tax_event.1 }
-				}
-            }
-			income_tax_percentage_add_1x_shift_click = {
-				if = {
-					limit = {
-						check_variable = { ebf_economy_income_tax > 0.90 }
-					}
-					set_variable = { ebf_economy_income_tax = 1.00 }
-					country_event = { id = ebf_economy_tax_event.1 }
-				}
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_income_tax > 0.90 }
-						}
-					}
-					add_to_variable = { ebf_economy_income_tax = 0.1 }
-					country_event = { id = ebf_economy_tax_event.1 }
-				}
-            }
-
-
+# 			income_tax_percentage_sub_1x_shift_click = {
+# 				if = {
+# 					limit = {
+# 						check_variable = { ebf_economy_income_tax < 0.1 }
+# 					}
+# 					set_variable = { ebf_economy_income_tax = 0.00 }
+# 					country_event = { id = ebf_economy_tax_event.1 }
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_income_tax < 0.1 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_income_tax = 0.1 }
+# 					country_event = { id = ebf_economy_tax_event.1 }
+# 				}
+#             }
+# 			income_tax_percentage_add_1x_shift_click = {
+# 				if = {
+# 					limit = {
+# 						check_variable = { ebf_economy_income_tax > 0.90 }
+# 					}
+# 					set_variable = { ebf_economy_income_tax = 1.00 }
+# 					country_event = { id = ebf_economy_tax_event.1 }
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_income_tax > 0.90 }
+# 						}
+# 					}
+# 					add_to_variable = { ebf_economy_income_tax = 0.1 }
+# 					country_event = { id = ebf_economy_tax_event.1 }
+# 				}
+#             }
 
 
 
@@ -136,798 +134,798 @@ scripted_gui = {
 
 
 
-			### Consumtion Tax Percentage Click
-			consumption_tax_percentage_sub_1x_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_consumption_tax < 0.01 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_consumption_tax = 0.01 }
-					country_event = { id = ebf_economy_tax_event.2 }
-				}
-            }
-			consumption_tax_percentage_add_1x_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_consumption_tax > 0.99 }
-						}
-					}
-					add_to_variable = { ebf_economy_consumption_tax = 0.01 }
-					country_event = { id = ebf_economy_tax_event.2 }
-				}
-            }
+# 			### Consumtion Tax Percentage Click
+# 			consumption_tax_percentage_sub_1x_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_consumption_tax < 0.01 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_consumption_tax = 0.01 }
+# 					country_event = { id = ebf_economy_tax_event.2 }
+# 				}
+#             }
+# 			consumption_tax_percentage_add_1x_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_consumption_tax > 0.99 }
+# 						}
+# 					}
+# 					add_to_variable = { ebf_economy_consumption_tax = 0.01 }
+# 					country_event = { id = ebf_economy_tax_event.2 }
+# 				}
+#             }
 
-			consumption_tax_percentage_sub_1x_control_click = {
-				if = {
-					limit = {
-						check_variable = { ebf_economy_consumption_tax < 0.05 }
-					}
-					set_variable = { ebf_economy_consumption_tax = 0.00 }
-					country_event = { id = ebf_economy_tax_event.2 }
-				}
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_consumption_tax < 0.05 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_consumption_tax = 0.05 }
-					country_event = { id = ebf_economy_tax_event.2 }
-				}
-            }
-			consumption_tax_percentage_add_1x_control_click = {
-				if = {
-					limit = {
-						check_variable = { ebf_economy_consumption_tax > 0.95 }
-					}
-					set_variable = { ebf_economy_consumption_tax = 1.00 }
-					country_event = { id = ebf_economy_tax_event.2 }
-				}
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_consumption_tax > 0.95 }
-						}
-					}
-					add_to_variable = { ebf_economy_consumption_tax = 0.05 }
-					country_event = { id = ebf_economy_tax_event.2 }
-				}
-            }
+# 			consumption_tax_percentage_sub_1x_control_click = {
+# 				if = {
+# 					limit = {
+# 						check_variable = { ebf_economy_consumption_tax < 0.05 }
+# 					}
+# 					set_variable = { ebf_economy_consumption_tax = 0.00 }
+# 					country_event = { id = ebf_economy_tax_event.2 }
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_consumption_tax < 0.05 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_consumption_tax = 0.05 }
+# 					country_event = { id = ebf_economy_tax_event.2 }
+# 				}
+#             }
+# 			consumption_tax_percentage_add_1x_control_click = {
+# 				if = {
+# 					limit = {
+# 						check_variable = { ebf_economy_consumption_tax > 0.95 }
+# 					}
+# 					set_variable = { ebf_economy_consumption_tax = 1.00 }
+# 					country_event = { id = ebf_economy_tax_event.2 }
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_consumption_tax > 0.95 }
+# 						}
+# 					}
+# 					add_to_variable = { ebf_economy_consumption_tax = 0.05 }
+# 					country_event = { id = ebf_economy_tax_event.2 }
+# 				}
+#             }
 
-			consumption_tax_percentage_sub_1x_shift_click = {
-				if = {
-					limit = {
-						check_variable = { ebf_economy_consumption_tax < 0.1 }
-					}
-					set_variable = { ebf_economy_consumption_tax = 0.00 }
-					country_event = { id = ebf_economy_tax_event.2 }
-				}
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_consumption_tax < 0.1 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_consumption_tax = 0.1 }
-					country_event = { id = ebf_economy_tax_event.2 }
-				}
-            }
-			consumption_tax_percentage_add_1x_shift_click = {
-				if = {
-					limit = {
-						check_variable = { ebf_economy_consumption_tax > 0.90 }
-					}
-					set_variable = { ebf_economy_consumption_tax = 1.00 }
-					country_event = { id = ebf_economy_tax_event.2 }
-				}
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_consumption_tax > 0.90 }
-						}
-					}
-					add_to_variable = { ebf_economy_consumption_tax = 0.1 }
-					country_event = { id = ebf_economy_tax_event.2 }
-				}
-            }
-
-
+# 			consumption_tax_percentage_sub_1x_shift_click = {
+# 				if = {
+# 					limit = {
+# 						check_variable = { ebf_economy_consumption_tax < 0.1 }
+# 					}
+# 					set_variable = { ebf_economy_consumption_tax = 0.00 }
+# 					country_event = { id = ebf_economy_tax_event.2 }
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_consumption_tax < 0.1 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_consumption_tax = 0.1 }
+# 					country_event = { id = ebf_economy_tax_event.2 }
+# 				}
+#             }
+# 			consumption_tax_percentage_add_1x_shift_click = {
+# 				if = {
+# 					limit = {
+# 						check_variable = { ebf_economy_consumption_tax > 0.90 }
+# 					}
+# 					set_variable = { ebf_economy_consumption_tax = 1.00 }
+# 					country_event = { id = ebf_economy_tax_event.2 }
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_consumption_tax > 0.90 }
+# 						}
+# 					}
+# 					add_to_variable = { ebf_economy_consumption_tax = 0.1 }
+# 					country_event = { id = ebf_economy_tax_event.2 }
+# 				}
+#             }
 
 
 
 
-			### Wealth Tax Percentage Click
-			wealth_tax_percentage_sub_1x_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_wealth_tax < 0.01 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_wealth_tax = 0.01 }
-					country_event = { id = ebf_economy_tax_event.3 }
-				}
-            }
-			wealth_tax_percentage_add_1x_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_wealth_tax > 0.99 }
-						}
-					}
-					add_to_variable = { ebf_economy_wealth_tax = 0.01 }
-					country_event = { id = ebf_economy_tax_event.3 }
-				}
-            }
-
-			wealth_tax_percentage_sub_1x_control_click = {
-				if = {
-					limit = {
-						check_variable = { ebf_economy_wealth_tax < 0.05 }
-					}
-					set_variable = { ebf_economy_wealth_tax = 0.00 }
-					country_event = { id = ebf_economy_tax_event.3 }
-				}
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_wealth_tax < 0.05 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_wealth_tax = 0.05 }
-					country_event = { id = ebf_economy_tax_event.3 }
-				}
-            }
-			wealth_tax_percentage_add_1x_control_click = {
-				if = {
-					limit = {
-						check_variable = { ebf_economy_wealth_tax > 0.95 }
-					}
-					set_variable = { ebf_economy_wealth_tax = 1.00 }
-					country_event = { id = ebf_economy_tax_event.3 }
-				}
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_wealth_tax > 0.95 }
-						}
-					}
-					add_to_variable = { ebf_economy_wealth_tax = 0.05 }
-					country_event = { id = ebf_economy_tax_event.3 }
-				}
-            }
-
-			wealth_tax_percentage_sub_1x_shift_click = {
-				if = {
-					limit = {
-						check_variable = { ebf_economy_wealth_tax < 0.1 }
-					}
-					set_variable = { ebf_economy_wealth_tax = 0.00 }
-					country_event = { id = ebf_economy_tax_event.3 }
-				}
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_wealth_tax < 0.1 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_wealth_tax = 0.1 }
-					country_event = { id = ebf_economy_tax_event.3 }
-				}
-            }
-			wealth_tax_percentage_add_1x_shift_click = {
-				if = {
-					limit = {
-						check_variable = { ebf_economy_wealth_tax > 0.90 }
-					}
-					set_variable = { ebf_economy_wealth_tax = 1.00 }
-					country_event = { id = ebf_economy_tax_event.3 }
-				}
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_wealth_tax > 0.90 }
-						}
-					}
-					add_to_variable = { ebf_economy_wealth_tax = 0.1 }
-					country_event = { id = ebf_economy_tax_event.3 }
-				}
-            }
 
 
+# 			### Wealth Tax Percentage Click
+# 			wealth_tax_percentage_sub_1x_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_wealth_tax < 0.01 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_wealth_tax = 0.01 }
+# 					country_event = { id = ebf_economy_tax_event.3 }
+# 				}
+#             }
+# 			wealth_tax_percentage_add_1x_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_wealth_tax > 0.99 }
+# 						}
+# 					}
+# 					add_to_variable = { ebf_economy_wealth_tax = 0.01 }
+# 					country_event = { id = ebf_economy_tax_event.3 }
+# 				}
+#             }
 
-			### Trade Tax Percentage Click
-			trade_tax_percentage_sub_1x_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_trade_tax < 0.01 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_trade_tax = 0.01 }
-					country_event = { id = ebf_economy_tax_event.4 }
-				}
-            }
-			trade_tax_percentage_add_1x_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_trade_tax > 0.99 }
-						}
-					}
-					add_to_variable = { ebf_economy_trade_tax = 0.01 }
-					country_event = { id = ebf_economy_tax_event.4 }
-				}
-            }
+# 			wealth_tax_percentage_sub_1x_control_click = {
+# 				if = {
+# 					limit = {
+# 						check_variable = { ebf_economy_wealth_tax < 0.05 }
+# 					}
+# 					set_variable = { ebf_economy_wealth_tax = 0.00 }
+# 					country_event = { id = ebf_economy_tax_event.3 }
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_wealth_tax < 0.05 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_wealth_tax = 0.05 }
+# 					country_event = { id = ebf_economy_tax_event.3 }
+# 				}
+#             }
+# 			wealth_tax_percentage_add_1x_control_click = {
+# 				if = {
+# 					limit = {
+# 						check_variable = { ebf_economy_wealth_tax > 0.95 }
+# 					}
+# 					set_variable = { ebf_economy_wealth_tax = 1.00 }
+# 					country_event = { id = ebf_economy_tax_event.3 }
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_wealth_tax > 0.95 }
+# 						}
+# 					}
+# 					add_to_variable = { ebf_economy_wealth_tax = 0.05 }
+# 					country_event = { id = ebf_economy_tax_event.3 }
+# 				}
+#             }
 
-			trade_tax_percentage_sub_1x_control_click = {
-				if = {
-					limit = {
-						check_variable = { ebf_economy_trade_tax < 0.05 }
-					}
-					set_variable = { ebf_economy_trade_tax = 0.00 }
-					country_event = { id = ebf_economy_tax_event.4 }
-				}
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_trade_tax < 0.05 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_trade_tax = 0.05 }
-					country_event = { id = ebf_economy_tax_event.4 }
-				}
-            }
-			trade_tax_percentage_add_1x_control_click = {
-				if = {
-					limit = {
-						check_variable = { ebf_economy_trade_tax > 0.95 }
-					}
-					set_variable = { ebf_economy_trade_tax = 1.00 }
-					country_event = { id = ebf_economy_tax_event.4 }
-				}
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_trade_tax > 0.95 }
-						}
-					}
-					add_to_variable = { ebf_economy_trade_tax = 0.05 }
-					country_event = { id = ebf_economy_tax_event.4 }
-				}
-            }
+# 			wealth_tax_percentage_sub_1x_shift_click = {
+# 				if = {
+# 					limit = {
+# 						check_variable = { ebf_economy_wealth_tax < 0.1 }
+# 					}
+# 					set_variable = { ebf_economy_wealth_tax = 0.00 }
+# 					country_event = { id = ebf_economy_tax_event.3 }
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_wealth_tax < 0.1 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_wealth_tax = 0.1 }
+# 					country_event = { id = ebf_economy_tax_event.3 }
+# 				}
+#             }
+# 			wealth_tax_percentage_add_1x_shift_click = {
+# 				if = {
+# 					limit = {
+# 						check_variable = { ebf_economy_wealth_tax > 0.90 }
+# 					}
+# 					set_variable = { ebf_economy_wealth_tax = 1.00 }
+# 					country_event = { id = ebf_economy_tax_event.3 }
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_wealth_tax > 0.90 }
+# 						}
+# 					}
+# 					add_to_variable = { ebf_economy_wealth_tax = 0.1 }
+# 					country_event = { id = ebf_economy_tax_event.3 }
+# 				}
+#             }
 
-			trade_tax_percentage_sub_1x_shift_click = {
-				if = {
-					limit = {
-						check_variable = { ebf_economy_trade_tax < 0.1 }
-					}
-					set_variable = { ebf_economy_trade_tax = 0.00 }
-					country_event = { id = ebf_economy_tax_event.4 }
-				}
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_trade_tax < 0.1 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_trade_tax = 0.1 }
-					country_event = { id = ebf_economy_tax_event.4 }
-				}
-            }
-			trade_tax_percentage_add_1x_shift_click = {
-				if = {
-					limit = {
-						check_variable = { ebf_economy_trade_tax > 0.90 }
-					}
-					set_variable = { ebf_economy_trade_tax = 1.00 }
-					country_event = { id = ebf_economy_tax_event.4 }
-				}
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_trade_tax > 0.90 }
-						}
-					}
-					add_to_variable = { ebf_economy_trade_tax = 0.1 }
-					country_event = { id = ebf_economy_tax_event.4 }
-				}
-            }
 
-			#ebf_economy_expenses_event.1
 
-			### Healthcare Rate Click
-			healthcare_rate_sub_1x_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_healtcare_rate < 1 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_healtcare_rate = 1 }
-					country_event = { id = ebf_economy_expenses_event.1 }
-				}
-            }
-			healthcare_rate_add_1x_click = {
+# 			### Trade Tax Percentage Click
+# 			trade_tax_percentage_sub_1x_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_trade_tax < 0.01 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_trade_tax = 0.01 }
+# 					country_event = { id = ebf_economy_tax_event.4 }
+# 				}
+#             }
+# 			trade_tax_percentage_add_1x_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_trade_tax > 0.99 }
+# 						}
+# 					}
+# 					add_to_variable = { ebf_economy_trade_tax = 0.01 }
+# 					country_event = { id = ebf_economy_tax_event.4 }
+# 				}
+#             }
+
+# 			trade_tax_percentage_sub_1x_control_click = {
+# 				if = {
+# 					limit = {
+# 						check_variable = { ebf_economy_trade_tax < 0.05 }
+# 					}
+# 					set_variable = { ebf_economy_trade_tax = 0.00 }
+# 					country_event = { id = ebf_economy_tax_event.4 }
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_trade_tax < 0.05 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_trade_tax = 0.05 }
+# 					country_event = { id = ebf_economy_tax_event.4 }
+# 				}
+#             }
+# 			trade_tax_percentage_add_1x_control_click = {
+# 				if = {
+# 					limit = {
+# 						check_variable = { ebf_economy_trade_tax > 0.95 }
+# 					}
+# 					set_variable = { ebf_economy_trade_tax = 1.00 }
+# 					country_event = { id = ebf_economy_tax_event.4 }
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_trade_tax > 0.95 }
+# 						}
+# 					}
+# 					add_to_variable = { ebf_economy_trade_tax = 0.05 }
+# 					country_event = { id = ebf_economy_tax_event.4 }
+# 				}
+#             }
+
+# 			trade_tax_percentage_sub_1x_shift_click = {
+# 				if = {
+# 					limit = {
+# 						check_variable = { ebf_economy_trade_tax < 0.1 }
+# 					}
+# 					set_variable = { ebf_economy_trade_tax = 0.00 }
+# 					country_event = { id = ebf_economy_tax_event.4 }
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_trade_tax < 0.1 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_trade_tax = 0.1 }
+# 					country_event = { id = ebf_economy_tax_event.4 }
+# 				}
+#             }
+# 			trade_tax_percentage_add_1x_shift_click = {
+# 				if = {
+# 					limit = {
+# 						check_variable = { ebf_economy_trade_tax > 0.90 }
+# 					}
+# 					set_variable = { ebf_economy_trade_tax = 1.00 }
+# 					country_event = { id = ebf_economy_tax_event.4 }
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_trade_tax > 0.90 }
+# 						}
+# 					}
+# 					add_to_variable = { ebf_economy_trade_tax = 0.1 }
+# 					country_event = { id = ebf_economy_tax_event.4 }
+# 				}
+#             }
+
+# 			#ebf_economy_expenses_event.1
+
+# 			### Healthcare Rate Click
+# 			healthcare_rate_sub_1x_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_healtcare_rate < 1 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_healtcare_rate = 1 }
+# 					country_event = { id = ebf_economy_expenses_event.1 }
+# 				}
+#             }
+# 			healthcare_rate_add_1x_click = {
 				
-				add_to_variable = { ebf_economy_healtcare_rate = 1 }
-				country_event = { id = ebf_economy_expenses_event.1 }
+# 				add_to_variable = { ebf_economy_healtcare_rate = 1 }
+# 				country_event = { id = ebf_economy_expenses_event.1 }
 				
-            }
+#             }
 
-			healthcare_rate_sub_1x_control_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_healtcare_rate < 10 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_healtcare_rate = 10 }
-					country_event = { id = ebf_economy_expenses_event.1 }
-				}
-				else = {
-					set_variable = {
-						ebf_economy_healtcare_rate = 0
-					}
-					country_event = { id = ebf_economy_expenses_event.1 }
-				}
-            }
-			healthcare_rate_add_1x_control_click = {
+# 			healthcare_rate_sub_1x_control_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_healtcare_rate < 10 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_healtcare_rate = 10 }
+# 					country_event = { id = ebf_economy_expenses_event.1 }
+# 				}
+# 				else = {
+# 					set_variable = {
+# 						ebf_economy_healtcare_rate = 0
+# 					}
+# 					country_event = { id = ebf_economy_expenses_event.1 }
+# 				}
+#             }
+# 			healthcare_rate_add_1x_control_click = {
 				
-				add_to_variable = { ebf_economy_healtcare_rate = 10 }
-				country_event = { id = ebf_economy_expenses_event.1 }
+# 				add_to_variable = { ebf_economy_healtcare_rate = 10 }
+# 				country_event = { id = ebf_economy_expenses_event.1 }
 				
-            }
+#             }
 
-			healthcare_rate_sub_1x_shift_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_healtcare_rate < 100 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_healtcare_rate = 100 }
-					country_event = { id = ebf_economy_expenses_event.1 }
-				}
-				else = {
-					set_variable = {
-						ebf_economy_healtcare_rate = 0
-					}
-					country_event = { id = ebf_economy_expenses_event.1 }
-				}
-            }
-			healthcare_rate_add_1x_shift_click = {
+# 			healthcare_rate_sub_1x_shift_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_healtcare_rate < 100 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_healtcare_rate = 100 }
+# 					country_event = { id = ebf_economy_expenses_event.1 }
+# 				}
+# 				else = {
+# 					set_variable = {
+# 						ebf_economy_healtcare_rate = 0
+# 					}
+# 					country_event = { id = ebf_economy_expenses_event.1 }
+# 				}
+#             }
+# 			healthcare_rate_add_1x_shift_click = {
 				
-				add_to_variable = { ebf_economy_healtcare_rate = 100 }
-				country_event = { id = ebf_economy_expenses_event.1 }
+# 				add_to_variable = { ebf_economy_healtcare_rate = 100 }
+# 				country_event = { id = ebf_economy_expenses_event.1 }
 				
-            }
-
-
-
-			### Soldier Healthcare Rate Click
-			soldier_healthcare_rate_sub_1x_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_soldiers_healtcare_rate < 1 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_soldiers_healtcare_rate = 1 }
-					country_event = { id = ebf_economy_expenses_event.1 }
-				}
-            }
-			soldier_healthcare_rate_add_1x_click = {
-				
-				add_to_variable = { ebf_economy_soldiers_healtcare_rate = 1 }
-				country_event = { id = ebf_economy_expenses_event.1 }
-				
-            }
-
-			soldier_healthcare_rate_sub_1x_control_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_soldiers_healtcare_rate < 10 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_soldiers_healtcare_rate = 10 }
-					country_event = { id = ebf_economy_expenses_event.1 }
-				}
-				else = {
-					set_variable = {
-						ebf_economy_soldiers_healtcare_rate = 0
-					}
-					country_event = { id = ebf_economy_expenses_event.1 }
-				}
-            }
-			soldier_healthcare_rate_add_1x_control_click = {
-				
-				add_to_variable = { ebf_economy_soldiers_healtcare_rate = 10 }
-				country_event = { id = ebf_economy_expenses_event.1 }
-				
-            }
-
-			soldier_healthcare_rate_sub_1x_shift_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_soldiers_healtcare_rate < 100 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_soldiers_healtcare_rate = 100 }
-					country_event = { id = ebf_economy_expenses_event.1 }
-				}
-				else = {
-					set_variable = {
-						ebf_economy_soldiers_healtcare_rate = 0
-					}
-					country_event = { id = ebf_economy_expenses_event.1 }
-				}
-            }
-			soldier_healthcare_rate_add_1x_shift_click = {
-				
-				add_to_variable = { ebf_economy_soldiers_healtcare_rate = 100 }
-				country_event = { id = ebf_economy_expenses_event.1 }
-				
-            }
+#             }
 
 
 
-			### Pension Rate Click
-			pension_rate_sub_1x_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_pension_rate < 1 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_pension_rate = 1 }
-					country_event = { id = ebf_economy_expenses_event.2 }
-				}
-            }
-			pension_rate_add_1x_click = {
+# 			### Soldier Healthcare Rate Click
+# 			soldier_healthcare_rate_sub_1x_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_soldiers_healtcare_rate < 1 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_soldiers_healtcare_rate = 1 }
+# 					country_event = { id = ebf_economy_expenses_event.1 }
+# 				}
+#             }
+# 			soldier_healthcare_rate_add_1x_click = {
 				
-				add_to_variable = { ebf_economy_pension_rate = 1 }
-				country_event = { id = ebf_economy_expenses_event.2 }
+# 				add_to_variable = { ebf_economy_soldiers_healtcare_rate = 1 }
+# 				country_event = { id = ebf_economy_expenses_event.1 }
 				
-            }
+#             }
 
-			pension_rate_sub_1x_control_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_pension_rate < 10 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_pension_rate = 10 }
-					country_event = { id = ebf_economy_expenses_event.2 }
-				}
-				else = {
-					set_variable = {
-						ebf_economy_pension_rate = 0
-					}
-					country_event = { id = ebf_economy_expenses_event.2 }
-				}
-            }
-			pension_rate_add_1x_control_click = {
+# 			soldier_healthcare_rate_sub_1x_control_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_soldiers_healtcare_rate < 10 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_soldiers_healtcare_rate = 10 }
+# 					country_event = { id = ebf_economy_expenses_event.1 }
+# 				}
+# 				else = {
+# 					set_variable = {
+# 						ebf_economy_soldiers_healtcare_rate = 0
+# 					}
+# 					country_event = { id = ebf_economy_expenses_event.1 }
+# 				}
+#             }
+# 			soldier_healthcare_rate_add_1x_control_click = {
 				
-				add_to_variable = { ebf_economy_pension_rate = 10 }
-				country_event = { id = ebf_economy_expenses_event.2 }
+# 				add_to_variable = { ebf_economy_soldiers_healtcare_rate = 10 }
+# 				country_event = { id = ebf_economy_expenses_event.1 }
 				
-            }
+#             }
 
-			pension_rate_sub_1x_shift_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_pension_rate < 100 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_pension_rate = 100 }
-					country_event = { id = ebf_economy_expenses_event.2 }
-				}
-				else = {
-					set_variable = {
-						ebf_economy_pension_rate = 0
-					}
-					country_event = { id = ebf_economy_expenses_event.2 }
-				}
-            }
-			pension_rate_add_1x_shift_click = {
+# 			soldier_healthcare_rate_sub_1x_shift_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_soldiers_healtcare_rate < 100 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_soldiers_healtcare_rate = 100 }
+# 					country_event = { id = ebf_economy_expenses_event.1 }
+# 				}
+# 				else = {
+# 					set_variable = {
+# 						ebf_economy_soldiers_healtcare_rate = 0
+# 					}
+# 					country_event = { id = ebf_economy_expenses_event.1 }
+# 				}
+#             }
+# 			soldier_healthcare_rate_add_1x_shift_click = {
 				
-				add_to_variable = { ebf_economy_pension_rate = 100 }
-				country_event = { id = ebf_economy_expenses_event.2 }
+# 				add_to_variable = { ebf_economy_soldiers_healtcare_rate = 100 }
+# 				country_event = { id = ebf_economy_expenses_event.1 }
 				
-            }
+#             }
 
-			### saleries Rate Click
-			saleries_rate_sub_1x_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_saleries_rate < 1 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_saleries_rate = 1 }
-					country_event = { id = ebf_economy_expenses_event.3 }
-				}
-            }
-			saleries_rate_add_1x_click = {
-				
-				add_to_variable = { ebf_economy_saleries_rate = 1 }
-				country_event = { id = ebf_economy_expenses_event.3 }
-				
-            }
 
-			saleries_rate_sub_1x_control_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_saleries_rate < 10 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_saleries_rate = 10 }
-					country_event = { id = ebf_economy_expenses_event.3 }
-				}
-				else = {
-					set_variable = {
-						ebf_economy_saleries_rate = 0
-					}
-					country_event = { id = ebf_economy_expenses_event.3 }
-				}
-            }
-			saleries_rate_add_1x_control_click = {
-				
-				add_to_variable = { ebf_economy_saleries_rate = 10 }
-				country_event = { id = ebf_economy_expenses_event.3 }
-				
-            }
 
-			saleries_rate_sub_1x_shift_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_saleries_rate < 100 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_saleries_rate = 100 }
-					country_event = { id = ebf_economy_expenses_event.3 }
-				}
-				else = {
-					set_variable = {
-						ebf_economy_saleries_rate = 0
-					}
-					country_event = { id = ebf_economy_expenses_event.3 }
-				}
-            }
-			saleries_rate_add_1x_shift_click = {
+# 			### Pension Rate Click
+# 			pension_rate_sub_1x_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_pension_rate < 1 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_pension_rate = 1 }
+# 					country_event = { id = ebf_economy_expenses_event.2 }
+# 				}
+#             }
+# 			pension_rate_add_1x_click = {
 				
-				add_to_variable = { ebf_economy_saleries_rate = 100 }
-				country_event = { id = ebf_economy_expenses_event.3 }
+# 				add_to_variable = { ebf_economy_pension_rate = 1 }
+# 				country_event = { id = ebf_economy_expenses_event.2 }
 				
-            }
+#             }
+
+# 			pension_rate_sub_1x_control_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_pension_rate < 10 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_pension_rate = 10 }
+# 					country_event = { id = ebf_economy_expenses_event.2 }
+# 				}
+# 				else = {
+# 					set_variable = {
+# 						ebf_economy_pension_rate = 0
+# 					}
+# 					country_event = { id = ebf_economy_expenses_event.2 }
+# 				}
+#             }
+# 			pension_rate_add_1x_control_click = {
+				
+# 				add_to_variable = { ebf_economy_pension_rate = 10 }
+# 				country_event = { id = ebf_economy_expenses_event.2 }
+				
+#             }
+
+# 			pension_rate_sub_1x_shift_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_pension_rate < 100 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_pension_rate = 100 }
+# 					country_event = { id = ebf_economy_expenses_event.2 }
+# 				}
+# 				else = {
+# 					set_variable = {
+# 						ebf_economy_pension_rate = 0
+# 					}
+# 					country_event = { id = ebf_economy_expenses_event.2 }
+# 				}
+#             }
+# 			pension_rate_add_1x_shift_click = {
+				
+# 				add_to_variable = { ebf_economy_pension_rate = 100 }
+# 				country_event = { id = ebf_economy_expenses_event.2 }
+				
+#             }
+
+# 			### saleries Rate Click
+# 			saleries_rate_sub_1x_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_saleries_rate < 1 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_saleries_rate = 1 }
+# 					country_event = { id = ebf_economy_expenses_event.3 }
+# 				}
+#             }
+# 			saleries_rate_add_1x_click = {
+				
+# 				add_to_variable = { ebf_economy_saleries_rate = 1 }
+# 				country_event = { id = ebf_economy_expenses_event.3 }
+				
+#             }
+
+# 			saleries_rate_sub_1x_control_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_saleries_rate < 10 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_saleries_rate = 10 }
+# 					country_event = { id = ebf_economy_expenses_event.3 }
+# 				}
+# 				else = {
+# 					set_variable = {
+# 						ebf_economy_saleries_rate = 0
+# 					}
+# 					country_event = { id = ebf_economy_expenses_event.3 }
+# 				}
+#             }
+# 			saleries_rate_add_1x_control_click = {
+				
+# 				add_to_variable = { ebf_economy_saleries_rate = 10 }
+# 				country_event = { id = ebf_economy_expenses_event.3 }
+				
+#             }
+
+# 			saleries_rate_sub_1x_shift_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_saleries_rate < 100 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_saleries_rate = 100 }
+# 					country_event = { id = ebf_economy_expenses_event.3 }
+# 				}
+# 				else = {
+# 					set_variable = {
+# 						ebf_economy_saleries_rate = 0
+# 					}
+# 					country_event = { id = ebf_economy_expenses_event.3 }
+# 				}
+#             }
+# 			saleries_rate_add_1x_shift_click = {
+				
+# 				add_to_variable = { ebf_economy_saleries_rate = 100 }
+# 				country_event = { id = ebf_economy_expenses_event.3 }
+				
+#             }
 			
-			### Social Welfare Rate Click
-			social_welfare_rate_sub_1x_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_social_welfare_rate < 1 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_social_welfare_rate = 1 }
-					country_event = { id = ebf_economy_expenses_event.4 }
-				}
-            }
-			social_welfare_rate_add_1x_click = {
+# 			### Social Welfare Rate Click
+# 			social_welfare_rate_sub_1x_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_social_welfare_rate < 1 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_social_welfare_rate = 1 }
+# 					country_event = { id = ebf_economy_expenses_event.4 }
+# 				}
+#             }
+# 			social_welfare_rate_add_1x_click = {
 				
-				add_to_variable = { ebf_economy_social_welfare_rate = 1 }
-				country_event = { id = ebf_economy_expenses_event.4 }
+# 				add_to_variable = { ebf_economy_social_welfare_rate = 1 }
+# 				country_event = { id = ebf_economy_expenses_event.4 }
 				
-            }
+#             }
 
-			social_welfare_rate_sub_1x_control_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_social_welfare_rate < 10 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_social_welfare_rate = 10 }
-					country_event = { id = ebf_economy_expenses_event.4 }
-				}
-				else = {
-					set_variable = {
-						ebf_economy_social_welfare_rate = 0
-					}
-					country_event = { id = ebf_economy_expenses_event.4 }
-				}
-            }
-			social_welfare_rate_add_1x_control_click = {
+# 			social_welfare_rate_sub_1x_control_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_social_welfare_rate < 10 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_social_welfare_rate = 10 }
+# 					country_event = { id = ebf_economy_expenses_event.4 }
+# 				}
+# 				else = {
+# 					set_variable = {
+# 						ebf_economy_social_welfare_rate = 0
+# 					}
+# 					country_event = { id = ebf_economy_expenses_event.4 }
+# 				}
+#             }
+# 			social_welfare_rate_add_1x_control_click = {
 				
-				add_to_variable = { ebf_economy_social_welfare_rate = 10 }
-				country_event = { id = ebf_economy_expenses_event.4 }
+# 				add_to_variable = { ebf_economy_social_welfare_rate = 10 }
+# 				country_event = { id = ebf_economy_expenses_event.4 }
 				
-            }
+#             }
 
-			social_welfare_rate_sub_1x_shift_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_social_welfare_rate < 100 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_social_welfare_rate = 100 }
-					country_event = { id = ebf_economy_expenses_event.4 }
-				}
-				else = {
-					set_variable = {
-						ebf_economy_social_welfare_rate = 0
-					}
-					country_event = { id = ebf_economy_expenses_event.4 }
-				}
-            }
-			social_welfare_rate_add_1x_shift_click = {
+# 			social_welfare_rate_sub_1x_shift_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_social_welfare_rate < 100 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_social_welfare_rate = 100 }
+# 					country_event = { id = ebf_economy_expenses_event.4 }
+# 				}
+# 				else = {
+# 					set_variable = {
+# 						ebf_economy_social_welfare_rate = 0
+# 					}
+# 					country_event = { id = ebf_economy_expenses_event.4 }
+# 				}
+#             }
+# 			social_welfare_rate_add_1x_shift_click = {
 				
-				add_to_variable = { ebf_economy_social_welfare_rate = 100 }
-				country_event = { id = ebf_economy_expenses_event.4 }
+# 				add_to_variable = { ebf_economy_social_welfare_rate = 100 }
+# 				country_event = { id = ebf_economy_expenses_event.4 }
 				
-            }
+#             }
 
-			### Full Age Click
-			full_age_sub_1x_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_age_of_majority < 1 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_age_of_majority = 1 }
-					country_event = ebf_economy_population_event.2
-				}
-            }
-			full_age_add_1x_click = {
-				add_to_variable = { ebf_economy_age_of_majority = 1 }
+# 			### Full Age Click
+# 			full_age_sub_1x_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_age_of_majority < 1 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_age_of_majority = 1 }
+# 					country_event = ebf_economy_population_event.2
+# 				}
+#             }
+# 			full_age_add_1x_click = {
+# 				add_to_variable = { ebf_economy_age_of_majority = 1 }
 				
 
-				country_event = ebf_economy_population_event.2 
-            }
+# 				country_event = ebf_economy_population_event.2 
+#             }
 
-			full_age_sub_1x_control_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_age_of_majority < 5 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_age_of_majority = 5 }
-					country_event = ebf_economy_population_event.2
-				}
-				else = {
-					set_variable = {
-						ebf_economy_age_of_majority = 0
-					}
-					country_event = ebf_economy_population_event.2
-				}
-            }
-			full_age_add_1x_control_click = {
-				add_to_variable = { ebf_economy_age_of_majority = 5 }
-				country_event = ebf_economy_population_event.2
-            }
+# 			full_age_sub_1x_control_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_age_of_majority < 5 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_age_of_majority = 5 }
+# 					country_event = ebf_economy_population_event.2
+# 				}
+# 				else = {
+# 					set_variable = {
+# 						ebf_economy_age_of_majority = 0
+# 					}
+# 					country_event = ebf_economy_population_event.2
+# 				}
+#             }
+# 			full_age_add_1x_control_click = {
+# 				add_to_variable = { ebf_economy_age_of_majority = 5 }
+# 				country_event = ebf_economy_population_event.2
+#             }
 
-			full_age_sub_1x_shift_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_age_of_majority < 10 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_age_of_majority = 10 }
-					country_event = ebf_economy_population_event.2
-				}
-				else = {
-					set_variable = {
-						ebf_economy_age_of_majority = 0
-					}
-					country_event = ebf_economy_population_event.2
-				}
-            }
-			full_age_add_1x_shift_click = {
-				add_to_variable = { ebf_economy_age_of_majority = 10 }
-				country_event = ebf_economy_population_event.2
-            }
+# 			full_age_sub_1x_shift_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_age_of_majority < 10 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_age_of_majority = 10 }
+# 					country_event = ebf_economy_population_event.2
+# 				}
+# 				else = {
+# 					set_variable = {
+# 						ebf_economy_age_of_majority = 0
+# 					}
+# 					country_event = ebf_economy_population_event.2
+# 				}
+#             }
+# 			full_age_add_1x_shift_click = {
+# 				add_to_variable = { ebf_economy_age_of_majority = 10 }
+# 				country_event = ebf_economy_population_event.2
+#             }
 
-			### Retirement Age
-			retirement_age_sub_1x_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_retirement_age < 1 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_retirement_age = 1 }
-					country_event = ebf_economy_population_event.3
-				}
-            }
-			retirement_age_add_1x_click = {
-				add_to_variable = { ebf_economy_retirement_age = 1 }
-				country_event = ebf_economy_population_event.3
-            }
+# 			### Retirement Age
+# 			retirement_age_sub_1x_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_retirement_age < 1 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_retirement_age = 1 }
+# 					country_event = ebf_economy_population_event.3
+# 				}
+#             }
+# 			retirement_age_add_1x_click = {
+# 				add_to_variable = { ebf_economy_retirement_age = 1 }
+# 				country_event = ebf_economy_population_event.3
+#             }
 
-			retirement_age_sub_1x_control_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_retirement_age < 5 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_retirement_age = 5 }
-					country_event = ebf_economy_population_event.3
-				}
-				else = {
-					set_variable = {
-						ebf_economy_retirement_age = 0
-					}
-					country_event = ebf_economy_population_event.3
-				}
-            }
-			retirement_age_add_1x_control_click = {
-				add_to_variable = { ebf_economy_retirement_age = 5 }
-				country_event = ebf_economy_population_event.3
-            }
+# 			retirement_age_sub_1x_control_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_retirement_age < 5 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_retirement_age = 5 }
+# 					country_event = ebf_economy_population_event.3
+# 				}
+# 				else = {
+# 					set_variable = {
+# 						ebf_economy_retirement_age = 0
+# 					}
+# 					country_event = ebf_economy_population_event.3
+# 				}
+#             }
+# 			retirement_age_add_1x_control_click = {
+# 				add_to_variable = { ebf_economy_retirement_age = 5 }
+# 				country_event = ebf_economy_population_event.3
+#             }
 
-			retirement_age_sub_1x_shift_click = {
-				if = {
-					limit = {
-						NOT = {
-							check_variable = { ebf_economy_retirement_age < 10 }
-						}
-					}
-					subtract_from_variable = { ebf_economy_retirement_age = 10 }
-					country_event = ebf_economy_population_event.3
-				}
-				else = {
-					set_variable = {
-						ebf_economy_retirement_age = 0
-					}
-					country_event = ebf_economy_population_event.3
-				}
-            }
-			retirement_age_add_1x_shift_click = {
-				add_to_variable = { ebf_economy_retirement_age = 10 }
-				country_event = ebf_economy_population_event.3
-            }
+# 			retirement_age_sub_1x_shift_click = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							check_variable = { ebf_economy_retirement_age < 10 }
+# 						}
+# 					}
+# 					subtract_from_variable = { ebf_economy_retirement_age = 10 }
+# 					country_event = ebf_economy_population_event.3
+# 				}
+# 				else = {
+# 					set_variable = {
+# 						ebf_economy_retirement_age = 0
+# 					}
+# 					country_event = ebf_economy_population_event.3
+# 				}
+#             }
+# 			retirement_age_add_1x_shift_click = {
+# 				add_to_variable = { ebf_economy_retirement_age = 10 }
+# 				country_event = ebf_economy_population_event.3
+#             }
 
 
-			############
-			### Loans
-			########
+# 			############
+# 			### Loans
+# 			########
 
-			# header_click = {
-			# 	if = {
-			# 		limit = {
-			# 			check_variable = { ebf_economy_show_loans = 0 }
-			# 		}
-			# 		set_variable = { ebf_economy_show_loans = 1 }
-			# 	}
-			# 	else = {
-			# 		set_variable = { ebf_economy_show_loans = 0 }
-			# 	}
-            # }
-		}
+# 			# header_click = {
+# 			# 	if = {
+# 			# 		limit = {
+# 			# 			check_variable = { ebf_economy_show_loans = 0 }
+# 			# 		}
+# 			# 		set_variable = { ebf_economy_show_loans = 1 }
+# 			# 	}
+# 			# 	else = {
+# 			# 		set_variable = { ebf_economy_show_loans = 0 }
+# 			# 	}
+#             # }
+# 		}
 
-		# triggers = {
-        #     # <element>_click_enabled = {
-        #     #     <triggers>
-        #     # }
-        #     # loans_visible = {
-        #     #     check_variable = { ebf_economy_show_loans = 0 }
-        #     # }
-        # }
-	}
-}
+# 		# triggers = {
+#         #     # <element>_click_enabled = {
+#         #     #     <triggers>
+#         #     # }
+#         #     # loans_visible = {
+#         #     #     check_variable = { ebf_economy_show_loans = 0 }
+#         #     # }
+#         # }
+# 	}
+# }
 

@@ -1,0 +1,49 @@
+#	Example:
+#
+#	example_effect = {
+#		add_political_power = 66
+#		add_popularity = {
+#			ideology = fascism
+#			popularity = 0.33
+#		}
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		example_effect = yes
+#	}
+#
+
+#####################################
+### emergency_factory_conversion ####
+#####################################
+
+money_printing_amount = {
+	set_variable = { ebf_economy_money_printing_amount = ebf_economy_money_printing_rate }
+	multiply_variable = { ebf_economy_money_printing_amount = ebf_economy_national_economy_money }
+	round_variable = ebf_economy_money_printing_amount
+}
+
+relative_printing_rate = {
+	set_variable = { ebf_economy_money_relative_printing_rate = ebf_economy_money_printing_rate }
+	divide_variable = { ebf_economy_money_relative_printing_rate = ebf_economy_money_decay_rate }
+}
+
+national_economy_money = {
+	set_variable = { ebf_economy_national_economy_money = modifier@num_of_civilian_factories }
+	multiply_variable = { ebf_economy_national_economy_money = ebf_economy_national_economy_civilian_factory_money }
+
+	set_temp_variable = { ebf_economy_national_economy_money_temp = ebf_economy_population }
+	subtract_from_temp_variable = { ebf_economy_national_economy_money_temp = ebf_economy_rich }
+	multiply_temp_variable = { ebf_economy_national_economy_money_temp = ebf_economy_national_economy_pop_money }
+
+	add_to_variable = { ebf_economy_national_economy_money = ebf_economy_national_economy_money_temp }
+
+	set_temp_variable = { ebf_economy_national_economy_money_temp = ebf_economy_rich }
+	multiply_temp_variable = { ebf_economy_national_economy_money_temp = ebf_economy_national_economy_rich_pop_money }
+
+	add_to_variable = { ebf_economy_national_economy_money = ebf_economy_national_economy_money_temp }
+}
+

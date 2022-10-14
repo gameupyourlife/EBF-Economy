@@ -1,0 +1,136 @@
+#	Example:
+#
+#	example_effect = {
+#		add_political_power = 66
+#		add_popularity = {
+#			ideology = fascism
+#			popularity = 0.33
+#		}
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		example_effect = yes
+#	}
+#
+
+#####################################
+### emergency_factory_conversion ####
+#####################################
+
+healthcare_expenses = {
+	set_variable = { ebf_economy_non_soldiers_healtcare_expenses = ebf_economy_healtcare_rate }
+	multiply_variable = { ebf_economy_non_soldiers_healtcare_expenses = ebf_economy_population }
+	
+	set_variable = { ebf_economy_soldiers_healtcare_expenses = ebf_economy_soldiers_healtcare_rate }
+	multiply_variable = { ebf_economy_soldiers_healtcare_expenses = max_available_manpower_k }
+	divide_variable = { ebf_economy_soldiers_healtcare_expenses = 1000 }
+	round_variable = ebf_economy_soldiers_healtcare_expenses
+
+	set_variable = {
+		ebf_economy_healtcare_expenses = ebf_economy_non_soldiers_healtcare_expenses
+	}
+	add_to_variable = {
+		ebf_economy_healtcare_expenses = ebf_economy_soldiers_healtcare_expenses
+	}
+	multiply_variable = {
+		ebf_economy_healtcare_expenses = ebf_economy_inflation
+	}
+	round_variable = ebf_economy_healtcare_expenses
+}
+
+pension_expenses = {
+	set_variable = {
+		ebf_economy_pension_expenses = ebf_economy_pension_rate
+	}
+	multiply_variable = {
+		ebf_economy_pension_expenses = ebf_economy_pensioner_population
+	}
+	multiply_variable = {
+		ebf_economy_pension_expenses = ebf_economy_inflation
+	}
+	round_variable = ebf_economy_pension_expenses
+}
+
+saleries_expenses = {
+	set_variable = {
+		ebf_economy_saleries_expenses = ebf_economy_workforce
+	}
+	multiply_variable = {
+		ebf_economy_saleries_expenses = 0.01
+	}
+	set_temp_variable = { ebf_economy_soldiers = max_available_manpower_k }
+	divide_temp_variable = { ebf_economy_soldiers = 1000 }
+	add_to_variable = {
+		ebf_economy_saleries_expenses = ebf_economy_soldiers
+	}
+	multiply_variable = {
+		ebf_economy_saleries_expenses = ebf_economy_saleries_rate
+	}
+	multiply_variable = {
+		ebf_economy_saleries_expenses = ebf_economy_inflation
+	}
+	round_variable = ebf_economy_saleries_expenses
+}
+
+social_welfare_expenses = {
+	set_variable = {
+		ebf_economy_social_welfare_expenses = ebf_economy_social_welfare_rate
+	}
+	multiply_variable = {
+		ebf_economy_social_welfare_expenses = ebf_economy_unemployed_population
+	}
+	multiply_variable = {
+		ebf_economy_social_welfare_expenses = ebf_economy_inflation
+	}
+	round_variable = ebf_economy_social_welfare_expenses
+}
+
+# TODO
+building_expenses = {
+	set_variable = { ebf_economy_buildings_expenses = 0 }
+}
+
+trading_resources_expenses = {
+	set_variable = { ebf_economy_resources_importing = resource_imported@oil }
+	add_to_variable = { ebf_economy_resources_importing = resource_imported@aluminium }
+	add_to_variable = { ebf_economy_resources_importing = resource_imported@rubber }
+	add_to_variable = { ebf_economy_resources_importing = resource_imported@tungsten }
+	add_to_variable = { ebf_economy_resources_importing = resource_imported@steel }
+	add_to_variable = { ebf_economy_resources_importing = resource_imported@chromium }
+	
+	set_variable = { ebf_economy_resources_trading_expenses = ebf_economy_resources_importing }
+	multiply_variable = { ebf_economy_resources_trading_expenses = ebf_economy_resources_importing_price }
+	multiply_variable = { ebf_economy_resources_trading_expenses = ebf_economy_inflation }
+
+	set_variable = { ebf_economy_resources_exporting = resource_exported@oil }
+	add_to_variable = { ebf_economy_resources_exporting = resource_exported@aluminium }
+	add_to_variable = { ebf_economy_resources_exporting = resource_exported@rubber }
+	add_to_variable = { ebf_economy_resources_exporting = resource_exported@tungsten }
+	add_to_variable = { ebf_economy_resources_exporting = resource_exported@steel }
+	add_to_variable = { ebf_economy_resources_exporting = resource_exported@chromium }
+	
+	set_variable = { ebf_economy_resources_trading_income = ebf_economy_resources_exporting }
+	multiply_variable = { ebf_economy_resources_trading_income = ebf_economy_resources_exporting_price }
+	multiply_variable = { ebf_economy_resources_trading_income = ebf_economy_inflation }
+
+	set_variable = { ebf_economy_resources_trading_net = ebf_economy_resources_trading_income }
+	subtract_from_variable = { ebf_economy_resources_trading_net = ebf_economy_resources_trading_expenses }
+	
+}
+
+total_expenses = {
+	healthcare_expenses = yes
+	pension_expenses = yes
+	saleries_expenses = yes
+	social_welfare_expenses = yes
+	building_expenses = yes # ToDo
+	trading_resources_expenses = yes
+	set_variable = { ebf_economy_total_expenses = ebf_economy_resources_trading_expenses }
+	add_to_variable = { ebf_economy_total_expenses = ebf_economy_pension_expenses }
+	add_to_variable = { ebf_economy_total_expenses = ebf_economy_saleries_expenses }
+	add_to_variable = { ebf_economy_total_expenses = ebf_economy_social_welfare_expenses }
+	add_to_variable = { ebf_economy_total_expenses = ebf_economy_buildings_expenses }
+}

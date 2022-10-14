@@ -1,0 +1,197 @@
+#	Example:
+#
+#	example_effect = {
+#		add_political_power = 66
+#		add_popularity = {
+#			ideology = fascism
+#			popularity = 0.33
+#		}
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		example_effect = yes
+#	}
+#
+
+#####################################
+### emergency_factory_conversion ####
+#####################################
+
+war_happines_effect = {
+	set_variable = { ebf_economy_happines_war_effect = 1.1 }
+	subtract_from_variable = { ebf_economy_happines_war_effect = ebf_economy_war_exhaustion }
+}
+
+income_tax_happines_effect = {
+	set_variable = { ebf_economy_happines_income_tax_effect = 1.1 }
+	subtract_from_variable = { ebf_economy_happines_income_tax_effect = ebf_economy_income_tax }
+}
+
+constumtion_tax_happines_effect = {
+	set_variable = { ebf_economy_happines_consumption_tax_effect = 1  }
+	set_temp_variable = { ebf_economy_happines_consumption_tax_effect_temp = 0.3 }
+	multiply_temp_variable = { ebf_economy_happines_consumption_tax_effect_temp = ebf_economy_consumption_tax }
+	subtract_from_variable = { ebf_economy_happines_consumption_tax_effect = ebf_economy_happines_consumption_tax_effect_temp }
+}
+
+inflation_rate_hapines_effect = {
+	set_variable = { ebf_economy_happines_inflation_rate_effect = 1.1 }
+	subtract_from_variable = { ebf_economy_happines_inflation_rate_effect = ebf_economy_inflation_rate }
+	set_temp_variable = { ebf_economy_happines_inflation_rate_effect_temp = ebf_economy_happines_inflation_rate_effect }
+	multiply_variable = { ebf_economy_happines_inflation_rate_effect = ebf_economy_happines_inflation_rate_effect_temp }
+	multiply_variable = { ebf_economy_happines_inflation_rate_effect = ebf_economy_happines_inflation_rate_effect_temp }
+	multiply_variable = { ebf_economy_happines_inflation_rate_effect = ebf_economy_happines_inflation_rate_effect_temp }
+}
+
+inflation_happines_effect = {
+	set_variable = { ebf_economy_happines_inflation_effect = 1 }
+	divide_variable = { ebf_economy_happines_inflation_effect = ebf_economy_inflation }
+}
+
+healthcare_happines_effect = {
+	set_variable = { ebf_economy_happines_healthcare_effect = ebf_economy_healtcare_rate }
+	divide_variable = { ebf_economy_happines_healthcare_effect = ebf_economy_recommended_healtcare_rate }
+}
+
+soldiers_healthcare_happines_effect = {
+	set_variable = { ebf_economy_happines_soldiers_healthcare_effect = ebf_economy_soldiers_healtcare_rate }
+	divide_variable = { ebf_economy_happines_soldiers_healthcare_effect = ebf_economy_recommended_soldiers_healtcare_rate }
+}
+
+pension_happines_effect = {
+	set_variable = { ebf_economy_happines_pension_effect = ebf_economy_pension_rate }
+	divide_variable = { ebf_economy_happines_pension_effect = ebf_economy_recommended_pension_rate }
+}
+
+saleries_happines_effect = {
+	set_variable = { ebf_economy_happines_saleries_effect = ebf_economy_saleries_rate }
+	divide_variable = { ebf_economy_happines_saleries_effect = ebf_economy_recommended_saleries_rate }
+}
+
+social_welfare_happines_effect = {
+	set_variable = { ebf_economy_happines_social_welfare_effect = ebf_economy_social_welfare_rate}
+	divide_variable = { ebf_economy_happines_social_welfare_effect = ebf_economy_recommended_social_welfare_rate }
+}
+
+expenses_happines_effect = {
+	healthcare_happines_effect = yes
+	soldiers_healthcare_happines_effect = yes
+	pension_happines_effect = yes
+	saleries_happines_effect = yes
+	social_welfare_happines_effect = yes
+	set_variable = { ebf_economy_happines_expenses_effect = 0.3 }
+	multiply_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_healthcare_effect }
+	
+	set_temp_variable = { ebf_economy_happines_expenses_effect_temp = 0.4 }
+	multiply_temp_variable = { ebf_economy_happines_expenses_effect_temp = ebf_economy_happines_soldiers_healthcare_effect }
+	add_to_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_expenses_effect_temp }
+
+	set_temp_variable = { ebf_economy_happines_expenses_effect_temp = 1.35 }
+	multiply_temp_variable = { ebf_economy_happines_expenses_effect_temp = ebf_economy_happines_pension_effect }
+	add_to_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_expenses_effect_temp }
+
+	set_temp_variable = { ebf_economy_happines_expenses_effect_temp = 1.7 }
+	multiply_temp_variable = { ebf_economy_happines_expenses_effect_temp = ebf_economy_happines_saleries_effect }
+	add_to_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_expenses_effect_temp }
+
+	set_temp_variable = { ebf_economy_happines_expenses_effect_temp = 1.35 }
+	multiply_temp_variable = { ebf_economy_happines_expenses_effect_temp = ebf_economy_happines_social_welfare_effect }
+	add_to_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_expenses_effect_temp }
+
+	divide_variable = { ebf_economy_happines_expenses_effect = 5 }
+}
+
+happines = {
+	war_happines_effect = yes
+	income_tax_happines_effect = yes
+	constumtion_tax_happines_effect = yes
+	inflation_rate_hapines_effect = yes
+	inflation_happines_effect = yes
+	expenses_happines_effect = yes
+	set_variable = { ebf_economy_happines = ebf_economy_happines_war_effect }
+	add_to_variable = { ebf_economy_happines = ebf_economy_happines_income_tax_effect }
+	add_to_variable = { ebf_economy_happines = ebf_economy_happines_consumption_tax_effect }
+	add_to_variable = { ebf_economy_happines = ebf_economy_happines_inflation_rate_effect }
+	add_to_variable = { ebf_economy_happines = ebf_economy_happines_inflation_effect }
+	add_to_variable = { ebf_economy_happines = ebf_economy_happines_expenses_effect }
+	divide_variable = { ebf_economy_happines = 6 }
+	# Calls the function to calculate the total happines effects
+	# country_event = { id = ebf_economy_happines_events.13 }
+}
+
+happines_effect = {
+	if = {
+		limit = { 
+			check_variable = { ebf_economy_happines  > 0.9 }
+		}
+		set_variable = { ebf_economy_happines_national_unrest_rate = -0.01 }
+		set_variable = { ebf_economy_happines_war_support_rate = 0.05 }
+		set_variable = { ebf_economy_happines_stability_rate = 0.05 }
+		add_ideas = ebf_economy_happines_effect_positive
+		remove_ideas = ebf_economy_happines_effect
+		remove_ideas = ebf_economy_happines_effect1
+		remove_ideas = ebf_economy_happines_effect2
+	}
+	else_if = {
+		limit = { 
+			check_variable = { ebf_economy_happines  > 0.7 }
+		}
+		set_variable = { ebf_economy_happines_national_unrest_rate = 0 }
+		set_variable = { ebf_economy_happines_war_support_rate = 0 }
+		set_variable = { ebf_economy_happines_stability_rate = 0 }
+		remove_ideas = ebf_economy_happines_effect_positive
+		remove_ideas = ebf_economy_happines_effect
+		remove_ideas = ebf_economy_happines_effect1
+		remove_ideas = ebf_economy_happines_effect2
+	}
+	else_if = {
+		limit = {
+			check_variable = { ebf_economy_happines  > 0.5 } 
+		}
+		set_variable = { ebf_economy_happines_national_unrest_rate = 0 }
+		# set_variable = { ebf_economy_happines_war_support_rate = -0.05 }
+		# set_variable = { ebf_economy_happines_stability_rate = -0.05 }
+		remove_ideas = ebf_economy_happines_effect_positive
+		add_ideas = ebf_economy_happines_effect
+		remove_ideas = ebf_economy_happines_effect1
+		remove_ideas = ebf_economy_happines_effect2
+	}
+	else_if = {
+		limit = {
+			check_variable = { ebf_economy_happines  > 0.3 } 
+		}
+		set_variable = { ebf_economy_happines_national_unrest_rate = 0.02 }
+		# set_variable = { ebf_economy_happines_war_support_rate = -0.05 }
+		# set_variable = { ebf_economy_happines_stability_rate = -0.05 }
+		remove_ideas = ebf_economy_happines_effect_positive
+		add_ideas = ebf_economy_happines_effect
+		remove_ideas = ebf_economy_happines_effect1
+		remove_ideas = ebf_economy_happines_effect2
+	}
+	else_if = {
+		limit = {
+			check_variable = { ebf_economy_happines  > 0.1 } 
+		}
+		set_variable = { ebf_economy_happines_national_unrest_rate = 0.05 }
+		# set_variable = { ebf_economy_happines_war_support_rate = -0.1 }
+		# set_variable = { ebf_economy_happines_stability_rate = -0.1 }
+		# set_variable = { ebf_economy_happines_consumer_goods_rate = 0 }
+		remove_ideas = ebf_economy_happines_effect_positive
+		remove_ideas = ebf_economy_happines_effect
+		add_ideas = ebf_economy_happines_effect1
+		remove_ideas = ebf_economy_happines_effect2
+	}
+	else = {
+		set_variable = { ebf_economy_happines_national_unrest_rate = 0.1 }
+		# set_variable = { ebf_economy_happines_war_support_rate = -0.1 }
+		# set_variable = { ebf_economy_happines_stability_rate = -0.1 }
+		# set_variable = { ebf_economy_happines_consumer_goods_rate = 0.05 }
+		remove_ideas = ebf_economy_happines_effect_positive
+		remove_ideas = ebf_economy_happines_effect
+		remove_ideas = ebf_economy_happines_effect1
+		add_ideas = ebf_economy_happines_effect2
+	}
+}

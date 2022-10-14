@@ -29,7 +29,7 @@ country_event = {
 
 	immediate = {
 		set_variable = { ebf_economy_monthly_spendings = ebf_economy_total_expenses }
-		add_to_variable = { ebf_economy_monthly_spendings = ebf_economy_monthly_loan_monthly_intrest_amount }
+		add_to_variable = { ebf_economy_monthly_spendings = ebf_economy_monthly_loan_monthly_interest_amount }
 		add_to_variable = { ebf_economy_monthly_spendings = ebf_economy_loan_monthly_repay_combined }
 	}
 }

@@ -1,0 +1,97 @@
+#	Example:
+#
+#	example_effect = {
+#		add_political_power = 66
+#		add_popularity = {
+#			ideology = fascism
+#			popularity = 0.33
+#		}
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		example_effect = yes
+#	}
+#
+
+#####################################
+### emergency_factory_conversion ####
+#####################################
+
+monthly_income = {
+	set_variable = { ebf_economy_monthly_income = ebf_economy_combined_tax_amount } #  Tax
+	add_to_variable = { ebf_economy_monthly_income = ebf_economy_resources_trading_income } # Expenses
+	add_to_variable = { ebf_economy_monthly_income = ebf_economy_money_printing_amount } # Printing
+}
+
+monthly_expenses = {
+	set_variable = { ebf_economy_monthly_spendings = ebf_economy_total_expenses } # Expenses
+	add_to_variable = { ebf_economy_monthly_spendings = ebf_economy_monthly_loan_monthly_interest_amount } # Loan
+	add_to_variable = { ebf_economy_monthly_spendings = ebf_economy_loan_monthly_repay_combined }
+}
+
+# Calculate the monthly balance - Cales the monthly income and expenses
+monthly_balance = {
+	monthly_expenses = yes
+	monthly_income = yes
+	set_variable = { ebf_economy_monthly_balance = ebf_economy_monthly_income }
+	subtract_from_variable = { ebf_economy_monthly_balance = ebf_economy_monthly_spendings }
+}
+
+#Just used during startup process
+monthly_balance_init = {
+	set_variable = { ebf_economy_monthly_balance = ebf_economy_monthly_income }
+	subtract_from_variable = { ebf_economy_monthly_balance = ebf_economy_monthly_spendings }
+}
+
+add_monthly_balance = {
+	monthly_balance = yes
+	# Check if monthly balance is negative and if check if there is enough money to pay the balance
+	if = {
+		limit = {
+			check_variable = { ebf_economy_monthly_balance < 0 }
+		}
+
+		set_variable = { ebf_economy_monthly_balance_temp = -1 }
+		multiply_variable = { ebf_economy_monthly_balance_temp = ebf_economy_monthly_balance }
+		
+		set_variable = { ebf_economy_monthly_balance_without_monthly_repay = ebf_economy_monthly_balance_temp }
+		subtract_from_variable = { ebf_economy_monthly_balance_without_monthly_repay = ebf_economy_loan_monthly_repay_combined }
+		
+		if = {
+			limit = {
+				OR = {
+					check_variable = { ebf_economy_money > ebf_economy_monthly_balance_temp }
+					check_variable = { ebf_economy_money = ebf_economy_monthly_balance_temp }
+				}
+			}
+			add_to_variable = { ebf_economy_money = ebf_economy_monthly_balance }
+			subtract_from_variable = { ebf_economy_loan_amount = ebf_economy_loan_monthly_repay_combined }
+			clr_country_flag = ebf_economy_bankrupt_did_nothing
+		}
+		else_if = {
+			limit = {
+				OR = {
+					check_variable = { ebf_economy_money > ebf_economy_monthly_balance_without_monthly_repay }
+					check_variable = { ebf_economy_money = ebf_economy_monthly_balance_without_monthly_repay }
+				}
+			}
+			# Event to inform the player that he does not have enough money to pay the monthly repay
+			set_variable = { ebf_economy_loan_monthly_repay_amount = 0 }
+			subtract_from_variable = { ebf_economy_money = ebf_economy_monthly_balance_without_monthly_repay }
+			country_event = ebf_economy_bankrupt_events.2
+		} 
+		else = {
+			# Bankrupt event
+			country_event = ebf_economy_bankrupt_events.1
+		}
+	}
+	else = {
+		# Add Mothly Balance
+		add_to_variable = { ebf_economy_money = ebf_economy_monthly_balance }
+		clr_country_flag = ebf_economy_bankrupt_did_nothing
+	}
+	
+}

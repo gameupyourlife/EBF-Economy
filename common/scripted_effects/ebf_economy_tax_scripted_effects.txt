@@ -1,0 +1,69 @@
+#	Example:
+#
+#	example_effect = {
+#		add_political_power = 66
+#		add_popularity = {
+#			ideology = fascism
+#			popularity = 0.33
+#		}
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		example_effect = yes
+#	}
+#
+
+#####################################
+### emergency_factory_conversion ####
+#####################################
+
+income_tax = {
+	### Income Tax
+	set_variable = { ebf_economy_income_tax_amount = ebf_economy_workforce }
+	multiply_variable = { ebf_economy_income_tax_amount = ebf_economy_income_tax }
+	multiply_variable = { ebf_economy_income_tax_amount = ebf_economy_average_income }
+	round_variable = ebf_economy_income_tax_amount
+			
+}
+
+consumption_tax = {
+	### Consumtion Tax
+	set_variable = { ebf_economy_consumption_tax_amount = modifier@consumer_goods_factor }
+	multiply_variable = { ebf_economy_consumption_tax_amount = ebf_economy_population }
+	multiply_variable = { ebf_economy_consumption_tax_amount = ebf_economy_consumption_tax }
+	multiply_variable = { ebf_economy_consumption_tax_amount = ebf_economy_consumption_money }
+	round_variable = ebf_economy_consumption_tax_amount
+			
+}
+
+wealth_tax = {
+	country_event = { id = ebf_economy_event.2 }
+	set_variable = { ebf_economy_wealth_tax_amount = ebf_economy_rich }
+	multiply_variable = { ebf_economy_wealth_tax_amount = ebf_economy_rich_wealth }
+	multiply_variable = { ebf_economy_wealth_tax_amount = ebf_economy_wealth_tax }
+	round_variable = ebf_economy_wealth_tax_amount 
+
+	
+}
+
+trade_tax = {
+	set_variable = { ebf_economy_trade_tax_amount = num_of_civilian_factories }
+	multiply_variable = { ebf_economy_trade_tax_amount = ebf_economy_civilian_factory_revenue }
+	multiply_variable = { ebf_economy_trade_tax_amount = ebf_economy_trade_tax }
+	round_variable = ebf_economy_trade_tax_amount
+}
+
+combined_tax = {
+	income_tax = yes
+	consumption_tax = yes
+	wealth_tax = yes
+	trade_tax = yes
+	set_variable = { ebf_economy_combined_tax_amount = ebf_economy_trade_tax_amount }
+	add_to_variable = { ebf_economy_combined_tax_amount = ebf_economy_wealth_tax_amount }
+	add_to_variable = { ebf_economy_combined_tax_amount = ebf_economy_consumption_tax_amount }
+	add_to_variable = { ebf_economy_combined_tax_amount = ebf_economy_income_tax_amount }
+	round_variable = ebf_economy_combined_tax_amount
+}

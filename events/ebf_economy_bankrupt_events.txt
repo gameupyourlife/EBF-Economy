@@ -10,23 +10,7 @@ country_event = {
 	is_triggered_only = yes
 
     immediate = {
-		# Takes over the negative monthly balance so no need of removing money
-		set_variable = { ebf_economy_bankrupt_emergency_printing_amount = ebf_economy_monthly_balance }
-
-		set_variable = { ebf_economy_bankrupt_emergency_printing_income_ratio = ebf_economy_bankrupt_emergency_print_amount }
-		divide_variable = { ebf_economy_bankrupt_emergency_printing_income_ratio = ebf_economy_monthly_income }
-		
-		set_variable = { ebf_economy_bankrupt_emergency_printing_inflation = ebf_economy_bankrupt_emergency_printing_income_ratio }
-		divide_variable = { ebf_economy_bankrupt_emergency_printing_inflation = 100 }
-		# Static inflation penalty of 5%
-		add_to_variable = { ebf_economy_bankrupt_emergency_printing_inflation = 0.05 }
-
-		# More Penaltys for not managing the economy correctly
-		add_to_variable = { ebf_economy_national_unrest = 0.05 }		
-		add_stability = -0.05
-		add_war_support = -0.05
-
-		
+		print_needed_money = yes
     }
 
 	option = { # Cut Expenses

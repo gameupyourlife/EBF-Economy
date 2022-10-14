@@ -1,0 +1,87 @@
+# This effect will do the one time call of all functions. This is necesary in order for the mod to work properly
+on_actions = {
+	# Called monthly but not on init
+	on_monthly = {
+		effect = {
+
+			# Calculate Population - First in Line because almoste everything else is based on it
+			country_population = yes
+			adult_population = yes
+			pensioner_population = yes
+			unemployed_population = yes
+			workforce_population = yes
+			rich_population = yes
+
+			# Calculate Tax - combined_tax calls all these other functions:
+			combined_tax = yes
+				# income_tax = yes
+				# consumption_tax = yes
+				# wealth_tax = yes
+				# trade_tax = yes
+
+			# Calculate Expenses - total_expenses calls all these other functions:
+			total_expenses = yes
+				# healthcare_expenses = yes
+				# pension_expenses = yes
+				# saleries_expenses = yes
+				# social_welfare_expenses = yes
+				# building_expenses = yes # ToDo
+				# trading_resources_expenses = yes
+
+			# Calculate Inflation - inflation_rate calls all these other functions:
+			inflation_rate = yes
+				# economic_inflation = yes
+				# printing_inflation = yes
+			inflation = yes
+
+			# Money Priniting
+			national_economy_money = yes
+			money_printing_amount = yes
+			relative_printing_rate = yes
+
+			# Balance - Needed for loan_income_ratio
+			monthly_income = yes
+
+			# Loans - Needed for Monthly Expenses
+			loan_income_ratio = yes
+			interest_rate = yes
+			interest_amount = yes
+			loan_cap = yes
+			monthly_repay_amount = yes
+				# monthly_repay_penalty = yes
+
+			# Balance
+			#monthly_repay_amount Needs to be called before 
+			add_monthly_balance = yes
+			# monthly_balance = yes 
+				# monthly_expenses = yes
+				# monthly_income = yes
+
+			# War Exhaustion
+			adjusted_casualties = yes
+			casualtie_ratio = yes
+			weighted_casualties = yes
+			war_exhaustion = yes
+			war_duration = yes
+			
+			# Happines
+			happines = yes
+				# war_happines_effect = yes
+				# income_tax_happines_effect = yes
+				# constumtion_tax_happines_effect = yes
+				# inflation_rate_hapines_effect = yes
+				# inflation_happines_effect = yes
+				# expenses_happines_effect = yes
+					# healthcare_happines_effect = yes
+					# soldiers_healthcare_happines_effect = yes
+					# pension_happines_effect = yes
+					# saleries_happines_effect = yes
+					# social_welfare_happines_effect = yes
+			happines_effect = yes
+
+			# National Unrest
+			national_unrest = yes
+		
+		}
+	}		
+}

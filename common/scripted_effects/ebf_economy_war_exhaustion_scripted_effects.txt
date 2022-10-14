@@ -1,0 +1,98 @@
+#	Example:
+#
+#	example_effect = {
+#		add_political_power = 66
+#		add_popularity = {
+#			ideology = fascism
+#			popularity = 0.33
+#		}
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		example_effect = yes
+#	}
+#
+
+#####################################
+### emergency_factory_conversion ####
+#####################################
+
+adjusted_casualties = {
+	set_variable = { ebf_economy_adjusted_casualties = casualties }
+	divide_variable = { ebf_economy_adjusted_casualties = 1000 }
+	multiply_variable = { ebf_economy_adjusted_casualties = 2 }
+	divide_variable = { ebf_economy_adjusted_casualties = manpower_k }
+}
+
+casualtie_ratio = {
+	### Gets Casulities for enemy and allied countries
+	every_country = {
+		limit = {
+			has_war_with = ROOT
+		}
+		set_temp_variable = { ebf_economy_casualtie_ratio_temp = casualties }
+		divide_variable = { ebf_economy_casualtie_ratio_temp = 1000 }
+		add_to_array = {
+			array = ebf_economy_enemy_casualties
+			value = ebf_economy_casualtie_ratio_temp
+		}
+	}
+	every_country = {
+		limit = {
+			is_in_faction_with = ROOT
+		}
+		set_temp_variable = { ebf_economy_casualtie_ratio_temp = casualties }
+		divide_variable = { ebf_economy_casualtie_ratio_temp = 1000 }
+		add_to_array = {
+			array = ebf_economy_friendly_casualties
+			value = ebf_economy_casualtie_ratio_temp
+		}
+	}
+
+	### Saves these Values in a Variable
+	set_variable = { ebf_economy_enemy_casualtie = 0 }
+	set_variable = { ebf_economy_friendly_casualtie = 0 }
+	for_each_loop = {
+		array = ebf_economy_enemy_casualties
+		add_to_variable = { ebf_economy_enemy_casualtie = v }
+	}
+	for_each_loop = {
+		array = ebf_economy_friendly_casualties
+		add_to_variable = { ebf_economy_friendly_casualtie = v }
+	}
+	
+	### Calculates the Ratio
+	set_variable = { ebf_economy_casualtie_ratio = casualties }
+	divide_variable = { ebf_economy_casualtie_ratio = 1000 }
+	add_to_variable = { ebf_economy_casualtie_ratio = ebf_economy_friendly_casualtie }
+	divide_variable = { ebf_economy_casualtie_ratio = ebf_economy_enemy_casualtie } 
+}
+
+weighted_casualties = {
+	set_variable = { ebf_economy_weighted_casualties  = ebf_economy_adjusted_casualties }
+	multiply_variable = { ebf_economy_weighted_casualties = ebf_economy_casualtie_ratio }
+}
+
+war_exhaustion = {
+	set_variable = { ebf_economy_war_exhaustion = 1.1 }
+	subtract_from_variable = { ebf_economy_war_exhaustion = modifier@war_support }
+	multiply_variable = { ebf_economy_war_exhaustion = ebf_economy_weighted_casualties }
+	multiply_variable = { ebf_economy_war_exhaustion = ebf_economy_war_duration }
+}
+
+war_duration = {
+	every_country = {
+		if = {
+			limit = {
+				has_war	= yes
+			}
+			add_to_variable = { ebf_economy_war_duration = 1 }
+		}
+		else = {
+			set_variable = { ebf_economy_war_duration = 0 }
+		}
+	}
+}

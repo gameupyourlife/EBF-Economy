@@ -1,0 +1,527 @@
+scripted_gui = {
+
+	economic_test_ui = {
+		context_type = player_context
+		window_name = "countryeconomyview"
+
+		visible = {
+			check_variable = { ebf_economy_show = 1 }
+		}
+
+		effects = {
+			close_button_click = {
+				set_variable = { ebf_economy_show = 0 }
+			}
+
+			### Income Tax Percentage Click
+			income_tax_sub_button_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_income_tax < 0.01 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_income_tax = 0.01 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+            }
+			income_tax_add_button_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_income_tax > 0.99 }
+						}
+					}
+					add_to_variable = { ebf_economy_income_tax = 0.01 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+            }
+
+			income_tax_sub_button_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_income_tax < 0.05 }
+					}
+					set_variable = { ebf_economy_income_tax = 0.00 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_income_tax < 0.05 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_income_tax = 0.05 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+            }
+			income_tax_add_button_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_income_tax > 0.95 }
+					}
+					set_variable = { ebf_economy_income_tax = 1.00 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_income_tax > 0.95 }
+						}
+					}
+					add_to_variable = { ebf_economy_income_tax = 0.05 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+            }
+
+			income_tax_sub_button_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_income_tax < 0.1 }
+					}
+					set_variable = { ebf_economy_income_tax = 0.00 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_income_tax < 0.1 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_income_tax = 0.1 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+            }
+			income_tax_add_button_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_income_tax > 0.90 }
+					}
+					set_variable = { ebf_economy_income_tax = 1.00 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_income_tax > 0.90 }
+						}
+					}
+					add_to_variable = { ebf_economy_income_tax = 0.1 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+            }
+
+			### Consumtion Tax Percentage Click
+			consumption_tax_sub_button_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_consumption_tax < 0.01 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_consumption_tax = 0.01 }
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+            }
+			consumption_tax_add_button_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_consumption_tax > 0.99 }
+						}
+					}
+					add_to_variable = { ebf_economy_consumption_tax = 0.01 }
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+            }
+
+			consumption_tax_sub_button_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_consumption_tax < 0.05 }
+					}
+					set_variable = { ebf_economy_consumption_tax = 0.00 }
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_consumption_tax < 0.05 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_consumption_tax = 0.05 }
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+            }
+			consumption_tax_add_button_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_consumption_tax > 0.95 }
+					}
+					set_variable = { ebf_economy_consumption_tax = 1.00 }
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_consumption_tax > 0.95 }
+						}
+					}
+					add_to_variable = { ebf_economy_consumption_tax = 0.05 }
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+            }
+
+			consumption_tax_sub_button_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_consumption_tax < 0.1 }
+					}
+					set_variable = { ebf_economy_consumption_tax = 0.00 }
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_consumption_tax < 0.1 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_consumption_tax = 0.1 }
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+            }
+			consumption_tax_add_button_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_consumption_tax > 0.90 }
+					}
+					set_variable = { ebf_economy_consumption_tax = 1.00 }
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_consumption_tax > 0.90 }
+						}
+					}
+					add_to_variable = { ebf_economy_consumption_tax = 0.1 }
+					combined_tax = yes
+					monthly_balance = yes
+					happines = yes
+				}
+            }
+
+			### Wealth Tax Percentage Click
+			wealth_tax_sub_button_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_wealth_tax < 0.01 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_wealth_tax = 0.01 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+				}
+            }
+			wealth_tax_add_button_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_wealth_tax > 0.99 }
+						}
+					}
+					add_to_variable = { ebf_economy_wealth_tax = 0.01 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+				}
+            }
+
+			wealth_tax_sub_button_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_wealth_tax < 0.05 }
+					}
+					set_variable = { ebf_economy_wealth_tax = 0.00 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_wealth_tax < 0.05 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_wealth_tax = 0.05 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+				}
+            }
+			wealth_tax_add_button_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_wealth_tax > 0.95 }
+					}
+					set_variable = { ebf_economy_wealth_tax = 1.00 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_wealth_tax > 0.95 }
+						}
+					}
+					add_to_variable = { ebf_economy_wealth_tax = 0.05 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+				}
+            }
+
+			wealth_tax_sub_button_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_wealth_tax < 0.1 }
+					}
+					set_variable = { ebf_economy_wealth_tax = 0.00 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_wealth_tax < 0.1 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_wealth_tax = 0.1 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+				}
+            }
+			wealth_tax_add_button_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_wealth_tax > 0.90 }
+					}
+					set_variable = { ebf_economy_wealth_tax = 1.00 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_wealth_tax > 0.90 }
+						}
+					}
+					add_to_variable = { ebf_economy_wealth_tax = 0.1 }
+					rich_population = yes
+					combined_tax = yes
+					monthly_balance = yes
+				}
+            }
+
+			### Trade Tax Percentage Click
+			trade_tax_sub_button_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_trade_tax < 0.01 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_trade_tax = 0.01 }
+					combined_tax = yes
+					monthly_balance = yes
+					# GDP = yes
+					
+				}
+            }
+			trade_tax_add_button_click = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_trade_tax > 0.99 }
+						}
+					}
+					add_to_variable = { ebf_economy_trade_tax = 0.01 }
+					combined_tax = yes
+					monthly_balance = yes
+					# GDP = yes
+				}
+            }
+
+			trade_tax_sub_button_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_trade_tax < 0.05 }
+					}
+					set_variable = { ebf_economy_trade_tax = 0.00 }
+					combined_tax = yes
+					monthly_balance = yes
+					# GDP = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_trade_tax < 0.05 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_trade_tax = 0.05 }
+					combined_tax = yes
+					monthly_balance = yes
+					# GDP = yes
+				}
+            }
+			trade_tax_add_button_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_trade_tax > 0.95 }
+					}
+					set_variable = { ebf_economy_trade_tax = 1.00 }
+					combined_tax = yes
+					monthly_balance = yes
+					# GDP = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_trade_tax > 0.95 }
+						}
+					}
+					add_to_variable = { ebf_economy_trade_tax = 0.05 }
+					combined_tax = yes
+					monthly_balance = yes
+					# GDP = yes
+				}
+            }
+
+			trade_tax_sub_button_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_trade_tax < 0.1 }
+					}
+					set_variable = { ebf_economy_trade_tax = 0.00 }
+					combined_tax = yes
+					monthly_balance = yes
+					# GDP = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_trade_tax < 0.1 }
+						}
+					}
+					subtract_from_variable = { ebf_economy_trade_tax = 0.1 }
+					combined_tax = yes
+					monthly_balance = yes
+					# GDP = yes
+				}
+            }
+			trade_tax_add_button_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_trade_tax > 0.90 }
+					}
+					set_variable = { ebf_economy_trade_tax = 1.00 }
+					combined_tax = yes
+					monthly_balance = yes
+					# GDP = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { ebf_economy_trade_tax > 0.90 }
+						}
+					}
+					add_to_variable = { ebf_economy_trade_tax = 0.1 }
+					combined_tax = yes
+					monthly_balance = yes
+					# GDP = yes
+				}
+            }
+
+			### Money Printing
+			money_printing_sub_button_click = {
+				subtract_from_variable = { ebf_economy_money_printing_rate = 0.01 }
+				relative_printing_rate = yes
+				national_economy_money = yes
+				money_printing_amount = yes
+				monthly_balance = yes
+				printing_inflation = yes
+            }
+
+			money_printing_add_button_click = {
+				add_to_variable = { ebf_economy_money_printing_rate = 0.01 }
+				relative_printing_rate = yes
+				national_economy_money = yes
+				money_printing_amount = yes
+				monthly_balance = yes
+				printing_inflation = yes
+            }
+
+
+
+
+
+
+
+
+		}
+	}
+}
