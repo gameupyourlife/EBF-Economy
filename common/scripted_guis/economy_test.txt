@@ -442,16 +442,16 @@
 # 				if = {
 # 					limit = {
 # 						NOT = {
-# 							check_variable = { ebf_economy_healtcare_rate < 1 }
+# 							check_variable = { ebf_economy_healthcare_rate < 1 }
 # 						}
 # 					}
-# 					subtract_from_variable = { ebf_economy_healtcare_rate = 1 }
+# 					subtract_from_variable = { ebf_economy_healthcare_rate = 1 }
 # 					country_event = { id = ebf_economy_expenses_event.1 }
 # 				}
 #             }
 # 			healthcare_rate_add_1x_click = {
 				
-# 				add_to_variable = { ebf_economy_healtcare_rate = 1 }
+# 				add_to_variable = { ebf_economy_healthcare_rate = 1 }
 # 				country_event = { id = ebf_economy_expenses_event.1 }
 				
 #             }
@@ -460,22 +460,22 @@
 # 				if = {
 # 					limit = {
 # 						NOT = {
-# 							check_variable = { ebf_economy_healtcare_rate < 10 }
+# 							check_variable = { ebf_economy_healthcare_rate < 10 }
 # 						}
 # 					}
-# 					subtract_from_variable = { ebf_economy_healtcare_rate = 10 }
+# 					subtract_from_variable = { ebf_economy_healthcare_rate = 10 }
 # 					country_event = { id = ebf_economy_expenses_event.1 }
 # 				}
 # 				else = {
 # 					set_variable = {
-# 						ebf_economy_healtcare_rate = 0
+# 						ebf_economy_healthcare_rate = 0
 # 					}
 # 					country_event = { id = ebf_economy_expenses_event.1 }
 # 				}
 #             }
 # 			healthcare_rate_add_1x_control_click = {
 				
-# 				add_to_variable = { ebf_economy_healtcare_rate = 10 }
+# 				add_to_variable = { ebf_economy_healthcare_rate = 10 }
 # 				country_event = { id = ebf_economy_expenses_event.1 }
 				
 #             }
@@ -484,22 +484,22 @@
 # 				if = {
 # 					limit = {
 # 						NOT = {
-# 							check_variable = { ebf_economy_healtcare_rate < 100 }
+# 							check_variable = { ebf_economy_healthcare_rate < 100 }
 # 						}
 # 					}
-# 					subtract_from_variable = { ebf_economy_healtcare_rate = 100 }
+# 					subtract_from_variable = { ebf_economy_healthcare_rate = 100 }
 # 					country_event = { id = ebf_economy_expenses_event.1 }
 # 				}
 # 				else = {
 # 					set_variable = {
-# 						ebf_economy_healtcare_rate = 0
+# 						ebf_economy_healthcare_rate = 0
 # 					}
 # 					country_event = { id = ebf_economy_expenses_event.1 }
 # 				}
 #             }
 # 			healthcare_rate_add_1x_shift_click = {
 				
-# 				add_to_variable = { ebf_economy_healtcare_rate = 100 }
+# 				add_to_variable = { ebf_economy_healthcare_rate = 100 }
 # 				country_event = { id = ebf_economy_expenses_event.1 }
 				
 #             }
@@ -511,16 +511,16 @@
 # 				if = {
 # 					limit = {
 # 						NOT = {
-# 							check_variable = { ebf_economy_soldiers_healtcare_rate < 1 }
+# 							check_variable = { ebf_economy_soldiers_healthcare_rate < 1 }
 # 						}
 # 					}
-# 					subtract_from_variable = { ebf_economy_soldiers_healtcare_rate = 1 }
+# 					subtract_from_variable = { ebf_economy_soldiers_healthcare_rate = 1 }
 # 					country_event = { id = ebf_economy_expenses_event.1 }
 # 				}
 #             }
 # 			soldier_healthcare_rate_add_1x_click = {
 				
-# 				add_to_variable = { ebf_economy_soldiers_healtcare_rate = 1 }
+# 				add_to_variable = { ebf_economy_soldiers_healthcare_rate = 1 }
 # 				country_event = { id = ebf_economy_expenses_event.1 }
 				
 #             }
@@ -529,22 +529,22 @@
 # 				if = {
 # 					limit = {
 # 						NOT = {
-# 							check_variable = { ebf_economy_soldiers_healtcare_rate < 10 }
+# 							check_variable = { ebf_economy_soldiers_healthcare_rate < 10 }
 # 						}
 # 					}
-# 					subtract_from_variable = { ebf_economy_soldiers_healtcare_rate = 10 }
+# 					subtract_from_variable = { ebf_economy_soldiers_healthcare_rate = 10 }
 # 					country_event = { id = ebf_economy_expenses_event.1 }
 # 				}
 # 				else = {
 # 					set_variable = {
-# 						ebf_economy_soldiers_healtcare_rate = 0
+# 						ebf_economy_soldiers_healthcare_rate = 0
 # 					}
 # 					country_event = { id = ebf_economy_expenses_event.1 }
 # 				}
 #             }
 # 			soldier_healthcare_rate_add_1x_control_click = {
 				
-# 				add_to_variable = { ebf_economy_soldiers_healtcare_rate = 10 }
+# 				add_to_variable = { ebf_economy_soldiers_healthcare_rate = 10 }
 # 				country_event = { id = ebf_economy_expenses_event.1 }
 				
 #             }
@@ -553,22 +553,22 @@
 # 				if = {
 # 					limit = {
 # 						NOT = {
-# 							check_variable = { ebf_economy_soldiers_healtcare_rate < 100 }
+# 							check_variable = { ebf_economy_soldiers_healthcare_rate < 100 }
 # 						}
 # 					}
-# 					subtract_from_variable = { ebf_economy_soldiers_healtcare_rate = 100 }
+# 					subtract_from_variable = { ebf_economy_soldiers_healthcare_rate = 100 }
 # 					country_event = { id = ebf_economy_expenses_event.1 }
 # 				}
 # 				else = {
 # 					set_variable = {
-# 						ebf_economy_soldiers_healtcare_rate = 0
+# 						ebf_economy_soldiers_healthcare_rate = 0
 # 					}
 # 					country_event = { id = ebf_economy_expenses_event.1 }
 # 				}
 #             }
 # 			soldier_healthcare_rate_add_1x_shift_click = {
 				
-# 				add_to_variable = { ebf_economy_soldiers_healtcare_rate = 100 }
+# 				add_to_variable = { ebf_economy_soldiers_healthcare_rate = 100 }
 # 				country_event = { id = ebf_economy_expenses_event.1 }
 				
 #             }

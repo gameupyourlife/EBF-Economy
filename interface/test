@@ -1,0 +1,41 @@
+main = {
+	body = {
+		scrollbar
+		Tax = {
+		
+		}
+		Expenses = {
+			
+		}
+		Soacial_Norms = {
+			
+		}
+	}
+	header = {
+		stats_bar = {
+			happines = {
+
+			}
+			money = {
+
+			}
+			monthly_balance = {
+
+			}
+			inflation = {
+
+			}
+			loans = {
+
+			}
+			... = {
+
+			}
+		}
+	}
+	footer = {
+		loan_management = {
+
+		}
+	}
+}

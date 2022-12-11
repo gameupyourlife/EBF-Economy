@@ -1,0 +1,1588 @@
+@prod_sub_pos_x = 169
+@prod_add_pos_x = 243
+@prod_nof_pos_x = 193
+@entry_frame_x = 1
+@entry_title_x = 20
+@entry_happines_x = 435
+@entry_happines_icon_x = 400
+@entry_arrow_icon_x = 275
+@entry_amount_x = 300
+
+@entry_width = 508 # 486 - With Scrollbar | 508 - Without Scrollbar
+guiTypes = {
+
+	containerWindowType = {
+		name = "countryeconomyview_extended"
+		position = { x=550 y=78}	
+		size = { width=1100 height=100%% }
+		
+		
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window2_1b_border"
+		}
+
+		iconType ={
+			name ="production_header_bg"
+			spriteType = "GFX_header_bg"
+			position = { x= 5 y = 07 }
+			Orientation = "UPPER_LEFT"
+		}	
+
+		instantTextboxType = {
+			name = "economy_title"
+			position = { x = 45 y = 8 }
+			
+			font = "hoi_36header"
+			borderSize = {x = 0 y = 0}
+			text = "ECONOMY_ECONOMY"
+			maxWidth = 280
+			maxHeight = 20
+			fixedsize = yes
+		}		
+
+		buttonType = {
+			name = "close_button"
+			position = { x = -42 y = 9 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+
+		containerWindowType = {
+			name = "var_lists"
+			position = { x=0 y=0}	
+			size = { width=100%% height=100%% }
+		
+			containerWindowType = {
+				name = "population_var_lists"
+				position = { x=16 y=48}	
+				size = { width=300 height=430 }
+			
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_mini_tooltip"
+				}
+				
+				instantTextboxType = {
+					name = "header"
+					position = { x = 15 y = 10 }
+					font = "hoi_24header"
+					text = "Population"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_age_of_majority"
+					position = { x = 15 y = 40 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_age_of_majority - [?ebf_economy_age_of_majority]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_retirement_age"
+					position = { x = 15 y = 60 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_retirement_age - [?ebf_economy_retirement_age]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_life_expectancy"
+					position = { x = 15 y = 80 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_life_expectancy - [?ebf_economy_life_expectancy]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_default_age_of_majority"
+					position = { x = 15 y = 100 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_default_age_of_majority - [?ebf_economy_default_age_of_majority]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_default_retirement_age"
+					position = { x = 15 y = 120 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_default_retirement_age - [?ebf_economy_default_retirement_age]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				###
+
+				instantTextboxType = {
+					name = "ebf_economy_adult_population"
+					position = { x = 15 y = 140 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_adult_population - [?ebf_economy_adult_population]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_adult_ratio"
+					position = { x = 15 y = 160 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_adult_ratio - [?ebf_economy_adult_ratio]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_child_ratio"
+					position = { x = 15 y = 180 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_child_ratio - [?ebf_economy_child_ratio]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_theoratical_rich"
+					position = { x = 15 y = 200 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_theoratical_rich - [?ebf_economy_theoratical_rich]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_worker_ratio"
+					position = { x = 15 y = 220 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_worker_ratio - [?ebf_economy_worker_ratio]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_workforce"
+					position = { x = 15 y = 240 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_workforce - [?ebf_economy_workforce]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_rich"
+					position = { x = 15 y = 260 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_rich - [?ebf_economy_rich]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_rich_base_rate"
+					position = { x = 15 y = 280 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_rich_base_rate - [?ebf_economy_rich_base_rate]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_rich_ratio"
+					position = { x = 15 y = 300 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_rich_ratio - [?ebf_economy_rich_ratio]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_unemployed_percentage"
+					position = { x = 15 y = 320 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_unemployed_percentage - [?ebf_economy_unemployed_percentage]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_unemployed_population"
+					position = { x = 15 y = 340 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_unemployed_population - [?ebf_economy_unemployed_population]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_pensioner_population"
+					position = { x = 15 y = 360 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_pensioner_population - [?ebf_economy_pensioner_population]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_pensioner_ratio"
+					position = { x = 15 y = 380 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_pensioner_ratio - [?ebf_economy_pensioner_ratio]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_population"
+					position = { x = 15 y = 400 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_population - [?ebf_economy_population]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+			
+			
+			
+			}
+
+
+			containerWindowType = {
+				name = "tax_var_lists"
+				position = { x=316 y=48}	
+				size = { width=400 height=390 }
+			
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_mini_tooltip"
+				}
+				
+				instantTextboxType = {
+					name = "header"
+					position = { x = 15 y = 10 }
+					font = "hoi_24header"
+					text = "Tax"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_combined_tax_amount"
+					position = { x = 15 y = 40 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_combined_tax_amount - [?ebf_economy_combined_tax_amount]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_consumption_tax"
+					position = { x = 15 y = 60 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_consumption_tax - [?ebf_economy_consumption_tax]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_default_consumption_tax"
+					position = { x = 15 y = 80 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_default_consumption_tax - [?ebf_economy_default_consumption_tax]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_consumption_tax_amount"
+					position = { x = 15 y = 100 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_consumption_tax_amount - [?ebf_economy_consumption_tax_amount]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_income_tax"
+					position = { x = 15 y = 120 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_income_tax - [?ebf_economy_income_tax]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_default_income_tax"
+					position = { x = 15 y = 140 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_default_income_tax - [?ebf_economy_default_income_tax]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_income_tax_amount"
+					position = { x = 15 y = 160 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_income_tax_amount - [?ebf_economy_income_tax_amount]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_trade_tax"
+					position = { x = 15 y = 180 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_trade_tax - [?ebf_economy_trade_tax]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_default_trade_tax"
+					position = { x = 15 y = 200 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_default_trade_tax - [?ebf_economy_default_trade_tax]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_trade_tax_amount"
+					position = { x = 15 y = 220 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_trade_tax_amount - [?ebf_economy_trade_tax_amount]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_wealth_tax"
+					position = { x = 15 y = 240 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_wealth_tax - [?ebf_economy_wealth_tax]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_default_wealth_tax"
+					position = { x = 15 y = 260 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_default_wealth_tax - [?ebf_economy_default_wealth_tax]"
+					maxWidth = 280
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_wealth_tax_amount"
+					position = { x = 15 y = 280 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_wealth_tax_amount - [?ebf_economy_wealth_tax_amount]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_rich_wealth"
+					position = { x = 15 y = 300 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_rich_wealth - [?ebf_economy_rich_wealth]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_consumption_money"
+					position = { x = 15 y = 320 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_consumption_money - [?ebf_economy_consumption_money]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_civilian_factory_revenue"
+					position = { x = 15 y = 340 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_civilian_factory_revenue - [?ebf_economy_civilian_factory_revenue]"
+					maxWidth = 380
+					maxHeight = 20
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_average_income"
+					position = { x = 15 y = 360 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_average_income - [?ebf_economy_average_income]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+			}
+
+
+
+			containerWindowType = {
+				name = "happines_var_lists"
+				position = { x=716 y=48}	
+				size = { width=400 height=350 }
+			
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_mini_tooltip"
+				}
+				
+				instantTextboxType = {
+					name = "header"
+					position = { x = 15 y = 10 }
+					font = "hoi_24header"
+					text = "Happines"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_happines"
+					position = { x = 15 y = 40 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_happines - [?ebf_economy_happines]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_happines_consumption_tax_effect"
+					position = { x = 15 y = 60 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_happines_consumption_tax_effect - [?ebf_economy_happines_consumption_tax_effect]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_happines_expenses_effect"
+					position = { x = 15 y = 80 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_happines_expenses_effect - [?ebf_economy_happines_expenses_effect]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_happines_healthcare_effect"
+					position = { x = 15 y = 100 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_happines_healthcare_effect - [?ebf_economy_happines_healthcare_effect]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_happines_income_tax_effect"
+					position = { x = 15 y = 120 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_happines_income_tax_effect - [?ebf_economy_happines_income_tax_effect]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_happines_inflation_effect"
+					position = { x = 15 y = 140 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_happines_inflation_effect - [?ebf_economy_happines_inflation_effect]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_happines_inflation_rate_effect"
+					position = { x = 15 y = 160 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_happines_inflation_rate_effect - [?ebf_economy_happines_inflation_rate_effect]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_happines_national_unrest_rate"
+					position = { x = 15 y = 180 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_happines_national_unrest_rate - [?ebf_economy_happines_national_unrest_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_happines_pension_effect"
+					position = { x = 15 y = 200 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_happines_pension_effect - [?ebf_economy_happines_pension_effect]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_happines_saleries_effect"
+					position = { x = 15 y = 220 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_happines_saleries_effect - [?ebf_economy_happines_saleries_effect]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_happines_social_welfare_effect"
+					position = { x = 15 y = 240 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_happines_social_welfare_effect - [?ebf_economy_happines_social_welfare_effect]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_happines_soldiers_healthcare_effect"
+					position = { x = 15 y = 260 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_happines_soldiers_healthcare_effect - [?ebf_economy_happines_soldiers_healthcare_effect]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_happines_stability_rate"
+					position = { x = 15 y = 280 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_happines_stability_rate - [?ebf_economy_happines_stability_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_happines_war_effect"
+					position = { x = 15 y = 300 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_happines_war_effect - [?ebf_economy_happines_war_effect]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_happines_war_support_rate"
+					position = { x = 15 y = 320 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_happines_war_support_rate - [?ebf_economy_happines_war_support_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+			}
+
+
+
+
+			containerWindowType = {
+				name = "inflation_var_lists"
+				position = { x=16 y=478}	
+				size = { width=300 height=150 }
+			
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_mini_tooltip"
+				}
+				
+				instantTextboxType = {
+					name = "header"
+					position = { x = 15 y = 10 }
+					font = "hoi_24header"
+					text = "Inflation"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_inflation"
+					position = { x = 15 y = 40 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_inflation - [?ebf_economy_inflation]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_inflation_rate"
+					position = { x = 15 y = 60 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_inflation_rate - [?ebf_economy_inflation_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_economic_inflation"
+					position = { x = 15 y = 80 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_economic_inflation - [?ebf_economy_economic_inflation]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_printing_inflation"
+					position = { x = 15 y = 100 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_printing_inflation - [?ebf_economy_printing_inflation]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_real_inflation"
+					position = { x = 15 y = 120 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_real_inflation - [?ebf_economy_real_inflation]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+			}
+
+			containerWindowType = {
+				name = "balance_var_lists"
+				position = { x=16 y=628}	
+				size = { width=300 height=150 }
+			
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_mini_tooltip"
+				}
+				
+				instantTextboxType = {
+					name = "header"
+					position = { x = 15 y = 10 }
+					font = "hoi_24header"
+					text = "Balance"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_yearly_income"
+					position = { x = 15 y = 40 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_yearly_income - [?ebf_economy_yearly_income]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_monthly_income"
+					position = { x = 15 y = 60 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_monthly_income - [?ebf_economy_monthly_income]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_monthly_spendings"
+					position = { x = 15 y = 80 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_monthly_spendings - [?ebf_economy_monthly_spendings]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_monthly_balance"
+					position = { x = 15 y = 100 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_monthly_balance - [?ebf_economy_monthly_balance]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+			}
+
+			containerWindowType = {
+				name = "expenses_trading_var_lists"
+				position = { x=716 y=628}	
+				size = { width=400 height=390 }
+			
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_mini_tooltip"
+				}
+				
+				instantTextboxType = {
+					name = "header"
+					position = { x = 15 y = 10 }
+					font = "hoi_24header"
+					text = "Expenses"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_total_expenses"
+					position = { x = 15 y = 40 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_total_expenses - [?ebf_economy_total_expenses]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_saleries_expenses"
+					position = { x = 15 y = 60 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_saleries_expenses - [?ebf_economy_saleries_expenses]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_saleries_rate"
+					position = { x = 15 y = 80 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_saleries_rate - [?ebf_economy_saleries_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_social_welfare_expenses"
+					position = { x = 15 y = 100 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_social_welfare_expenses - [?ebf_economy_social_welfare_expenses]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_social_welfare_rate"
+					position = { x = 15 y = 120 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_social_welfare_rate - [?ebf_economy_social_welfare_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_soldiers_healthcare_expenses"
+					position = { x = 15 y = 140 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_soldiers_healthcare_expenses - [?ebf_economy_soldiers_healthcare_expenses]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_soldiers_healthcare_rate"
+					position = { x = 15 y = 160 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_soldiers_healthcare_rate - [?ebf_economy_soldiers_healthcare_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_non_soldiers_healthcare_expenses"
+					position = { x = 15 y = 180 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_non_soldiers_healthcare_expenses - [?ebf_economy_non_soldiers_healthcare_expenses]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_pension_expenses"
+					position = { x = 15 y = 200 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_pension_expenses - [?ebf_economy_pension_expenses]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_pension_rate"
+					position = { x = 15 y = 220 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_pension_rate - [?ebf_economy_pension_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_healthcare_expenses"
+					position = { x = 15 y = 240 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_healthcare_expenses - [?ebf_economy_healthcare_expenses]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_healthcare_rate"
+					position = { x = 15 y = 260 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_healthcare_rate - [?ebf_economy_healthcare_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_recommended_healthcare_rate"
+					position = { x = 15 y = 280 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_recommended_healthcare_rate - [?ebf_economy_recommended_healthcare_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_recommended_pension_rate"
+					position = { x = 15 y = 300 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_recommended_pension_rate - [?ebf_economy_recommended_pension_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_recommended_saleries_rate"
+					position = { x = 15 y = 320 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_recommended_saleries_rate - [?ebf_economy_recommended_saleries_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_recommended_social_welfare_rate"
+					position = { x = 15 y = 340 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_recommended_social_welfare_rate - [?ebf_economy_recommended_social_welfare_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_recommended_soldiers_healthcare_rate"
+					position = { x = 15 y = 360 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_recommended_soldiers_healthcare_rate - [?ebf_economy_recommended_soldiers_healthcare_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+			}
+
+			containerWindowType = {
+				name = "resources_trading_var_lists"
+				position = { x=716 y=398}	
+				size = { width=400 height=230 }
+			
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_mini_tooltip"
+				}
+				
+				instantTextboxType = {
+					name = "header"
+					position = { x = 15 y = 10 }
+					font = "hoi_24header"
+					text = "Resources Trading"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_resources_exported_rate"
+					position = { x = 15 y = 40 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_resources_exported_rate - [?ebf_economy_resources_exported_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_resources_exporting"
+					position = { x = 15 y = 60 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_resources_exporting - [?ebf_economy_resources_exporting]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_resources_exporting_price"
+					position = { x = 15 y = 80 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_resources_exporting_price - [?ebf_economy_resources_exporting_price]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_resources_imported_rate"
+					position = { x = 15 y = 100 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_resources_imported_rate - [?ebf_economy_resources_imported_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_resources_importing"
+					position = { x = 15 y = 120 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_resources_importing - [?ebf_economy_resources_importing]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_resources_importing_price"
+					position = { x = 15 y = 140 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_resources_importing_price - [?ebf_economy_resources_importing_price]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_resources_trading_expenses"
+					position = { x = 15 y = 160 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_resources_trading_expenses - [?ebf_economy_resources_trading_expenses]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_resources_trading_income"
+					position = { x = 15 y = 180 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_resources_trading_income - [?ebf_economy_resources_trading_income]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_resources_trading_net"
+					position = { x = 15 y = 200 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_resources_trading_net - [?ebf_economy_resources_trading_net]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+			}
+
+			containerWindowType = {
+				name = "money_printing_var_lists"
+				position = { x=316 y=438}	
+				size = { width=400 height=210 }
+			
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_mini_tooltip"
+				}
+				
+				instantTextboxType = {
+					name = "header"
+					position = { x = 15 y = 10 }
+					font = "hoi_24header"
+					text = "Money Printing"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_money_decay_rate"
+					position = { x = 15 y = 40 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_money_decay_rate - [?ebf_economy_money_decay_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_money_printing_amount"
+					position = { x = 15 y = 60 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_money_printing_amount - [?ebf_economy_money_printing_amount]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_money_printing_rate"
+					position = { x = 15 y = 80 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_money_printing_rate - [?ebf_economy_money_printing_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_money_relative_printing_rate"
+					position = { x = 15 y = 100 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_money_relative_printing_rate - [?ebf_economy_money_relative_printing_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_national_economy_civilian_factory_money"
+					position = { x = 15 y = 120 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_national_economy_civilian_factory_money - [?ebf_economy_national_economy_civilian_factory_money]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_national_economy_money"
+					position = { x = 15 y = 140 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_national_economy_money - [?ebf_economy_national_economy_money]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_national_economy_pop_money"
+					position = { x = 15 y = 160 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_national_economy_pop_money - [?ebf_economy_national_economy_pop_money]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_national_economy_rich_pop_money"
+					position = { x = 15 y = 180 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_national_economy_rich_pop_money - [?ebf_economy_national_economy_rich_pop_money]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+			}
+
+			containerWindowType = {
+				name = "loan_var_lists"
+				position = { x=316 y=648}	
+				size = { width=400 height=310 }
+			
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_mini_tooltip"
+				}
+				
+				instantTextboxType = {
+					name = "header"
+					position = { x = 15 y = 10 }
+					font = "hoi_24header"
+					text = "Loan"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_loan_amount"
+					position = { x = 15 y = 40 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_loan_amount - [?ebf_economy_loan_amount]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_loan_cap"
+					position = { x = 15 y = 60 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_loan_cap - [?ebf_economy_loan_cap]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_loan_cap_factor"
+					position = { x = 15 y = 80 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_loan_cap_factor - [?ebf_economy_loan_cap_factor]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_loan_income_ratio"
+					position = { x = 15 y = 100 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_loan_income_ratio - [?ebf_economy_loan_income_ratio]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_loan_interest_rate"
+					position = { x = 15 y = 120 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_loan_interest_rate - [?ebf_economy_loan_interest_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_loan_max_interest_rate"
+					position = { x = 15 y = 140 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_loan_max_interest_rate - [?ebf_economy_loan_max_interest_rate]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_loan_monthly_repay_amount"
+					position = { x = 15 y = 160 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_loan_monthly_repay_amount - [?ebf_economy_loan_monthly_repay_amount]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_loan_monthly_repay_combined"
+					position = { x = 15 y = 180 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_loan_monthly_repay_combined - [?ebf_economy_loan_monthly_repay_combined]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_loan_monthly_repay_penalty"
+					position = { x = 15 y = 200 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_loan_monthly_repay_penalty - [?ebf_economy_loan_monthly_repay_penalty]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_loan_monthly_repay_penalty_temp"
+					position = { x = 15 y = 220 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_loan_monthly_repay_penalty_temp - [?ebf_economy_loan_monthly_repay_penalty_temp]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_loan_one_time_repay_amount"
+					position = { x = 15 y = 240 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_loan_one_time_repay_amount - [?ebf_economy_loan_one_time_repay_amount]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_repayment_loan_ratio"
+					position = { x = 15 y = 260 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_repayment_loan_ratio - [?ebf_economy_repayment_loan_ratio]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_monthly_loan_monthly_interest_amount"
+					position = { x = 15 y = 280 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_monthly_loan_monthly_interest_amount - [?ebf_economy_monthly_loan_monthly_interest_amount]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+			}
+
+
+			containerWindowType = {
+				name = "war_exhaustion_lists"
+				position = { x=316 y=958}	
+				size = { width=400 height=190 }
+			
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_mini_tooltip"
+				}
+				
+				instantTextboxType = {
+					name = "header"
+					position = { x = 15 y = 10 }
+					font = "hoi_24header"
+					text = "War Exhaustion"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_adjusted_casualties"
+					position = { x = 15 y = 40 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_adjusted_casualties - [?ebf_economy_adjusted_casualties]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_casualtie_ratio"
+					position = { x = 15 y = 60 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_casualtie_ratio - [?ebf_economy_casualtie_ratio]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_war_duration"
+					position = { x = 15 y = 80 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_war_duration - [?ebf_economy_war_duration]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_war_exhaustion"
+					position = { x = 15 y = 100 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_war_exhaustion - [?ebf_economy_war_exhaustion]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_weighted_casualties"
+					position = { x = 15 y = 120 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_weighted_casualties - [?ebf_economy_weighted_casualties]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_enemy_casualtie"
+					position = { x = 15 y = 140 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_enemy_casualtie - [?ebf_economy_enemy_casualtie]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_friendly_casualtie"
+					position = { x = 15 y = 160 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_friendly_casualtie - [?ebf_economy_friendly_casualtie]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+			}
+
+			containerWindowType = {
+				name = "national_unrest_lists"
+				position = { x=716 y=1018}	
+				size = { width=400 height=110 }
+			
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_mini_tooltip"
+				}
+				
+				instantTextboxType = {
+					name = "header"
+					position = { x = 15 y = 10 }
+					font = "hoi_24header"
+					text = "National Unrest"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_national_unrest"
+					position = { x = 15 y = 40 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_national_unrest - [?ebf_economy_national_unrest]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_national_unrest_building_damage"
+					position = { x = 15 y = 60 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_national_unrest_building_damage - [?ebf_economy_national_unrest_building_damage]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_national_unrest_building_damage_multiplier"
+					position = { x = 15 y = 80 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_national_unrest_building_damage_multiplier - [?ebf_economy_national_unrest_building_damage_multiplier]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+			}
+
+			containerWindowType = {
+				name = "buildings_lists"
+				position = { x=316 y=1148}	
+				size = { width=400 height=200 }
+			
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_mini_tooltip"
+				}
+				
+				instantTextboxType = {
+					name = "header"
+					position = { x = 15 y = 10 }
+					font = "hoi_24header"
+					text = "Buildings"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_air_base_building_cost"
+					position = { x = 15 y = 40 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_air_base_building_cost - [?ebf_economy_air_base_building_cost]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_air_base_combined_monthly_cost"
+					position = { x = 15 y = 60 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_air_base_combined_monthly_cost - [?ebf_economy_air_base_combined_monthly_cost]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_air_base_monthly_cost"
+					position = { x = 15 y = 80 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_air_base_monthly_cost - [?ebf_economy_air_base_monthly_cost]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_anti_air_building_building_cost"
+					position = { x = 15 y = 100 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_anti_air_building_building_cost - [?ebf_economy_anti_air_building_building_cost]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_anti_air_building_combined_monthly_cost"
+					position = { x = 15 y = 120 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_anti_air_building_combined_monthly_cost - [?ebf_economy_anti_air_building_combined_monthly_cost]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_anti_air_building_monthly_cost"
+					position = { x = 15 y = 140 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_anti_air_building_monthly_cost - [?ebf_economy_anti_air_building_monthly_cost]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_arms_factory_building_cost"
+					position = { x = 15 y = 160 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_arms_factory_building_cost - [?ebf_economy_arms_factory_building_cost]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				instantTextboxType = {
+					name = "ebf_economy_arms_factory_combined_monthly_cost"
+					position = { x = 15 y = 180 }
+					font = "hoi_16mbs"
+					text = "ebf_economy_arms_factory_combined_monthly_cost - [?ebf_economy_arms_factory_combined_monthly_cost]"
+					maxWidth = 380
+					maxHeight = 20
+					fixedsize = yes
+				}
+
+				# instantTextboxType = {
+				# 	name = "ebf_economy_arms_factory_monthly_cost"
+				# 	position = { x = 15 y = 200 }
+				# 	font = "hoi_16mbs"
+				# 	text = "ebf_economy_arms_factory_monthly_cost - [?ebf_economy_arms_factory_monthly_cost]"
+				# 	maxWidth = 380
+				# 	maxHeight = 20
+				# 	fixedsize = yes
+				# }
+			}
+
+
+
+		}
+	}
+}
+

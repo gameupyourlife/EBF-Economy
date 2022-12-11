@@ -60,15 +60,15 @@
 
 #  #
 #  ECONOMY_HEALTHCARE_EXPENSES:0 "Healthcare Expenses"
-#  ECONOMY_HEALTHCARE_EXPENSES_AMOUNT: "[?ebf_economy_healtcare_expenses] M $"
+#  ECONOMY_HEALTHCARE_EXPENSES_AMOUNT: "[?ebf_economy_healthcare_expenses] M $"
 
 #  ECONOMY_HEALTHCARE_RATE_NAME:0 "Healthcare Rate"
-#  ECONOMY_HEALTHCARE_RATE:0 "[?ebf_economy_healtcare_rate]"
-#  HEALTHCARE_RATE_AMOUNT:0 "[?ebf_economy_non_soldiers_healtcare_expenses] M $"
+#  ECONOMY_HEALTHCARE_RATE:0 "[?ebf_economy_healthcare_rate]"
+#  HEALTHCARE_RATE_AMOUNT:0 "[?ebf_economy_non_soldiers_healthcare_expenses] M $"
 
 #  ECONOMY_SOLDIER_HEALTHCARE_RATE_NAME:0 "Soldiers Healthcare Rate"
-#  ECONOMY_SOLDIER_HEALTHCARE_RATE:0 "[?ebf_economy_soldiers_healtcare_rate]"
-#  SOLDIER_HEALTHCARE_RATE_AMOUNT:0 "[?ebf_economy_soldiers_healtcare_expenses] M $"
+#  ECONOMY_SOLDIER_HEALTHCARE_RATE:0 "[?ebf_economy_soldiers_healthcare_rate]"
+#  SOLDIER_HEALTHCARE_RATE_AMOUNT:0 "[?ebf_economy_soldiers_healthcare_expenses] M $"
 
 #  #
 #  ECONOMY_PENSION_EXPENSES:0 "Pension Expenses"
@@ -126,7 +126,8 @@
  # Custom
 
  ECONOMY_ECONOMY:0 "Economy"
- ECONOMY_BALANCE_TITLE:0 "Balance"
+ ECONOMY_BALANCE_TITLE:0 "Balance [?ebf_economy_monthly_balance] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ ECONOMY_BALANCE_AMOUNT:0 "[?ebf_economy_monthly_balance] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
  ECONOMY_INCOME_TITLE:0 "Income"
  ECONOMY_INCOME_AMOUNT:0 "§[?ebf_economy_monthly_income|=0]§! [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
@@ -172,13 +173,13 @@
 
  ECONOMY_HEALTHCARE:0 "Civilian Healthcare"
  ECONOMY_HEALTHCARE_HAPPINESS:0 "[?ebf_economy_happines_healthcare_effect|%0]"
- ECONOMY_HEALTHCARE_RATE:0 "[?ebf_economy_healtcare_rate]"
- ECONOMY_HEALTHCARE_AMOUNT:0 "[?ebf_economy_non_soldiers_healtcare_expenses] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ ECONOMY_HEALTHCARE_RATE:0 "[?ebf_economy_healthcare_rate]"
+ ECONOMY_HEALTHCARE_AMOUNT:0 "[?ebf_economy_non_soldiers_healthcare_expenses] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
  ECONOMY_SOLDIERS_HEALTHCARE:0 "Military Healthcare"
  ECONOMY_SOLDIERS_HEALTHCARE_HAPPINESS:0 "[?ebf_economy_happines_soldiers_healthcare_effect|%0]"
- ECONOMY_SOLDIERS_HEALTHCARE_RATE:0 "[?ebf_economy_soldiers_healtcare_rate]"
- ECONOMY_SOLDIERS_HEALTHCARE_AMOUNT:0 "[?ebf_economy_soldiers_healtcare_expenses] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ ECONOMY_SOLDIERS_HEALTHCARE_RATE:0 "[?ebf_economy_soldiers_healthcare_rate]"
+ ECONOMY_SOLDIERS_HEALTHCARE_AMOUNT:0 "[?ebf_economy_soldiers_healthcare_expenses] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
  ECONOMY_PENSION:0 "Pension"
  ECONOMY_PENSION_HAPPINESS:0 "[?ebf_economy_happines_pension_effect|%0]"
@@ -199,7 +200,7 @@
  ECONOMY_RESOURCES_IMPORTING_AMOUNT:0 "[?ebf_economy_resources_trading_expenses] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
  ECONOMY_RESOURCES_IMPORTING_CALCULATION:0 "[?ebf_economy_resources_importing] £resources_to_market_icon  x [?ebf_economy_resources_importing_price] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
- ECONOMY_LOAN_INTREST:0 "Lona Intrest"
+ ECONOMY_LOAN_INTREST:0 "Loans Intrest"
  ECONOMY_LOAN_INTREST_AMOUNT:0 "[?ebf_economy_monthly_loan_monthly_interest_amount] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
  ECONOMY_LOAN_INTREST_RATE:0 "[?ebf_economy_loan_interest_rate|%]"
 
@@ -209,4 +210,46 @@
  ECONOMY_LOAN_REPAYMENT_AMOUNT:0 "[?ebf_economy_loan_monthly_repay_combined] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
 
- ECONOMY_LOANS_TITLEyy:0 "Loans"
+ ECONOMY_LOANS_TITLE:0 "Loans [?ebf_economy_loan_amount] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ ECONOMY_INTEREST_RATE_TITLE:0 "Interest Rate - [?ebf_economy_loan_interest_rate|%]"
+ ECONOMY_LOAN_CAP_TITLE:0 "Loan Cap - [?ebf_economy_loan_cap]"
+
+ ECONOMY_LOAN_MANAGEMENT_TITLE:0 "Management"
+ ECONOMY_LOAN_MANAGEMENT_INTEREST_AMOUNT:0 "Interest Amount"
+ ECONOMY_LOAN_MANAGEMENT_REPAY_AMOUNT:0 "Repay Amount"
+ ECONOMY_LOAN_MANAGEMENT_REPAY_PENALTY_AMOUNT:0 "Repay Penalty"
+
+ ECONOMY_LOAN_MANAGEMENT_INTEREST_VALUE:0 "[?ebf_economy_monthly_loan_monthly_interest_amount] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ ECONOMY_LOAN_MANAGEMENT_REPAY_VALUE:0 "[?ebf_economy_loan_monthly_repay_amount] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ ECONOMY_LOAN_MANAGEMENT_REPAY_PENALTY_VALUE:0 "[?ebf_economy_loan_monthly_repay_penalty] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+
+ ECONOMY_LOAN_AMOUNT_TITLE:0 "Loan Amount"
+ 
+
+
+ ECONOMY_SOCIETY_TITLE:0 "Society"
+ 
+ ECONOMY_FULL_AGE:0 "Full Age"
+ ECONOMY_FULL_AGE_RATIO:0 "[?ebf_economy_adult_ratio|%0]"
+ ECONOMY_FULL_AGE_LIMIT:0 "[?ebf_economy_age_of_majority]"
+ ECONOMY_FULL_AGE_AMOUNT:0 "[?ebf_economy_adult_population] M"
+
+ ECONOMY_RETIREMENT_AGE:0 "Retirement Age"
+ ECONOMY_RETIREMENT_AGE_RATIO:0 "[?ebf_economy_pensioner_ratio|%0]"
+ ECONOMY_RETIREMENT_AGE_LIMIT:0 "[?ebf_economy_retirement_age]"
+ ECONOMY_RETIREMENT_AGE_AMOUNT:0 "[?ebf_economy_pensioner_population] M"
+
+ ECONOMY_UNEMPLOYED_POPULATION:0 "Unemployed Pop."
+ ECONOMY_UNEMPLOYED_POPULATION_RATIO:0 "[?ebf_economy_unemployed_percentage|%0]"
+ ECONOMY_UNEMPLOYED_POPULATION_LIMIT:0 ""
+ ECONOMY_UNEMPLOYED_POPULATION_AMOUNT:0 "[?ebf_economy_unemployed_population] M"
+
+ ECONOMY_RICH:0 "Rich Pop."
+ ECONOMY_RICH_RATIO:0 "[?ebf_economy_rich_ratio|%]"
+ ECONOMY_RICH_LIMIT:0 ""
+ ECONOMY_RICH_AMOUNT:0 "[?ebf_economy_rich] M"
+
+ ECONOMY_POPULATION:0 "Population"
+ ECONOMY_POPULATION_RATIO:0 "100%"
+ ECONOMY_POPULATION_LIMIT:0 ""
+ ECONOMY_POPULATION_AMOUNT:0 "[?ebf_economy_population] M"

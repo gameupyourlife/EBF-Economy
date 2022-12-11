@@ -9,16 +9,19 @@ on_actions = {
 					ebf_economy_factor = 1
 				}
 
-				set_variable = {
-					ebf_economy_cg1 = modifier@consumer_goods_factor
-				}
+
+				# SAMPLE_add_random_point_to_line = yes
+				# SAMPLE_add_random_point_to_line = yes
+				# SAMPLE_add_random_point_to_line = yes
+
+
+
 
 
 				add_ideas = ebf_economy_national_unrest1
 				set_global_flag = ebf_economy_is_active
 				set_country_flag = crisis_in_progress
 
-				set_variable = { ebf_economy_test = 0.1 }
 
 				set_variable = {
 					ebf_economy_ = 0
@@ -32,6 +35,9 @@ on_actions = {
 				set_variable = {
 					ebf_economy_age_of_majority = 18
 				}
+				set_variable = { ebf_economy_default_age_of_majority = 18 }
+				set_variable = { ebf_economy_default_retirement_age = 65 }
+				 
 				set_variable = {
 					ebf_economy_unemployed_percentage = 0.03
 				}
@@ -79,37 +85,37 @@ on_actions = {
 				set_variable = {
 					ebf_economy_income_tax = 0.3
 				}
-				country_event = {
-					id = ebf_economy_tax_event.1
+				set_variable = {
+					ebf_economy_default_income_tax = 0.3
 				}
 				### Consumtion Tax
 				set_variable = {
 					ebf_economy_consumption_tax = 0.18
 				}
-				country_event = {
-					id = ebf_economy_tax_event.2
+				set_variable = {
+					ebf_economy_default_consumption_tax = 0.18
 				}
 				### Wealth Tax
 				set_variable = {
 					ebf_economy_wealth_tax = 0.1
 				}
-				country_event = {
-					id = ebf_economy_tax_event.3
+				set_variable = {
+					ebf_economy_default_wealth_tax = 0.1
 				}
+
 				### Trade Tax
 				set_variable = {
 					ebf_economy_trade_tax = 0.1
 				}
-				country_event = {
-					id = ebf_economy_tax_event.4
+				set_variable = {
+					ebf_economy_default_trade_tax = 0.1
 				}
 				
 				### loan
 				set_variable = { ebf_economy_loan_amount = 0 }
-				set_variable = { ebf_economy_loan_ratio = 0 }
 				set_variable = { ebf_economy_loan_interest_rate = 0 }
-				set_variable = { ebf_economy_loan_cap_factor = 10 }
-				set_variable = { ebf_economy_loan_max_interest_rate = 0.03 }
+				set_variable = { ebf_economy_loan_cap_factor = 1 }
+				set_variable = { ebf_economy_loan_max_interest_rate = 0.025 }
 
 				
 				### State Bank
@@ -136,8 +142,8 @@ on_actions = {
 				}
 
 				##### Expenses
-				set_variable = { ebf_economy_healtcare_rate = 150 }
-				set_variable = { ebf_economy_soldiers_healtcare_rate = 100 }
+				set_variable = { ebf_economy_healthcare_rate = 150 }
+				set_variable = { ebf_economy_soldiers_healthcare_rate = 100 }
 				set_variable = { ebf_economy_pension_rate = 1000 }
 				set_variable = { ebf_economy_saleries_rate = 2000 }
 				set_variable = { ebf_economy_social_welfare_rate = 1000 }
@@ -145,8 +151,8 @@ on_actions = {
 				set_variable = { ebf_economy_resources_importing_price = 1100}
 				
 				# Rate at which the happines effect is 1 aka no effect
-				set_variable = { ebf_economy_recommended_healtcare_rate = 150 }
-				set_variable = { ebf_economy_recommended_soldiers_healtcare_rate = 100 }
+				set_variable = { ebf_economy_recommended_healthcare_rate = 150 }
+				set_variable = { ebf_economy_recommended_soldiers_healthcare_rate = 100 }
 				set_variable = { ebf_economy_recommended_pension_rate = 1000 }
 				set_variable = { ebf_economy_recommended_saleries_rate = 2000 }
 				set_variable = { ebf_economy_recommended_social_welfare_rate = 1000 }

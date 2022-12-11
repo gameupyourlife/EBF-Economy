@@ -49,11 +49,11 @@ adult_population = {
 }
 
 pensioner_population = {
-	set_temp_variable = { ebf_economy_pensioner_ratio = ebf_economy_life_expectancy }
-	subtract_from_temp_variable = { ebf_economy_pensioner_ratio = ebf_economy_retirement_age }
-	divide_temp_variable  = { ebf_economy_pensioner_ratio = ebf_economy_life_expectancy }
-	set_temp_variable = { ebf_economy_worker_ratio = 1 }
-	subtract_from_temp_variable = { ebf_economy_worker_ratio = ebf_economy_pensioner_ratio }
+	set_variable = { ebf_economy_pensioner_ratio = ebf_economy_life_expectancy }
+	subtract_from_variable = { ebf_economy_pensioner_ratio = ebf_economy_retirement_age }
+	divide_variable  = { ebf_economy_pensioner_ratio = ebf_economy_life_expectancy }
+	set_variable = { ebf_economy_worker_ratio = 1 }
+	subtract_from_variable = { ebf_economy_worker_ratio = ebf_economy_pensioner_ratio }
 	set_variable = { ebf_economy_pensioner_population = ebf_economy_pensioner_ratio }
 	multiply_variable = { ebf_economy_pensioner_population = ebf_economy_population }
 	if = {

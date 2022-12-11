@@ -1,0 +1,13 @@
+scripted_gui = {
+	economic_extended_gui_ui = {
+		context_type = player_context
+		window_name = "countryeconomyview_extended"
+
+		visible = {
+			AND = {
+				check_variable = { ebf_economy_show = 1 }
+				check_variable = { ebf_economy_extended_show = 1 }
+			}
+		}
+	}
+}

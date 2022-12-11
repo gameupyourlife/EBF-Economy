@@ -52,13 +52,13 @@ inflation_happines_effect = {
 }
 
 healthcare_happines_effect = {
-	set_variable = { ebf_economy_happines_healthcare_effect = ebf_economy_healtcare_rate }
-	divide_variable = { ebf_economy_happines_healthcare_effect = ebf_economy_recommended_healtcare_rate }
+	set_variable = { ebf_economy_happines_healthcare_effect = ebf_economy_healthcare_rate }
+	divide_variable = { ebf_economy_happines_healthcare_effect = ebf_economy_recommended_healthcare_rate }
 }
 
 soldiers_healthcare_happines_effect = {
-	set_variable = { ebf_economy_happines_soldiers_healthcare_effect = ebf_economy_soldiers_healtcare_rate }
-	divide_variable = { ebf_economy_happines_soldiers_healthcare_effect = ebf_economy_recommended_soldiers_healtcare_rate }
+	set_variable = { ebf_economy_happines_soldiers_healthcare_effect = ebf_economy_soldiers_healthcare_rate }
+	divide_variable = { ebf_economy_happines_soldiers_healthcare_effect = ebf_economy_recommended_soldiers_healthcare_rate }
 }
 
 pension_happines_effect = {

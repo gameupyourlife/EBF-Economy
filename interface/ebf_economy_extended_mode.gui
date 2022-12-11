@@ -1,0 +1,509 @@
+# @prod_sub_pos_x = 169
+# @prod_add_pos_x = 243
+# @prod_nof_pos_x = 193
+# @entry_frame_x = 1
+# @entry_title_x = 20
+# @entry_happines_x = 435
+# @entry_happines_icon_x = 400
+# @entry_arrow_icon_x = 275
+# @entry_amount_x = 300
+
+# @entry_width = 508 # 486 - With Scrollbar | 508 - Without Scrollbar
+# guiTypes = {
+
+# 	containerWindowType = {
+# 		name = "countryeconomyview_extended"
+# 		position = { x=550 y =78 }
+# 		size = { width=550 height=100%% }
+# 		# verticalScrollbar = "right_vertical_slider"
+# 		# scroll_wheel_factor = 40
+# 		# smooth_scrolling = yes
+		
+# 		hide_sound = menu_close_window
+# 		show_sound = menu_open_window
+		
+# 		background = {
+# 			name = "Background"
+# 			quadTextureSprite ="GFX_tiled_window2_1b_border"
+# 		}
+
+# 		iconType ={
+# 			name ="production_header_bg"
+# 			spriteType = "GFX_header_bg"
+# 			position = { x= 5 y = 07 }
+# 			Orientation = "UPPER_LEFT"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "economy_title"
+# 			position = { x = 45 y = 8 }
+# 			font = "hoi_36header"
+# 			text = "ECONOMY_ECONOMY"
+# 			maxWidth = 400
+# 			maxHeight = 20
+# 			fixedsize = yes
+# 		}		
+
+# 		buttonType = {
+# 			name = "close_button"
+# 			position = { x = -42 y = 9 }
+# 			quadTextureSprite ="GFX_closebutton"
+# 			buttonFont = "Main_14_black"
+# 			shortcut = "ESCAPE"
+# 			Orientation = "UPPER_RIGHT"
+# 			clicksound = click_close
+# 			pdx_tooltip = "CLOSE"
+# 		}
+
+# 		instantTextboxType = {
+# 			name = "ebf_economy_money"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "varss"
+# 			position = { x = 25 y = 70 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_monthly_income | [?ebf_economy_monthly_income]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "varsss"
+# 			position = { x = 25 y = 90 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_combined_tax_amount | [?ebf_economy_combined_tax_amount]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "varssss"
+# 			position = { x = 25 y = 110 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_resources_trading_income | [?ebf_economy_resources_trading_income]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "varssadasds"
+# 			position = { x = 25 y = 130 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money_printing_amount | [?ebf_economy_money_printing_amount]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "varadfss"
+# 			position = { x = 25 y = 150 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_monthly_spendings | [?ebf_economy_monthly_spendings]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vaasdfrs"
+# 			position = { x = 25 y = 170 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_total_expenses | [?ebf_economy_total_expenses]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vafdgsrs"
+# 			position = { x = 25 y = 190 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_monthly_loan_monthly_interest_amount | [?ebf_economy_monthly_loan_monthly_interest_amount]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vahgfrs"
+# 			position = { x = 25 y = 210 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_loan_monthly_repay_combined | [?ebf_economy_loan_monthly_repay_combined]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vaghfsrs"
+# 			position = { x = 25 y = 230 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 500
+# 			text = "ebf_economy_monthly_balance | [?ebf_economy_monthly_balance]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vaasdfrs"
+# 			position = { x = 25 y = 250 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 500
+# 			text = "ebf_economy_monthly_balance_temp | [?ebf_economy_monthly_balance_temp]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vaqwrefrs"
+# 			position = { x = 25 y = 270 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 500
+# 			text = "ebf_economy_loan_monthly_repay_combined | [?ebf_economy_loan_monthly_repay_combined]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vateruzzrs"
+# 			position = { x = 25 y = 290 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_bankrupt_emergency_printing_amount | [?ebf_economy_bankrupt_emergency_printing_amount]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vaqwerrs"
+# 			position = { x = 25 y = 310 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_bankrupt_emergency_printing_income_ratio | [?ebf_economy_bankrupt_emergency_printing_income_ratio]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vfdsgdfhars"
+# 			position = { x = 25 y = 330 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_bankrupt_emergency_printing_inflation | [?ebf_economy_bankrupt_emergency_printing_inflation]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vafgdhdfghrs"
+# 			position = { x = 25 y = 350 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_national_unrest | [?ebf_economy_national_unrest]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "varsfdsafdsfsdafsd"
+# 			position = { x = 25 y = 370 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_non_soldiers_healthcare_expenses | [?ebf_economy_non_soldiers_healthcare_expenses]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "tzttrz"
+# 			position = { x = 25 y = 390 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_healthcare_rate | [?ebf_economy_healthcare_rate]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "awsdfwer"
+# 			position = { x = 25 y = 410 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_population | [?ebf_economy_population]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "fgdhhfdg"
+# 			position = { x = 25 y = 430 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_soldiers_healthcare_expenses | [?ebf_economy_soldiers_healthcare_expenses]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "fdsaghfdh"
+# 			position = { x = 25 y = 450 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_soldiers_healthcare_rate | [?ebf_economy_soldiers_healthcare_rate]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "safdsaf"
+# 			position = { x = 25 y = 490 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "max_available_manpower_k | [?max_available_manpower_k]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vaqasdsdfgdsgrs"
+# 			position = { x = 25 y = 490 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_healthcare_expenses | [?ebf_economy_healthcare_expenses]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "varsdadafadsfsfgsdgsdsadsas"
+# 			position = { x = 25 y = 510 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_inflation | [?ebf_economy_inflation]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "fdsagfagfdhdgfh"
+# 			position = { x = 25 y = 520 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vajghjfghjghfrs"
+# 			position = { x = 25 y = 550 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 570 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}	
+
+# 		instantTextboxType = {
+# 			name = "vars"
+# 			position = { x = 25 y = 50 }
+# 			font = "hoi_16mbs"
+# 			maxWidth = 400
+# 			text = "ebf_economy_money | [?ebf_economy_money]"
+# 		}
+
+		
+# 	}
+# }
+
