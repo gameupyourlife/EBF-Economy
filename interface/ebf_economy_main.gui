@@ -140,9 +140,9 @@ guiTypes = {
 						name = "body_window"
 						position = { x=1 y=48}	
 						size = { width=512 height=216 }
-						verticalScrollbar = "right_vertical_slider"
-						scroll_wheel_factor = 40
-						smooth_scrolling = yes
+						# verticalScrollbar = "right_vertical_slider"
+						# scroll_wheel_factor = 40
+						# smooth_scrolling = yes
 
 						background = {
 							name = "Background"
@@ -849,9 +849,9 @@ guiTypes = {
 						name = "body_window"
 						position = { x=1 y=48}	
 						size = { width=512 height=288 } 
-						verticalScrollbar = "right_vertical_slider"
-						scroll_wheel_factor = 40
-						smooth_scrolling = yes
+						# verticalScrollbar = "right_vertical_slider"
+						# scroll_wheel_factor = 40
+						# smooth_scrolling = yes
 
 						background = {
 							name = "Background"
@@ -1216,6 +1216,17 @@ guiTypes = {
 								font = "hoi_18mbs"
 								borderSize = {x = 0 y = 0}
 								text = "ECONOMY_SALERIES_RATE"
+								maxWidth = 50
+								maxHeight = 20
+								format = center
+							}
+
+							instantTextboxType = {
+								name = "value"
+								position = { x=@prod_nof_pos_x y=8 }
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_PENSION_RATE"
 								maxWidth = 50
 								maxHeight = 25
 								fixedsize = yes
@@ -1587,13 +1598,25 @@ guiTypes = {
 					format = center
 				}
 
+				# instantTextboxType = {
+				# 	name = "balance_amount"
+				# 	position = { x = 35 y = 10 }
+					
+				# 	font = "hoi_36header"
+				# 	borderSize = {x = 0 y = 0}
+				# 	text = "ECONOMY_BALANCE_AMOUNT"
+				# 	maxWidth = 450
+				# 	maxHeight = 20
+				# 	format = center
+				# }
+
 			}
 
 			# Balance Overview - Contains Income and Expenses
 			containerWindowType = {
 				name = "loans_window"
 				position = { x=12 y=645}	
-				size = { width=514 height=100 }
+				size = { width=514 height=400 }
 				# verticalScrollbar = "right_vertical_slider"
 				# scroll_wheel_factor = 40
 				# smooth_scrolling = yes
@@ -1607,30 +1630,421 @@ guiTypes = {
 				
 
 				containerWindowType = {
-					name = "intrest_rate_window"
-					position = { x=1 y=48}	
-					size = { width=512 height=200 }
+					name = "interest_rate_window"
+					position = { x=3 y=53}	
+					size = { width=254 height=170 }
 					# verticalScrollbar = "right_vertical_slider"
 					# scroll_wheel_factor = 40
 					# smooth_scrolling = yes
-					
 
-					
+					background = {
+						name = "background"		
+						quadTextureSprite = "GFX_mini_tooltip"
+					}
+
+					instantTextboxType = {
+						name = "interest_rate_title"
+						position = { x = 0 y = 10 }
+						font = "hoi_24header"
+						text = "ECONOMY_INTEREST_RATE_TITLE"
+						maxWidth = 254
+						format = center
+					}
+
+					# instantTextboxType = {
+					# 	name = "interest_rate_amount"
+					# 	position = { x = 170 y = 10 }
+						
+					# 	font = "hoi_24header"
+					# 	borderSize = {x = 0 y = 0}
+					# 	text = "ECONOMY_INTEREST_RATE_AMOUNT"
+					# }
 
 					containerWindowType = {
-						name = "body_window"
-						position = { x=1 y=48}	
-						size = { width=512 height=216 }
-						verticalScrollbar = "right_vertical_slider"
-						scroll_wheel_factor = 40
-						smooth_scrolling = yes
+						name = "graph_window"
+						position = { x=0 y=0}	
+						size = { width=100%% height=100%% }
+						# verticalScrollbar = "right_vertical_slider"
+						# scroll_wheel_factor = 40
+						# smooth_scrolling = yes
 
-						background = {
-							name = "Background"
-							quadTextureSprite ="GFX_tiled_window_transparent"
+						# Chart background
+						iconType = {
+							name = "chart"
+							spriteType = "GFX_Line_Graph_Chart"
+							position = { x = 41 y = 50 }
+						}
+				
+						# Container which will hold each of our line segments
+						gridboxtype = {
+							name = "interest_rate_line_segments"
+							position = { x = 50 y = 46 }
+							size = { width = 0 height = 200 }
+							slotsize = { width = 10 height = 200 }
+							max_slots_horizontal = 20
+							add_horizontal = yes
+						}
+				
+						# y-axis labels, very optional
+						instantTextboxType = {
+							name = "100pct"
+							position = { x= -15 y = 45}
+							font = "hoi_16mbs"
+							text = "2,5%"
+							maxWidth = 50
+							format = right
+						}
+						instantTextboxType = {
+							name = "80pct"
+							position = { x= -15 y = 65}
+							font = "hoi_16mbs"
+							text = "2%"
+							maxWidth = 50
+							format = right
+						}
+						instantTextboxType = {
+							name = "60pct"
+							position = { x= -15 y = 85}
+							font = "hoi_16mbs"
+							text = "1,5%"
+							maxWidth = 50
+							format = right
+						}
+						instantTextboxType = {
+							name = "40pct"
+							position = { x= -15 y = 105}
+							font = "hoi_16mbs"
+							text = "1%"
+							maxWidth = 50
+							format = right
+						}
+						instantTextboxType = {
+							name = "20pct"
+							position = { x= -15 y = 125}
+							font = "hoi_16mbs"
+							text = "0,5%"
+							maxWidth = 50
+							format = right
+						}
+						instantTextboxType = {
+							name = "0pct"
+							position = { x= -15 y = 145}
+							font = "hoi_16mbs"
+							text = "0%"
+							maxWidth = 50
+							format = right
 						}
 					}
 				}
+
+				containerWindowType = {
+					name = "loan_management_window"
+					position = { x=3 y=223}	
+					size = { width=254 height=170 }
+					# verticalScrollbar = "right_vertical_slider"
+					# scroll_wheel_factor = 40
+					# smooth_scrolling = yes
+
+					background = {
+						name = "background"		
+						quadTextureSprite = "GFX_mini_tooltip"
+					}
+
+					instantTextboxType = {
+						name = "interest_rate_title"
+						position = { x = 0 y = 10 }
+						font = "hoi_24header"
+						text = "ECONOMY_LOAN_MANAGEMENT_TITLE"
+						maxWidth = 254
+						format = center
+					}
+					
+
+					instantTextboxType = {
+						name = "interest_amount"
+						position = { x = 15 y = 60 }
+						font = "hoi_18mbs"
+						text = "ECONOMY_LOAN_MANAGEMENT_INTEREST_AMOUNT"
+						maxWidth = 254
+					}
+
+					instantTextboxType = {
+						name = "loan_repay_amount"
+						position = { x = 15 y = 80 }
+						font = "hoi_18mbs"
+						text = "ECONOMY_LOAN_MANAGEMENT_REPAY_AMOUNT"
+						maxWidth = 254
+					}
+
+					instantTextboxType = {
+						name = "loan_repay_penalty_amount"
+						position = { x = 15 y = 100 }
+						font = "hoi_18mbs"
+						text = "ECONOMY_LOAN_MANAGEMENT_REPAY_PENALTY_AMOUNT"
+						maxWidth = 254
+					}
+
+
+
+					instantTextboxType = {
+						name = "interest_value"
+						position = { x = 135 y = 60 }
+						font = "hoi_18mbs"
+						text = "ECONOMY_LOAN_MANAGEMENT_INTEREST_VALUE"
+						maxWidth = 254
+					}
+
+					instantTextboxType = {
+						name = "loan_repay_value"
+						position = { x = 135 y = 80 }
+						font = "hoi_18mbs"
+						text = "ECONOMY_LOAN_MANAGEMENT_REPAY_VALUE"
+						maxWidth = 254
+					}
+
+					instantTextboxType = {
+						name = "loan_repay_penalty_value"
+						position = { x = 135 y = 100 }
+						font = "hoi_18mbs"
+						text = "ECONOMY_LOAN_MANAGEMENT_REPAY_PENALTY_VALUE"
+						maxWidth = 254
+					}
+
+
+
+						# 254
+						# 127
+						# 13
+
+					buttonType = {
+						name = "loan_repayment_sub_button"
+						position = { x=94 y=130 }
+						quadTextureSprite = "GFX_subtract_one"
+						font = "hoi_16mbs"
+						clicksound = click_default
+						tooltip = "SUB_BUTTON_TOOLTIP"
+					}
+					buttonType = {
+						name = "loan_repayment_add_button"
+						position = { x=134 y=130 }
+						quadTextureSprite = "GFX_add_one"
+						font = "hoi_16mbs"
+						clicksound = click_default
+						tooltip  = "ADD_BUTTON_TOOLTIP"
+					}
+
+					# instantTextboxType = {
+					# 	name = "interest_rate_amount"
+					# 	position = { x = 170 y = 10 }
+						
+					# 	font = "hoi_24header"
+					# 	borderSize = {x = 0 y = 0}
+					# 	text = "ECONOMY_INTEREST_RATE_AMOUNT"
+					# }
+
+					
+				}
+
+				containerWindowType = {
+					name = "loan_cap_window"
+					position = { x=257 y=53}	
+					size = { width=254 height=170 }
+					# verticalScrollbar = "right_vertical_slider"
+					# scroll_wheel_factor = 40
+					# smooth_scrolling = yes
+
+					background = {
+						name = "background"		
+						quadTextureSprite = "GFX_mini_tooltip"
+					}
+
+					instantTextboxType = {
+						name = "loan_cap_title"
+						position = { x = 0 y = 10 }
+						font = "hoi_24header"
+						text = "ECONOMY_LOAN_CAP_TITLE"
+						maxWidth = 254
+						format = center
+					}
+
+					containerWindowType = {
+						name = "graph_window"
+						position = { x=0 y=0}	
+						size = { width=100%% height=100%% }
+						# verticalScrollbar = "right_vertical_slider"
+						# scroll_wheel_factor = 40
+						# smooth_scrolling = yes
+
+						# Chart background
+						iconType = {
+							name = "chart"
+							spriteType = "GFX_Line_Graph_Chart"
+							position = { x = 41 y = 50 }
+						}
+				
+						# Container which will hold each of our line segments
+						gridboxtype = {
+							name = "line_segments"
+							position = { x = 50 y = 46 }
+							size = { width = 0 height = 200 }
+							slotsize = { width = 10 height = 200 }
+							max_slots_horizontal = 20
+							add_horizontal = yes
+						}
+				
+						# y-axis labels, very optional
+						instantTextboxType = {
+							name = "100pct"
+							position = { x= -15 y = 45}
+							font = "garamond_14"
+							text = "100%"
+							maxWidth = 50
+							format = right
+						}
+						instantTextboxType = {
+							name = "80pct"
+							position = { x= -15 y = 65}
+							font = "garamond_14"
+							text = "80%"
+							maxWidth = 50
+							format = right
+						}
+						instantTextboxType = {
+							name = "60pct"
+							position = { x= -15 y = 85}
+							font = "garamond_14"
+							text = "60%"
+							maxWidth = 50
+							format = right
+						}
+						instantTextboxType = {
+							name = "40pct"
+							position = { x= -15 y = 105}
+							font = "garamond_14"
+							text = "40%"
+							maxWidth = 50
+							format = right
+						}
+						instantTextboxType = {
+							name = "20pct"
+							position = { x= -15 y = 125}
+							font = "garamond_14"
+							text = "20%"
+							maxWidth = 50
+							format = right
+						}
+						instantTextboxType = {
+							name = "0pct"
+							position = { x= -15 y = 145}
+							font = "garamond_14"
+							text = "0%"
+							maxWidth = 50
+							format = right
+						}
+					}
+				}
+
+
+				containerWindowType = {
+					name = "loan_amount_window"
+					position = { x=257 y=223}	
+					size = { width=254 height=170 }
+					# verticalScrollbar = "right_vertical_slider"
+					# scroll_wheel_factor = 40
+					# smooth_scrolling = yes
+
+					background = {
+						name = "background"		
+						quadTextureSprite = "GFX_mini_tooltip"
+					}
+
+					instantTextboxType = {
+						name = "loan_cap_title"
+						position = { x = 0 y = 10 }
+						font = "hoi_24header"
+						text = "ECONOMY_LOAN_AMOUNT_TITLE"
+						maxWidth = 254
+						format = center
+					}
+
+					containerWindowType = {
+						name = "graph_window"
+						position = { x=0 y=0}	
+						size = { width=100%% height=100%% }
+						# verticalScrollbar = "right_vertical_slider"
+						# scroll_wheel_factor = 40
+						# smooth_scrolling = yes
+
+						# Chart background
+						iconType = {
+							name = "chart"
+							spriteType = "GFX_Line_Graph_Chart"
+							position = { x = 41 y = 50 }
+						}
+				
+						# Container which will hold each of our line segments
+						gridboxtype = {
+							name = "line_segments"
+							position = { x = 50 y = 46 }
+							size = { width = 0 height = 200 }
+							slotsize = { width = 10 height = 200 }
+							max_slots_horizontal = 20
+							add_horizontal = yes
+						}
+				
+						# y-axis labels, very optional
+						instantTextboxType = {
+							name = "100pct"
+							position = { x= -15 y = 45}
+							font = "garamond_14"
+							text = "100%"
+							maxWidth = 50
+							format = right
+						}
+						instantTextboxType = {
+							name = "80pct"
+							position = { x= -15 y = 65}
+							font = "garamond_14"
+							text = "80%"
+							maxWidth = 50
+							format = right
+						}
+						instantTextboxType = {
+							name = "60pct"
+							position = { x= -15 y = 85}
+							font = "garamond_14"
+							text = "60%"
+							maxWidth = 50
+							format = right
+						}
+						instantTextboxType = {
+							name = "40pct"
+							position = { x= -15 y = 105}
+							font = "garamond_14"
+							text = "40%"
+							maxWidth = 50
+							format = right
+						}
+						instantTextboxType = {
+							name = "20pct"
+							position = { x= -15 y = 125}
+							font = "garamond_14"
+							text = "20%"
+							maxWidth = 50
+							format = right
+						}
+						instantTextboxType = {
+							name = "0pct"
+							position = { x= -15 y = 145}
+							font = "garamond_14"
+							text = "0%"
+							maxWidth = 50
+							format = right
+						}
+					}
+				}
+
+
 
 				iconType ={
 					name ="category_header"
@@ -1653,6 +2067,985 @@ guiTypes = {
 					format = center
 				}
 			}
+
+
+
+
+			containerWindowType = {
+				name = "society_window"
+				position = { x=12 y=1036}	
+				size = { width=514 height=230 }
+
+				containerWindowType = {
+					name = "body_window"
+					position = { x=1 y=54}	
+					size = { width=512 height=216 }
+					# verticalScrollbar = "right_vertical_slider"
+					# scroll_wheel_factor = 40
+					# smooth_scrolling = yes
+
+					background = {
+						name = "Background"
+						quadTextureSprite ="GFX_tiled_window_transparent"
+					}
+					
+					containerWindowType = {
+						name = "entry_population"
+						position = { x=@entry_frame_x y=0 }
+						size = { width =@entry_width height = 36 } # size = { width = @entry_width height = 36 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_mini_tooltip"
+						}
+						
+						instantTextboxType = {
+							name = "title"
+							position = { x = @entry_title_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_POPULATION"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "population_population_amount"
+							position = { x =166 y = 8 }
+							font = "hoi_18mbs"
+							text = "ECONOMY_POPULATION_AMOUNT"
+							maxWidth = 100
+							maxHeight = 20
+							format = right
+							
+							alwaystransparent = yes
+						}		
+
+						iconType = {
+							name = "arrow"
+							position = { x=@entry_arrow_icon_x	 y=10 }
+							spriteType = "GFX_opinion_arrow_right"
+							# scale = 0.9
+						}
+						
+						iconType = {
+							name = "population_ratio_icon"
+							position = { x=@entry_happines_icon_x	 y=5 }
+							spriteType = "GFX_population_icon"
+							scale = 0.9
+						}
+
+						instantTextboxType = {
+							name = "population_ratio_value"
+							position = { x = @entry_happines_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_POPULATION_RATIO"
+							maxWidth = 50
+							maxHeight = 20
+							format = left
+						}
+
+						instantTextboxType = {
+							name = "value"
+							position = { x=@prod_nof_pos_x y=8 }
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_POPULATION_LIMIT"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+					}
+
+					containerWindowType = {
+						name = "entry_full_age"
+						position = { x=@entry_frame_x y=36 }
+						size = { width =@entry_width height = 36 } # size = { width = @entry_width height = 36 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_mini_tooltip"
+						}
+						
+						instantTextboxType = {
+							name = "title"
+							position = { x = @entry_title_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_FULL_AGE"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "aduld_population_amount"
+							position = { x =@entry_amount_x y = 8 }
+							font = "hoi_18mbs"
+							text = "ECONOMY_FULL_AGE_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							# format = center
+							
+							alwaystransparent = yes
+						}		
+
+						iconType = {
+							name = "arrow"
+							position = { x=@entry_arrow_icon_x	 y=10 }
+							spriteType = "GFX_opinion_arrow_right"
+							# scale = 0.9
+						}
+						
+						iconType = {
+							name = "full_age_ratio_icon"
+							position = { x=@entry_happines_icon_x	 y=5 }
+							spriteType = "GFX_population_icon"
+							scale = 0.9
+						}
+
+						instantTextboxType = {
+							name = "full_age_ratio_value"
+							position = { x = @entry_happines_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_FULL_AGE_RATIO"
+							maxWidth = 50
+							maxHeight = 20
+							format = left
+						}
+
+						instantTextboxType = {
+							name = "value"
+							position = { x=@prod_nof_pos_x y=8 }
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_FULL_AGE_LIMIT"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+						buttonType = {
+							name = "full_age_sub_button"
+							position = { x=@prod_sub_pos_x y=5 }
+							quadTextureSprite = "GFX_subtract_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip = "SUB_BUTTON_TOOLTIP"
+						}
+						buttonType = {
+							name = "full_age_add_button"
+							position = { x=@prod_add_pos_x y=5 }
+							quadTextureSprite = "GFX_add_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip  = "ADD_BUTTON_TOOLTIP"
+						}
+					}
+
+
+					containerWindowType = {
+						name = "entry_retirement_age"
+						position = { x=@entry_frame_x y=72 }
+						size = { width =@entry_width height = 36 } # size = { width = @entry_width height = 36 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_mini_tooltip"
+						}
+						
+						instantTextboxType = {
+							name = "title"
+							position = { x = @entry_title_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_RETIREMENT_AGE"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "senior_population_amount"
+							position = { x =@entry_amount_x y = 8 }
+							font = "hoi_18mbs"
+							text = "ECONOMY_RETIREMENT_AGE_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							# format = center
+							
+							alwaystransparent = yes
+						}		
+
+						iconType = {
+							name = "arrow"
+							position = { x=@entry_arrow_icon_x	 y=10 }
+							spriteType = "GFX_opinion_arrow_right"
+							# scale = 0.9
+						}
+						
+						iconType = {
+							name = "retirement_age_ratio_icon"
+							position = { x=@entry_happines_icon_x	 y=5 }
+							spriteType = "GFX_population_icon"
+							scale = 0.9
+						}
+
+						instantTextboxType = {
+							name = "retirement_age_ratio_value"
+							position = { x = @entry_happines_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_RETIREMENT_AGE_RATIO"
+							maxWidth = 50
+							maxHeight = 20
+							format = left
+						}
+
+						instantTextboxType = {
+							name = "value"
+							position = { x=@prod_nof_pos_x y=8 }
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_RETIREMENT_AGE_LIMIT"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+						buttonType = {
+							name = "retirement_age_sub_button"
+							position = { x=@prod_sub_pos_x y=5 }
+							quadTextureSprite = "GFX_subtract_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip = "SUB_BUTTON_TOOLTIP"
+						}
+						buttonType = {
+							name = "retirement_age_add_button"
+							position = { x=@prod_add_pos_x y=5 }
+							quadTextureSprite = "GFX_add_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip  = "ADD_BUTTON_TOOLTIP"
+						}
+					}
+
+					containerWindowType = {
+						name = "entry_unemployed_population"
+						position = { x=@entry_frame_x y=108 }
+						size = { width =@entry_width height = 36 } # size = { width = @entry_width height = 36 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_mini_tooltip"
+						}
+						
+						instantTextboxType = {
+							name = "title"
+							position = { x = @entry_title_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_UNEMPLOYED_POPULATION"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "unemployed_population_population_amount"
+							position = { x =@entry_amount_x y = 8 }
+							font = "hoi_18mbs"
+							text = "ECONOMY_UNEMPLOYED_POPULATION_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							# format = center
+							
+							alwaystransparent = yes
+						}		
+
+						iconType = {
+							name = "arrow"
+							position = { x=@entry_arrow_icon_x	 y=10 }
+							spriteType = "GFX_opinion_arrow_right"
+							# scale = 0.9
+						}
+						
+						iconType = {
+							name = "unemployed_population_ratio_icon"
+							position = { x=@entry_happines_icon_x	 y=5 }
+							spriteType = "GFX_population_icon"
+							scale = 0.9
+						}
+
+						instantTextboxType = {
+							name = "unemployed_population_ratio_value"
+							position = { x = @entry_happines_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_UNEMPLOYED_POPULATION_RATIO"
+							maxWidth = 50
+							maxHeight = 20
+							format = left
+						}
+
+						instantTextboxType = {
+							name = "value"
+							position = { x=@prod_nof_pos_x y=8 }
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_UNEMPLOYED_POPULATION_LIMIT"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+					}
+
+					containerWindowType = {
+						name = "entry_rich"
+						position = { x=@entry_frame_x y=144 }
+						size = { width =@entry_width height = 36 } # size = { width = @entry_width height = 36 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_mini_tooltip"
+						}
+						
+						instantTextboxType = {
+							name = "title"
+							position = { x = @entry_title_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_RICH"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "rich_population_amount"
+							position = { x =@entry_amount_x y = 8 }
+							font = "hoi_18mbs"
+							text = "ECONOMY_RICH_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							# format = center
+							
+							alwaystransparent = yes
+						}		
+
+						iconType = {
+							name = "arrow"
+							position = { x=@entry_arrow_icon_x	 y=10 }
+							spriteType = "GFX_opinion_arrow_right"
+							# scale = 0.9
+						}
+						
+						iconType = {
+							name = "rich_ratio_icon"
+							position = { x=@entry_happines_icon_x	 y=5 }
+							spriteType = "GFX_population_icon"
+							scale = 0.9
+						}
+
+						instantTextboxType = {
+							name = "rich_ratio_value"
+							position = { x = @entry_happines_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_RICH_RATIO"
+							maxWidth = 50
+							maxHeight = 20
+							format = left
+						}
+
+						instantTextboxType = {
+							name = "value"
+							position = { x=@prod_nof_pos_x y=8 }
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_RICH_LIMIT"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+					}
+
+					
+				}
+					
+				
+				
+	
+				iconType ={
+					name ="category_header"
+					spriteType = "GFX_ebf_section_header_bg"
+					position = { x=0 y=1 }
+					Orientation = "UPPER_LEFT"
+				}
+
+		
+				
+				instantTextboxType = {
+					name = "balance_title"
+					position = { x = 35 y = 10 }
+					
+					font = "hoi_36header"
+					borderSize = {x = 0 y = 0}
+					text = "ECONOMY_SOCIETY_TITLE"
+					maxWidth = 450
+					maxHeight = 20
+					format = center
+				}
+
+			}
+
+
+
+
+
+
+
+
+
+			containerWindowType = {
+				name = "happines_window"
+				position = { x=12 y=1266}	
+				size = { width=514 height=230 }
+
+				containerWindowType = {
+					name = "body_window"
+					position = { x=1 y=54}	
+					size = { width=512 height=216 }
+					# verticalScrollbar = "right_vertical_slider"
+					# scroll_wheel_factor = 40
+					# smooth_scrolling = yes
+
+					background = {
+						name = "Background"
+						quadTextureSprite ="GFX_tiled_window_transparent"
+					}
+					
+					containerWindowType = {
+						name = "entry_population"
+						position = { x=@entry_frame_x y=0 }
+						size = { width =@entry_width height = 36 } # size = { width = @entry_width height = 36 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_mini_tooltip"
+						}
+						
+						instantTextboxType = {
+							name = "title"
+							position = { x = @entry_title_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_POPULATION"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "population_population_amount"
+							position = { x =166 y = 8 }
+							font = "hoi_18mbs"
+							text = "ECONOMY_POPULATION_AMOUNT"
+							maxWidth = 100
+							maxHeight = 20
+							format = right
+							
+							alwaystransparent = yes
+						}		
+
+						iconType = {
+							name = "arrow"
+							position = { x=@entry_arrow_icon_x	 y=10 }
+							spriteType = "GFX_opinion_arrow_right"
+							# scale = 0.9
+						}
+						
+						iconType = {
+							name = "population_ratio_icon"
+							position = { x=@entry_happines_icon_x	 y=5 }
+							spriteType = "GFX_population_icon"
+							scale = 0.9
+						}
+
+						instantTextboxType = {
+							name = "population_ratio_value"
+							position = { x = @entry_happines_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_POPULATION_RATIO"
+							maxWidth = 50
+							maxHeight = 20
+							format = left
+						}
+
+						instantTextboxType = {
+							name = "value"
+							position = { x=@prod_nof_pos_x y=8 }
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_POPULATION_LIMIT"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+					}
+
+					containerWindowType = {
+						name = "entry_full_age"
+						position = { x=@entry_frame_x y=36 }
+						size = { width =@entry_width height = 36 } # size = { width = @entry_width height = 36 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_mini_tooltip"
+						}
+						
+						instantTextboxType = {
+							name = "title"
+							position = { x = @entry_title_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_FULL_AGE"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "aduld_population_amount"
+							position = { x =@entry_amount_x y = 8 }
+							font = "hoi_18mbs"
+							text = "ECONOMY_FULL_AGE_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							# format = center
+							
+							alwaystransparent = yes
+						}		
+
+						iconType = {
+							name = "arrow"
+							position = { x=@entry_arrow_icon_x	 y=10 }
+							spriteType = "GFX_opinion_arrow_right"
+							# scale = 0.9
+						}
+						
+						iconType = {
+							name = "full_age_ratio_icon"
+							position = { x=@entry_happines_icon_x	 y=5 }
+							spriteType = "GFX_population_icon"
+							scale = 0.9
+						}
+
+						instantTextboxType = {
+							name = "full_age_ratio_value"
+							position = { x = @entry_happines_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_FULL_AGE_RATIO"
+							maxWidth = 50
+							maxHeight = 20
+							format = left
+						}
+
+						instantTextboxType = {
+							name = "value"
+							position = { x=@prod_nof_pos_x y=8 }
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_FULL_AGE_LIMIT"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+						buttonType = {
+							name = "full_age_sub_button"
+							position = { x=@prod_sub_pos_x y=5 }
+							quadTextureSprite = "GFX_subtract_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip = "SUB_BUTTON_TOOLTIP"
+						}
+						buttonType = {
+							name = "full_age_add_button"
+							position = { x=@prod_add_pos_x y=5 }
+							quadTextureSprite = "GFX_add_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip  = "ADD_BUTTON_TOOLTIP"
+						}
+					}
+
+
+					containerWindowType = {
+						name = "entry_retirement_age"
+						position = { x=@entry_frame_x y=72 }
+						size = { width =@entry_width height = 36 } # size = { width = @entry_width height = 36 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_mini_tooltip"
+						}
+						
+						instantTextboxType = {
+							name = "title"
+							position = { x = @entry_title_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_RETIREMENT_AGE"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "senior_population_amount"
+							position = { x =@entry_amount_x y = 8 }
+							font = "hoi_18mbs"
+							text = "ECONOMY_RETIREMENT_AGE_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							# format = center
+							
+							alwaystransparent = yes
+						}		
+
+						iconType = {
+							name = "arrow"
+							position = { x=@entry_arrow_icon_x	 y=10 }
+							spriteType = "GFX_opinion_arrow_right"
+							# scale = 0.9
+						}
+						
+						iconType = {
+							name = "retirement_age_ratio_icon"
+							position = { x=@entry_happines_icon_x	 y=5 }
+							spriteType = "GFX_population_icon"
+							scale = 0.9
+						}
+
+						instantTextboxType = {
+							name = "retirement_age_ratio_value"
+							position = { x = @entry_happines_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_RETIREMENT_AGE_RATIO"
+							maxWidth = 50
+							maxHeight = 20
+							format = left
+						}
+
+						instantTextboxType = {
+							name = "value"
+							position = { x=@prod_nof_pos_x y=8 }
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_RETIREMENT_AGE_LIMIT"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+						buttonType = {
+							name = "retirement_age_sub_button"
+							position = { x=@prod_sub_pos_x y=5 }
+							quadTextureSprite = "GFX_subtract_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip = "SUB_BUTTON_TOOLTIP"
+						}
+						buttonType = {
+							name = "retirement_age_add_button"
+							position = { x=@prod_add_pos_x y=5 }
+							quadTextureSprite = "GFX_add_one"
+							font = "hoi_16mbs"
+							clicksound = click_default
+							tooltip  = "ADD_BUTTON_TOOLTIP"
+						}
+					}
+
+					containerWindowType = {
+						name = "entry_unemployed_population"
+						position = { x=@entry_frame_x y=108 }
+						size = { width =@entry_width height = 36 } # size = { width = @entry_width height = 36 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_mini_tooltip"
+						}
+						
+						instantTextboxType = {
+							name = "title"
+							position = { x = @entry_title_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_UNEMPLOYED_POPULATION"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "unemployed_population_population_amount"
+							position = { x =@entry_amount_x y = 8 }
+							font = "hoi_18mbs"
+							text = "ECONOMY_UNEMPLOYED_POPULATION_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							# format = center
+							
+							alwaystransparent = yes
+						}		
+
+						iconType = {
+							name = "arrow"
+							position = { x=@entry_arrow_icon_x	 y=10 }
+							spriteType = "GFX_opinion_arrow_right"
+							# scale = 0.9
+						}
+						
+						iconType = {
+							name = "unemployed_population_ratio_icon"
+							position = { x=@entry_happines_icon_x	 y=5 }
+							spriteType = "GFX_population_icon"
+							scale = 0.9
+						}
+
+						instantTextboxType = {
+							name = "unemployed_population_ratio_value"
+							position = { x = @entry_happines_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_UNEMPLOYED_POPULATION_RATIO"
+							maxWidth = 50
+							maxHeight = 20
+							format = left
+						}
+
+						instantTextboxType = {
+							name = "value"
+							position = { x=@prod_nof_pos_x y=8 }
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_UNEMPLOYED_POPULATION_LIMIT"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+					}
+
+					containerWindowType = {
+						name = "entry_rich"
+						position = { x=@entry_frame_x y=144 }
+						size = { width =@entry_width height = 36 } # size = { width = @entry_width height = 36 }
+						clipping = no
+				
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_mini_tooltip"
+						}
+						
+						instantTextboxType = {
+							name = "title"
+							position = { x = @entry_title_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_RICH"
+							maxWidth = 150
+							maxHeight = 20
+							format = left
+							vertical_alignment = center 
+							
+							alwaystransparent = yes
+						}
+						
+						instantTextboxType = {
+							name = "rich_population_amount"
+							position = { x =@entry_amount_x y = 8 }
+							font = "hoi_18mbs"
+							text = "ECONOMY_RICH_AMOUNT"
+							maxWidth = 130
+							maxHeight = 20
+							# format = center
+							
+							alwaystransparent = yes
+						}		
+
+						iconType = {
+							name = "arrow"
+							position = { x=@entry_arrow_icon_x	 y=10 }
+							spriteType = "GFX_opinion_arrow_right"
+							# scale = 0.9
+						}
+						
+						iconType = {
+							name = "rich_ratio_icon"
+							position = { x=@entry_happines_icon_x	 y=5 }
+							spriteType = "GFX_population_icon"
+							scale = 0.9
+						}
+
+						instantTextboxType = {
+							name = "rich_ratio_value"
+							position = { x = @entry_happines_x y = 8 }
+							
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_RICH_RATIO"
+							maxWidth = 50
+							maxHeight = 20
+							format = left
+						}
+
+						instantTextboxType = {
+							name = "value"
+							position = { x=@prod_nof_pos_x y=8 }
+							font = "hoi_18mbs"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_RICH_LIMIT"
+							maxWidth = 50
+							maxHeight = 25
+							fixedsize = yes
+							format = center
+							alwaystransparent = yes
+						}
+					}
+
+					
+				}
+					
+				
+				
+	
+				iconType ={
+					name ="category_header"
+					spriteType = "GFX_ebf_section_header_bg"
+					position = { x=0 y=1 }
+					Orientation = "UPPER_LEFT"
+				}
+
+		
+				
+				instantTextboxType = {
+					name = "balance_title"
+					position = { x = 35 y = 10 }
+					
+					font = "hoi_36header"
+					borderSize = {x = 0 y = 0}
+					text = "ECONOMY_SOCIETY_TITLE"
+					maxWidth = 450
+					maxHeight = 20
+					format = center
+				}
+
+			}
 		}
 	}
+
+
+	# Line segment container, very important
+	containerWindowType = {
+		name = "intrest_rate_graph_line_segment"
+		size = { width = 10 height = 200 }
+		position = { x = 0 y = 0 }
+
+		# Line segment progress bar, using our custom asset with custom shader
+		iconType = {
+			name = "intrest_rate_graph_segment"
+			spriteType = "GFX_Line_Segment"
+			position = { x = 0 y = 0 }
+			frame = 57
+		}
+
+		# Optional, x-axis label which corresponds to the value of this segment
+		# instantTextboxType = {
+		# 	name = "label"
+		# 	position = { x = -15 y = 112}
+		# 	font = "garamond_14"
+		# 	text = "line_graph_data_label"
+		# 	maxWidth = 30
+		# 	format = center
+		# }
+	}
+
 }
+

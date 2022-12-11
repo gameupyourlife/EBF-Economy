@@ -21,24 +21,24 @@
 #####################################
 
 healthcare_expenses = {
-	set_variable = { ebf_economy_non_soldiers_healtcare_expenses = ebf_economy_healtcare_rate }
-	multiply_variable = { ebf_economy_non_soldiers_healtcare_expenses = ebf_economy_population }
+	set_variable = { ebf_economy_non_soldiers_healthcare_expenses = ebf_economy_healthcare_rate }
+	multiply_variable = { ebf_economy_non_soldiers_healthcare_expenses = ebf_economy_population }
 	
-	set_variable = { ebf_economy_soldiers_healtcare_expenses = ebf_economy_soldiers_healtcare_rate }
-	multiply_variable = { ebf_economy_soldiers_healtcare_expenses = max_available_manpower_k }
-	divide_variable = { ebf_economy_soldiers_healtcare_expenses = 1000 }
-	round_variable = ebf_economy_soldiers_healtcare_expenses
+	set_variable = { ebf_economy_soldiers_healthcare_expenses = ebf_economy_soldiers_healthcare_rate }
+	multiply_variable = { ebf_economy_soldiers_healthcare_expenses = max_available_manpower_k }
+	divide_variable = { ebf_economy_soldiers_healthcare_expenses = 1000 }
+	round_variable = ebf_economy_soldiers_healthcare_expenses
 
 	set_variable = {
-		ebf_economy_healtcare_expenses = ebf_economy_non_soldiers_healtcare_expenses
+		ebf_economy_healthcare_expenses = ebf_economy_non_soldiers_healthcare_expenses
 	}
 	add_to_variable = {
-		ebf_economy_healtcare_expenses = ebf_economy_soldiers_healtcare_expenses
+		ebf_economy_healthcare_expenses = ebf_economy_soldiers_healthcare_expenses
 	}
 	multiply_variable = {
-		ebf_economy_healtcare_expenses = ebf_economy_inflation
+		ebf_economy_healthcare_expenses = ebf_economy_inflation
 	}
-	round_variable = ebf_economy_healtcare_expenses
+	round_variable = ebf_economy_healthcare_expenses
 }
 
 pension_expenses = {

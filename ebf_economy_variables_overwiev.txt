@@ -1,27 +1,235 @@
-ebf_economy_money
-ebf_economy_inflation
+### General
+ebf_economy_money = 1000
+# 2.000.000 - Limit for vars
 
-ebf_economy_consumption_tax 
-ebf_economy_consumption_tax_amount 
+# Backend
+ebf_economy_factor = Corsica (1)
+ebf_economy_currency = 0
 
-ebf_economy_income_tax 
-ebf_economy_income_tax_amount 
+### Population
+ebf_economy_age_of_majority = Champagne (18)
+ebf_economy_retirement_age = Sachsen (65)
+ebf_economy_life_expectancy = Bucovina (80)
+ebf_economy_default_age_of_majority = Champagne (18)
+ebf_economy_default_retirement_age = Sachsen (65)
 
-ebf_economy_wealth_tax 
-ebf_economy_retirement_age 
-ebf_economy_age_of_majority 
+ebf_economy_adult_population = 50.798
+ebf_economy_adult_ratio = 0.775
+ebf_economy_child_ratio = 0.225
+ebf_economy_theoratical_rich = 0.639
+ebf_economy_worker_ratio = 0.813
+ebf_economy_workforce = 37.385
+ebf_economy_rich = 0.639
+ebf_economy_rich_base_rate = 0.02
+ebf_economy_rich_ratio = 0.009
+ebf_economy_unemployed_percentage = 0.03
+ebf_economy_unemployed_population = 1.156
+ebf_economy_pensioner_population = 12.257
+ebf_economy_pensioner_ratio = 0.187
+ebf_economy_population = 65.546
 
+### Buildings
+ebf_economy_air_base_building_cost = Ermland-Masuren (5)
+ebf_economy_air_base_combined_monthly_cost = Attica (47)
+ebf_economy_air_base_monthly_cost = Rhone (20)
 
-ebf_economy_money_printing_rate # Set by Player
-#########################
-### Formula
-#########################
+ebf_economy_anti_air_building_building_cost = Corsica (1)
+ebf_economy_anti_air_building_combined_monthly_cost = Lower Austria (4)
+ebf_economy_anti_air_building_monthly_cost = Warszawa (10)
 
-Income Tax	#	Population * Worker * 200 * Income Tax
-	# set_temp_variable = { ebf_economy_child_ratio = ebf_economy_age_of_majority }
-	# divide_temp_variable  = { ebf_economy_child_ratio = ebf_economy_life_expectancy }
-	# set_temp_variable = { ebf_economy_adult_ratio = 1 }
-	# subtract_from_temp_variable = { ebf_economy_adult_ratio = ebf_economy_child_ratio }
-	# multiply_variable = { ebf_economy_adult_population = ebf_economy_adult_ratio }
-	# multiply_variable = { ebf_economy_adult_population = ebf_economy_population }
+ebf_economy_arms_factory_building_cost = Rhone (20)
+ebf_economy_arms_factory_combined_monthly_cost = Alsace-Lorraine (28)
+ebf_economy_arms_factory_monthly_cost = Rio de Janeiro (500)
 
+ebf_economy_bunker_building_cost = Corsica (1)
+ebf_economy_bunker_combined_monthly_cost = 0
+ebf_economy_bunker_monthly_cost = Warszawa (10)
+
+ebf_economy_coastal_bunker_building_cost = Corsica (1)
+ebf_economy_coastal_bunker_combined_monthly_cost = 0
+ebf_economy_coastal_bunker_monthly_cost = Warszawa (10)
+
+ebf_economy_fuel_silo_building_combined_monthly_cost = Lazio (2)
+ebf_economy_fuel_silo_building_cost = Ermland-Masuren (5)
+ebf_economy_fuel_silo_monthly_cost = Rhone (20)
+
+ebf_economy_grain_farm_building_cost = Normandy (15)
+ebf_economy_grain_farm_inactive_building_cost = Ermland-Masuren (5)
+ebf_economy_grain_farm_inactive_monthly_cost = Rhone (20)
+ebf_economy_grain_farm_monthly_cost = Zaporozhe (200)
+
+ebf_economy_industrial_complex_building_cost = Altai Krai (40)
+ebf_economy_industrial_complex_combined_monthly_cost = Alpes (32)
+ebf_economy_industrial_complex_monthly_cost = Rio de Janeiro (500)
+
+ebf_economy_dockyard_building_cost = Rhone (20)
+ebf_economy_dockyard_combined_monthly_cost = Warszawa (10)
+ebf_economy_dockyard_monthly_cost = Rio de Janeiro (500)
+
+ebf_economy_infrastructure_building_cost = Corsica (1)
+ebf_economy_infrastructure_combined_monthly_cost = North Transylvania (76)
+ebf_economy_infrastructure_monthly_cost = Warszawa (10)
+
+ebf_economy_steel_mill_building_cost = Normandy (15)
+ebf_economy_steel_mill_inactive_building_cost = Ermland-Masuren (5)
+ebf_economy_steel_mill_inactive_monthly_cost = Rhone (20)
+ebf_economy_steel_mill_monthly_cost = Zaporozhe (200)
+
+ebf_economy_supply_node_building_cost = Warszawa (10)
+ebf_economy_supply_node_combined_monthly_cost = 0
+ebf_economy_supply_node_monthly_cost = Rio de Janeiro (500)
+
+ebf_economy_synthetic_refinery_building_combined_monthly_cost = 0
+ebf_economy_synthetic_refinery_building_cost = Warszawa (10)
+ebf_economy_synthetic_refinery_monthly_cost = Uruguay (300)
+
+ebf_economy_naval_base_building_cost = Ermland-Masuren (5)
+ebf_economy_naval_base_combined_monthly_cost = 0
+ebf_economy_naval_base_monthly_cost = Württemberg (50)
+
+ebf_economy_nuclear_reactor_building_combined_monthly_cost = 0
+ebf_economy_nuclear_reactor_building_cost = Iceland (100)
+ebf_economy_nuclear_reactor_monthly_cost = 2000
+
+ebf_economy_radar_station_building_combined_monthly_cost = 0
+ebf_economy_radar_station_building_cost = Warszawa (10)
+ebf_economy_radar_station_monthly_cost = Württemberg (50)
+
+ebf_economy_rail_way_building_cost = Corsica (1)
+ebf_economy_rail_way_combined_monthly_cost = 0
+ebf_economy_rail_way_monthly_cost = Warszawa (10)
+
+ebf_economy_rocket_side_building_cost = Ermland-Masuren (5)
+ebf_economy_rocket_side_monthly_cost = Rhone (20)
+ebf_economy_rocket_site_building_combined_monthly_cost = 0
+
+ebf_economy_lumber_mill_building_cost = Normandy (15)
+ebf_economy_lumber_mill_monthly_cost = Zaporozhe (200)
+
+ebf_economy_infrastructure_amount = 0
+ebf_economy_buildings_expenses = 0
+
+### Tax
+ebf_economy_combined_tax_amount = 125476
+
+ebf_economy_consumption_tax = 0.18
+ebf_economy_default_consumption_tax = 0.18
+ebf_economy_consumption_tax_amount = 3133
+
+ebf_economy_income_tax = 0.3
+ebf_economy_default_income_tax = 0.3
+ebf_economy_income_tax_amount = token:NEP_bir_shamsher_singh_thapa (22430)
+
+ebf_economy_trade_tax = 0.1
+ebf_economy_default_trade_tax = 0.1
+ebf_economy_trade_tax_amount = 93523
+
+ebf_economy_wealth_tax = 0.1
+ebf_economy_default_wealth_tax = 0.1
+ebf_economy_wealth_tax_amount = 6390
+
+ebf_economy_rich_wealth = 100000
+ebf_economy_consumption_money = 1600
+ebf_economy_civilian_factory_revenue = 1000000
+ebf_economy_average_income = 2000 # Used in Income Tax Calculation
+
+### Happines
+ebf_economy_happines = 9.615
+ebf_economy_happines_consumption_tax_effect = 0.946
+ebf_economy_happines_expenses_effect = 1.02
+ebf_economy_happines_healthcare_effect = Corsica (1)
+ebf_economy_happines_income_tax_effect = 0.8
+ebf_economy_happines_inflation_effect = Corsica (1)
+ebf_economy_happines_inflation_rate_effect = 52.825
+ebf_economy_happines_national_unrest_rate = -0.01
+ebf_economy_happines_pension_effect = Corsica (1)
+ebf_economy_happines_saleries_effect = Corsica (1)
+ebf_economy_happines_social_welfare_effect = Corsica (1)
+ebf_economy_happines_soldiers_healthcare_effect = Corsica (1)
+ebf_economy_happines_stability_rate = 0.05
+ebf_economy_happines_war_effect = 1.1
+ebf_economy_happines_war_support_rate = 0.05
+
+### Inflation
+ebf_economy_inflation = Corsica (1)
+ebf_economy_inflation_rate = 3.796
+ebf_economy_economic_inflation = 3.796
+ebf_economy_printing_inflation = 0
+ebf_economy_real_inflation = 0.01
+
+### Resources Trading
+ebf_economy_resources_exported_rate = 9000
+ebf_economy_resources_exporting = 144.5
+ebf_economy_resources_exporting_price = Benue (900)
+ebf_economy_resources_imported_rate = token:collector_power (11000)
+ebf_economy_resources_importing = Luxemburg (8)
+ebf_economy_resources_importing_price = 1100
+ebf_economy_resources_trading_expenses = 8800
+ebf_economy_resources_trading_income = 130050
+ebf_economy_resources_trading_net = 121250
+
+### Expenses
+ebf_economy_total_expenses = token:SOV_sent_us_weapons (26235)
+
+ebf_economy_saleries_expenses = 4022
+ebf_economy_saleries_rate = 2000
+ebf_economy_social_welfare_expenses = 1156
+ebf_economy_social_welfare_rate = 1000
+ebf_economy_soldiers_healthcare_expenses = Dodecaneso (164)
+ebf_economy_soldiers_healthcare_rate = Iceland (100)
+ebf_economy_non_soldiers_healthcare_expenses = 9831.9
+ebf_economy_pension_expenses = token:set_production_line_amount_to_produce_command (12257)
+ebf_economy_pension_rate = 1000
+ebf_economy_healthcare_expenses = 9996
+ebf_economy_healthcare_rate = Savo (150)
+
+ebf_economy_recommended_healthcare_rate = Savo (150)
+ebf_economy_recommended_pension_rate = 1000
+ebf_economy_recommended_saleries_rate = 2000
+ebf_economy_recommended_social_welfare_rate = 1000
+ebf_economy_recommended_soldiers_healthcare_rate = Iceland (100)
+
+### Balance
+ebf_economy_yearly_income = -919523.296
+ebf_economy_monthly_income = 281287
+ebf_economy_monthly_spendings = token:SOV_sent_us_weapons (26235)
+ebf_economy_monthly_balance = 255052
+
+### Money Printing
+ebf_economy_money_decay_rate = 0.002
+ebf_economy_money_printing_amount = token:offered_support (25761)
+ebf_economy_money_printing_rate = 0.02
+ebf_economy_money_relative_printing_rate = Warszawa (10)
+ebf_economy_national_economy_civilian_factory_money = -1
+ebf_economy_national_economy_money = 1288070
+ebf_economy_national_economy_pop_money = token:add_treasury (10000)
+ebf_economy_national_economy_rich_pop_money = 1000000
+
+### Loan
+ebf_economy_loan_amount = 0
+ebf_economy_loan_cap = -919523.296
+ebf_economy_loan_cap_factor = Corsica (1)
+ebf_economy_loan_income_ratio = 0
+ebf_economy_loan_interest_rate = 0.01
+ebf_economy_loan_max_interest_rate = 0.025
+ebf_economy_loan_monthly_repay_amount = 0
+ebf_economy_loan_monthly_repay_combined = 0
+ebf_economy_loan_monthly_repay_penalty = 0
+ebf_economy_loan_monthly_repay_penalty_temp = 1.025
+ebf_economy_loan_one_time_repay_amount = 0
+ebf_economy_repayment_loan_ratio = -0.001
+ebf_economy_monthly_loan_monthly_interest_amount = 0
+
+### War Exhaustion
+ebf_economy_adjusted_casualties = 0
+ebf_economy_casualtie_ratio = -0.001
+ebf_economy_war_duration = 0
+ebf_economy_war_exhaustion = 0
+ebf_economy_weighted_casualties = 0
+ebf_economy_enemy_casualtie = 0
+ebf_economy_friendly_casualtie = 0
+
+### National Unrest
+ebf_economy_national_unrest = -0.01
+ebf_economy_national_unrest_building_damage = -0.03
+ebf_economy_national_unrest_building_damage_multiplier = Swiss Plateau (3)

@@ -82,6 +82,9 @@ on_actions = {
 			# National Unrest
 			national_unrest = yes
 		
+
+			### Graphics
+			intrest_rate_graph_add_new_segment = yes
 		}
 	}		
 }

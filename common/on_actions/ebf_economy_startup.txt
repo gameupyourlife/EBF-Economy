@@ -78,6 +78,12 @@ on_actions = {
 				# National Unrest
 				national_unrest = yes
 			}
+
+			GER = {
+				print_variables = {
+					file = ebf_economy_vars_debug
+				}
+			}
 		}
 	}
 }

@@ -13,6 +13,18 @@ scripted_gui = {
 				set_variable = { ebf_economy_show = 0 }
 			}
 
+			production_header_bg_click = {
+				if = {
+					limit = { 
+						check_variable = { ebf_economy_extended_show = 1 } 
+					}
+					set_variable = { ebf_economy_extended_show = 0 }
+				}
+				else = {
+					set_variable = { ebf_economy_extended_show = 1 }
+				}
+			}
+
 			### Income Tax Percentage Click
 			income_tax_sub_button_click = {
 				if = {
@@ -141,6 +153,22 @@ scripted_gui = {
 				}
             }
 
+			income_tax_sub_button_right_click = {
+				set_variable = { ebf_economy_income_tax = ebf_economy_default_income_tax }
+				rich_population = yes
+				combined_tax = yes
+				monthly_balance = yes
+				happines = yes
+
+            }
+			income_tax_add_button_right_click = {
+				set_variable = { ebf_economy_income_tax = ebf_economy_default_income_tax }
+				rich_population = yes
+				combined_tax = yes
+				monthly_balance = yes
+				happines = yes
+            }
+
 			### Consumtion Tax Percentage Click
 			consumption_tax_sub_button_click = {
 				if = {
@@ -259,6 +287,22 @@ scripted_gui = {
 				}
             }
 
+			consumption_tax_sub_button_right_click = {
+				set_variable = { ebf_economy_consumption_tax = ebf_economy_default_consumption_tax }
+				rich_population = yes
+				combined_tax = yes
+				monthly_balance = yes
+				happines = yes
+
+            }
+			consumption_tax_add_button_right_click = {
+				set_variable = { ebf_economy_consumption_tax = ebf_economy_default_consumption_tax }
+				rich_population = yes
+				combined_tax = yes
+				monthly_balance = yes
+				happines = yes
+            }
+
 			### Wealth Tax Percentage Click
 			wealth_tax_sub_button_click = {
 				if = {
@@ -375,6 +419,22 @@ scripted_gui = {
 					combined_tax = yes
 					monthly_balance = yes
 				}
+            }
+
+			wealth_tax_sub_button_right_click = {
+				set_variable = { ebf_economy_wealth_tax = ebf_economy_default_wealth_tax }
+				rich_population = yes
+				combined_tax = yes
+				monthly_balance = yes
+				happines = yes
+
+            }
+			wealth_tax_add_button_right_click = {
+				set_variable = { ebf_economy_wealth_tax = ebf_economy_default_wealth_tax }
+				rich_population = yes
+				combined_tax = yes
+				monthly_balance = yes
+				happines = yes
             }
 
 			### Trade Tax Percentage Click
@@ -496,6 +556,22 @@ scripted_gui = {
 				}
             }
 
+			trade_tax_sub_button_right_click = {
+				set_variable = { ebf_economy_trade_tax = ebf_economy_default_trade_tax }
+				rich_population = yes
+				combined_tax = yes
+				monthly_balance = yes
+				happines = yes
+
+            }
+			trade_tax_add_button_right_click = {
+				set_variable = { ebf_economy_trade_tax = ebf_economy_default_trade_tax }
+				rich_population = yes
+				combined_tax = yes
+				monthly_balance = yes
+				happines = yes
+            }
+
 			### Money Printing
 			money_printing_sub_button_click = {
 				subtract_from_variable = { ebf_economy_money_printing_rate = 0.01 }
@@ -515,13 +591,639 @@ scripted_gui = {
 				printing_inflation = yes
             }
 
+			######### Expenses
+
+			### Civilian Healthcare
+			healthcare_add_button_click = {
+				add_to_variable = { ebf_economy_healthcare_rate = 1 }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+            }
+
+			healthcare_add_button_control_click = {
+				add_to_variable = { ebf_economy_healthcare_rate = 10 }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+            }
+
+			healthcare_add_button_shift_click = {
+				add_to_variable = { ebf_economy_healthcare_rate = 100 }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+            }
+
+			healthcare_add_button_right_click = {
+				set_variable = { ebf_economy_healthcare_rate = ebf_economy_recommended_healthcare_rate }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+            }
+
+			healthcare_sub_button_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_healthcare_rate > 0 }
+					}
+					subtract_from_variable = { ebf_economy_healthcare_rate = 1 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes
+				}
+            }
+
+			healthcare_sub_button_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_healthcare_rate < 9 }
+					}
+					set_variable = { ebf_economy_healthcare_rate = 0 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes
+				}
+				else = {
+					subtract_from_variable = { ebf_economy_healthcare_rate = 10 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes	
+				}
+            }
+
+			healthcare_sub_button_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_healthcare_rate < 99 }
+					}
+					set_variable = { ebf_economy_healthcare_rate = 0 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes
+				}
+				else = {
+					subtract_from_variable = { ebf_economy_healthcare_rate = 100 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes	
+				}
+            }
+
+			healthcare_sub_button_right_click = {
+				set_variable = { ebf_economy_healthcare_rate = ebf_economy_recommended_healthcare_rate }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+            }
+
+			### Military Healthcare
+			soldiers_healthcare_add_button_click = {
+				add_to_variable = { ebf_economy_soldiers_healthcare_rate = 1 }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+            }
+
+			soldiers_healthcare_add_button_control_click = {
+				add_to_variable = { ebf_economy_soldiers_healthcare_rate = 10 }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+            }
+
+			soldiers_healthcare_add_button_shift_click = {
+				add_to_variable = { ebf_economy_soldiers_healthcare_rate = 100 }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+            }
+
+			soldiers_healthcare_add_button_right_click = {
+				set_variable = { ebf_economy_soldiers_healthcare_rate = ebf_economy_recommended_soldiers_healthcare_rate }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+            }
+
+			soldiers_healthcare_sub_button_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_soldiers_healthcare_rate > 0 }
+					}
+					subtract_from_variable = { ebf_economy_soldiers_healthcare_rate = 1 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes
+				}
+            }
+
+			soldiers_healthcare_sub_button_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_soldiers_healthcare_rate < 9 }
+					}
+					set_variable = { ebf_economy_soldiers_healthcare_rate = 0 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes
+				}
+				else = {
+					subtract_from_variable = { ebf_economy_soldiers_healthcare_rate = 10 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes	
+				}
+            }
+
+			soldiers_healthcare_sub_button_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_soldiers_healthcare_rate < 99 }
+					}
+					set_variable = { ebf_economy_soldiers_healthcare_rate = 0 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes
+				}
+				else = {
+					subtract_from_variable = { ebf_economy_soldiers_healthcare_rate = 100 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes	
+				}
+            }
+
+			soldiers_healthcare_sub_button_right_click = {
+				set_variable = { ebf_economy_soldiers_healthcare_rate = ebf_economy_recommended_soldiers_healthcare_rate }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+            }
+
+			### Pension
+			pension_add_button_click = {
+				add_to_variable = { ebf_economy_pension_rate = 1 }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+			}
+
+			pension_add_button_control_click = {
+				add_to_variable = { ebf_economy_pension_rate = 10 }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+			}
+
+			pension_add_button_shift_click = {
+				add_to_variable = { ebf_economy_pension_rate = 100 }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+			}
+
+			pension_add_button_right_click = {
+				set_variable = { ebf_economy_pension_rate = ebf_economy_recommended_pension_rate }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+			}
+
+			pension_sub_button_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_pension_rate > 0 }
+					}
+					subtract_from_variable = { ebf_economy_pension_rate = 1 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes
+				}
+			}
+
+			pension_sub_button_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_pension_rate < 9 }
+					}
+					set_variable = { ebf_economy_pension_rate = 0 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes
+				}
+				else = {
+					subtract_from_variable = { ebf_economy_pension_rate = 10 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes	
+				}
+			}
+
+			pension_sub_button_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_pension_rate < 99 }
+					}
+					set_variable = { ebf_economy_pension_rate = 0 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes
+				}
+				else = {
+					subtract_from_variable = { ebf_economy_pension_rate = 100 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes	
+				}
+			}
+
+			pension_sub_button_right_click = {
+				set_variable = { ebf_economy_pension_rate = ebf_economy_recommended_pension_rate }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+			}
+
+			### Saleries
+			saleries_add_button_click = {
+				add_to_variable = { ebf_economy_saleries_rate = 1 }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+			}
+
+			saleries_add_button_control_click = {
+				add_to_variable = { ebf_economy_saleries_rate = 10 }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+			}
+
+			saleries_add_button_shift_click = {
+				add_to_variable = { ebf_economy_saleries_rate = 100 }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+			}
+
+			saleries_add_button_right_click = {
+				set_variable = { ebf_economy_saleries_rate = ebf_economy_recommended_saleries_rate }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+			}
+
+			saleries_sub_button_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_saleries_rate > 0 }
+					}
+					subtract_from_variable = { ebf_economy_saleries_rate = 1 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes
+				}
+			}
+
+			saleries_sub_button_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_saleries_rate < 9 }
+					}
+					set_variable = { ebf_economy_saleries_rate = 0 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes
+				}
+				else = {
+					subtract_from_variable = { ebf_economy_saleries_rate = 10 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes	
+				}
+			}
+
+			saleries_sub_button_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_saleries_rate < 99 }
+					}
+					set_variable = { ebf_economy_saleries_rate = 0 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes
+				}
+				else = {
+					subtract_from_variable = { ebf_economy_saleries_rate = 100 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes	
+				}
+			}
+
+			saleries_sub_button_right_click = {
+				set_variable = { ebf_economy_saleries_rate = ebf_economy_recommended_saleries_rate }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+			}
+
+			### Social Welfare
+			social_welfare_add_button_click = {
+				add_to_variable = { ebf_economy_social_welfare_rate = 1 }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+			}
+
+			social_welfare_add_button_control_click = {
+				add_to_variable = { ebf_economy_social_welfare_rate = 10 }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+			}
+
+			social_welfare_add_button_shift_click = {
+				add_to_variable = { ebf_economy_social_welfare_rate = 100 }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+			}
+
+			social_welfare_add_button_right_click = {
+				set_variable = { ebf_economy_social_welfare_rate = ebf_economy_recommended_social_welfare_rate }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+			}
+
+			social_welfare_sub_button_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_social_welfare_rate > 0 }
+					}
+					subtract_from_variable = { ebf_economy_social_welfare_rate = 1 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes
+				}
+			}
+
+			social_welfare_sub_button_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_social_welfare_rate < 9 }
+					}
+					set_variable = { ebf_economy_social_welfare_rate = 0 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes
+				}
+				else = {
+					subtract_from_variable = { ebf_economy_social_welfare_rate = 10 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes	
+				}
+			}
+
+			social_welfare_sub_button_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_social_welfare_rate < 99 }
+					}
+					set_variable = { ebf_economy_social_welfare_rate = 0 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes
+				}
+				else = {
+					subtract_from_variable = { ebf_economy_social_welfare_rate = 100 }
+					total_expenses = yes
+					monthly_balance = yes
+					happines = yes	
+				}
+			}
+
+			social_welfare_sub_button_right_click = {
+				set_variable = { ebf_economy_social_welfare_rate = ebf_economy_recommended_social_welfare_rate }
+				total_expenses = yes
+				monthly_balance = yes
+				happines = yes
+			}
+
+			### Loan Repayment
+			loan_repayment_add_button_click = {
+				add_to_variable = { ebf_economy_loan_monthly_repay_amount = 10 }
+				monthly_repay_amount = yes
+				monthly_balance = yes
+			}
+
+			loan_repayment_add_button_control_click = {
+				add_to_variable = { ebf_economy_loan_monthly_repay_amount = 100 }
+				monthly_repay_amount = yes
+				monthly_balance = yes
+			}
+
+			loan_repayment_add_button_shift_click = {
+				add_to_variable = { ebf_economy_loan_monthly_repay_amount = 1000 }
+				monthly_repay_amount = yes
+				monthly_balance = yes
+			}
+
+			loan_repayment_add_button_alt_click = {
+				add_to_variable = { ebf_economy_loan_monthly_repay_amount = 10000 }
+				monthly_repay_amount = yes
+				monthly_balance = yes
+			}
+
+			loan_repayment_add_button_right_click = {
+				set_variable = { ebf_economy_loan_monthly_repay_amount = 0 }
+				monthly_repay_amount = yes
+				monthly_balance = yes
+			}
+
+			loan_repayment_sub_button_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_loan_monthly_repay_amount > 9 }
+					}
+					subtract_from_variable = { ebf_economy_loan_monthly_repay_amount = 10 }
+					monthly_repay_amount = yes
+				monthly_balance = yes
+				}
+			}
+
+			loan_repayment_sub_button_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_loan_monthly_repay_amount < 99 }
+					}
+					set_variable = { ebf_economy_loan_monthly_repay_amount = 0 }
+					monthly_repay_amount = yes
+				monthly_balance = yes
+				}
+				else = {
+					subtract_from_variable = { ebf_economy_loan_monthly_repay_amount = 100 }
+					monthly_repay_amount = yes
+				monthly_balance = yes	
+				}
+			}
+
+			loan_repayment_sub_button_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_loan_monthly_repay_amount < 999 }
+					}
+					set_variable = { ebf_economy_loan_monthly_repay_amount = 0 }
+					monthly_repay_amount = yes
+				monthly_balance = yes
+				}
+				else = {
+					subtract_from_variable = { ebf_economy_loan_monthly_repay_amount = 1000 }
+					monthly_repay_amount = yes
+				monthly_balance = yes
+				}
+			}
+
+			loan_repayment_sub_button_alt_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_loan_monthly_repay_amount < 9999 }
+					}
+					set_variable = { ebf_economy_loan_monthly_repay_amount = 0 }
+					monthly_repay_amount = yes
+				monthly_balance = yes
+				}
+				else = {
+					subtract_from_variable = { ebf_economy_loan_monthly_repay_amount = 10000 }
+					monthly_repay_amount = yes
+				monthly_balance = yes
+				}
+			}
+
+			loan_repayment_sub_button_right_click = {
+				set_variable = { ebf_economy_loan_monthly_repay_amount = 0 }
+				monthly_repay_amount = yes
+				monthly_balance = yes
+			}
+
+			######### Society
+
+			### Full Age
+			full_age_add_button_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_age_of_majority < ebf_economy_retirement_age }
+					}
+					add_to_variable = { ebf_economy_age_of_majority = 1 }
+					adult_population = yes
+					unemployed_population = yes
+					workforce_population = yes
+					rich_population = yes
+				}
+			}
+
+			full_age_add_button_right_click = {
+				set_variable = { ebf_economy_age_of_majority = ebf_economy_default_age_of_majority }
+				adult_population = yes
+				unemployed_population = yes
+				workforce_population = yes
+				rich_population = yes
+			}
+
+			full_age_sub_button_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_age_of_majority > 0 }
+					}
+					subtract_from_variable = { ebf_economy_age_of_majority = 1 }
+					adult_population = yes
+					unemployed_population = yes
+					workforce_population = yes
+					rich_population = yes
+				}
+			}
+
+			full_age_sub_button_right_click = {
+				set_variable = { ebf_economy_age_of_majority = ebf_economy_default_age_of_majority }
+				adult_population = yes
+				unemployed_population = yes
+				workforce_population = yes
+				rich_population = yes
+			}
+
+
+			### Retirement Age
+			retirement_age_add_button_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_retirement_age < ebf_economy_life_expectancy }
+					}
+					add_to_variable = { ebf_economy_retirement_age = 1 }
+					adult_population = yes
+					unemployed_population = yes
+					workforce_population = yes
+					rich_population = yes
+				}
+			}
+
+			retirement_age_add_button_right_click = {
+				set_variable = { ebf_economy_retirement_age = ebf_economy_default_retirement_age }
+				adult_population = yes
+				unemployed_population = yes
+				workforce_population = yes
+				rich_population = yes
+			}
+
+			retirement_age_sub_button_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_retirement_age > ebf_economy_age_of_majority }
+					}
+					subtract_from_variable = { ebf_economy_retirement_age = 1 }
+					adult_population = yes
+					unemployed_population = yes
+					workforce_population = yes
+					rich_population = yes
+				}
+			}
+
+			retirement_age_sub_button_right_click = {
+				set_variable = { ebf_economy_retirement_age = ebf_economy_default_age_of_majority }
+				adult_population = yes
+				unemployed_population = yes
+				workforce_population = yes
+				rich_population = yes
+			}
 
 
 
 
+		}
 
+		dynamic_lists = {
+			interest_rate_line_segments = {
+				array = ebf_economy_intrest_rate_graph_offsets  # SAMPLE_graph_offsets			# See next section, this is one of the arrays which defines your line graph
+				change_scope = no
+				entry_container = intrest_rate_graph_line_segment	# Container name from previous step
+				index = ebf_economy_intrest_rate_graph_segment_index				# This variable can be used in scripted effects, loc, or GUI to change
+										# behavior based on the current segment
+			}
+		}
 
-
+		properties = {
+			# Here, segment is the name of the iconType in your container
+			intrest_rate_graph_segment = {
+				# Sets the relative position of the line segment to the graph offset
+				# This graph offset is equal to to -y1
+				y = ebf_economy_intrest_rate_graph_offsets^ebf_economy_intrest_rate_graph_segment_index
+		
+				# Tells the shader how steep to draw the line
+				# Must be equal to (y2 - y1) / 2 + 50
+				frame = ebf_economy_intrest_rate_graph_slopes^ebf_economy_intrest_rate_graph_segment_index
+			}
 		}
 	}
 }

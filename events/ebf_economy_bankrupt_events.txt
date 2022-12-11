@@ -16,8 +16,8 @@ country_event = {
 	option = { # Cut Expenses
 		name = ebf_economy_bankrupt_events.1.a
 		
-		divide_variable = { ebf_economy_healtcare_rate = 2 }
-		divide_variable = { ebf_economy_soldiers_healtcare_rate = 2 }
+		divide_variable = { ebf_economy_healthcare_rate = 2 }
+		divide_variable = { ebf_economy_soldiers_healthcare_rate = 2 }
 		divide_variable = { ebf_economy_pension_rate = 2 }
 		divide_variable = { ebf_economy_saleries_rate = 2 }
 		divide_variable = { ebf_economy_social_welfare_rate = 2 }
@@ -26,8 +26,8 @@ country_event = {
 	option = { # Set Expenses 0
 		name = ebf_economy_bankrupt_events.1.b
 		
-		set_variable = { ebf_economy_healtcare_rate = 0 }
-		set_variable = { ebf_economy_soldiers_healtcare_rate = 0 }
+		set_variable = { ebf_economy_healthcare_rate = 0 }
+		set_variable = { ebf_economy_soldiers_healthcare_rate = 0 }
 		set_variable = { ebf_economy_pension_rate = 0 }
 		set_variable = { ebf_economy_saleries_rate = 0 }
 		set_variable = { ebf_economy_social_welfare_rate = 0 }
