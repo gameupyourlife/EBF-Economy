@@ -62,8 +62,6 @@ var_declariation = {
 	set_variable = {
 		ebf_economy_rich_base_rate = 0.02
 	}
-	### Population
-	country_event = { id = ebf_economy_event.1 }
 	
 	### Money
 	set_variable = { ebf_economy_money = 1000 }

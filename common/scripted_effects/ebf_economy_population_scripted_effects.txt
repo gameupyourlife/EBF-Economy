@@ -1,42 +1,7 @@
-#	Example:
-#
-#	example_effect = {
-#		add_political_power = 66
-#		add_popularity = {
-#			ideology = fascism
-#			popularity = 0.33
-#		}
-#	}
-#
-#
-#	In a script file:
-#
-#	effect = {
-#		example_effect = yes
-#	}
-#
-
-#####################################
-### emergency_factory_conversion ####
-#####################################
-
 # Calculates the Population of a country in Millions
 country_population = {
-	# every_state = {
-	# 	limit = {
-	# 		is_owned_and_controlled_by = ROOT
-	# 	}
-	# 	set_temp_variable = {
-	# 		ebf_economy_state_population_M = state_population_k
-	# 	}
-	# 	divide_temp_variable = {
-	# 		ebf_economy_state_population_M = 1000
-	# 	}
-	# 	add_to_variable = { ROOT.ebf_economy_population = ebf_economy_state_population_M }
-	# }
 	set_variable = { ebf_economy_population = max_manpower_k }
 	divide_variable = { ebf_economy_population = 1000 }
-	# round_variable = ebf_economy_population
 }
 
 adult_population = {

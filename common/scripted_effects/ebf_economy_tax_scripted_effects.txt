@@ -40,13 +40,11 @@ consumption_tax = {
 }
 
 wealth_tax = {
-	country_event = { id = ebf_economy_event.2 }
+	rich_population = yes
 	set_variable = { ebf_economy_wealth_tax_amount = ebf_economy_rich }
 	multiply_variable = { ebf_economy_wealth_tax_amount = ebf_economy_rich_wealth }
 	multiply_variable = { ebf_economy_wealth_tax_amount = ebf_economy_wealth_tax }
 	round_variable = ebf_economy_wealth_tax_amount 
-
-	
 }
 
 trade_tax = {

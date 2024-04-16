@@ -165,7 +165,7 @@ happines_effect = {
 		limit = { 
 			check_variable = { ebf_economy_happines  > 0.9 }
 		}
-		set_variable = { ebf_economy_happines_national_unrest_rate = 0.01 }
+		set_variable = { ebf_economy_happines_national_unrest_rate = 1 } # Will increase stability by 1 per month
 		set_variable = { ebf_economy_happines_war_support_rate = 0.05 }
 		set_variable = { ebf_economy_happines_stability_rate = 0.05 }
 		add_ideas = ebf_economy_happines_effect_positive
@@ -201,7 +201,7 @@ happines_effect = {
 		limit = {
 			check_variable = { ebf_economy_happines  > 0.3 } 
 		}
-		set_variable = { ebf_economy_happines_national_unrest_rate = -0.02 }
+		set_variable = { ebf_economy_happines_national_unrest_rate = -2 }
 		# set_variable = { ebf_economy_happines_war_support_rate = -0.05 }
 		# set_variable = { ebf_economy_happines_stability_rate = -0.05 }
 		remove_ideas = ebf_economy_happines_effect_positive
@@ -213,7 +213,7 @@ happines_effect = {
 		limit = {
 			check_variable = { ebf_economy_happines  > 0.1 } 
 		}
-		set_variable = { ebf_economy_happines_national_unrest_rate = -0.05 }
+		set_variable = { ebf_economy_happines_national_unrest_rate = -5 }
 		# set_variable = { ebf_economy_happines_war_support_rate = -0.1 }
 		# set_variable = { ebf_economy_happines_stability_rate = -0.1 }
 		# set_variable = { ebf_economy_happines_consumer_goods_rate = 0 }
@@ -223,7 +223,7 @@ happines_effect = {
 		remove_ideas = ebf_economy_happines_effect2
 	}
 	else = {
-		set_variable = { ebf_economy_happines_national_unrest_rate = -0.1 }
+		set_variable = { ebf_economy_happines_national_unrest_rate = -10 }
 		# set_variable = { ebf_economy_happines_war_support_rate = -0.1 }
 		# set_variable = { ebf_economy_happines_stability_rate = -0.1 }
 		# set_variable = { ebf_economy_happines_consumer_goods_rate = 0.05 }

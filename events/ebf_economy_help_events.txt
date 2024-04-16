@@ -12,18 +12,17 @@ country_event = {
 
     }
 
-    option = { # Help
-		name = ebf_economy_event.1.a
+    option = { # Population
+		name = ebf_economy_help_events.1.a
 		country_event = { id = ebf_economy_help_events.2 }
     }
 
 	option = { # close
-		name = ebf_economy_event.1.b
-		
+		name = ebf_economy_help_events.1.b
     }
-	
 }
 
+# Population
 country_event = {
 	id = ebf_economy_help_events.2
 	title = ebf_economy_help_events.2.t
@@ -36,27 +35,68 @@ country_event = {
 
     }
 
-    option = { # Help
-		name = ebf_economy_event.2.a
-		
+	option = { # Population
+		name = ebf_economy_help_events.2.a
+		country_event = { id = ebf_economy_help_events.3 }
     }
+
+	option = { # Budget
+		name = ebf_economy_help_events.2.b
+		country_event = { id = ebf_economy_help_events.4 }
+    }
+
 
 	option = { # close
-		name = ebf_economy_event.2.b
-		
+		name = ebf_economy_help_events.2.c
     }
+}
 
-	option = { # close
-		name = ebf_economy_event.2.c
-		
-    }
-
-	option = { # close
-		name = ebf_economy_event.2.d
-		
-    }
-
+#  Population
+country_event = {
+	id = ebf_economy_help_events.3
+	title = ebf_economy_help_events.3.t
+	desc = ebf_economy_help_events.3.d
+	picture = GFX_report_event_soviet_soldiers
+	is_triggered_only = yes
 	
+    immediate = {
+
+
+    }
+
+    option = { # back
+		name = ebf_economy_help_events.3.a
+		country_event = { id = ebf_economy_help_events.2 }
+    }
+
+
+	option = { # close
+		name = ebf_economy_help_events.3.b
+    }
+}
+
+
+# Budget
+country_event = {
+	id = ebf_economy_help_events.4
+	title = ebf_economy_help_events.4.t
+	desc = ebf_economy_help_events.4.d
+	picture = GFX_report_event_soviet_soldiers
+	is_triggered_only = yes
 	
+    immediate = {
+
+
+    }
+
+    option = { # back
+		name = ebf_economy_help_events.4.a
+		country_event = { id = ebf_economy_help_events.2 }
+    }
+
+
+	option = { # close
+		name = ebf_economy_help_events.4.b
+    }
 }
 

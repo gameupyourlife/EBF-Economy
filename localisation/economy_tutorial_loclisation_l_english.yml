@@ -4,4 +4,17 @@
  ebf_economy_event.1.a:0 "Learn about the features of "Wealth and Warfare" with the in-game tutorial"
  ebf_economy_event.1.b:0 "Close"
 
+ ebf_economy_help_events.2.t:0 "Tutorial for "Wealth and Warfare: The Economic Overhaul"
  ebf_economy_help_events.2.d:0 " Let's get you up to speed:\n\nCitizen Simulation:\nYour people aren't just numbers; they're the lifeblood of your nation. Keep them content, and your nation will prosper.\n\nWar Exhaustion System\nProlonged conflicts weigh on the hearts and minds of your people. Watch for rising war exhaustion as you wage your campaigns.\n\nTaxes\nTaxation isn't just about money; it's about power. Carefully tweak your tax policies to strike the right balance between funding your endeavors and keeping your citizens happy.\n\nSimulated State Bankruptcy\nFinancial mismanagement can lead to the brink of collapse. Guard against state bankruptcy by making shrewd choices in resource allocation.\n\nState Bank\nYour nation's financial hub is now a center of power. Utilize the national bank for sophisticated operations, including borrowing and monetary policy.\n\nNumerous State Expenses\nBalance the books by managing various state expenses, from pensions and salaries to social welfare. It's a tightrope walk to financial stability.\n\nNumerous State Budgets\nDirect resources to research, police, military, and construction budgets to bolster your strategic goals. The choices you make here will shape your nation's future.\n\nNew Happiness System\nContent citizens are productive citizens. Keep an eye on your people's happiness; it's a barometer of your nation's stability.\n\nNational Unrest System\nInternal strife can lead to civil wars. Handle unrest with care to keep your nation on an even keel.\n\nCustom GUIs\nDive into the intricacies of these user-friendly interfaces, custom-tailored to each feature, making your strategic decisions smoother and more intuitive.\n"
+ ebf_economy_help_events.2.a:0 "Learn more about population"
+ ebf_economy_help_events.2.b:0 "Learn more about the country balance"
+
+ ebf_economy_help_events.3.t:0 "Population"
+ ebf_economy_help_events.3.d:0 ""
+ ebf_economy_help_events.3.a:0 "Return"
+ ebf_economy_help_events.3.b:0 "Close"
+
+ ebf_economy_help_events.4.t:0 "Budget"
+ ebf_economy_help_events.4.d:0 ""
+ ebf_economy_help_events.4.a:0 "Return"
+ ebf_economy_help_events.4.b:0 "Close"
