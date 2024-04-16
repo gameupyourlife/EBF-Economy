@@ -1821,6 +1821,14 @@ scripted_gui = {
 				index = ebf_economy_intrest_rate_graph_segment_index				# This variable can be used in scripted effects, loc, or GUI to change
 										# behavior based on the current segment
 			}
+
+			loan_cap_line_segments = {
+				array = ebf_economy_loan_cap_graph_offsets  # SAMPLE_graph_offsets			# See next section, this is one of the arrays which defines your line graph
+				change_scope = no
+				entry_container = loan_cap_graph_line_segment	# Container name from previous step
+				index = ebf_economy_loan_cap_graph_segment_index				# This variable can be used in scripted effects, loc, or GUI to change
+										# behavior based on the current segment
+			}
 		}
 
 		triggers = {
@@ -1839,6 +1847,16 @@ scripted_gui = {
 				# Tells the shader how steep to draw the line
 				# Must be equal to (y2 - y1) / 2 + 50
 				frame = ebf_economy_intrest_rate_graph_slopes^ebf_economy_intrest_rate_graph_segment_index
+			}
+
+			loan_cap_graph_segment = {
+				# Sets the relative position of the line segment to the graph offset
+				# This graph offset is equal to to -y1
+				y = ebf_economy_loan_cap_graph_offsets^ebf_economy_loan_cap_graph_segment_index
+		
+				# Tells the shader how steep to draw the line
+				# Must be equal to (y2 - y1) / 2 + 50
+				frame = ebf_economy_loan_cap_graph_slopes^ebf_economy_loan_cap_graph_segment_index
 			}
 		}
 	}

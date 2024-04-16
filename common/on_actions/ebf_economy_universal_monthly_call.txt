@@ -95,6 +95,7 @@ on_actions = {
 
 			### Graphics
 			intrest_rate_graph_add_new_segment = yes
+			loan_cap_graph_add_new_segment = yes
 		}
 	}		
 }

@@ -4,5 +4,5 @@ tags={
 	"Gameplay"
 	"Utilities"
 }
-name="HoI4 Economy - DEV"
-supported_version="1.12.*"
+name="EBF-Economy"
+supported_version="1.14.4"
