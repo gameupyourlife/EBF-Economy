@@ -62,7 +62,6 @@ war_exhaustion = {
 }
 
 war_duration = {
-	every_country = {
 		if = {
 			limit = {
 				has_war	= yes
@@ -72,5 +71,4 @@ war_duration = {
 		else = {
 			set_variable = { ebf_economy_war_duration = 0 }
 		}
-	}
 }

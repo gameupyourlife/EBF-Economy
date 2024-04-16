@@ -7,14 +7,6 @@ var_declariation = {
 	}
 
 
-	# SAMPLE_add_random_point_to_line = yes
-	# SAMPLE_add_random_point_to_line = yes
-	# SAMPLE_add_random_point_to_line = yes
-
-
-
-
-
 	# add_ideas = ebf_economy_national_unrest1
 	set_global_flag = ebf_economy_is_active
 	set_country_flag = crisis_in_progress
