@@ -119,6 +119,8 @@ ideas = {
 			modifier = {
 				recruitable_population = -0.04
 				local_resources_factor = -0.1
+				consumer_goods_factor = 0.05
+
 			}
 		}
 		ebf_economy_national_unrest_effect3 = {
@@ -134,9 +136,31 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				recruitable_population = -0.04
-				local_resources_factor = -0.1
-				stability_weekly = -0.01
+				recruitable_population = -0.05
+				local_resources_factor = -0.25
+				consumer_goods_factor = 0.1
+				industrial_capacity_factory = -0.10
+				industrial_capacity_dockyard = -0.10
+			}
+		}
+		ebf_economy_national_unrest_effect3 = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				recruitable_population = -0.05
+				local_resources_factor = -0.50
+				consumer_goods_factor = 0.20
+				industrial_capacity_factory = -0.25
+				industrial_capacity_dockyard = -0.25
 			}
 		}
 	}

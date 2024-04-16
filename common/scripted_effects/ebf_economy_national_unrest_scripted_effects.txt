@@ -1,31 +1,12 @@
-#	Example:
-#
-#	example_effect = {
-#		add_political_power = 66
-#		add_popularity = {
-#			ideology = fascism
-#			popularity = 0.33
-#		}
-#	}
-#
-#
-#	In a script file:
-#
-#	effect = {
-#		example_effect = yes
-#	}
-#
-
-#####################################
-### emergency_factory_conversion ####
-#####################################
-
 national_unrest = {
-	add_to_variable = { ebf_economy_national_unrest = ebf_economy_happines_national_unrest_rate }
+	
+	add_stability = ebf_economy_happines_national_unrest_rate
+	
+	# add_to_variable = { ebf_economy_national_unrest = ebf_economy_happines_national_unrest_rate }
 	set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 3 }
 	if = {
 		limit = {
-			check_variable = { ebf_economy_national_unrest > 0.99 }
+			check_variable = { var:stability < 0.01 }
 		}
 		# Civil War / Uprising
 		set_country_flag = ebf_economy_national_unrest_uprising_imminent
@@ -34,7 +15,7 @@ national_unrest = {
 	}
 	else_if = {
 		limit = {
-			check_variable = { ebf_economy_national_unrest > 0.8 }
+			check_variable = { var:stability < 0.1 }
 		}
 		# -0.1 weekly stability | Weapons are goining missing (Event like Builidings)
 		set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 7 }
@@ -46,7 +27,7 @@ national_unrest = {
 	} 
 	else_if = {
 		limit = {
-			check_variable = { ebf_economy_national_unrest > 0.7 }
+			check_variable = { var:stability < 0.2 }
 		}
 		# Less Resources
 		set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 6 }
@@ -61,7 +42,7 @@ national_unrest = {
 	}
 	else_if = {
 		limit = {
-			check_variable = { ebf_economy_national_unrest > 0.6 }
+			check_variable = { var:stability < 0.3 }
 		}
 		# Larger Destruction | -4% Rec
 		set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 5 }
@@ -74,7 +55,7 @@ national_unrest = {
 	}
 	else_if = {
 		limit = {
-			check_variable = { ebf_economy_national_unrest > 0.4 }
+			check_variable = { var:stability < 0.4 }
 		}
 		# Buildings are beeing damaged
 		set_country_flag = ebf_economy_national_unrest_buildings_damage_events			
@@ -85,7 +66,7 @@ national_unrest = {
 	}
 	else_if = {
 		limit = {
-			check_variable = { ebf_economy_national_unrest > 0.2 }
+			check_variable = { var:stability < 0.5 }
 		}
 		add_ideas = ebf_economy_national_unrest_effect
 		clr_country_flag = ebf_economy_national_unrest_buildings_damage_events
@@ -98,6 +79,7 @@ national_unrest = {
 		clr_country_flag = ebf_economy_national_unrest_steel_weapons_events
 		clr_country_flag = ebf_economy_national_unrest_uprising_imminent
 	}
-	set_variable = { ebf_economy_national_unrest_building_damage = ebf_economy_national_unrest }
+	set_variable = { ebf_economy_national_unrest_building_damage = 1 }
+	subtract_from_variable = { ebf_economy_national_unrest_building_damage = var:stability }
 	multiply_variable = { ebf_economy_national_unrest_building_damage = ebf_economy_national_unrest_building_damage_multiplier }
 }

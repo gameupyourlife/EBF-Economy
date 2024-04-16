@@ -15,13 +15,12 @@ political_actions = {
 
 		activation = {
 			has_civil_war = no
-			check_variable = { ebf_economy_national_unrest > 0.8 }
+			check_variable = { var:stability < 0.1 }
 			has_country_flag = ebf_economy_national_unrest_uprising_imminent 
 		}
 
 		visible = {
-			has_country_flag = ebf_economy_national_unrest_uprising_imminent 
-			check_variable = { ebf_economy_national_unrest > 0.8 }
+			check_variable = { var:stability < 0.3 }
 		}
 
 		cancel_if_not_visible = yes
@@ -45,13 +44,8 @@ political_actions = {
 					size = 0.5
 				}
 			}
-			add_stability = -0.15	
-			set_variable_to_random = {
-				var = ebf_economy_national_unrest
-				max = 0.35
-				min = 0.15
-			}
-			
+			add_stability = 0.25	
+			add_war_support = 0.05			
 		}
 	}
 }

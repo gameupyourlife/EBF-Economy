@@ -1,82 +1,5 @@
 add_namespace = ebf_economy_national_unrest_events
 
-# # Calculate new national unrest 
-# country_event = {
-# 	id = ebf_economy_national_unrest_events.1
-# 	title = ebf_economy_national_unrest_events.1.t
-# 	desc = ebf_economy_national_unrest_events.1.d
-# 	picture = GFX_report_event_soviet_soldiers
-# 	hidden = yes
-# 	is_triggered_only = yes
-	
-#     immediate = {
-# 		add_to_variable = { ebf_economy_national_unrest = ebf_economy_happines_national_unrest_rate }
-# 		set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 3 }
-# 		if = {
-# 			limit = {
-# 				check_variable = { ebf_economy_national_unrest > 0.99 }
-# 			}
-# 			# Civil War / Uprising
-# 			set_country_flag = ebf_economy_national_unrest_uprising_imminent
-# 		}
-# 		else_if = {
-# 			limit = {
-# 				check_variable = { ebf_economy_national_unrest > 0.8 }
-# 			}
-# 			# -0.1 weekly stability | Weapons are goining missing (Event like Builidings)
-# 			set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 7 }
-# 			add_ideas = ebf_economy_national_unrest_effect4
-# 			clr_ideas = ebf_economy_national_unrest_effect3
-# 			set_country_flag = ebf_economy_national_unrest_steel_weapons_events
-# 		}
-# 		else_if = {
-# 			limit = {
-# 				check_variable = { ebf_economy_national_unrest > 0.7 }
-# 			}
-# 			# Less Resources
-# 			set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 6 }
-# 			add_ideas = ebf_economy_national_unrest_effect3
-# 			clr_ideas = ebf_economy_national_unrest_effect2
-# 			clr_ideas = ebf_economy_national_unrest_effect4
-# 			clr_country_flag = ebf_economy_national_unrest_steel_weapons_events
-
-# 		}
-# 		else_if = {
-# 			limit = {
-# 				check_variable = { ebf_economy_national_unrest > 0.6 }
-# 			}
-# 			# Larger Destruction | -4% Rec
-# 			set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 5 }
-# 			add_ideas = ebf_economy_national_unrest_effect2
-# 			clr_ideas = ebf_economy_national_unrest_effect
-# 			clr_ideas = ebf_economy_national_unrest_effect3
-# 		}
-# 		else_if = {
-# 			limit = {
-# 				check_variable = { ebf_economy_national_unrest > 0.4 }
-# 			}
-# 			# Buildings are beeing damaged
-# 			set_country_flag = ebf_economy_national_unrest_buildings_damage_events			
-# 			clr_ideas = ebf_economy_national_unrest_effect2
-# 			add_ideas = ebf_economy_national_unrest_effect
-# 		}
-# 		else_if = {
-# 			limit = {
-# 				check_variable = { ebf_economy_national_unrest > 0.2 }
-# 			}
-# 			add_ideas = ebf_economy_national_unrest_effect
-# 			clr_country_flag = ebf_economy_national_unrest_buildings_damage_events
-# 		}
-# 		else = {
-# 			remove_ideas = ebf_economy_national_unrest_effect
-# 			clr_country_flag = ebf_economy_national_unrest_buildings_damage_events
-# 		}
-# 		set_variable = { ebf_economy_national_unrest_building_damage = ebf_economy_national_unrest }
-# 		multiply_variable = { ebf_economy_national_unrest_building_damage = ebf_economy_national_unrest_building_damage_multiplier }
-# 	}
-# }
-
-# Damagning buildings | Random Event
 country_event = {
 	id = ebf_economy_national_unrest_events.2
 	title = ebf_economy_national_unrest_events.2.t
@@ -195,7 +118,7 @@ country_event = {
 		add_equipment_to_stockpile = {
 			type = infantry_equipment
 			amount = ebf_economy_national_unrest_steel_weapons_amount_test
-			producer = GER
+			producer = THIS
 		}
 	}
 
@@ -204,7 +127,7 @@ country_event = {
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = ebf_economy_national_unrest_steel_weapons_amount_test
-				producer = GER
+				producer = THIS
 			}
 		}
 		hidden_effect = {

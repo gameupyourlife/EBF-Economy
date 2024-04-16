@@ -38,7 +38,6 @@ print_needed_money = {
 	log = "print_needed_money | ebf_economy_bankrupt_emergency_printing_amount: [?ebf_economy_bankrupt_emergency_printing_amount] --- ebf_economy_bankrupt_emergency_printing_inflation: [?ebf_economy_bankrupt_emergency_printing_inflation]"
 
 	# More Penaltys for not managing the economy correctly
-	add_to_variable = { ebf_economy_national_unrest = 0.05 }		
-	add_stability = -0.05
+	add_stability = -0.075
 	add_war_support = -0.05
 }

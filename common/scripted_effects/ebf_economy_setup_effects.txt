@@ -7,7 +7,6 @@ var_declariation = {
 	}
 
 
-	# add_ideas = ebf_economy_national_unrest1
 	set_global_flag = ebf_economy_is_active
 	set_country_flag = crisis_in_progress
 	set_country_flag = ebf_economy_vars_declared
@@ -214,8 +213,6 @@ var_declariation = {
 	set_variable = { ebf_economy_resources_exported_rate = ebf_economy_resources_exporting_price }
 	set_variable = { ebf_economy_resources_imported_rate = ebf_economy_resources_importing_price }
 
-	### National Unrest and Happiness
-	set_variable = { ebf_economy_national_unrest = 0 }
 }
 
 initial_calculation = {
