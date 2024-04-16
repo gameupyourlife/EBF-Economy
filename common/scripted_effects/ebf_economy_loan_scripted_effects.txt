@@ -20,8 +20,6 @@
 ### emergency_factory_conversion ####
 #####################################
 
-
-
 repayment_loan_ratio = {
 	set_variable = { ebf_economy_repayment_loan_ratio = ebf_economy_loan_monthly_repay_amount }
 	divide_variable = { ebf_economy_repayment_loan_ratio = ebf_economy_loan_amount }
@@ -77,6 +75,11 @@ monthly_repay_amount = {
 	monthly_repay_penalty = yes
 	set_variable = { ebf_economy_loan_monthly_repay_combined = ebf_economy_loan_monthly_repay_amount }
 	add_to_variable = { ebf_economy_loan_monthly_repay_combined = ebf_economy_loan_monthly_repay_penalty }
+	clamp_variable = {
+		var = ebf_economy_loan_monthly_repay_combined
+		min = 0
+		max = ebf_economy_loan_amount
+	}
 }
 
 
@@ -108,6 +111,7 @@ one_time_repay_amount = {
 }
 
 pay_one_time = {
+	one_time_repay_amount = yes
 	# Check wether you have enough money to pay the one time repay
 	if = {
 		limit = {
@@ -116,7 +120,7 @@ pay_one_time = {
 				check_variable = { ebf_economy_money = ebf_economy_loan_one_time_repay_combined }
 			}
 		}
-		subtract_from_variable = { ebf_economy_loan_amount = ebf_economy_loan_one_time_repay_combined }
+		subtract_from_variable = { ebf_economy_loan_amount = ebf_economy_loan_one_time_repay_amount }
 		subtract_from_variable = { ebf_economy_money = ebf_economy_loan_one_time_repay_combined }
 	}
 	else = {

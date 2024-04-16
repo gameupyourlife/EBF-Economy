@@ -813,7 +813,7 @@ guiTypes = {
 				containerWindowType = {
 					name = "expenses_window"
 					position = { x=1 y=312}	
-					size = { width=512 height=245 }			
+					size = { width=512 height=1245 }		# 245 TEMP	
 
 					containerWindowType = {
 						name = "header_window"
@@ -848,7 +848,7 @@ guiTypes = {
 					containerWindowType = {
 						name = "body_window"
 						position = { x=1 y=48}	
-						size = { width=512 height=288 } 
+						size = { width=512 height=1288 } # TEMP
 						# verticalScrollbar = "right_vertical_slider"
 						# scroll_wheel_factor = 40
 						# smooth_scrolling = yes
@@ -1442,8 +1442,55 @@ guiTypes = {
 						}
 
 						containerWindowType = {
-							name = "entry_resources_importing_amount"
+							name = "entry_building_expenses"
 							position = { x=@entry_frame_x y=216 }
+							size = { width = @entry_width height = 36 }
+							clipping = no
+					
+							background = {
+								name = "Background"
+								quadTextureSprite ="GFX_mini_tooltip"
+							}
+							
+							instantTextboxType = {
+								name = "title"
+								position = { x = @entry_title_x y = 8 }
+								
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_BUILDING_EXPENSES"
+								maxWidth = 150
+								maxHeight = 20
+								format = left
+								vertical_alignment = center 
+								
+								alwaystransparent = yes
+							}
+							
+							instantTextboxType = {
+								name = "amount"
+								position = { x =@entry_amount_x y = 8 }
+								
+								font = "hoi_18mbs"
+								text = "ECONOMY_BUILDING_EXPENSES_AMOUNT"
+								maxWidth = 130
+								maxHeight = 20
+								# format = center
+								
+								alwaystransparent = yes
+							}		
+
+							iconType = {
+								name = "arrow"
+								position = { x=@entry_arrow_icon_x	 y=10 }
+								spriteType = "GFX_opinion_arrow_right"
+								# scale = 0.9
+							}
+						}
+
+						containerWindowType = {
+							name = "entry_resources_importing_amount"
+							position = { x=@entry_frame_x y=252 }
 							size = { width = @entry_width height = 36 }
 							clipping = no
 					
@@ -1500,7 +1547,7 @@ guiTypes = {
 
 						containerWindowType = {
 							name = "entry_loan_intrest"
-							position = { x=@entry_frame_x y=252 }
+							position = { x=@entry_frame_x y=288 }
 							size = { width = @entry_width height = 36 }
 							clipping = no
 					
@@ -1555,6 +1602,1249 @@ guiTypes = {
 							}
 						}
 
+						
+
+						
+						
+					}
+				}
+
+
+
+				
+
+				########  ##     ## ########   ######   ######## ########  ######  
+				##     ## ##     ## ##     ## ##    ##  ##          ##    ##    ## 
+				##     ## ##     ## ##     ## ##        ##          ##    ##       
+				########  ##     ## ##     ## ##   #### ######      ##     ######  
+				##     ## ##     ## ##     ## ##    ##  ##          ##          ## 
+				##     ## ##     ## ##     ## ##    ##  ##          ##    ##    ## 
+				########   #######  ########   ######   ########    ##     ###### 
+
+				containerWindowType = {
+					name = "budget_window"
+					position = { x=1 y=2612}	# TEMP
+					size = { width=512 height=461 }			
+
+					containerWindowType = {
+						name = "header_window"
+						position = { x=0 y=0}	
+						size = { width=512 height=45 }
+
+						iconType = {
+							name = "bg"
+							position = { x=0 y=0 }
+							spriteType = "GFX_ebf_economy_sub_section_header_bg"
+						}
+
+						instantTextboxType = {
+							name = "budget_title"
+							position = { x = 70 y = 10 }
+							
+							font = "hoi_24header"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_BUDGET_TITLE"
+						}
+
+						instantTextboxType = {
+							name = "budget_amount"
+							position = { x = 300 y = 10 }
+							
+							font = "hoi_24header"
+							borderSize = {x = 0 y = 0}
+							text = "ECONOMY_BUDGET_AMOUNT"
+						}
+					}
+
+					containerWindowType = {
+						name = "body_window"
+						position = { x=1 y=48}	
+						size = { width=512 height=504 } 
+						# verticalScrollbar = "right_vertical_slider"
+						# scroll_wheel_factor = 40
+						# smooth_scrolling = yes
+
+						background = {
+							name = "Background"
+							quadTextureSprite ="GFX_tiled_window_transparent"
+						}
+						
+
+
+						containerWindowType = {
+							name = "entry_police_budget"
+							position = { x=@entry_frame_x y=0 }
+							size = { width =@entry_width height = 72 } # size = { width = @entry_width height = 36 }
+							clipping = no
+					
+							background = {
+								name = "Background"
+								quadTextureSprite ="GFX_mini_tooltip"
+							}
+							
+							instantTextboxType = {
+								name = "title"
+								position = { x = @entry_title_x y = 8 }
+								
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_POLICE_BUDGET"
+								maxWidth = 150
+								maxHeight = 20
+								format = left
+								vertical_alignment = center 
+								
+								alwaystransparent = yes
+							}
+							
+							instantTextboxType = {
+								name = "amount"
+								position = { x =@entry_amount_x y = 8 }
+								
+								font = "hoi_18mbs"
+								text = "ECONOMY_POLICE_BUDGET_AMOUNT"
+								maxWidth = 130
+								maxHeight = 20
+								# format = center
+								
+								alwaystransparent = yes
+							}		
+
+							iconType = {
+								name = "arrow"
+								position = { x=@entry_arrow_icon_x	 y=10 }
+								spriteType = "GFX_opinion_arrow_right"
+								# scale = 0.9
+							}
+
+							
+							iconType = {
+								name = "modifer_rate_icon"
+								position = { x=@entry_happines_icon_x	 y=5 }
+								spriteType = "GFX_population_icon"
+								scale = 0.9
+							}
+
+							# Percentage of the max effect the budget has on the modifier
+							instantTextboxType = {
+								name = "modifer_rate"
+								position = { x = @entry_happines_x y = 8 }
+								
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_POLICE_BUDGET_MODIFIER_RATE"
+								maxWidth = 50
+								maxHeight = 20
+								format = left
+							}
+
+							# Modifers
+							containerWindowType = {
+								name = "modifiers"
+								position = { x=@entry_frame_x y=32 }
+								size = { width =@entry_width height = 40 } # size = { width = @entry_width height = 36 }
+								clipping = no
+								margin = {
+									top = 1
+								}
+				
+
+								iconType = {
+									name = "ebf_economy_1p_with_shadow_divider_bar"
+									position = { x = 1 y = -2 }
+									spriteType = "GFX_ebf_economy_1p_with_shadow_divider_bar"
+								}
+							
+
+								iconType = {
+									name = "stability_icon"
+									position = { x = 30 y = 7 }
+									spriteType = "GFX_stability_icon"
+									scale = 0.9
+								}
+
+								
+
+								instantTextboxType = {
+									name = "stability_value"
+									position = { x = 60 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_POLICE_STABILITY_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+
+								iconType = {
+									name = "resistance_icon"
+									position = { x = 120 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "resistance_value"
+									position = { x = 150 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_POLICE_RESISTANCE_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+
+								iconType = {
+									name = "command_power_icon"
+									position = { x = 210 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "command_power_value"
+									position = { x = 240 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_POLICE_COMMAND_POWER_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+
+								iconType = {
+									name = "encyption_icon"
+									position = { x = 300 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "encyption_value"
+									position = { x = 330 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_POLICE_ENCRYPTION_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+
+								iconType = {
+									name = "foreign_activities_icon"
+									position = { x = 390 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "foreign_activities_value"
+									position = { x = 420 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_POLICE_FORGEIN_ACTIVITES_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+							}
+							# Adjust buttons
+							instantTextboxType = {
+								name = "value"
+								position = { x=@prod_nof_pos_x y=8 }
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_POLICE_RATE"
+								maxWidth = 50
+								maxHeight = 25
+								fixedsize = yes
+								format = center
+								alwaystransparent = yes
+							}
+							buttonType = {
+								name = "police_budget_sub_button"
+								position = { x=@prod_sub_pos_x y=5 }
+								quadTextureSprite = "GFX_subtract_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip = "SUB_BUTTON_TOOLTIP"
+							}
+							buttonType = {
+								name = "police_budget_add_button"
+								position = { x=@prod_add_pos_x y=5 }
+								quadTextureSprite = "GFX_add_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip  = "ADD_BUTTON_TOOLTIP"
+							}
+						}
+
+
+
+						containerWindowType = {
+							name = "entry_research_budget"
+							position = { x=@entry_frame_x y=72 }
+							size = { width =@entry_width height = 72 } # size = { width = @entry_width height = 36 }
+							clipping = no
+					
+							background = {
+								name = "Background"
+								quadTextureSprite ="GFX_mini_tooltip"
+							}
+							
+							instantTextboxType = {
+								name = "title"
+								position = { x = @entry_title_x y = 8 }
+								
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_RESEARCH_BUDGET"
+								maxWidth = 150
+								maxHeight = 20
+								format = left
+								vertical_alignment = center 
+								
+								alwaystransparent = yes
+							}
+							
+							instantTextboxType = {
+								name = "amount"
+								position = { x =@entry_amount_x y = 8 }
+								
+								font = "hoi_18mbs"
+								text = "ECONOMY_RESEARCH_BUDGET_AMOUNT"
+								maxWidth = 130
+								maxHeight = 20
+								# format = center
+								
+								alwaystransparent = yes
+							}		
+
+							iconType = {
+								name = "arrow"
+								position = { x=@entry_arrow_icon_x	 y=10 }
+								spriteType = "GFX_opinion_arrow_right"
+								# scale = 0.9
+							}
+
+							
+							iconType = {
+								name = "modifer_rate_icon"
+								position = { x=@entry_happines_icon_x	 y=5 }
+								spriteType = "GFX_population_icon"
+								scale = 0.9
+							}
+
+							# Percentage of the max effect the budget has on the modifier
+							instantTextboxType = {
+								name = "modifer_rate"
+								position = { x = @entry_happines_x y = 8 }
+								
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_RESEARCH_BUDGET_MODIFIER_RATE"
+								maxWidth = 50
+								maxHeight = 20
+								format = left
+							}
+
+							# Modifers
+							containerWindowType = {
+								name = "modifiers"
+								position = { x=@entry_frame_x y=32 }
+								size = { width =@entry_width height = 40 } # size = { width = @entry_width height = 36 }
+								clipping = no
+								margin = {
+									top = 1
+								}
+				
+								iconType = {
+									name = "ebf_economy_1p_with_shadow_divider_bar"
+									position = { x = 1 y = -2 }
+									spriteType = "GFX_ebf_economy_1p_with_shadow_divider_bar"
+								}
+
+
+
+								iconType = {
+									name = "research_speed_icon"
+									position = { x = 30 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "research_speed_value"
+									position = { x = 60 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_RESEARCH_SPEED_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+
+								iconType = {
+									name = "min_adult_age_icon"
+									position = { x = 210 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "min_adult_age_value"
+									position = { x = 240 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_RESEARCH_MIN_ADULT_AGE_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+
+								iconType = {
+									name = "experience_gain_icon"
+									position = { x = 390 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "experience_gain_value"
+									position = { x = 420 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_RESEARCH_BUDGET_EXPERIENCE_GAIN_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+							}
+							# Adjust buttons
+							instantTextboxType = {
+								name = "value"
+								position = { x=@prod_nof_pos_x y=8 }
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_RESEARCH_BUDGET_RATE"
+								maxWidth = 50
+								maxHeight = 25
+								fixedsize = yes
+								format = center
+								alwaystransparent = yes
+							}
+							buttonType = {
+								name = "research_budget_sub_button"
+								position = { x=@prod_sub_pos_x y=5 }
+								quadTextureSprite = "GFX_subtract_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip = "SUB_BUTTON_TOOLTIP"
+							}
+							buttonType = {
+								name = "research_budget_add_button"
+								position = { x=@prod_add_pos_x y=5 }
+								quadTextureSprite = "GFX_add_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip  = "ADD_BUTTON_TOOLTIP"
+							}
+						}
+
+
+
+						containerWindowType = {
+							name = "entry_military_budget"
+							position = { x=@entry_frame_x y=144 }
+							size = { width =@entry_width height = 72 } # size = { width = @entry_width height = 36 }
+							clipping = no
+					
+							background = {
+								name = "Background"
+								quadTextureSprite ="GFX_mini_tooltip"
+							}
+							
+							instantTextboxType = {
+								name = "title"
+								position = { x = @entry_title_x y = 8 }
+								
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_MILITARY_BUDGET"
+								maxWidth = 150
+								maxHeight = 20
+								format = left
+								vertical_alignment = center 
+								
+								alwaystransparent = yes
+							}
+							
+							instantTextboxType = {
+								name = "amount"
+								position = { x =@entry_amount_x y = 8 }
+								
+								font = "hoi_18mbs"
+								text = "ECONOMY_MILITARY_BUDGET_AMOUNT"
+								maxWidth = 130
+								maxHeight = 20
+								# format = center
+								
+								alwaystransparent = yes
+							}		
+
+							iconType = {
+								name = "arrow"
+								position = { x=@entry_arrow_icon_x	 y=10 }
+								spriteType = "GFX_opinion_arrow_right"
+								# scale = 0.9
+							}
+
+							
+							iconType = {
+								name = "modifer_rate_icon"
+								position = { x=@entry_happines_icon_x	 y=5 }
+								spriteType = "GFX_population_icon"
+								scale = 0.9
+							}
+
+							# Percentage of the max effect the budget has on the modifier
+							instantTextboxType = {
+								name = "modifer_rate"
+								position = { x = @entry_happines_x y = 8 }
+								
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_MILITARY_BUDGET_MODIFIER_RATE"
+								maxWidth = 50
+								maxHeight = 20
+								format = left
+							}
+
+							# Modifers
+							containerWindowType = {
+								name = "modifiers"
+								position = { x=@entry_frame_x y=32 }
+								size = { width =@entry_width height = 40 } # size = { width = @entry_width height = 36 }
+								clipping = no
+								margin = {
+									top = 1
+								}
+				
+								iconType = {
+									name = "ebf_economy_1p_with_shadow_divider_bar"
+									position = { x = 1 y = -2 }
+									spriteType = "GFX_ebf_economy_1p_with_shadow_divider_bar"
+								}
+
+
+
+								iconType = {
+									name = "attack_icon"
+									position = { x = 30 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "attack_value"
+									position = { x = 60 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_MILITARY_BUDGET_ATTACK_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+
+								iconType = {
+									name = "training_time_icon"
+									position = { x = 210 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "training_time_value"
+									position = { x = 240 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_MILITARY_BUDGET_TRAINING_TIME_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+
+								iconType = {
+									name = "experience_gain_icon"
+									position = { x = 390 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "experience_gain_value"
+									position = { x = 420 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_MILITARY_BUDGET_EXPERIENCE_GAIN_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+							}
+							# Adjust buttons
+							instantTextboxType = {
+								name = "value"
+								position = { x=@prod_nof_pos_x y=8 }
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_MILITARY_BUDGET_RATE"
+								maxWidth = 50
+								maxHeight = 25
+								fixedsize = yes
+								format = center
+								alwaystransparent = yes
+							}
+							buttonType = {
+								name = "military_budget_sub_button"
+								position = { x=@prod_sub_pos_x y=5 }
+								quadTextureSprite = "GFX_subtract_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip = "SUB_BUTTON_TOOLTIP"
+							}
+							buttonType = {
+								name = "military_budget_add_button"
+								position = { x=@prod_add_pos_x y=5 }
+								quadTextureSprite = "GFX_add_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip  = "ADD_BUTTON_TOOLTIP"
+							}
+						}
+
+
+
+						containerWindowType = {
+							name = "entry_bureaucracy_budget"
+							position = { x=@entry_frame_x y = 216 }
+							size = { width =@entry_width height = 72 } # size = { width = @entry_width height = 36 }
+							clipping = no
+					
+							background = {
+								name = "Background"
+								quadTextureSprite ="GFX_mini_tooltip"
+							}
+							
+							instantTextboxType = {
+								name = "title"
+								position = { x = @entry_title_x y = 8 }
+								
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_BUREAUCRACY_BUDGET"
+								maxWidth = 150
+								maxHeight = 20
+								format = left
+								vertical_alignment = center 
+								
+								alwaystransparent = yes
+							}
+							
+							instantTextboxType = {
+								name = "amount"
+								position = { x =@entry_amount_x y = 8 }
+								
+								font = "hoi_18mbs"
+								text = "ECONOMY_BUREAUCRACY_BUDGET_AMOUNT"
+								maxWidth = 130
+								maxHeight = 20
+								# format = center
+								
+								alwaystransparent = yes
+							}		
+
+							iconType = {
+								name = "arrow"
+								position = { x=@entry_arrow_icon_x	 y=10 }
+								spriteType = "GFX_opinion_arrow_right"
+								# scale = 0.9
+							}
+
+							
+							iconType = {
+								name = "modifer_rate_icon"
+								position = { x=@entry_happines_icon_x	 y=5 }
+								spriteType = "GFX_population_icon"
+								scale = 0.9
+							}
+
+							# Percentage of the max effect the budget has on the modifier
+							instantTextboxType = {
+								name = "modifer_rate"
+								position = { x = @entry_happines_x y = 8 }
+								
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_BUREAUCRACY_BUDGET_MODIFIER_RATE"
+								maxWidth = 50
+								maxHeight = 20
+								format = left
+							}
+
+							# Modifers
+							containerWindowType = {
+								name = "modifiers"
+								position = { x=@entry_frame_x y=32 }
+								size = { width =@entry_width height = 40 } # size = { width = @entry_width height = 36 }
+								clipping = no
+								margin = {
+									top = 1
+								}
+				
+								iconType = {
+									name = "ebf_economy_1p_with_shadow_divider_bar"
+									position = { x = 1 y = -2 }
+									spriteType = "GFX_ebf_economy_1p_with_shadow_divider_bar"
+								}
+
+
+
+								iconType = {
+									name = "political_power_gain_icon"
+									position = { x = 30 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "political_power_gain_value"
+									position = { x = 60 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_BUREAUCRACY_BUDGET_POLITICAL_POWER_GAIN_RATE"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+
+								iconType = {
+									name = "construction_speed_icon"
+									position = { x = 210 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "construction_speed_value"
+									position = { x = 240 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_BUREAUCRACY_BUDGET_CONSTRUCTION_SPEED_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+
+								iconType = {
+									name = "recrutible_population_factor_icon"
+									position = { x = 390 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "recrutible_population_factor_value"
+									position = { x = 420 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_BUREAUCRACY_BUDGET_RECRUTIBLE_POPULATION_FACTOR_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+							}
+							# Adjust buttons
+							instantTextboxType = {
+								name = "value"
+								position = { x=@prod_nof_pos_x y=8 }
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_BUREAUCRACY_BUDGET_RATE"
+								maxWidth = 50
+								maxHeight = 25
+								fixedsize = yes
+								format = center
+								alwaystransparent = yes
+							}
+							buttonType = {
+								name = "bureaucracy_budget_sub_button"
+								position = { x=@prod_sub_pos_x y=5 }
+								quadTextureSprite = "GFX_subtract_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip = "SUB_BUTTON_TOOLTIP"
+							}
+							buttonType = {
+								name = "bureaucracy_budget_add_button"
+								position = { x=@prod_add_pos_x y=5 }
+								quadTextureSprite = "GFX_add_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip  = "ADD_BUTTON_TOOLTIP"
+							}
+						}
+
+
+
+						containerWindowType = {
+							name = "entry_construction_budget"
+							position = { x=@entry_frame_x y = 288 }
+							size = { width =@entry_width height = 72 } # size = { width = @entry_width height = 36 }
+							clipping = no
+					
+							background = {
+								name = "Background"
+								quadTextureSprite ="GFX_mini_tooltip"
+							}
+							
+							instantTextboxType = {
+								name = "title"
+								position = { x = @entry_title_x y = 8 }
+								
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_CONSTRUCTION_BUDGET"
+								maxWidth = 150
+								maxHeight = 20
+								format = left
+								vertical_alignment = center 
+								
+								alwaystransparent = yes
+							}
+							
+							instantTextboxType = {
+								name = "amount"
+								position = { x =@entry_amount_x y = 8 }
+								
+								font = "hoi_18mbs"
+								text = "ECONOMY_CONSTRUCTION_BUDGET_AMOUNT"
+								maxWidth = 130
+								maxHeight = 20
+								# format = center
+								
+								alwaystransparent = yes
+							}		
+
+							iconType = {
+								name = "arrow"
+								position = { x=@entry_arrow_icon_x	 y=10 }
+								spriteType = "GFX_opinion_arrow_right"
+								# scale = 0.9
+							}
+
+							
+							iconType = {
+								name = "modifer_rate_icon"
+								position = { x=@entry_happines_icon_x	 y=5 }
+								spriteType = "GFX_population_icon"
+								scale = 0.9
+							}
+
+							# Percentage of the max effect the budget has on the modifier
+							instantTextboxType = {
+								name = "modifer_rate"
+								position = { x = @entry_happines_x y = 8 }
+								
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_CONSTRUCTION_BUDGET_MODIFIER_RATE"
+								maxWidth = 50
+								maxHeight = 20
+								format = left
+							}
+
+							# Modifers
+							containerWindowType = {
+								name = "modifiers"
+								position = { x=@entry_frame_x y=32 }
+								size = { width =@entry_width height = 40 } # size = { width = @entry_width height = 36 }
+								clipping = no
+								margin = {
+									top = 1
+								}
+				
+								iconType = {
+									name = "ebf_economy_1p_with_shadow_divider_bar"
+									position = { x = 1 y = -2 }
+									spriteType = "GFX_ebf_economy_1p_with_shadow_divider_bar"
+								}
+
+
+
+								iconType = {
+									name = "construction_speed_icon"
+									position = { x = 30 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "construction_speed_value"
+									position = { x = 60 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_CONSTRUCTION_BUDGET_CONSTRUCTION_SPEED_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+
+								iconType = {
+									name = "political_power_gain_icon"
+									position = { x = 210 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "political_power_gain_value"
+									position = { x = 240 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_CONSTRUCTION_BUDGET_POLITICAL_POWER_GAIN_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+
+								iconType = {
+									name = "recrutible_population_factor_icon"
+									position = { x = 390 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "recrutible_population_factor_value"
+									position = { x = 420 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_CONSTRUCTION_BUDGET_RECRUTIBLE_POPULATION_FACTOR_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+							}
+							# Adjust buttons
+							instantTextboxType = {
+								name = "value"
+								position = { x=@prod_nof_pos_x y=8 }
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_CONSTRUCTION_BUDGET_RATE"
+								maxWidth = 50
+								maxHeight = 25
+								fixedsize = yes
+								format = center
+								alwaystransparent = yes
+							}
+							buttonType = {
+								name = "construction_budget_sub_button"
+								position = { x=@prod_sub_pos_x y=5 }
+								quadTextureSprite = "GFX_subtract_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip = "SUB_BUTTON_TOOLTIP"
+							}
+							buttonType = {
+								name = "construction_budget_add_button"
+								position = { x=@prod_add_pos_x y=5 }
+								quadTextureSprite = "GFX_add_one"
+								font = "hoi_16mbs"
+								clicksound = click_default
+								tooltip  = "ADD_BUTTON_TOOLTIP"
+							}
+						}
+
+
+						#######################################
+						########## Indirect Controll ##########
+						#######################################
+
+						containerWindowType = {
+							name = "entry_healthcare_budget"
+							position = { x=@entry_frame_x y = 360 }
+							size = { width =@entry_width height = 36 } # size = { width = @entry_width height = 36 }
+							clipping = no
+					
+							background = {
+								name = "Background"
+								quadTextureSprite ="GFX_mini_tooltip"
+							}
+							
+							instantTextboxType = {
+								name = "title"
+								position = { x = @entry_title_x y = 8 }
+								
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_HEALTHCARE_BUDGET"
+								maxWidth = 150
+								maxHeight = 20
+								format = left
+								vertical_alignment = center 
+								
+								alwaystransparent = yes
+							}
+							
+							# instantTextboxType = {
+							# 	name = "amount"
+							# 	position = { x =@entry_amount_x y = 8 }
+								
+							# 	font = "hoi_18mbs"
+							# 	text = "ECONOMY_HEALTHCARE_BUDGET_AMOUNT"
+							# 	maxWidth = 130
+							# 	maxHeight = 20
+							# 	# format = center
+								
+							# 	alwaystransparent = yes
+							# }		
+
+							# iconType = {
+							# 	name = "arrow"
+							# 	position = { x=@entry_arrow_icon_x	 y=10 }
+							# 	spriteType = "GFX_opinion_arrow_right"
+							# 	# scale = 0.9
+							# }
+
+							
+		
+
+							# Modifers
+							containerWindowType = {
+								name = "modifiers"
+								position = { x=@entry_frame_x y=0 }
+								size = { width =@entry_width height = 100%% } # size = { width = @entry_width height = 36 }
+								clipping = no
+								margin = {
+									top = 1
+								}
+				
+								# iconType = {
+								# 	name = "ebf_economy_1p_with_shadow_divider_bar"
+								# 	position = { x = 1 y = -2 }
+								# 	spriteType = "GFX_ebf_economy_1p_with_shadow_divider_bar"
+								# }
+
+
+
+								iconType = {
+									name = "population_growth_icon"
+									position = { x = 200 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "population_growth_value"
+									position = { x = 230 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_HEALTHCARE_BUDGET_POPULATION_GROWTH_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+
+								iconType = {
+									name = "organisation_icon"
+									position = { x = 310 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "organisation_value"
+									position = { x = 340 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_HEALTHCARE_BUDGET_ORGANISATION_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+
+								iconType = {
+									name = "stability_icon"
+									position = { x = 390 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "stability_value"
+									position = { x = 420 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_HEALTHCARE_BUDGET_STABILITY_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+							}
+						}
+
+						containerWindowType = {
+							name = "entry_social_welfare_budget"
+							position = { x=@entry_frame_x y = 396 }
+							size = { width =@entry_width height = 36 } # size = { width = @entry_width height = 36 }
+							clipping = no
+					
+							background = {
+								name = "Background"
+								quadTextureSprite ="GFX_mini_tooltip"
+							}
+							
+							instantTextboxType = {
+								name = "title"
+								position = { x = @entry_title_x y = 8 }
+								
+								font = "hoi_18mbs"
+								borderSize = {x = 0 y = 0}
+								text = "ECONOMY_SOCIAL_WELFARE_BUDGET"
+								maxWidth = 150
+								maxHeight = 20
+								format = left
+								vertical_alignment = center 
+								
+								alwaystransparent = yes
+							}
+							
+							# instantTextboxType = {
+							# 	name = "amount"
+							# 	position = { x =@entry_amount_x y = 8 }
+								
+							# 	font = "hoi_18mbs"
+							# 	text = "ECONOMY_HEALTHCARE_BUDGET_AMOUNT"
+							# 	maxWidth = 130
+							# 	maxHeight = 20
+							# 	# format = center
+								
+							# 	alwaystransparent = yes
+							# }		
+
+							# iconType = {
+							# 	name = "arrow"
+							# 	position = { x=@entry_arrow_icon_x	 y=10 }
+							# 	spriteType = "GFX_opinion_arrow_right"
+							# 	# scale = 0.9
+							# }
+
+							
+		
+
+							# Modifers
+							containerWindowType = {
+								name = "modifiers"
+								position = { x=@entry_frame_x y=0 }
+								size = { width =@entry_width height = 100%% } # size = { width = @entry_width height = 36 }
+								clipping = no
+								margin = {
+									top = 1
+								}
+				
+								# iconType = {
+								# 	name = "ebf_economy_1p_with_shadow_divider_bar"
+								# 	position = { x = 1 y = -2 }
+								# 	spriteType = "GFX_ebf_economy_1p_with_shadow_divider_bar"
+								# }
+
+
+
+								iconType = {
+									name = "stability_icon"
+									position = { x = 200 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "stability_value"
+									position = { x = 230 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_SOCIAL_WELFARE_BUDGET_STABILITY_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+
+								iconType = {
+									name = "political_power_gain_icon"
+									position = { x = 310 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "political_power_gain_value"
+									position = { x = 340 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_SOCIAL_WELFARE_BUDGET_POLITICAL_POWER_GAIN_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+
+								iconType = {
+									name = "population_growth_icon"
+									position = { x = 390 y = 5 }
+									spriteType = "GFX_population_icon"
+									scale = 0.9
+								}
+
+								instantTextboxType = {
+									name = "population_growth_value"
+									position = { x = 420 y = 8 }
+									
+									font = "hoi_18mbs"
+									borderSize = {x = 0 y = 0}
+									text = "ECONOMY_SOCIAL_WELFARE_BUDGET_POPULATION_GROWTH_MODIFIER"
+									maxWidth = 50
+									maxHeight = 20
+									format = left
+								}
+							}
+						}
+
+
+
+
+						
 						
 						
 					}
@@ -1615,7 +2905,7 @@ guiTypes = {
 			# Balance Overview - Contains Income and Expenses
 			containerWindowType = {
 				name = "loans_window"
-				position = { x=12 y=645}	
+				position = { x=12 y=689} # Added 144
 				size = { width=514 height=400 }
 				# verticalScrollbar = "right_vertical_slider"
 				# scroll_wheel_factor = 40
@@ -1762,7 +3052,7 @@ guiTypes = {
 
 					instantTextboxType = {
 						name = "interest_amount"
-						position = { x = 15 y = 60 }
+						position = { x = 15 y = 50 }
 						font = "hoi_18mbs"
 						text = "ECONOMY_LOAN_MANAGEMENT_INTEREST_AMOUNT"
 						maxWidth = 254
@@ -1770,7 +3060,7 @@ guiTypes = {
 
 					instantTextboxType = {
 						name = "loan_repay_amount"
-						position = { x = 15 y = 80 }
+						position = { x = 15 y = 70 }
 						font = "hoi_18mbs"
 						text = "ECONOMY_LOAN_MANAGEMENT_REPAY_AMOUNT"
 						maxWidth = 254
@@ -1778,7 +3068,7 @@ guiTypes = {
 
 					instantTextboxType = {
 						name = "loan_repay_penalty_amount"
-						position = { x = 15 y = 100 }
+						position = { x = 15 y = 90 }
 						font = "hoi_18mbs"
 						text = "ECONOMY_LOAN_MANAGEMENT_REPAY_PENALTY_AMOUNT"
 						maxWidth = 254
@@ -1788,7 +3078,7 @@ guiTypes = {
 
 					instantTextboxType = {
 						name = "interest_value"
-						position = { x = 135 y = 60 }
+						position = { x = 135 y = 50 }
 						font = "hoi_18mbs"
 						text = "ECONOMY_LOAN_MANAGEMENT_INTEREST_VALUE"
 						maxWidth = 254
@@ -1796,15 +3086,15 @@ guiTypes = {
 
 					instantTextboxType = {
 						name = "loan_repay_value"
-						position = { x = 135 y = 80 }
+						position = { x = 135 y = 70 }
 						font = "hoi_18mbs"
 						text = "ECONOMY_LOAN_MANAGEMENT_REPAY_VALUE"
-						maxWidth = 254
+						maxWidth = 	254
 					}
 
 					instantTextboxType = {
 						name = "loan_repay_penalty_value"
-						position = { x = 135 y = 100 }
+						position = { x = 135 y = 90 }
 						font = "hoi_18mbs"
 						text = "ECONOMY_LOAN_MANAGEMENT_REPAY_PENALTY_VALUE"
 						maxWidth = 254
@@ -1818,7 +3108,7 @@ guiTypes = {
 
 					buttonType = {
 						name = "loan_repayment_sub_button"
-						position = { x=94 y=130 }
+						position = { x=215 y=83 }
 						quadTextureSprite = "GFX_subtract_one"
 						font = "hoi_16mbs"
 						clicksound = click_default
@@ -1826,11 +3116,21 @@ guiTypes = {
 					}
 					buttonType = {
 						name = "loan_repayment_add_button"
-						position = { x=134 y=130 }
+						position = { x=215 y=53 }
 						quadTextureSprite = "GFX_add_one"
 						font = "hoi_16mbs"
 						clicksound = click_default
 						tooltip  = "ADD_BUTTON_TOOLTIP"
+					}
+
+					buttonType = {
+						name = "loan_repayment_take_loan_button"
+						position = { x=68 y=118 }
+						quadTextureSprite = "GFX_button_123x34"
+						font = "hoi_16mbs"
+						clicksound = click_default
+						tooltip  = "TAKE_LOAN_TOOLTIP"
+						text = "TAKE_LOAN"
 					}
 
 					# instantTextboxType = {
@@ -2073,7 +3373,7 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "society_window"
-				position = { x=12 y=1036}	
+				position = { x=12 y=1080}	
 				size = { width=514 height=230 }
 
 				containerWindowType = {
@@ -2551,7 +3851,7 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "happines_window"
-				position = { x=12 y=1266}	
+				position = { x=12 y=1310}	
 				size = { width=514 height=230 }
 
 				containerWindowType = {
@@ -2568,7 +3868,7 @@ guiTypes = {
 					}
 					
 					containerWindowType = {
-						name = "entry_population"
+						name = "entry_expenses_happines"
 						position = { x=@entry_frame_x y=0 }
 						size = { width =@entry_width height = 36 } # size = { width = @entry_width height = 36 }
 						clipping = no
@@ -2584,7 +3884,7 @@ guiTypes = {
 							
 							font = "hoi_18mbs"
 							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_POPULATION"
+							text = "ECONOMY_EXPENSES_HAPPINES"
 							maxWidth = 150
 							maxHeight = 20
 							format = left
@@ -2594,11 +3894,11 @@ guiTypes = {
 						}
 						
 						instantTextboxType = {
-							name = "population_population_amount"
-							position = { x =166 y = 8 }
-							font = "hoi_18mbs"
-							text = "ECONOMY_POPULATION_AMOUNT"
-							maxWidth = 100
+							name = "expenses_happines_calculation"
+							position = { x =100 y = 11 }
+							font = "garamond_14"
+							text = "ECONOMY_EXPENSES_HAPPINES_CALCULATION"
+							maxWidth = 300
 							maxHeight = 20
 							format = right
 							
@@ -2607,25 +3907,18 @@ guiTypes = {
 
 						iconType = {
 							name = "arrow"
-							position = { x=@entry_arrow_icon_x	 y=10 }
+							position = { x=410	 y=10 }
 							spriteType = "GFX_opinion_arrow_right"
 							# scale = 0.9
 						}
 						
-						iconType = {
-							name = "population_ratio_icon"
-							position = { x=@entry_happines_icon_x	 y=5 }
-							spriteType = "GFX_population_icon"
-							scale = 0.9
-						}
-
 						instantTextboxType = {
-							name = "population_ratio_value"
+							name = "expenses_happines_amount"
 							position = { x = @entry_happines_x y = 8 }
 							
 							font = "hoi_18mbs"
 							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_POPULATION_RATIO"
+							text = "ECONOMY_EXPENSES_HAPPINES_AMOUNT"
 							maxWidth = 50
 							maxHeight = 20
 							format = left
@@ -2644,9 +3937,9 @@ guiTypes = {
 							alwaystransparent = yes
 						}
 					}
-
+					
 					containerWindowType = {
-						name = "entry_full_age"
+						name = "entry_war_happines"
 						position = { x=@entry_frame_x y=36 }
 						size = { width =@entry_width height = 36 } # size = { width = @entry_width height = 36 }
 						clipping = no
@@ -2662,7 +3955,7 @@ guiTypes = {
 							
 							font = "hoi_18mbs"
 							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_FULL_AGE"
+							text = "ECONOMY_WAR_HAPPINES"
 							maxWidth = 150
 							maxHeight = 20
 							format = left
@@ -2672,76 +3965,39 @@ guiTypes = {
 						}
 						
 						instantTextboxType = {
-							name = "aduld_population_amount"
-							position = { x =@entry_amount_x y = 8 }
-							font = "hoi_18mbs"
-							text = "ECONOMY_FULL_AGE_AMOUNT"
-							maxWidth = 130
+							name = "expenses_happines_calculation"
+							position = { x =100 y = 11 }
+							font = "garamond_14"
+							text = "ECONOMY_WAR_HAPPINES_CALCULATION"
+							maxWidth = 300
 							maxHeight = 20
-							# format = center
+							format = right
 							
 							alwaystransparent = yes
 						}		
 
 						iconType = {
 							name = "arrow"
-							position = { x=@entry_arrow_icon_x	 y=10 }
+							position = { x=410	 y=10 }
 							spriteType = "GFX_opinion_arrow_right"
 							# scale = 0.9
 						}
 						
-						iconType = {
-							name = "full_age_ratio_icon"
-							position = { x=@entry_happines_icon_x	 y=5 }
-							spriteType = "GFX_population_icon"
-							scale = 0.9
-						}
-
 						instantTextboxType = {
-							name = "full_age_ratio_value"
+							name = "expenses_happines_amount"
 							position = { x = @entry_happines_x y = 8 }
 							
 							font = "hoi_18mbs"
 							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_FULL_AGE_RATIO"
+							text = "ECONOMY_WAR_HAPPINES_AMOUNT"
 							maxWidth = 50
 							maxHeight = 20
 							format = left
 						}
-
-						instantTextboxType = {
-							name = "value"
-							position = { x=@prod_nof_pos_x y=8 }
-							font = "hoi_18mbs"
-							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_FULL_AGE_LIMIT"
-							maxWidth = 50
-							maxHeight = 25
-							fixedsize = yes
-							format = center
-							alwaystransparent = yes
-						}
-						buttonType = {
-							name = "full_age_sub_button"
-							position = { x=@prod_sub_pos_x y=5 }
-							quadTextureSprite = "GFX_subtract_one"
-							font = "hoi_16mbs"
-							clicksound = click_default
-							tooltip = "SUB_BUTTON_TOOLTIP"
-						}
-						buttonType = {
-							name = "full_age_add_button"
-							position = { x=@prod_add_pos_x y=5 }
-							quadTextureSprite = "GFX_add_one"
-							font = "hoi_16mbs"
-							clicksound = click_default
-							tooltip  = "ADD_BUTTON_TOOLTIP"
-						}
 					}
-
-
+					
 					containerWindowType = {
-						name = "entry_retirement_age"
+						name = "entry_tax_happines"
 						position = { x=@entry_frame_x y=72 }
 						size = { width =@entry_width height = 36 } # size = { width = @entry_width height = 36 }
 						clipping = no
@@ -2757,7 +4013,7 @@ guiTypes = {
 							
 							font = "hoi_18mbs"
 							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_RETIREMENT_AGE"
+							text = "ECONOMY_TAX_HAPPINES"
 							maxWidth = 150
 							maxHeight = 20
 							format = left
@@ -2767,75 +4023,39 @@ guiTypes = {
 						}
 						
 						instantTextboxType = {
-							name = "senior_population_amount"
-							position = { x =@entry_amount_x y = 8 }
-							font = "hoi_18mbs"
-							text = "ECONOMY_RETIREMENT_AGE_AMOUNT"
-							maxWidth = 130
+							name = "happines_calculation"
+							position = { x =100 y = 11 }
+							font = "garamond_14"
+							text = "ECONOMY_TAX_HAPPINES_CALCULATION"
+							maxWidth = 300
 							maxHeight = 20
-							# format = center
+							format = right
 							
 							alwaystransparent = yes
 						}		
 
 						iconType = {
 							name = "arrow"
-							position = { x=@entry_arrow_icon_x	 y=10 }
+							position = { x=410	 y=10 }
 							spriteType = "GFX_opinion_arrow_right"
 							# scale = 0.9
 						}
 						
-						iconType = {
-							name = "retirement_age_ratio_icon"
-							position = { x=@entry_happines_icon_x	 y=5 }
-							spriteType = "GFX_population_icon"
-							scale = 0.9
-						}
-
 						instantTextboxType = {
-							name = "retirement_age_ratio_value"
+							name = "happines_amount"
 							position = { x = @entry_happines_x y = 8 }
 							
 							font = "hoi_18mbs"
 							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_RETIREMENT_AGE_RATIO"
+							text = "ECONOMY_TAX_HAPPINES_AMOUNT"
 							maxWidth = 50
 							maxHeight = 20
 							format = left
 						}
-
-						instantTextboxType = {
-							name = "value"
-							position = { x=@prod_nof_pos_x y=8 }
-							font = "hoi_18mbs"
-							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_RETIREMENT_AGE_LIMIT"
-							maxWidth = 50
-							maxHeight = 25
-							fixedsize = yes
-							format = center
-							alwaystransparent = yes
-						}
-						buttonType = {
-							name = "retirement_age_sub_button"
-							position = { x=@prod_sub_pos_x y=5 }
-							quadTextureSprite = "GFX_subtract_one"
-							font = "hoi_16mbs"
-							clicksound = click_default
-							tooltip = "SUB_BUTTON_TOOLTIP"
-						}
-						buttonType = {
-							name = "retirement_age_add_button"
-							position = { x=@prod_add_pos_x y=5 }
-							quadTextureSprite = "GFX_add_one"
-							font = "hoi_16mbs"
-							clicksound = click_default
-							tooltip  = "ADD_BUTTON_TOOLTIP"
-						}
 					}
-
+					
 					containerWindowType = {
-						name = "entry_unemployed_population"
+						name = "entry_inflation_happines"
 						position = { x=@entry_frame_x y=108 }
 						size = { width =@entry_width height = 36 } # size = { width = @entry_width height = 36 }
 						clipping = no
@@ -2851,7 +4071,7 @@ guiTypes = {
 							
 							font = "hoi_18mbs"
 							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_UNEMPLOYED_POPULATION"
+							text = "ECONOMY_INFLATION_HAPPINES"
 							maxWidth = 150
 							maxHeight = 20
 							format = left
@@ -2861,59 +4081,39 @@ guiTypes = {
 						}
 						
 						instantTextboxType = {
-							name = "unemployed_population_population_amount"
-							position = { x =@entry_amount_x y = 8 }
-							font = "hoi_18mbs"
-							text = "ECONOMY_UNEMPLOYED_POPULATION_AMOUNT"
-							maxWidth = 130
+							name = "happines_calculation"
+							position = { x =100 y = 11 }
+							font = "garamond_14"
+							text = "ECONOMY_INFLATION_HAPPINES_CALCULATION"
+							maxWidth = 300
 							maxHeight = 20
-							# format = center
+							format = right
 							
 							alwaystransparent = yes
 						}		
 
 						iconType = {
 							name = "arrow"
-							position = { x=@entry_arrow_icon_x	 y=10 }
+							position = { x=410	 y=10 }
 							spriteType = "GFX_opinion_arrow_right"
 							# scale = 0.9
 						}
 						
-						iconType = {
-							name = "unemployed_population_ratio_icon"
-							position = { x=@entry_happines_icon_x	 y=5 }
-							spriteType = "GFX_population_icon"
-							scale = 0.9
-						}
-
 						instantTextboxType = {
-							name = "unemployed_population_ratio_value"
+							name = "happines_amount"
 							position = { x = @entry_happines_x y = 8 }
 							
 							font = "hoi_18mbs"
 							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_UNEMPLOYED_POPULATION_RATIO"
+							text = "ECONOMY_INFLATION_HAPPINES_AMOUNT"
 							maxWidth = 50
 							maxHeight = 20
 							format = left
 						}
-
-						instantTextboxType = {
-							name = "value"
-							position = { x=@prod_nof_pos_x y=8 }
-							font = "hoi_18mbs"
-							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_UNEMPLOYED_POPULATION_LIMIT"
-							maxWidth = 50
-							maxHeight = 25
-							fixedsize = yes
-							format = center
-							alwaystransparent = yes
-						}
 					}
-
+					
 					containerWindowType = {
-						name = "entry_rich"
+						name = "entry_total_happines"
 						position = { x=@entry_frame_x y=144 }
 						size = { width =@entry_width height = 36 } # size = { width = @entry_width height = 36 }
 						clipping = no
@@ -2929,7 +4129,7 @@ guiTypes = {
 							
 							font = "hoi_18mbs"
 							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_RICH"
+							text = "ECONOMY_TOTAL_HAPPINES"
 							maxWidth = 150
 							maxHeight = 20
 							format = left
@@ -2939,56 +4139,38 @@ guiTypes = {
 						}
 						
 						instantTextboxType = {
-							name = "rich_population_amount"
-							position = { x =@entry_amount_x y = 8 }
-							font = "hoi_18mbs"
-							text = "ECONOMY_RICH_AMOUNT"
-							maxWidth = 130
+							name = "happines_calculation"
+							position = { x =100 y = 11 }
+							font = "garamond_14"
+							text = "ECONOMY_TOTAL_HAPPINES_CALCULATION"
+							maxWidth = 300
 							maxHeight = 20
-							# format = center
+							format = right
 							
 							alwaystransparent = yes
 						}		
 
 						iconType = {
 							name = "arrow"
-							position = { x=@entry_arrow_icon_x	 y=10 }
+							position = { x=410	 y=10 }
 							spriteType = "GFX_opinion_arrow_right"
 							# scale = 0.9
 						}
 						
-						iconType = {
-							name = "rich_ratio_icon"
-							position = { x=@entry_happines_icon_x	 y=5 }
-							spriteType = "GFX_population_icon"
-							scale = 0.9
-						}
-
 						instantTextboxType = {
-							name = "rich_ratio_value"
+							name = "happines_amount"
 							position = { x = @entry_happines_x y = 8 }
 							
 							font = "hoi_18mbs"
 							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_RICH_RATIO"
+							text = "ECONOMY_TOTAL_HAPPINES_AMOUNT"
 							maxWidth = 50
 							maxHeight = 20
 							format = left
 						}
-
-						instantTextboxType = {
-							name = "value"
-							position = { x=@prod_nof_pos_x y=8 }
-							font = "hoi_18mbs"
-							borderSize = {x = 0 y = 0}
-							text = "ECONOMY_RICH_LIMIT"
-							maxWidth = 50
-							maxHeight = 25
-							fixedsize = yes
-							format = center
-							alwaystransparent = yes
-						}
 					}
+
+					
 
 					
 				}
@@ -3011,7 +4193,7 @@ guiTypes = {
 					
 					font = "hoi_36header"
 					borderSize = {x = 0 y = 0}
-					text = "ECONOMY_SOCIETY_TITLE"
+					text = "ECONOMY_HAPPINES_TITLE"
 					maxWidth = 450
 					maxHeight = 20
 					format = center

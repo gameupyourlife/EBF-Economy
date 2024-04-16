@@ -4,5 +4,5 @@ tags={
 	"Gameplay"
 	"Utilities"
 }
-name="HoI4 Economy"
-supported_version="1.11.3"
+name="HoI4 Economy - DEV"
+supported_version="1.12.*"

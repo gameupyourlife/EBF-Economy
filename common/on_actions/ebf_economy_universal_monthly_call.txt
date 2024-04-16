@@ -25,7 +25,7 @@ on_actions = {
 				# pension_expenses = yes
 				# saleries_expenses = yes
 				# social_welfare_expenses = yes
-				# building_expenses = yes # ToDo
+				# building_expenses = yes 
 				# trading_resources_expenses = yes
 
 			# Calculate Inflation - inflation_rate calls all these other functions:
@@ -39,8 +39,18 @@ on_actions = {
 			money_printing_amount = yes
 			relative_printing_rate = yes
 
-			# Balance - Needed for loan_income_ratio
+			# Balance - Needed for loan_income_ratio and Budgets
 			monthly_income = yes
+
+			# Budgets
+			calculate_research_budget_modifiers = yes
+			calculate_healthcare_budget_modifiers = yes
+			calculate_military_budget_modifiers = yes
+			calculate_police_budget_modifiers = yes
+			calculate_burocratic_budget_modifiers = yes
+			calculate_social_welfare_modifiers = yes
+			calculate_construction_budget_modifiers = yes
+			calculate_total_budget_cost = yes
 
 			# Loans - Needed for Monthly Expenses
 			loan_income_ratio = yes

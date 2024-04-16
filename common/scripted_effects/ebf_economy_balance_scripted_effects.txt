@@ -30,6 +30,8 @@ monthly_expenses = {
 	set_variable = { ebf_economy_monthly_spendings = ebf_economy_total_expenses } # Expenses
 	add_to_variable = { ebf_economy_monthly_spendings = ebf_economy_monthly_loan_monthly_interest_amount } # Loan
 	add_to_variable = { ebf_economy_monthly_spendings = ebf_economy_loan_monthly_repay_combined }
+	set_variable = { ebf_economy_monthly_spendings_without_budgets = ebf_economy_monthly_spendings} # For localisation purposes
+	add_to_variable = { ebf_economy_monthly_spendings = ebf_economy_total_budget_cost } # Budget - Healthcare and Social Welfare in Expenses
 }
 
 # Calculate the monthly balance - Cales the monthly income and expenses

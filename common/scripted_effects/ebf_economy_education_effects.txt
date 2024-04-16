@@ -1,0 +1,27 @@
+calculate_education_rate = {
+	set_variable = { ebf_economy_education_rate = ebf_economy_research_budget_ratio }
+	multiply_variable = { ebf_economy_education_rate = 10 }
+	
+	set_temp_variable = { ebf_economy_education_rate_temp = amount_research_slots }
+	divide_temp_variable = { ebf_economy_education_rate_temp = 6 }
+	clamp_temp_variable = {
+		var = ebf_economy_education_rate_temp
+		min = 0
+		max = 1
+	}
+
+	multiply_variable = { ebf_economy_education_rate = ebf_economy_education_rate_temp }
+	#between 0 and 1
+}
+
+calculate_education_change_rate = {
+	set_variable = { ebf_economy_education_change_rate = ebf_economy_education_rate }
+	multiply_variable = { ebf_economy_education_change_rate = ebf_economy_education_rate }
+	subtract_from_temp_variable = { ebf_economy_education_change_rate = 1 }
+	multiply_variable = { ebf_economy_education_change_rate = 0.1 }
+	#between -0.1 and 0.1
+}
+
+calculate_education_rating = {
+	add_to_variable = { ebf_economy_education_rating = ebf_economy_education_rate}
+}

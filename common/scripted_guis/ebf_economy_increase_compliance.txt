@@ -1,0 +1,36 @@
+scripted_gui = {
+
+	ebf_economy_increase_compliance_ui = {
+		context_type = selected_state_context
+		window_name = "ebf_economy_increase_compliance_window"
+		parent_window_name = "resistance_container"
+
+		visible = {
+			always = yes
+		}
+
+		effects = {
+			increase_compliance_button_click = {
+				set_variable = { ebf_economy_increase_compliance_cost = state_population_k }
+				multiply_variable = { ebf_economy_increase_compliance_cost = 0.001 }
+				set_temp_variable = { ebf_economy_increase_compliance_cost_temp = 100 }
+				subtract_from_temp_variable = { ebf_economy_increase_compliance_cost_temp = compliance }
+				divide_variable = { ebf_economy_increase_compliance_cost_temp = 100 }
+				multiply_variable = { ebf_economy_increase_compliance_cost = ebf_economy_increase_compliance_cost_temp }
+				multiply_variable = { ebf_economy_increase_compliance_cost = 0.1 }
+				
+				custom_effect_tooltip = TT_INCREASE_COMPLIANCE
+				subtract_from_variable = { ROOT.ebf_economy_money = ebf_economy_increase_compliance_cost }
+				add_compliance = 10
+			}
+		}	
+		
+		triggers = {
+			increase_compliance_button_click_enabled = {
+				check_variable = { ROOT.ebf_economy_money > ebf_economy_increase_compliance_cost }
+				check_variable = { compliance < 99 }
+			}
+		}
+
+	}
+}

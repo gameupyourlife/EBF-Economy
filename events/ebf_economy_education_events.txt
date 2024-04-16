@@ -1,0 +1,20 @@
+add_namespace = ebf_economy_tdax_event
+
+#Income Tax
+country_event = {
+	id = ebf_economy_tdax_event.1
+	title = ebf_economy_tax_event.1.t
+	desc = ebf_economy_tax_event.1.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	hidden = yes
+
+    immediate = {
+		### Income Tax
+		set_variable = { ebf_economy_income_tax_amount = ebf_economy_workforce }
+		multiply_variable = { ebf_economy_income_tax_amount = ebf_economy_income_tax }
+		multiply_variable = { ebf_economy_income_tax_amount = ebf_economy_average_income }
+		round_variable = ebf_economy_income_tax_amount
+    }
+}

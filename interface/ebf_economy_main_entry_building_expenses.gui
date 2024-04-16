@@ -1,0 +1,113 @@
+@prod_sub_pos_x = 169
+@prod_add_pos_x = 243
+@prod_nof_pos_x = 193
+@entry_frame_x = 9
+@entry_title_x = 20
+@entry_happines_x = 435
+@entry_happines_icon_x = 400
+@entry_arrow_icon_x = 275
+@entry_amount_x = 300
+@entry_width = 508 # 486 - With Scrollbar | 508 - Without Scrollbar
+
+guiTypes = {
+	containerWindowType = {
+		name = "entry_building_expenses_extended"
+		position = { x=550 y=488 }
+		size = { width = @entry_width height = 1036 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_mini_tooltip"
+		}
+		
+		instantTextboxType = {
+			name = "title"
+			position = { x = @entry_title_x y = 8 }
+			
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "ECONOMY_BUILDING_EXPENSES"
+			maxWidth = 150
+			maxHeight = 20
+			format = left
+			vertical_alignment = center 
+			
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "amount"
+			position = { x =@entry_amount_x y = 8 }
+			
+			font = "hoi_18mbs"
+			text = "ECONOMY_BUILDING_EXPENSES_AMOUNT"
+			maxWidth = 130
+			maxHeight = 20
+			# format = center
+			
+			alwaystransparent = yes
+		}		
+
+		iconType = {
+			name = "arrow"
+			position = { x=@entry_arrow_icon_x	 y=10 }
+			spriteType = "GFX_opinion_arrow_right"
+			# scale = 0.9
+		}
+
+		containerWindowType = {
+			name = "building_expenses_list"
+			position = { x=@entry_frame_x y=100 }
+			size = { width = @entry_width height = 100%% }
+			clipping = no
+		
+			containerWindowType = {
+				name = "industrial_complex"
+				position = { x=@entry_frame_x y=1 }
+				size = { width = @entry_width height = 100%% }
+				clipping = no
+
+				iconType = {
+					name = "building_icon"
+					position = { x=10	 y=10 }
+					spriteType = "GFX_buildings_strip"
+					frame = 1
+				}
+
+				instantTextboxType = {
+					name = "buildings_amount"
+					position = { x =@entry_amount_x y = 8 }
+					font = "hoi_18mbs"
+					text = "ECONOMY_BUILDING_EXPENSES_AMOUNT"
+					maxWidth = 130
+					maxHeight = 20
+					# format = center
+					
+					alwaystransparent = yes
+				}
+				
+				instantTextboxType = {
+					name = "buildings_calculation"
+					position = { x =70 y = 8 }
+					font = "hoi_18mbs"
+					text = "ECONOMY_BUILDING_EXPENSES_CALCULATION"
+					maxWidth = 130
+					maxHeight = 20
+					# format = center
+					
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "arrow"
+					position = { x=@entry_arrow_icon_x	 y=10 }
+					spriteType = "GFX_opinion_arrow_right"
+				}
+			
+			}
+
+
+		}
+	}
+}

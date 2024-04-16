@@ -1,0 +1,314 @@
+var_declariation = {
+	set_variable = {
+		ebf_economy_currency = 0
+	}
+	set_variable = {
+		ebf_economy_factor = 1
+	}
+
+
+	# SAMPLE_add_random_point_to_line = yes
+	# SAMPLE_add_random_point_to_line = yes
+	# SAMPLE_add_random_point_to_line = yes
+
+
+
+
+
+	# add_ideas = ebf_economy_national_unrest1
+	set_global_flag = ebf_economy_is_active
+	set_country_flag = crisis_in_progress
+	set_country_flag = ebf_economy_vars_declared
+
+
+	set_variable = {
+		ebf_economy_ = 0
+	}
+	set_variable = { ebf_economy_min_adult_age = 12 }
+	set_variable = {
+		ebf_economy_retirement_age = 65
+	}
+	set_variable = {
+		ebf_economy_life_expectancy = 80
+	}
+	set_variable = {
+		ebf_economy_age_of_majority = 18
+	}
+	set_variable = { ebf_economy_default_age_of_majority = 18 }
+	set_variable = { ebf_economy_default_retirement_age = 65 }
+	 
+	set_variable = {
+		ebf_economy_unemployed_percentage = 0.03
+	}
+	set_variable = {
+		ebf_economy_population = 0
+	}
+	set_variable = {
+		ebf_economy_adult_population = 1
+	}
+	set_variable = {
+		ebf_economy_pensioner_population = 1
+	}
+	set_variable = {
+		ebf_economy_unemployed_population = 1
+	}
+	set_variable = {
+		ebf_economy_workforce = 0
+	}
+	set_variable = {
+		ebf_economy_average_income = 2 # was 2000
+	}
+	# Per 1k People in M
+	set_variable = {
+		ebf_economy_consumption_money = 1.6 # was 1600
+	}
+	set_variable = {
+		ebf_economy_rich_wealth = 100 # was 100000
+	}
+	set_variable = {
+		ebf_economy_civilian_factory_revenue = 10 # was 1000000
+	}
+	set_variable = {
+		ebf_economy_rich_base_rate = 0.02
+	}
+	### Population
+	country_event = { id = ebf_economy_event.1 }
+	
+	### Money
+	set_variable = { ebf_economy_money = 1000 }
+	set_variable = { ebf_economy_inflation = 1 }
+	set_variable = { ebf_economy_real_inflation = 0.01 }
+
+
+	### Income Tax
+	set_variable = {
+		ebf_economy_income_tax = 0.3
+	}
+	set_variable = {
+		ebf_economy_default_income_tax = 0.3
+	}
+	### Consumtion Tax
+	set_variable = {
+		ebf_economy_consumption_tax = 0.18
+	}
+	set_variable = {
+		ebf_economy_default_consumption_tax = 0.18
+	}
+	### Wealth Tax
+	set_variable = {
+		ebf_economy_wealth_tax = 0.1
+	}
+	set_variable = {
+		ebf_economy_default_wealth_tax = 0.1
+	}
+
+	### Trade Tax
+	set_variable = {
+		ebf_economy_trade_tax = 0.1
+	}
+	set_variable = {
+		ebf_economy_default_trade_tax = 0.1
+	}
+	
+	### loan
+	set_variable = { ebf_economy_loan_amount = 0 }
+	set_variable = { ebf_economy_loan_interest_rate = 0 }
+	set_variable = { ebf_economy_loan_cap_factor = 1 }
+	set_variable = { ebf_economy_loan_max_interest_rate = 0.025 }
+
+	
+	### State Bank
+	set_variable = { ebf_economy_money_printing_rate = 0.02 }				#The input the player makes to change how much money is created
+	set_variable = { ebf_economy_money_decay_rate = 0.02 }
+	set_variable = { ebf_economy_loan_one_time_repay_amount = 0 }
+	set_variable = { ebf_economy_loan_monthly_repay_amount = 0 }
+
+	set_variable = { ebf_economy_national_economy_civilian_factory_money = 100000 } # was 100000000
+	set_variable = { ebf_economy_national_economy_pop_money = 10 } # was 10000
+	set_variable = { ebf_economy_national_economy_rich_pop_money = 1000 } # was 1000000
+
+	
+
+	##### Expenses
+	set_variable = { ebf_economy_healthcare_rate = 1.5 } # was 150
+	set_variable = { ebf_economy_soldiers_healthcare_rate = 1 } # was 100
+	set_variable = { ebf_economy_pension_rate = 1 } # was 1000
+	set_variable = { ebf_economy_saleries_rate = 2 } # was 2000
+	set_variable = { ebf_economy_social_welfare_rate = 1 } # was 1000
+	set_variable = { ebf_economy_resources_exporting_price = 0.9 } # was 900
+	set_variable = { ebf_economy_resources_importing_price = 1.1 } # was 1100
+
+	# Budgets
+	set_variable = { ebf_economy_research_budget = 10 }
+	set_variable = { ebf_economy_recommended_research_budget = ebf_economy_research_budget }
+	set_variable = { ebf_economy_military_budget = 10 }
+	set_variable = { ebf_economy_recommended_military_budget = ebf_economy_military_budget }
+	set_variable = { ebf_economy_police_budget = 10 }
+	set_variable = { ebf_economy_recommended_police_budget = ebf_economy_police_budget }
+	set_variable = { ebf_economy_burocratic_budget = 10 }
+	set_variable = { ebf_economy_recommended_burocratic_budget = ebf_economy_burocratic_budget }
+	set_variable = { ebf_economy_construction_budget = 10 }
+	set_variable = { ebf_economy_recommended_construction_budget = ebf_economy_construction_budget }
+
+	# Dynamic Modifiers for the budgets
+	add_dynamic_modifier = { modifier = ebf_economy_police_budget_dynamic_modifier }
+	add_dynamic_modifier = { modifier = ebf_economy_research_budget_dynamic_modifier }
+	add_dynamic_modifier = { modifier = ebf_economy_healthcare_budget_dynamic_modifier }
+	add_dynamic_modifier = { modifier = ebf_economy_military_budget_dynamic_modifier }
+	add_dynamic_modifier = { modifier = ebf_economy_burocratic_budget_dynamic_modifier }
+	add_dynamic_modifier = { modifier = ebf_economy_social_welfare_budget_dynamic_modifier }
+	add_dynamic_modifier = { modifier = ebf_economy_construction_budget_dynamic_modifier }
+
+		
+	# Rate at which the happines effect is 1 aka no effect - Can be changed by events, dynamicaly and country specific 
+	set_variable = { ebf_economy_recommended_healthcare_rate = ebf_economy_healthcare_rate }
+	set_variable = { ebf_economy_recommended_soldiers_healthcare_rate = ebf_economy_soldiers_healthcare_rate }
+	set_variable = { ebf_economy_recommended_pension_rate = ebf_economy_pension_rate }
+	set_variable = { ebf_economy_recommended_saleries_rate = ebf_economy_saleries_rate }
+	set_variable = { ebf_economy_recommended_social_welfare_rate = ebf_economy_social_welfare_rate }
+
+
+
+
+	### Buildings
+	set_variable = { ebf_economy_infrastructure_monthly_cost = 0.01 }
+	set_variable = { ebf_economy_arms_factory_monthly_cost = 0.500 }
+	set_variable = { ebf_economy_industrial_complex_monthly_cost = 0.500 }
+	set_variable = { ebf_economy_air_base_monthly_cost = 0.020 }
+	set_variable = { ebf_economy_supply_node_monthly_cost = 0.500 }
+	set_variable = { ebf_economy_rail_way_monthly_cost = 0.010 }
+	set_variable = { ebf_economy_Naval_base_monthly_cost = 0.050 }
+	set_variable = { ebf_economy_bunker_monthly_cost = 0.010 }
+	set_variable = { ebf_economy_coastal_bunker_monthly_cost = 0.010 }
+	set_variable = { ebf_economy_dockyard_monthly_cost = 0.500 }
+	set_variable = { ebf_economy_anti_air_building_monthly_cost = 0.010 }
+	set_variable = { ebf_economy_synthetic_refinery_monthly_cost = 0.300 }
+	set_variable = { ebf_economy_fuel_silo_monthly_cost = 0.020 }
+	set_variable = { ebf_economy_radar_station_monthly_cost = 0.050 }
+	set_variable = { ebf_economy_rocket_side_monthly_cost = 0.020 }
+	set_variable = { ebf_economy_nuclear_reactor_monthly_cost = 2.000 }
+	set_variable = { ebf_economy_steel_mill_monthly_cost = 0.200 }
+	set_variable = { ebf_economy_grain_farm_monthly_cost = 0.200 }
+	set_variable = { ebf_economy_lumber_mill_monthly_cost = 0.200 }
+	set_variable = { ebf_economy_steel_mill_inactive_monthly_cost = 0.020 }
+	set_variable = { ebf_economy_grain_farm_inactive_monthly_cost = 0.020 }
+	set_variable = { ebf_economy_nuclear_reactor_inactive_monthly_cost = 0.020 }
+
+	set_variable = { ebf_economy_infrastructure_building_cost = 1 }
+	set_variable = { ebf_economy_arms_factory_building_cost = 20 }
+	set_variable = { ebf_economy_industrial_complex_building_cost = 40 }
+	set_variable = { ebf_economy_air_base_building_cost = 5 }
+	set_variable = { ebf_economy_supply_node_building_cost = 10 }
+	set_variable = { ebf_economy_rail_way_building_cost = 1 }
+	set_variable = { ebf_economy_Naval_base_building_cost = 5 }
+	set_variable = { ebf_economy_bunker_building_cost = 1 }
+	set_variable = { ebf_economy_coastal_bunker_building_cost = 1 }
+	set_variable = { ebf_economy_dockyard_building_cost = 20 }
+	set_variable = { ebf_economy_anti_air_building_building_cost = 1 }
+	set_variable = { ebf_economy_synthetic_refinery_building_cost = 10 }
+	set_variable = { ebf_economy_fuel_silo_building_cost = 5 }
+	set_variable = { ebf_economy_radar_station_building_cost = 10 }
+	set_variable = { ebf_economy_rocket_side_building_cost = 5 }
+	set_variable = { ebf_economy_nuclear_reactor_building_cost = 100 }
+	set_variable = { ebf_economy_steel_mill_building_cost = 15 }
+	set_variable = { ebf_economy_grain_farm_building_cost = 15 }
+	set_variable = { ebf_economy_lumber_mill_building_cost = 15 }
+	set_variable = { ebf_economy_steel_mill_inactive_building_cost = 5 }
+	set_variable = { ebf_economy_grain_farm_inactive_building_cost = 5 }
+	set_variable = { ebf_economy_nuclear_reactor_inactive_building_cost = 5 }
+
+
+	### Resources - Replaced
+	set_variable = { ebf_economy_resources_exported_rate = ebf_economy_resources_exporting_price }
+	set_variable = { ebf_economy_resources_imported_rate = ebf_economy_resources_importing_price }
+
+	### National Unrest and Happiness
+	set_variable = { ebf_economy_national_unrest = 0 }
+}
+
+initial_calculation = {
+	# Calculate Population - First in Line because almoste everything else is based on it
+	country_population = yes
+	adult_population = yes
+	pensioner_population = yes
+	unemployed_population = yes
+	workforce_population = yes
+	rich_population = yes
+
+	# Calculate Tax - combined_tax calls all these other functions:
+	combined_tax = yes
+		# income_tax = yes
+		# consumption_tax = yes
+		# wealth_tax = yes
+		# trade_tax = yes
+
+	# Calculate Expenses - total_expenses calls all these other functions:
+	total_expenses = yes
+		# healthcare_expenses = yes
+		# pension_expenses = yes
+		# saleries_expenses = yes
+		# social_welfare_expenses = yes
+		# building_expenses = yes 
+		# trading_resources_expenses = yes
+
+	# Calculate Inflation - inflation_rate calls all these other functions:
+	inflation_rate = yes
+		# economic_inflation = yes
+		# printing_inflation = yes
+
+	# Money Priniting
+	national_economy_money = yes
+	money_printing_amount = yes
+	relative_printing_rate = yes
+
+	# Balance - Needed for loan_income_ratio & Budgets
+	monthly_income = yes
+
+	# Budgets
+	calculate_research_budget_modifiers = yes
+	calculate_healthcare_budget_modifiers = yes
+	calculate_military_budget_modifiers = yes
+	calculate_police_budget_modifiers = yes
+	calculate_burocratic_budget_modifiers = yes
+	calculate_social_welfare_modifiers = yes
+	calculate_construction_budget_modifiers = yes
+	calculate_total_budget_cost = yes
+	
+	# Loans - Needed for Monthly Expenses
+	loan_income_ratio = yes
+	interest_rate = yes
+	interest_amount = yes
+	loan_cap = yes
+	monthly_repay_amount = yes
+		# monthly_repay_penalty = yes
+	repayment_loan_ratio = yes
+
+	# Balance
+	monthly_expenses = yes
+	monthly_balance_init = yes
+
+	# War Exhaustion
+	adjusted_casualties = yes
+	casualtie_ratio = yes
+	weighted_casualties = yes
+	war_exhaustion = yes
+	war_duration = yes
+
+	# Happines
+	happines = yes
+		# war_happines_effect = yes
+		# income_tax_happines_effect = yes
+		# constumtion_tax_happines_effect = yes
+		# inflation_rate_hapines_effect = yes
+		# inflation_happines_effect = yes
+		# expenses_happines_effect = yes
+			# healthcare_happines_effect = yes
+			# soldiers_healthcare_happines_effect = yes
+			# pension_happines_effect = yes
+			# saleries_happines_effect = yes
+			# social_welfare_happines_effect = yes
+	happines_effect = yes
+
+	# National Unrest
+	national_unrest = yes
+}

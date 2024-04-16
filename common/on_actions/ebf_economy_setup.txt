@@ -2,251 +2,99 @@ on_actions = {
 	on_startup = {
 		effect = {
 			every_country = {
-				set_variable = {
-					ebf_economy_currency = 0
-				}
-				set_variable = {
-					ebf_economy_factor = 1
-				}
-
-
-				# SAMPLE_add_random_point_to_line = yes
-				# SAMPLE_add_random_point_to_line = yes
-				# SAMPLE_add_random_point_to_line = yes
-
-
-
-
-
-				add_ideas = ebf_economy_national_unrest1
-				set_global_flag = ebf_economy_is_active
-				set_country_flag = crisis_in_progress
-
-
-				set_variable = {
-					ebf_economy_ = 0
-				}
-				set_variable = {
-					ebf_economy_retirement_age = 65
-				}
-				set_variable = {
-					ebf_economy_life_expectancy = 80
-				}
-				set_variable = {
-					ebf_economy_age_of_majority = 18
-				}
-				set_variable = { ebf_economy_default_age_of_majority = 18 }
-				set_variable = { ebf_economy_default_retirement_age = 65 }
-				 
-				set_variable = {
-					ebf_economy_unemployed_percentage = 0.03
-				}
-				set_variable = {
-					ebf_economy_population = 0
-				}
-				set_variable = {
-					ebf_economy_adult_population = 1
-				}
-				set_variable = {
-					ebf_economy_pensioner_population = 1
-				}
-				set_variable = {
-					ebf_economy_unemployed_population = 1
-				}
-				set_variable = {
-					ebf_economy_workforce = 0
-				}
-				set_variable = {
-					ebf_economy_average_income = 2000
-				}
-				# Per 1k People in M
-				set_variable = {
-					ebf_economy_consumption_money = 1600
-				}
-				set_variable = {
-					ebf_economy_rich_wealth = 100000
-				}
-				set_variable = {
-					ebf_economy_civilian_factory_revenue = 1000000
-				}
-				set_variable = {
-					ebf_economy_rich_base_rate = 0.02
-				}
-				### Population
-				country_event = { id = ebf_economy_event.1 }
-				
-				### Money
-				set_variable = { ebf_economy_money = 1000 }
-				set_variable = { ebf_economy_inflation = 1 }
-				set_variable = { ebf_economy_real_inflation = 0.01 }
-
-
-				### Income Tax
-				set_variable = {
-					ebf_economy_income_tax = 0.3
-				}
-				set_variable = {
-					ebf_economy_default_income_tax = 0.3
-				}
-				### Consumtion Tax
-				set_variable = {
-					ebf_economy_consumption_tax = 0.18
-				}
-				set_variable = {
-					ebf_economy_default_consumption_tax = 0.18
-				}
-				### Wealth Tax
-				set_variable = {
-					ebf_economy_wealth_tax = 0.1
-				}
-				set_variable = {
-					ebf_economy_default_wealth_tax = 0.1
-				}
-
-				### Trade Tax
-				set_variable = {
-					ebf_economy_trade_tax = 0.1
-				}
-				set_variable = {
-					ebf_economy_default_trade_tax = 0.1
-				}
-				
-				### loan
-				set_variable = { ebf_economy_loan_amount = 0 }
-				set_variable = { ebf_economy_loan_interest_rate = 0 }
-				set_variable = { ebf_economy_loan_cap_factor = 1 }
-				set_variable = { ebf_economy_loan_max_interest_rate = 0.025 }
-
-				
-				### State Bank
-				set_variable = { ebf_economy_money_printing_rate = 0.02 }				#The input the player makes to change how much money is created
-				set_variable = { ebf_economy_money_decay_rate = 0.002 }
-				set_variable = { ebf_economy_loan_one_time_repay_amount = 0 }
-				set_variable = { ebf_economy_loan_monthly_repay_amount = 0 }
-
-				set_variable = { ebf_economy_national_economy_civilian_factory_money = 10000000000 }
-				set_variable = { ebf_economy_national_economy_pop_money = 10000 }
-				set_variable = { ebf_economy_national_economy_rich_pop_money = 1000000 }
-
-				country_event = {
-					id = ebf_economy_state_bank_event.1
-				}
-				country_event = {
-					id = ebf_economy_state_bank_event.2
-				}
-				country_event = {
-					id = ebf_economy_state_bank_event.3
-				}
-				country_event = {
-					id = ebf_economy_state_bank_event.4
-				}
-
-				##### Expenses
-				set_variable = { ebf_economy_healthcare_rate = 150 }
-				set_variable = { ebf_economy_soldiers_healthcare_rate = 100 }
-				set_variable = { ebf_economy_pension_rate = 1000 }
-				set_variable = { ebf_economy_saleries_rate = 2000 }
-				set_variable = { ebf_economy_social_welfare_rate = 1000 }
-				set_variable = { ebf_economy_resources_exporting_price = 900}
-				set_variable = { ebf_economy_resources_importing_price = 1100}
-				
-				# Rate at which the happines effect is 1 aka no effect
-				set_variable = { ebf_economy_recommended_healthcare_rate = 150 }
-				set_variable = { ebf_economy_recommended_soldiers_healthcare_rate = 100 }
-				set_variable = { ebf_economy_recommended_pension_rate = 1000 }
-				set_variable = { ebf_economy_recommended_saleries_rate = 2000 }
-				set_variable = { ebf_economy_recommended_social_welfare_rate = 1000 }
-
-				country_event = { 
-					id = ebf_economy_expenses_event.1 
-				}
-				country_event = { 
-					id = ebf_economy_expenses_event.2 
-				}
-				country_event = { 
-					id = ebf_economy_expenses_event.3 
-				}
-				country_event = { 
-					id = ebf_economy_expenses_event.4 
-				}
-				country_event = { 
-					id = ebf_economy_expenses_event.5 
-				}
-
-
-
-				### Buildings
-				set_variable = { ebf_economy_infrastructure_monthly_cost = 10 }
-				set_variable = { ebf_economy_arms_factory_monthly_cost = 500 }
-				set_variable = { ebf_economy_industrial_complex_monthly_cost = 500 }
-				set_variable = { ebf_economy_air_base_monthly_cost = 20 }
-				set_variable = { ebf_economy_supply_node_monthly_cost = 500 }
-				set_variable = { ebf_economy_rail_way_monthly_cost = 10 }
-				set_variable = { ebf_economy_Naval_base_monthly_cost = 50 }
-				set_variable = { ebf_economy_bunker_monthly_cost = 10 }
-				set_variable = { ebf_economy_coastal_bunker_monthly_cost = 10 }
-				set_variable = { ebf_economy_dockyard_monthly_cost = 500 }
-				set_variable = { ebf_economy_anti_air_building_monthly_cost = 10 }
-				set_variable = { ebf_economy_synthetic_refinery_monthly_cost = 300 }
-				set_variable = { ebf_economy_fuel_silo_monthly_cost = 20 }
-				set_variable = { ebf_economy_radar_station_monthly_cost = 50 }
-				set_variable = { ebf_economy_rocket_side_monthly_cost = 20 }
-				set_variable = { ebf_economy_nuclear_reactor_monthly_cost = 2000 }
-				set_variable = { ebf_economy_steel_mill_monthly_cost = 200 }
-				set_variable = { ebf_economy_grain_farm_monthly_cost = 200 }
-				set_variable = { ebf_economy_lumber_mill_monthly_cost = 200 }
-				set_variable = { ebf_economy_steel_mill_inactive_monthly_cost = 20 }
-				set_variable = { ebf_economy_grain_farm_inactive_monthly_cost = 20 }
-
-				set_variable = { ebf_economy_infrastructure_building_cost = 1 }
-				set_variable = { ebf_economy_arms_factory_building_cost = 20 }
-				set_variable = { ebf_economy_industrial_complex_building_cost = 40 }
-				set_variable = { ebf_economy_air_base_building_cost = 5 }
-				set_variable = { ebf_economy_supply_node_building_cost = 10 }
-				set_variable = { ebf_economy_rail_way_building_cost = 1 }
-				set_variable = { ebf_economy_Naval_base_building_cost = 5 }
-				set_variable = { ebf_economy_bunker_building_cost = 1 }
-				set_variable = { ebf_economy_coastal_bunker_building_cost = 1 }
-				set_variable = { ebf_economy_dockyard_building_cost = 20 }
-				set_variable = { ebf_economy_anti_air_building_building_cost = 1 }
-				set_variable = { ebf_economy_synthetic_refinery_building_cost = 10 }
-				set_variable = { ebf_economy_fuel_silo_building_cost = 5 }
-				set_variable = { ebf_economy_radar_station_building_cost = 10 }
-				set_variable = { ebf_economy_rocket_side_building_cost = 5 }
-				set_variable = { ebf_economy_nuclear_reactor_building_cost = 100 }
-				set_variable = { ebf_economy_steel_mill_building_cost = 15 }
-				set_variable = { ebf_economy_grain_farm_building_cost = 15 }
-				set_variable = { ebf_economy_lumber_mill_building_cost = 15 }
-				set_variable = { ebf_economy_steel_mill_inactive_building_cost = 5 }
-				set_variable = { ebf_economy_grain_farm_inactive_building_cost = 5 }
-
-				### Resources
-				set_variable = { ebf_economy_resources_exported_rate = 9000 }
-				set_variable = { ebf_economy_resources_imported_rate = 11000 }
-
-				### National Unrest and Happiness
-				set_variable = { ebf_economy_national_unrest = 0 }
-
-				
-				country_event = {
-					id = ebf_economy_building_expenses_event.1
-				}
-
+				var_declariation = yes
+				initial_calculation = yes
 
 				### Inital Welcome Event => References Help Event
 				country_event = {
 					id = ebf_economy_help_events.1
 				}
-
 			}
 		}
 	}
-	on_monthly = {
+	
+	on_coup_succeeded = {
 		effect = {
-			### Population
-			country_event = {
-				id = ebf_economy_event.1
+			every_country = {
+				limit = {
+					NOT = {
+						has_country_flag = ebf_economy_vars_declared
+					}
+				}
+				var_declariation = yes
+				initial_calculation = yes
 			}
 		}
 	}
+
+	on_declare_war = {
+		effect = {
+			every_country = {
+				limit = {
+					NOT = {
+						has_country_flag = ebf_economy_vars_declared
+					}
+				}
+				var_declariation = yes
+				initial_calculation = yes
+			}
+		}
+	}
+
+	on_liberate = {
+		effect = {
+			every_country = {
+				limit = {
+					NOT = {
+						has_country_flag = ebf_economy_vars_declared
+					}
+				}
+				var_declariation = yes
+				initial_calculation = yes
+			}
+		}
+	}
+
+	on_release_as_free = {
+		effect = {
+			every_country = {
+				limit = {
+					NOT = {
+						has_country_flag = ebf_economy_vars_declared
+					}
+				}
+				var_declariation = yes
+				initial_calculation = yes
+			}
+		}
+	}
+
+	on_release_as_puppet = {
+		effect = {
+			every_country = {
+				limit = {
+					NOT = {
+						has_country_flag = ebf_economy_vars_declared
+					}
+				}
+				var_declariation = yes
+				initial_calculation = yes
+			}
+		}
+	}
+
+	on_peaceconference_ended = {
+		effect = {
+			every_country = {
+				limit = {
+					NOT = {
+						has_country_flag = ebf_economy_vars_declared
+					}
+				}
+				var_declariation = yes
+				initial_calculation = yes
+			}
+		}
+	}
+	
 }

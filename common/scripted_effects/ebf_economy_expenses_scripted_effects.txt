@@ -38,7 +38,6 @@ healthcare_expenses = {
 	multiply_variable = {
 		ebf_economy_healthcare_expenses = ebf_economy_inflation
 	}
-	round_variable = ebf_economy_healthcare_expenses
 }
 
 pension_expenses = {
@@ -51,7 +50,6 @@ pension_expenses = {
 	multiply_variable = {
 		ebf_economy_pension_expenses = ebf_economy_inflation
 	}
-	round_variable = ebf_economy_pension_expenses
 }
 
 saleries_expenses = {
@@ -72,7 +70,6 @@ saleries_expenses = {
 	multiply_variable = {
 		ebf_economy_saleries_expenses = ebf_economy_inflation
 	}
-	round_variable = ebf_economy_saleries_expenses
 }
 
 social_welfare_expenses = {
@@ -85,12 +82,126 @@ social_welfare_expenses = {
 	multiply_variable = {
 		ebf_economy_social_welfare_expenses = ebf_economy_inflation
 	}
-	round_variable = ebf_economy_social_welfare_expenses
 }
 
 # TODO
 building_expenses = {
-	set_variable = { ebf_economy_buildings_expenses = 0 }
+	set_variable = { ebf_economy_infrastructure_building_num = 0 }
+	set_variable = { ebf_economy_arms_factory_building_num = 0 }
+	set_variable = { ebf_economy_industrial_complex_building_num = 0 }
+	set_variable = { ebf_economy_air_base_building_num = 0 }
+	set_variable = { ebf_economy_supply_node_building_num = 0 }
+	set_variable = { ebf_economy_rail_way_building_num = 0 }
+	set_variable = { ebf_economy_Naval_base_building_num = 0 }
+	set_variable = { ebf_economy_bunker_building_num = 0 }
+	set_variable = { ebf_economy_coastal_bunker_building_num = 0 }
+	set_variable = { ebf_economy_dockyard_building_num = 0 }
+	set_variable = { ebf_economy_anti_air_building_building_num = 0 }
+	set_variable = { ebf_economy_synthetic_refinery_building_num = 0 }
+	set_variable = { ebf_economy_fuel_silo_building_num = 0 }
+	set_variable = { ebf_economy_radar_station_building_num = 0 }
+	set_variable = { ebf_economy_rocket_side_building_num = 0 }
+	set_variable = { ebf_economy_nuclear_reactor_building_num = 0 }
+	set_variable = { ebf_economy_steel_mill_building_num = 0 }
+	set_variable = { ebf_economy_grain_farm_building_num = 0 }
+	set_variable = { ebf_economy_lumber_mill_building_num = 0 }
+	set_variable = { ebf_economy_steel_mill_inactive_building_num = 0 }
+	set_variable = { ebf_economy_grain_farm_inactive_building_num = 0 }
+	set_variable = { ebf_economy_nuclear_reactor_inactive_building_num = 0 }
+
+	every_controlled_state = {
+		add_to_variable = { PREV.ebf_economy_infrastructure_building_num = building_level@infrastructure }
+		add_to_variable = { PREV.ebf_economy_arms_factory_building_num = building_level@arms_factory }
+		add_to_variable = { PREV.ebf_economy_industrial_complex_building_num = building_level@industrial_complex }
+		add_to_variable = { PREV.ebf_economy_air_base_building_num = building_level@air_base }
+		add_to_variable = { PREV.ebf_economy_supply_node_building_num = building_level@supply_node }
+		add_to_variable = { PREV.ebf_economy_rail_way_building_num = building_level@rail_way }
+		add_to_variable = { PREV.ebf_economy_Naval_base_building_num = building_level@Naval_base }
+		add_to_variable = { PREV.ebf_economy_bunker_building_num = building_level@bunker }
+		add_to_variable = { PREV.ebf_economy_coastal_bunker_building_num = building_level@coastal_bunker }
+		add_to_variable = { PREV.ebf_economy_dockyard_building_num = building_level@dockyard }
+		add_to_variable = { PREV.ebf_economy_anti_air_building_building_num = building_level@anti_air_building }
+		add_to_variable = { PREV.ebf_economy_synthetic_refinery_building_num = building_level@synthetic_refinery }
+		add_to_variable = { PREV.ebf_economy_fuel_silo_building_num = building_level@fuel_silo }
+		add_to_variable = { PREV.ebf_economy_radar_station_building_num = building_level@radar_station }
+		add_to_variable = { PREV.ebf_economy_rocket_side_building_num = building_level@rocket_side }
+		add_to_variable = { PREV.ebf_economy_nuclear_reactor_building_num = building_level@nuclear_reactor }
+		add_to_variable = { PREV.ebf_economy_steel_mill_building_num = building_level@steel_mill }
+		add_to_variable = { PREV.ebf_economy_grain_farm_building_num = building_level@grain_farm }
+		add_to_variable = { PREV.ebf_economy_lumber_mill_building_num = building_level@lumber_mill }
+		add_to_variable = { PREV.ebf_economy_steel_mill_inactive_building_num = building_level@steel_mill_inactive }
+		add_to_variable = { PREV.ebf_economy_grain_farm_inactive_building_num = building_level@grain_farm_inactive }
+		add_to_variable = { PREV.ebf_economy_nuclear_reactor_inactive_building_num = building_level@nuclear_reactor_inactive }
+	}
+
+	set_variable = { ebf_economy_infrastructure_building_monthly_total_cost = ebf_economy_infrastructure_building_num }
+	set_variable = { ebf_economy_arms_factory_building_monthly_total_cost = ebf_economy_arms_factory_building_num }
+	set_variable = { ebf_economy_industrial_complex_building_monthly_total_cost = ebf_economy_industrial_complex_building_num }
+	set_variable = { ebf_economy_air_base_building_monthly_total_cost = ebf_economy_air_base_building_num }
+	set_variable = { ebf_economy_supply_node_building_monthly_total_cost = ebf_economy_supply_node_building_num }
+	set_variable = { ebf_economy_rail_way_building_monthly_total_cost = ebf_economy_rail_way_building_num }
+	set_variable = { ebf_economy_Naval_base_building_monthly_total_cost = ebf_economy_Naval_base_building_num }
+	set_variable = { ebf_economy_bunker_building_monthly_total_cost = ebf_economy_bunker_building_num}
+	set_variable = { ebf_economy_coastal_bunker_building_monthly_total_cost = ebf_economy_coastal_bunker_building_num }
+	set_variable = { ebf_economy_dockyard_building_monthly_total_cost = ebf_economy_dockyard_building_num }
+	set_variable = { ebf_economy_anti_air_building_building_monthly_total_cost = ebf_economy_anti_air_building_building_num }
+	set_variable = { ebf_economy_synthetic_refinery_building_monthly_total_cost = ebf_economy_synthetic_refinery_building_num }
+	set_variable = { ebf_economy_fuel_silo_building_monthly_total_cost = ebf_economy_fuel_silo_building_num }
+	set_variable = { ebf_economy_radar_station_building_monthly_total_cost = ebf_economy_radar_station_building_num }
+	set_variable = { ebf_economy_rocket_side_building_monthly_total_cost = ebf_economy_rocket_side_building_num }
+	set_variable = { ebf_economy_nuclear_reactor_building_monthly_total_cost = ebf_economy_nuclear_reactor_building_num }
+	set_variable = { ebf_economy_steel_mill_building_monthly_total_cost = ebf_economy_steel_mill_building_num }
+	set_variable = { ebf_economy_grain_farm_building_monthly_total_cost = ebf_economy_grain_farm_building_num }
+	set_variable = { ebf_economy_lumber_mill_building_monthly_total_cost = ebf_economy_lumber_mill_building_num }
+	set_variable = { ebf_economy_steel_mill_inactive_building_monthly_total_cost = ebf_economy_steel_mill_inactive_building_num }
+	set_variable = { ebf_economy_grain_farm_inactive_building_monthly_total_cost = ebf_economy_grain_farm_inactive_building_num }
+	set_variable = { ebf_economy_nuclear_reactor_inactive_building_monthly_total_cost = ebf_economy_nuclear_reactor_inactive_building_num }
+
+	multiply_variable = { ebf_economy_infrastructure_building_monthly_total_cost = ebf_economy_infrastructure_monthly_cost }
+	multiply_variable = { ebf_economy_arms_factory_building_monthly_total_cost = ebf_economy_arms_factory_monthly_cost }
+	multiply_variable = { ebf_economy_industrial_complex_building_monthly_total_cost = ebf_economy_industrial_complex_monthly_cost }
+	multiply_variable = { ebf_economy_air_base_building_monthly_total_cost = ebf_economy_air_base_monthly_cost }
+	multiply_variable = { ebf_economy_supply_node_building_monthly_total_cost = ebf_economy_supply_node_monthly_cost }
+	multiply_variable = { ebf_economy_rail_way_building_monthly_total_cost = ebf_economy_rail_way_monthly_cost }
+	multiply_variable = { ebf_economy_Naval_base_building_monthly_total_cost = ebf_economy_Naval_base_monthly_cost }
+	multiply_variable = { ebf_economy_bunker_building_monthly_total_cost = ebf_economy_bunker_monthly_cost}
+	multiply_variable = { ebf_economy_coastal_bunker_building_monthly_total_cost = ebf_economy_coastal_bunker_monthly_cost }
+	multiply_variable = { ebf_economy_dockyard_building_monthly_total_cost = ebf_economy_dockyard_monthly_cost }
+	multiply_variable = { ebf_economy_anti_air_building_building_monthly_total_cost = ebf_economy_anti_air_building_monthly_cost }
+	multiply_variable = { ebf_economy_synthetic_refinery_building_monthly_total_cost = ebf_economy_synthetic_refinery_monthly_cost }
+	multiply_variable = { ebf_economy_fuel_silo_building_monthly_total_cost = ebf_economy_fuel_silo_monthly_cost }
+	multiply_variable = { ebf_economy_radar_station_building_monthly_total_cost = ebf_economy_radar_station_monthly_cost }
+	multiply_variable = { ebf_economy_rocket_side_building_monthly_total_cost = ebf_economy_rocket_side_monthly_cost }
+	multiply_variable = { ebf_economy_nuclear_reactor_building_monthly_total_cost = ebf_economy_nuclear_reactor_monthly_cost }
+	multiply_variable = { ebf_economy_steel_mill_building_monthly_total_cost = ebf_economy_steel_mill_monthly_cost }
+	multiply_variable = { ebf_economy_grain_farm_building_monthly_total_cost = ebf_economy_grain_farm_monthly_cost }
+	multiply_variable = { ebf_economy_lumber_mill_building_monthly_total_cost = ebf_economy_lumber_mill_monthly_cost }
+	multiply_variable = { ebf_economy_steel_mill_inactive_building_monthly_total_cost = ebf_economy_steel_mill_inactive_monthly_cost }
+	multiply_variable = { ebf_economy_grain_farm_inactive_building_monthly_total_cost = ebf_economy_grain_farm_inactive_monthly_cost }
+	multiply_variable = { ebf_economy_nuclear_reactor_inactive_building_monthly_total_cost = ebf_economy_nuclear_reactor_inactive_monthly_cost }
+
+	set_variable = { ebf_economy_buildings_expenses = ebf_economy_infrastructure_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_arms_factory_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_industrial_complex_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_air_base_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_supply_node_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_rail_way_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_Naval_base_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_bunker_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_coastal_bunker_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_dockyard_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_anti_air_building_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_synthetic_refinery_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_fuel_silo_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_radar_station_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_rocket_side_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_nuclear_reactor_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_steel_mill_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_grain_farm_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_lumber_mill_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_steel_mill_inactive_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_grain_farm_inactive_building_monthly_total_cost }
+	add_to_variable = { ebf_economy_buildings_expenses = ebf_economy_nuclear_reactor_inactive_building_monthly_total_cost }
 }
 
 trading_resources_expenses = {
@@ -126,7 +237,7 @@ total_expenses = {
 	pension_expenses = yes
 	saleries_expenses = yes
 	social_welfare_expenses = yes
-	building_expenses = yes # ToDo
+	building_expenses = yes
 	trading_resources_expenses = yes
 	set_variable = { ebf_economy_total_expenses = ebf_economy_resources_trading_expenses }
 	add_to_variable = { ebf_economy_total_expenses = ebf_economy_pension_expenses }

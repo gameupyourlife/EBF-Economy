@@ -35,5 +35,15 @@ spriteTypes = {
 		name = "GFX_ebf_section_header_bg"
 		texturefile = "gfx/interface/ebf_section_header_bg.dds"
 	}
+	spriteType = {
+		name = "GFX_ebf_economy_1p_divider_bar"
+		texturefile = "gfx/interface/ebf_economy_1p_divider_bar.dds"
+	}
+	spriteType = {
+		name = "GFX_ebf_economy_1p_with_shadow_divider_bar"
+		texturefile = "gfx/interface/ebf_economy_1p_with_shadow_divider_bar.dds"
+	}
+
+
 	
 }

@@ -21,7 +21,7 @@ calculate_everything = {
 		# pension_expenses = yes
 		# saleries_expenses = yes
 		# social_welfare_expenses = yes
-		# building_expenses = yes # ToDo
+		# building_expenses = yes 
 		# trading_resources_expenses = yes
 
 	# Calculate Inflation - inflation_rate calls all these other functions:

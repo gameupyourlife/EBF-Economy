@@ -1,0 +1,76 @@
+ebf_economy_money_decisions = {
+	ebf_economy_stimulus_bonds = {
+		visible = {
+			always = yes
+		}
+		available = {
+			set_temp_variable = { ebf_economy_stimulus_bonds_cost = ebf_economy_adult_population }
+			multiply_temp_variable = { ebf_economy_stimulus_bonds_cost = ebf_economy_average_income }
+			multiply_temp_variable = { ebf_economy_stimulus_bonds_cost = 3 }
+			check_variable = { ebf_economy_money > ebf_economy_stimulus_bonds_cost }
+		}
+
+		complete_effect = {
+			set_temp_variable = { ebf_economy_stimulus_bonds_cost = ebf_economy_adult_population }
+			multiply_temp_variable = { ebf_economy_stimulus_bonds_cost = ebf_economy_average_income }
+			multiply_temp_variable = { ebf_economy_stimulus_bonds_cost = 3 }
+			subtract_from_variable = { ebf_economy_money = ebf_economy_stimulus_bonds_cost }
+			add_stability = 0.05
+			custom_effect_tooltip = "ECONOMY_STIMULUS_BONDS_TT"
+		}
+	}
+
+	ebf_economy_political_campaigns = {
+		visible = {
+			always = yes
+		}
+		available = {
+			check_variable = { ebf_economy_money > 30 }
+		}
+
+		complete_effect = {
+			subtract_from_variable = { ebf_economy_money = 30 }
+			add_political_power = 120
+		}
+	}
+
+	ebf_economy_large_political_campaigns = {
+		visible = {
+			always = yes
+		}
+		available = {
+			check_variable = { ebf_economy_money > 90 }
+		}
+
+		complete_effect = {
+			subtract_from_variable = { ebf_economy_money = 90 }
+			add_political_power = 360
+		}
+	}
+
+	ebf_economy_gain_research_slot = {
+		icon = generic_research
+		fire_only_once = no
+		days_remove = 90
+		days_re_enable = 150 # lets have some balancing checks, should re-enable 5 months after complete
+
+		visible = {
+			amount_research_slots < 6
+		}
+
+		available = {
+			set_temp_variable = { ebf_economy_research_slot_cost = ebf_economy_monthly_income }
+			multiply_temp_variable = { ebf_economy_research_slot_cost = 0.5 }
+			check_variable = { ebf_economy_money > ebf_economy_research_slot_cost }
+		}
+
+		remove_effect = {
+			add_research_slot = 1
+			set_temp_variable = { ebf_economy_research_slot_cost = ebf_economy_monthly_income }
+			multiply_temp_variable = { ebf_economy_research_slot_cost = amount_research_slots }
+			divide_temp_variable = { ebf_economy_research_slot_cost = 2 }
+			subtract_from_variable = { ebf_economy_money = ebf_economy_research_slot_cost }
+			custom_effect_tooltip = "ECONOMY_GAIN_RESEARCH_SLOT_TT"
+		}
+	}
+}

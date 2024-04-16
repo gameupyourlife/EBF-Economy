@@ -1,0 +1,13 @@
+# usage: set_temp_variable = { ebf_economy_change_income_tax = +-X } where X is a number between 0 and 1
+adjust_income_tax = {
+	add_to_variable = { ebf_economy_income_tax = ebf_economy_change_income_tax }	
+	clamp_variable = {
+		var = ebf_economy_income_tax
+		min = 0
+		max = 1
+	}
+	rich_population = yes
+	combined_tax = yes
+	monthly_balance = yes
+	happines = yes
+}

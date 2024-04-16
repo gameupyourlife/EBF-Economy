@@ -21,6 +21,8 @@ country_event = {
 		divide_variable = { ebf_economy_pension_rate = 2 }
 		divide_variable = { ebf_economy_saleries_rate = 2 }
 		divide_variable = { ebf_economy_social_welfare_rate = 2 }
+		total_expenses = yes
+		monthly_balance = yes
     }
 
 	option = { # Set Expenses 0
@@ -31,6 +33,8 @@ country_event = {
 		set_variable = { ebf_economy_pension_rate = 0 }
 		set_variable = { ebf_economy_saleries_rate = 0 }
 		set_variable = { ebf_economy_social_welfare_rate = 0 }
+		total_expenses = yes
+		monthly_balance = yes
     }
 
 	option = { # Do nothing

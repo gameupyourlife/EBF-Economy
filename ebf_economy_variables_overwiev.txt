@@ -155,10 +155,10 @@ ebf_economy_inflation = Corsica (1)
 ebf_economy_inflation_rate = 3.796
 ebf_economy_economic_inflation = 3.796
 ebf_economy_printing_inflation = 0
-ebf_economy_real_inflation = 0.01
+ebf_economy_real_inflation = 0.01 #Currently not used
 
 ### Resources Trading
-ebf_economy_resources_exported_rate = 9000
+ebf_economy_resources_exported_rate = 9000 # replaced by ebf_economy_resources_exported_price
 ebf_economy_resources_exporting = 144.5
 ebf_economy_resources_exporting_price = Benue (900)
 ebf_economy_resources_imported_rate = token:collector_power (11000)

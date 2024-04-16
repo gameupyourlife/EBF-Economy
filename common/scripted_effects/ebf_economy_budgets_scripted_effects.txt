@@ -1,0 +1,250 @@
+### Research Budget - Will be directly controlled by the player
+##### Healthcare Budget - NOT be directly controlled by the player
+### Military Budget - Will be directly controlled by the player
+### Police Budget - Will be directly controlled by the player
+### Burocratic Budget - Will be directly controlled by the player
+# Socilal Welfare Budget - NOT be directly controlled by the player
+### Construction Budget - Will be directly controlled by the player
+
+
+# To declare on init: ebf_economy_research_budget ,  , ebf_economy_military_budget , ebf_economy_police_budget , ebf_economy_burocratic_budget ,  , ebf_economy_construction_budget
+
+calculate_research_budget_modifiers = {
+	calculate_research_budget_ratio = yes
+	#Research Speed
+	set_variable = { ebf_economy_research_budget_research_speed_modifier = ebf_economy_research_budget_ratio }
+	multiply_variable = { ebf_economy_research_budget_research_speed_modifier = 2 }
+
+	# Min Adult Age - Will Result in Max 10 years extra
+	set_variable = { ebf_economy_research_budget_min_adult_age_modifer = ebf_economy_research_budget_ratio }
+	multiply_variable = { ebf_economy_research_budget_min_adult_age_modifer = 100 }
+	calculate_min_adult_age = yes
+
+	# Experience Gain
+	set_variable = { ebf_economy_research_budget_experience_gain_modifier = ebf_economy_research_budget_ratio }
+}
+
+calculate_research_budget_ratio = {
+	set_variable = { ebf_economy_research_budget_ratio = ebf_economy_research_budget }
+	divide_variable = { ebf_economy_research_budget_ratio = ebf_economy_monthly_income }
+	clamp_variable = {
+		var = ebf_economy_research_budget_ratio
+		min = 0
+		max = 0.1
+	}
+	# Percentage of the max effect the budget has on the modifier
+	set_variable = { ebf_economy_research_budget_modifier_rate = ebf_economy_research_budget_ratio }
+	multiply_variable = { ebf_economy_research_budget_modifier_rate = 10 }
+}
+
+# Will be moved to population file
+calculate_min_adult_age = {
+	# To declare on init: ebf_economy_min_adult_age
+	set_variable = { ebf_economy_min_adult_age = 12 }
+	add_to_variable = { ebf_economy_min_adult_age = ebf_economy_research_budget_min_adult_age_modifer }
+}
+
+
+
+calculate_healthcare_budget_modifiers = {
+	# Population Growth
+	set_variable = { ebf_economy_healthcare_budget_pop_growth_modifier = ebf_economy_non_soldiers_healthcare_expenses }
+	divide_variable = { ebf_economy_healthcare_budget_pop_growth_modifier = ebf_economy_monthly_income }
+	multiply_variable = { ebf_economy_healthcare_budget_pop_growth_modifier = 10 }
+
+	# Organisation
+	set_variable = { ebf_economy_healthcare_budget_organisation_modifier = ebf_economy_soldiers_healthcare_expenses }
+	divide_variable = { ebf_economy_healthcare_budget_organisation_modifier = ebf_economy_monthly_income }
+	multiply_variable = { ebf_economy_healthcare_budget_organisation_modifier = 2 }
+	clamp_variable = {
+		var = ebf_economy_healthcare_budget_organisation_modifier
+		min = 0
+		max = 0.15
+	}
+
+	#  Stability
+	set_variable = { ebf_economy_healthcare_budget_stability_modifier = ebf_economy_healthcare_expenses }
+	divide_variable = { ebf_economy_healthcare_budget_stability_modifier = ebf_economy_monthly_income }
+	multiply_variable = { ebf_economy_healthcare_budget_stability_modifier = 2 }
+	clamp_variable = {
+		var = ebf_economy_healthcare_budget_stability_modifier
+		min = 0
+		max = 0.15
+	}
+}
+
+
+
+calculate_military_budget_modifiers = {
+	calculate_military_budget_ratio = yes
+	# Attack
+	set_variable = { ebf_economy_military_budget_attack_modifier = ebf_economy_military_budget_ratio }
+	multiply_variable = { ebf_economy_military_budget_attack_modifier = 2 }
+
+	# Training Time
+	set_variable = { ebf_economy_military_budget_training_time_modifier = ebf_economy_military_budget_ratio }
+	multiply_variable = { ebf_economy_military_budget_training_time_modifier = 4 }
+
+	# Experience Gain
+	set_variable = { ebf_economy_military_budget_experience_gain_modifier = ebf_economy_military_budget_ratio }
+}
+
+calculate_military_budget_ratio = {
+	set_variable = { ebf_economy_military_budget_ratio = ebf_economy_military_budget }
+	divide_variable = { ebf_economy_military_budget_ratio = ebf_economy_monthly_income }
+	clamp_variable = {
+		var = ebf_economy_military_budget_ratio
+		min = 0
+		max = 0.1
+	}
+	# Percentage of the max effect the budget has on the modifier
+	set_variable = { ebf_economy_military_budget_modifier_rate = ebf_economy_military_budget_ratio }
+	multiply_variable = { ebf_economy_military_budget_modifier_rate = 10 }
+}
+
+
+
+calculate_police_budget_modifiers = {
+	calculate_police_budget_ratio = yes
+	# Stability
+	set_variable = { ebf_economy_police_budget_stability_modifier = ebf_economy_police_budget_ratio }
+	multiply_variable = { ebf_economy_police_budget_stability_modifier = 2 }
+	clamp_variable = {
+		var = ebf_economy_police_budget_stability_modifier
+		min = 0
+		max = 0.15
+	}
+
+	# Resistance Target
+	set_variable = { ebf_economy_police_budget_resistance_target_modifier = ebf_economy_police_budget_ratio }
+	multiply_variable = { ebf_economy_police_budget_resistance_target_modifier = 10 }
+	clamp_variable = {
+		var = ebf_economy_police_budget_resistance_target_modifier
+		min = 0
+		max = 0.2
+	}
+
+	# Command Power Gain
+	set_variable = { ebf_economy_police_budget_command_power_gain_modifier = ebf_economy_police_budget_ratio }
+	clamp_variable = {
+		var = ebf_economy_police_budget_command_power_gain_modifier
+		min = 0
+		max = 0.3
+	}
+
+	# Encyrption
+	set_variable = { ebf_economy_police_budget_encryption_modifier = ebf_economy_police_budget_ratio }
+	multiply_variable = { ebf_economy_police_budget_encryption_modifier = 50 }
+
+	# Foreign Activities
+	set_variable = { ebf_economy_police_budget_foreign_activities_modifier = ebf_economy_police_budget_ratio }
+	multiply_variable = { ebf_economy_police_budget_foreign_activities_modifier = 2 }
+}
+
+calculate_police_budget_ratio = {
+	set_variable = { ebf_economy_police_budget_ratio = ebf_economy_police_budget }
+	divide_variable = { ebf_economy_police_budget_ratio = ebf_economy_monthly_income }
+	clamp_variable = {
+		var = ebf_economy_police_budget_ratio
+		min = 0
+		max = 0.1
+	}
+	# Percentage of the max effect the budget has on the modifier
+	set_variable = { ebf_economy_police_budget_modifier_rate = ebf_economy_police_budget_ratio }
+	multiply_variable = { ebf_economy_police_budget_modifier_rate = 10 }
+}
+
+
+
+calculate_burocratic_budget_modifiers = {
+	calculate_burocratic_budget_ratio = yes
+	# Political Power Gain
+	set_variable = { ebf_economy_burocratic_budget_political_power_gain_modifier = ebf_economy_burocratic_budget_ratio }
+	multiply_variable = { ebf_economy_burocratic_budget_political_power_gain_modifier = 3 }
+
+	# Construction Speed
+	set_variable = { ebf_economy_burocratic_budget_construction_speed_modifier = ebf_economy_burocratic_budget_ratio }
+
+	# Recrutible Population
+	set_variable = { ebf_economy_burocratic_budget_recrutible_population_modifier = ebf_economy_burocratic_budget_ratio }
+	multiply_variable = { ebf_economy_burocratic_budget_recrutible_population_modifier = 2 }
+}
+
+calculate_burocratic_budget_ratio = {
+	set_variable = { ebf_economy_burocratic_budget_ratio = ebf_economy_burocratic_budget }
+	divide_variable = { ebf_economy_burocratic_budget_ratio = ebf_economy_monthly_income }
+	clamp_variable = {
+		var = ebf_economy_burocratic_budget_ratio
+		min = 0
+		max = 0.1
+	}
+	# Percentage of the max effect the budget has on the modifier
+	set_variable = { ebf_economy_burocratic_budget_modifier_rate = ebf_economy_police_budget_ratio }
+	multiply_variable = { ebf_economy_burocratic_budget_modifier_rate = 10 }
+}
+
+
+
+calculate_social_welfare_modifiers = {
+	calculate_social_welfare_ratio = yes
+	# Stability
+	set_variable = { ebf_economy_social_welfare_stability_modifier = ebf_economy_social_welfare_ratio }
+	multiply_variable = { ebf_economy_social_welfare_stability_modifier = 2 }
+
+	# Political Power Gain
+	set_variable = { ebf_economy_social_welfare_political_power_gain_modifier = ebf_economy_social_welfare_ratio }
+	multiply_variable = { ebf_economy_social_welfare_political_power_gain_modifier = 3 }
+
+	# Population Growth
+	set_variable = { ebf_economy_social_welfare_population_growth_modifier = ebf_economy_social_welfare_ratio }
+	multiply_variable = { ebf_economy_social_welfare_population_growth_modifier = 5 }
+}
+
+calculate_social_welfare_ratio = {
+	set_variable = { ebf_economy_social_welfare_ratio = ebf_economy_social_welfare_expenses }
+	divide_variable = { ebf_economy_social_welfare_ratio = ebf_economy_monthly_income }
+	clamp_variable = {
+		var = ebf_economy_social_welfare_ratio
+		min = 0
+		max = 0.1
+	}
+}
+
+
+
+calculate_construction_budget_modifiers = {
+	calculate_construction_budget_ratio = yes
+	# Construction Speed
+	set_variable = { ebf_economy_construction_budget_construction_speed_modifier = ebf_economy_construction_budget_ratio }
+	multiply_variable = { ebf_economy_construction_budget_construction_speed_modifier = 3 }
+
+	# Political Power Gain
+	set_variable = { ebf_economy_construction_budget_political_power_gain_modifier = ebf_economy_construction_budget_ratio }
+	multiply_variable = { ebf_economy_construction_budget_political_power_gain_modifier = 4 }
+
+	# Recrutible Population
+	set_variable = { ebf_economy_construction_budget_recrutible_population_modifier = ebf_economy_construction_budget_ratio }
+	multiply_variable = { ebf_economy_construction_budget_recrutible_population_modifier = 2 }
+}
+
+calculate_construction_budget_ratio = {
+	set_variable = { ebf_economy_construction_budget_ratio = ebf_economy_construction_budget }
+	divide_variable = { ebf_economy_construction_budget_ratio = ebf_economy_monthly_income }
+	clamp_variable = {
+		var = ebf_economy_construction_budget_ratio
+		min = 0
+		max = 0.1
+	}
+	# Percentage of the max effect the budget has on the modifier
+	set_variable = { ebf_economy_construction_budget_modifier_rate = ebf_economy_construction_budget }
+	multiply_variable = { ebf_economy_construction_budget_modifier_rate = 10 }
+}
+
+calculate_total_budget_cost = {
+	# Total Budget Cost - Healthcare and Social Welfare are already included in the total expenses cost and therefore don't need to be added here
+	set_variable = { ebf_economy_total_budget_cost = ebf_economy_police_budget }
+	add_variable = { ebf_economy_total_budget_cost = ebf_economy_burocratic_budget }
+	add_variable = { ebf_economy_total_budget_cost = ebf_economy_research_budget }
+	add_variable = { ebf_economy_total_budget_cost = ebf_economy_construction_budget }
+	add_variable = { ebf_economy_total_budget_cost = ebf_economy_military_budget }
+}

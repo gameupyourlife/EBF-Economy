@@ -1,5 +1,5 @@
 ﻿l_english:
-#  TEST_KEY_EBF: "[GetSliderValueEBF]"
+# TEST_KEY_EBF:0 "Sssa [?ebf_economy_money_to_subtract]"
 
 #  Test123:0 "check_variable = { testasd = 1 }"
 #  Test1234:0 "Not = { check_variable = { testasd = 1 } }"
@@ -122,11 +122,24 @@
  ###############################################
  ADD_BUTTON_TOOLTIP:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§!"
  SUB_BUTTON_TOOLTIP:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§!"
+ TAKE_LOAN_TOOLTIP:0 "§GClick§! to take a loan of §Y10§! \n§GCTRL + Click§! to take a loan of §Y100§! \n§GShift + Click§! to take a loan of §Y1000§!"
+ TAKE_LOAN:0 "Take loan"
+
+
+  # Topbar
+  EBF_ECONOMY_MONEY_VALUE:0 "[?ebf_economy_money] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+
+  # State Info Panel
+ TT_INCREASE_COMPLIANCE:0 "This will cost §Y$[?THIS.ebf_economy_increase_compliance_cost]§! [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ INCREASE_COMPLIANCE_TOOLTIP:0 "[?THIS.ebf_economy_increase_compliance_cost]" 
+  # Events
+ national_unrest_civil_war_imminent:0 "Civil War Imminent"
+
 
  # Custom
 
- ECONOMY_ECONOMY:0 "Economy"
- ECONOMY_BALANCE_TITLE:0 "Balance [?ebf_economy_monthly_balance] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ ECONOMY_ECONOMY:0 "Economy - [?ebf_economy_money] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ ECONOMY_BALANCE_TITLE:0 "Balance [?ebf_economy_monthly_balance|+] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
  ECONOMY_BALANCE_AMOUNT:0 "[?ebf_economy_monthly_balance] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
  ECONOMY_INCOME_TITLE:0 "Income"
@@ -153,8 +166,8 @@
  ECONOMY_TRADE_TAX_AMOUNT:0 "[?ebf_economy_trade_tax_amount] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
  ECONOMY_MONEY_PRINTING:0 "Money Printing"
- ECONOMY_MONEY_PRINTING_HAPPINESS:0 "[?ebf_economy_printing_inflation|%0]"
- ECONOMY_MONEY_PRINTING_PERCENTAGE:0 "[?ebf_economy_money_printing_rate|%0]"
+ ECONOMY_MONEY_PRINTING_HAPPINESS:0 "[?ebf_economy_printing_inflation|%]"
+ ECONOMY_MONEY_PRINTING_PERCENTAGE:0 "[?ebf_economy_money_printing_rate|%1]"
  ECONOMY_MONEY_PRINTING_AMOUNT:0 "[?ebf_economy_money_printing_amount] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
  ECONOMY_RESOURCES_EXPORTING:0 "Resources Trading"
@@ -162,7 +175,7 @@
  ECONOMY_RESOURCES_EXPORTING_CALCULATION:0 "[?ebf_economy_resources_exporting] £resources_to_market_icon  x [?ebf_economy_resources_exporting_price] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
  ECONOMY_EXPENSES_TITLE:0 "Expenses"
- ECONOMY_EXPENSES_AMOUNT:0 "§[?ebf_economy_monthly_spendings|=0]§! [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ ECONOMY_EXPENSES_AMOUNT:0 "[?ebf_economy_monthly_spendings_without_budgets|-0] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
  ECONOMY_RESOURCES_INCOME_OIL:0 "[?resource_exported@oil]"
  ECONOMY_RESOURCES_INCOME_ALU:0 "[?resource_exported@aluminium]"
@@ -208,7 +221,9 @@
  ECONOMY_LOAN_REPAYMENT_RATIO:0 "[?ebf_economy_repayment_loan_ratio|%]"
  ECONOMY_LOAN_REPAYMENT_RATE:0 "[?ebf_economy_loan_monthly_repay_amount]"
  ECONOMY_LOAN_REPAYMENT_AMOUNT:0 "[?ebf_economy_loan_monthly_repay_combined] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
-
+ 
+ ECONOMY_BUILDING_EXPENSES:0 "Building Expenses"
+ ECONOMY_BUILDING_EXPENSES_AMOUNT:0 "[?ebf_economy_buildings_expenses] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
 
  ECONOMY_LOANS_TITLE:0 "Loans [?ebf_economy_loan_amount] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
  ECONOMY_INTEREST_RATE_TITLE:0 "Interest Rate - [?ebf_economy_loan_interest_rate|%]"
@@ -253,3 +268,98 @@
  ECONOMY_POPULATION_RATIO:0 "100%"
  ECONOMY_POPULATION_LIMIT:0 ""
  ECONOMY_POPULATION_AMOUNT:0 "[?ebf_economy_population] M"
+
+
+########  ##     ## ########   ######   ######## ########  ######  
+##     ## ##     ## ##     ## ##    ##  ##          ##    ##    ## 
+##     ## ##     ## ##     ## ##        ##          ##    ##       
+########  ##     ## ##     ## ##   #### ######      ##     ######  
+##     ## ##     ## ##     ## ##    ##  ##          ##          ## 
+##     ## ##     ## ##     ## ##    ##  ##          ##    ##    ## 
+########   #######  ########   ######   ########    ##     ###### 
+ ECONOMY_BUDGET_TITLE:0 "Budget"
+ ECONOMY_BUDGET_AMOUNT:0 "[?ebf_economy_total_budget_cost] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+
+ ECONOMY_POLICE_BUDGET:0 "Police Budget"
+ ECONOMY_POLICE_BUDGET_AMOUNT:0 "[?ebf_economy_police_budget] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ ECONOMY_POLICE_BUDGET_MODIFIER_RATE:0 "[?ebf_economy_police_budget_modifier_rate|%0]"
+ ECONOMY_POLICE_STABILITY_MODIFIER:0 "[?ebf_economy_police_budget_stability_modifier|%0]"
+ ECONOMY_POLICE_RATE:0 "[?ebf_economy_police_budget_ratio|%0]"
+ ECONOMY_POLICE_RESISTANCE_MODIFIER:0 "[?ebf_economy_police_budget_resistance_target_modifier|%0]"
+ ECONOMY_POLICE_COMMAND_POWER_MODIFIER:0 "[?ebf_economy_police_budget_command_power_gain_modifier|%0]"
+ ECONOMY_POLICE_ENCRYPTION_MODIFIER:0 "[?ebf_economy_police_budget_encryption_modifier|0]"
+ ECONOMY_POLICE_FORGEIN_ACTIVITES_MODIFIER:0 "[?ebf_economy_police_budget_foreign_activities_modifier|%0]"
+
+ ECONOMY_RESEARCH_BUDGET:0 "Education Budget"
+ ECONOMY_RESEARCH_BUDGET_AMOUNT:0 "[?ebf_economy_research_budget] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ ECONOMY_RESEARCH_BUDGET_MODIFIER_RATE:0 "[?ebf_economy_research_budget_modifier_rate|%0]"
+ ECONOMY_RESEARCH_BUDGET_RATE:0 "[?ebf_economy_research_budget_ratio|%0]"
+ ECONOMY_RESEARCH_SPEED_MODIFIER:0 "[?ebf_economy_research_budget_research_speed_modifier|%0]"
+ ECONOMY_RESEARCH_MIN_ADULT_AGE_MODIFIER:0 "[?ebf_economy_min_adult_age|%0]"
+ ECONOMY_RESEARCH_BUDGET_EXPERIENCE_GAIN_MODIFIER:0 "[?ebf_economy_research_budget_experience_gain_modifier|%0]"
+
+
+ ECONOMY_MILITARY_BUDGET:0 "Military Budget"
+ ECONOMY_MILITARY_BUDGET_AMOUNT:0 "[?ebf_economy_military_budget] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ ECONOMY_MILITARY_BUDGET_MODIFIER_RATE:0 "[?ebf_economy_military_budget_modifier_rate|%0]"
+ ECONOMY_MILITARY_BUDGET_RATE:0 "[?ebf_economy_military_budget_ratio|%0]"
+ ECONOMY_MILITARY_BUDGET_ATTACK_MODIFIER:0 "[?ebf_economy_military_budget_attack_modifier|%0]"
+ ECONOMY_MILITARY_BUDGET_TRAINING_TIME_MODIFIER:0 "[?ebf_economy_military_budget_training_time_modifier|%0]"
+ ECONOMY_MILITARY_BUDGET_EXPERIENCE_GAIN_MODIFIER:0 "[?ebf_economy_military_budget_experience_gain_modifier|%0]"
+
+
+ ECONOMY_BUREAUCRACY_BUDGET:0 "Bureaucracy Budget"  
+ ECONOMY_BUREAUCRACY_BUDGET_AMOUNT:0 "[?ebf_economy_burocratic_budget] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ ECONOMY_BUREAUCRACY_BUDGET_MODIFIER_RATE:0 "[?ebf_economy_burocratic_budget_modifier_rate|%0]"
+ ECONOMY_BUREAUCRACY_BUDGET_RATE:0 "[?ebf_economy_burocratic_budget_ratio|%0]"
+ ECONOMY_BUREAUCRACY_BUDGET_POLITICAL_POWER_GAIN_RATE:0 "[?ebf_economy_burocratic_budget_political_power_gain_modifier|%0]"
+ ECONOMY_BUREAUCRACY_BUDGET_CONSTRUCTION_SPEED_MODIFIER:0 "[?ebf_economy_burocratic_budget_construction_speed_modifier|%0]"
+ ECONOMY_BUREAUCRACY_BUDGET_RECRUTIBLE_POPULATION_FACTOR_MODIFIER:0 "[?ebf_economy_burocratic_budget_recrutible_population_modifier|%0]"
+
+ ECONOMY_CONSTRUCTION_BUDGET:0 "Construction Budget"
+ ECONOMY_CONSTRUCTION_BUDGET_AMOUNT:0 "[?ebf_economy_construction_budget] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ ECONOMY_CONSTRUCTION_BUDGET_MODIFIER_RATE:0 "[?ebf_economy_construction_budget_modifier_rate|%0]"
+ ECONOMY_CONSTRUCTION_BUDGET_RATE:0 "[?ebf_economy_construction_budget_ratio|%0]"
+ ECONOMY_CONSTRUCTION_BUDGET_CONSTRUCTION_SPEED_MODIFIER:0 "[?ebf_economy_construction_budget_construction_speed_modifier|%0]"
+ ECONOMY_CONSTRUCTION_BUDGET_POLITICAL_POWER_GAIN_MODIFIER:0 "[?ebf_economy_construction_budget_political_power_gain_modifier|%0]"
+ ECONOMY_CONSTRUCTION_BUDGET_RECRUTIBLE_POPULATION_FACTOR_MODIFIER:0 "[?ebf_economy_construction_budget_recrutible_population_modifier|%0]"
+
+ ECONOMY_HEALTHCARE_BUDGET:0 "Healthcare Budget"
+ ECONOMY_HEALTHCARE_BUDGET_AMOUNT:0 "[?ebf_economy_healthcare_expenses] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
+ ECONOMY_HEALTHCARE_BUDGET_POPULATION_GROWTH_MODIFIER:0 "[?ebf_economy_healthcare_budget_pop_growth_modifier|%0]"
+ ECONOMY_HEALTHCARE_BUDGET_ORGANISATION_MODIFIER:0 "[?ebf_economy_healthcare_budget_organisation_modifier|%0]"
+ ECONOMY_HEALTHCARE_BUDGET_STABILITY_MODIFIER:0 "[?ebf_economy_healthcare_budget_stability_modifier|%0]"
+
+ ECONOMY_SOCIAL_WELFARE_BUDGET:0 "Social Welfare Budget"
+ ECONOMY_SOCIAL_WELFARE_BUDGET_STABILITY_MODIFIER:0 "[?ebf_economy_social_welfare_stability_modifier|%0]"
+ ECONOMY_SOCIAL_WELFARE_BUDGET_POLITICAL_POWER_GAIN_MODIFIER:0 "[?ebf_economy_social_welfare_political_power_gain_modifier|%0]"
+ ECONOMY_SOCIAL_WELFARE_BUDGET_POPULATION_GROWTH_MODIFIER:0 "[?ebf_economy_social_welfare_population_growth_modifier|%0]"
+
+
+ ECONOMY_HAPPINES_TITLE:0 "Happiness"
+ ECONOMY_EXPENSES_HAPPINES:0 "Expenses Happiness"
+ ECONOMY_EXPENSES_HAPPINES_CALCULATION:0 "[?ebf_economy_happines_healthcare_effect|%0] * [?ebf_economy_happines_soldiers_healthcare_effect|%0] * [?ebf_economy_happines_pension_effect|%0] * [?ebf_economy_happines_saleries_effect|%0] * [?ebf_economy_happines_social_welfare_effect|%0] * 1,1"
+ ECONOMY_EXPENSES_HAPPINES_AMOUNT:0 "[?ebf_economy_happines_expenses_effect|%0]"
+
+ ECONOMY_WAR_HAPPINES:0 "War Happiness"
+ ECONOMY_WAR_HAPPINES_CALCULATION:0 "110% - [?ebf_economy_war_exhaustion|%0]"
+ ECONOMY_WAR_HAPPINES_AMOUNT:0 "[?ebf_economy_happines_war_effect|%0]"
+
+ ECONOMY_TAX_HAPPINES:0 "Tax Happiness"
+ ECONOMY_TAX_HAPPINES_CALCULATION:0 "([?ebf_economy_happines_income_tax_effect|%0] + [?ebf_economy_happines_consumption_tax_effect|%0]) / 2"
+ ECONOMY_TAX_HAPPINES_AMOUNT:0 "[?ebf_economy_happines_tax_effect|%0]"
+
+ ECONOMY_INFLATION_HAPPINES:0 "Inflation Happiness"
+ ECONOMY_INFLATION_HAPPINES_CALCULATION:0 "([?ebf_economy_happines_inflation_rate_effect|%0] + [?ebf_economy_happines_inflation_effect|%0]) / 2"
+ ECONOMY_INFLATION_HAPPINES_AMOUNT:0 "[?ebf_economy_happines_combined_inflation_effect|%0]"
+
+ ECONOMY_TOTAL_HAPPINES:0 "Total Happiness"
+ ECONOMY_TOTAL_HAPPINES_CALCULATION:0 "([?ebf_economy_happines_war_effect|%0] + [?ebf_economy_happines_tax_effect|%0] + [?ebf_economy_happines_combined_inflation_effect|%0] + [?ebf_economy_happines_expenses_effect|%0]) / 4"
+ ECONOMY_TOTAL_HAPPINES_AMOUNT:0 "[?ebf_economy_happines|%0]"
+
+ # BUILDINGS
+ ECONOMY_BUILDING_EXPENSES_CALCULATION:0 "[?ebf_economy_building_expenses|%0] * [?ebf_economy_building_expenses_modifier|%0]"
+
+ # DECISIONS
+ ECONOMY_STIMULUS_BONDS_TT:0 "[?ebf_economy_stimulus_bonds_cost] [GETEBF_ECONOMY_FACTOR] [GETEBF_ECONOMY_CURRENCY] will be spent on stimulus bonds."
+ ECONOMY_GAIN_RESEARCH_SLOT_TT:0 "[?ebf_economy_research_slot_cost] [GETEBF_ECONOMY_FACTOR] [GETEBF_ECONOMY_CURRENCY] will be spent on gaining a research slot."

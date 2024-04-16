@@ -1,0 +1,35 @@
+guiTypes = {
+		
+	containerWindowType = {
+		name = "ebf_economy_topbar_container"
+		position = { x = 1121 y = 3 }
+        orientation = "UPPER_LEFT"
+		
+		iconType ={
+			name ="ebf_economy_money_bg"
+			spriteType = "GFX_generic_box"
+			position = { x=-45 y=1 }
+		}
+		# buttonType = {
+		# 	name ="ebf_economy_icon_budget_command"
+		# 	spriteType = "GFX_money"
+		# 	position = { x= -45 y = -2 }
+		# 	pdx_tooltip = "MONEY_TT_TOOLTIP"
+		# }
+
+		instantTextBoxType = {
+			name ="ebf_economy_money_value"
+			position = { x= -21 y = 4 }
+			font = "hoi_18mbs"
+			text = "EBF_ECONOMY_MONEY_VALUE"
+			format = center
+			maxWidth = 65
+			maxHeight = 24
+			fixedsize = yes
+			
+			# pdx_tooltip = "MONEY_TOOLTIP"
+			# pdx_tooltip_delayed = "MONEY_TT_TOOLTIP"
+		}
+		
+	}
+}

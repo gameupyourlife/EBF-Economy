@@ -29,6 +29,8 @@ national_unrest = {
 		}
 		# Civil War / Uprising
 		set_country_flag = ebf_economy_national_unrest_uprising_imminent
+		set_country_flag = ebf_economy_national_unrest_buildings_damage_events
+		set_country_flag = ebf_economy_national_unrest_steel_weapons_events
 	}
 	else_if = {
 		limit = {
@@ -37,9 +39,11 @@ national_unrest = {
 		# -0.1 weekly stability | Weapons are goining missing (Event like Builidings)
 		set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 7 }
 		add_ideas = ebf_economy_national_unrest_effect4
-		clr_ideas = ebf_economy_national_unrest_effect3
+		remove_ideas = ebf_economy_national_unrest_effect3
+		set_country_flag = ebf_economy_national_unrest_buildings_damage_events
 		set_country_flag = ebf_economy_national_unrest_steel_weapons_events
-	}
+
+	} 
 	else_if = {
 		limit = {
 			check_variable = { ebf_economy_national_unrest > 0.7 }
@@ -47,9 +51,12 @@ national_unrest = {
 		# Less Resources
 		set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 6 }
 		add_ideas = ebf_economy_national_unrest_effect3
-		clr_ideas = ebf_economy_national_unrest_effect2
-		clr_ideas = ebf_economy_national_unrest_effect4
-		clr_country_flag = ebf_economy_national_unrest_steel_weapons_events
+		remove_ideas = ebf_economy_national_unrest_effect2
+		remove_ideas = ebf_economy_national_unrest_effect4
+		set_country_flag = ebf_economy_national_unrest_buildings_damage_events
+		set_country_flag = ebf_economy_national_unrest_steel_weapons_events
+		clr_country_flag = ebf_economy_national_unrest_uprising_imminent
+
 
 	}
 	else_if = {
@@ -59,8 +66,11 @@ national_unrest = {
 		# Larger Destruction | -4% Rec
 		set_variable = { ebf_economy_national_unrest_building_damage_multiplier = 5 }
 		add_ideas = ebf_economy_national_unrest_effect2
-		clr_ideas = ebf_economy_national_unrest_effect
-		clr_ideas = ebf_economy_national_unrest_effect3
+		remove_ideas = ebf_economy_national_unrest_effect
+		remove_ideas = ebf_economy_national_unrest_effect3
+		set_country_flag = ebf_economy_national_unrest_buildings_damage_events
+		clr_country_flag = ebf_economy_national_unrest_steel_weapons_events
+		clr_country_flag = ebf_economy_national_unrest_uprising_imminent
 	}
 	else_if = {
 		limit = {
@@ -68,8 +78,10 @@ national_unrest = {
 		}
 		# Buildings are beeing damaged
 		set_country_flag = ebf_economy_national_unrest_buildings_damage_events			
-		clr_ideas = ebf_economy_national_unrest_effect2
+		remove_ideas = ebf_economy_national_unrest_effect2
 		add_ideas = ebf_economy_national_unrest_effect
+		clr_country_flag = ebf_economy_national_unrest_steel_weapons_events
+		clr_country_flag = ebf_economy_national_unrest_uprising_imminent
 	}
 	else_if = {
 		limit = {
@@ -77,10 +89,14 @@ national_unrest = {
 		}
 		add_ideas = ebf_economy_national_unrest_effect
 		clr_country_flag = ebf_economy_national_unrest_buildings_damage_events
+		clr_country_flag = ebf_economy_national_unrest_steel_weapons_events
+		clr_country_flag = ebf_economy_national_unrest_uprising_imminent
 	}
 	else = {
 		remove_ideas = ebf_economy_national_unrest_effect
 		clr_country_flag = ebf_economy_national_unrest_buildings_damage_events
+		clr_country_flag = ebf_economy_national_unrest_steel_weapons_events
+		clr_country_flag = ebf_economy_national_unrest_uprising_imminent
 	}
 	set_variable = { ebf_economy_national_unrest_building_damage = ebf_economy_national_unrest }
 	multiply_variable = { ebf_economy_national_unrest_building_damage = ebf_economy_national_unrest_building_damage_multiplier }

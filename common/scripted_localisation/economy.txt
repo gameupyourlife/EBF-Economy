@@ -57,3 +57,4 @@ defined_text = {
 		localization_key = "B"
 	}
 }
+

@@ -1,0 +1,6 @@
+ebf_economy_money_decisions = {
+	icon = generic_research
+	visible = {
+		always = yes
+	}
+}
