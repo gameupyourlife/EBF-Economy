@@ -5,6 +5,9 @@ var_declariation = {
 	set_variable = {
 		ebf_economy_factor = 1
 	}
+	set_variable = {
+		ebf_economy_pp_base_cost = -50
+	}
 
 
 	set_global_flag = ebf_economy_is_active

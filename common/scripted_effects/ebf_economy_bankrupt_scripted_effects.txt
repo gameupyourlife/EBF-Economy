@@ -19,3 +19,8 @@ print_needed_money = {
 	add_stability = -0.075
 	add_war_support = -0.05
 }
+
+declare_bancrupcy = {
+	add_ideas = ebf_economy_bankruptcy_initial
+	country_event = { id = ebf_economy_bankrupt_events.3 months = 3 }
+}

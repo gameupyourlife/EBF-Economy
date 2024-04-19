@@ -15,7 +15,13 @@ country_event = {
 
 	option = { # Cut Expenses
 		name = ebf_economy_bankrupt_events.1.a
-		
+		trigger = {
+			NOT = {
+				has_country_flag = ebf_economy_has_adjusted_expenses
+
+			}
+		}
+
 		divide_variable = { ebf_economy_healthcare_rate = 2 }
 		divide_variable = { ebf_economy_soldiers_healthcare_rate = 2 }
 		divide_variable = { ebf_economy_pension_rate = 2 }
@@ -23,11 +29,20 @@ country_event = {
 		divide_variable = { ebf_economy_social_welfare_rate = 2 }
 		total_expenses = yes
 		monthly_balance = yes
+
+		hidden_effect = {
+			set_country_flag = ebf_economy_has_adjusted_expenses	
+		}
     }
 
 	option = { # Set Expenses 0
 		name = ebf_economy_bankrupt_events.1.b
-		
+		trigger = {
+			NOT = {
+				has_country_flag = ebf_economy_has_adjusted_expenses
+			}
+		}
+
 		set_variable = { ebf_economy_healthcare_rate = 0 }
 		set_variable = { ebf_economy_soldiers_healthcare_rate = 0 }
 		set_variable = { ebf_economy_pension_rate = 0 }
@@ -35,13 +50,37 @@ country_event = {
 		set_variable = { ebf_economy_social_welfare_rate = 0 }
 		total_expenses = yes
 		monthly_balance = yes
+
+		
+		hidden_effect = {
+			set_country_flag = ebf_economy_has_adjusted_expenses	
+		}
+    }
+
+	option = { # Declare bancrupcy
+		name = ebf_economy_bankrupt_events.1.d
+		
+		set_variable = { ebf_economy_healthcare_rate = 0 }
+		set_variable = { ebf_economy_soldiers_healthcare_rate = 0 }
+		set_variable = { ebf_economy_pension_rate = 0 }
+		set_variable = { ebf_economy_saleries_rate = 0 }
+		set_variable = { ebf_economy_social_welfare_rate = 0 }
+		declare_bancrupcy = yes
+		
+		total_expenses = yes
+		monthly_balance = yes
+		
+
     }
 
 	option = { # Do nothing
 		name = ebf_economy_bankrupt_events.1.c
 		trigger = {
 			NOT = {
-				has_country_flag = ebf_economy_bankrupt_did_nothing	
+				OR = {
+					has_country_flag = ebf_economy_bankrupt_did_nothing	
+					has_country_flag = ebf_economy_has_adjusted_expenses	
+				}
 			}
 		}
 		hidden_effect = {
@@ -64,6 +103,69 @@ country_event = {
     }
 
 	option = {
-		name = ebf_economy_bankrupt_events.1.a
+		name = ebf_economy_bankrupt_events.2.a
+    }
+}
+
+# Reduce bankruptcy malus
+country_event = {
+	id = ebf_economy_bankrupt_events.3
+	title = ebf_economy_bankrupt_events.3.t
+	desc = ebf_economy_bankrupt_events.3.d
+	picture = GFX_report_event_soviet_soldiers
+	hidden = yes
+	is_triggered_only = yes
+
+    immediate = {
+		swap_ideas = {
+			remove_idea = ebf_economy_bankruptcy_initial
+			add_idea = ebf_economy_bankruptcy_recovering
+		}
+		country_event = { id = ebf_economy_bankrupt_events.4 months = 3 }
+
+    }
+
+	option = {
+		name = ebf_economy_bankrupt_events.3.a
+    }
+}
+
+# Reduce bankruptcy malus
+country_event = {
+	id = ebf_economy_bankrupt_events.4
+	title = ebf_economy_bankrupt_events.4.t
+	desc = ebf_economy_bankrupt_events.4.d
+	picture = GFX_report_event_soviet_soldiers
+	hidden = yes
+	is_triggered_only = yes
+
+    immediate = {
+		swap_ideas = {
+			remove_idea = ebf_economy_bankruptcy_recovering
+			add_idea = ebf_economy_bankruptcy_aftermath
+		}
+		country_event = { id = ebf_economy_bankrupt_events.5 months = 6 }
+    }
+
+	option = {
+		name = ebf_economy_bankrupt_events.4.a
+    }
+}
+
+# Remove bankruptcy malus
+country_event = {
+	id = ebf_economy_bankrupt_events.5
+	title = ebf_economy_bankrupt_events.5.t
+	desc = ebf_economy_bankrupt_events.5.d
+	picture = GFX_report_event_soviet_soldiers
+	hidden = yes
+	is_triggered_only = yes
+
+    immediate = {
+		remove_idea = ebf_economy_bankruptcy_aftermath
+    }
+
+	option = {
+		name = ebf_economy_bankrupt_events.5.a
     }
 }

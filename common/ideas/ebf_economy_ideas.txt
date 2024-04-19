@@ -1,5 +1,143 @@
 ideas = {
 	country = {
+		ebf_economy_bankruptcy_initial = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				war_support_factor = -1
+				stability_factor = -0.2
+				army_attack_factor = -0.5
+				army_defence_factor = -0.5
+				army_org_factor = -0.25
+				army_morale_factor = -0.5
+				training_time_factor = 0.25
+				
+				air_attack_factor = -0.5
+				air_defence_factor = -0.5
+				air_detection = -0.25
+				air_mission_efficiency = -0.25
+				
+				experience_gain_army_factor = -1.0
+				experience_gain_factor = -1.0
+				experience_gain_air_factor = -1.0
+				experience_gain_navy_factor = -1.0
+				experience_gain_navy_unit_factor = -1.0
+
+				naval_damage_factor = -0.5
+				naval_defense_factor = -0.5
+				navy_org_factor = -0.25
+				naval_morale_factor	 = -0.5
+
+				production_speed_buildings_factor = -0.5
+				local_resources_factor = -0.5
+				industry_free_repair_factor = -1
+				production_factory_efficiency_gain_factor = -1
+				industrial_capacity_factory = -0.25
+				industrial_capacity_dockyard = -0.25
+				research_speed_factor = -0.5
+			}
+		}
+
+		ebf_economy_bankruptcy_recovering = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				war_support_factor = -1
+				stability_factor = -0.1
+				army_attack_factor = -0.30
+				army_defence_factor = -0.30
+				army_org_factor = -0.175
+				army_morale_factor = -0.3
+				training_time_factor = 0.175
+				
+				air_attack_factor = -0.3
+				air_defence_factor = -0.3
+				air_detection = -0.175
+				air_mission_efficiency = -0.175
+				
+				experience_gain_army_factor = -1.0
+				experience_gain_factor = -1.0
+				experience_gain_air_factor = -1.0
+				experience_gain_navy_factor = -1.0
+				experience_gain_navy_unit_factor = -1.0
+
+				naval_damage_factor = -0.3
+				naval_defense_factor = -0.3
+				navy_org_factor = -0.175
+				naval_morale_factor	 = -0.3
+
+				production_speed_buildings_factor = -0.3
+				local_resources_factor = -0.3
+				industry_free_repair_factor = -0.5
+				production_factory_efficiency_gain_factor = -0.5
+				industrial_capacity_factory = -0.175
+				industrial_capacity_dockyard = -0.175
+				research_speed_factor = -0.3
+			}
+		}
+
+		ebf_economy_bankruptcy_aftermath = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				war_support_factor = -0.5
+				stability_factor = -0.5
+				army_attack_factor = -0.10
+				army_defence_factor = -0.10
+				army_org_factor = -0.1
+				army_morale_factor = -0.1
+				training_time_factor = 0.1
+				
+				air_attack_factor = -0.1
+				air_defence_factor = -0.1
+				air_detection = -0.1
+				air_mission_efficiency = -0.1
+				
+				experience_gain_army_factor = -0.50
+				experience_gain_factor = -0.50
+				experience_gain_air_factor = -0.50
+				experience_gain_navy_factor = -0.50
+				experience_gain_navy_unit_factor = -0.50
+
+				naval_damage_factor = -0.1
+				naval_defense_factor = -0.1
+				navy_org_factor = -0.1
+				naval_morale_factor	 = -0.1
+
+				production_speed_buildings_factor = -0.1
+				local_resources_factor = -0.1
+				industry_free_repair_factor = -0.3
+				production_factory_efficiency_gain_factor = -0.3
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+				research_speed_factor = -0.1
+			}
+		}
+
 		# Happines Effect 
 		ebf_economy_happines_effect_positive = {
 			
