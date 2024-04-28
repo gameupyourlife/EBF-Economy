@@ -84,7 +84,6 @@ social_welfare_expenses = {
 	}
 }
 
-# TODO
 building_expenses = {
 	set_variable = { ebf_economy_infrastructure_building_num = 0 }
 	set_variable = { ebf_economy_arms_factory_building_num = 0 }

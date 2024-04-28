@@ -216,28 +216,31 @@ calculate_construction_budget_modifiers = {
 	calculate_construction_budget_ratio = yes
 	# Construction Speed
 	set_variable = { ebf_economy_construction_budget_construction_speed_modifier = ebf_economy_construction_budget_ratio }
-	multiply_variable = { ebf_economy_construction_budget_construction_speed_modifier = 3 }
+	# multiply_variable = { ebf_economy_construction_budget_construction_speed_modifier = 3 }
 
 	# Political Power Gain
 	set_variable = { ebf_economy_construction_budget_political_power_gain_modifier = ebf_economy_construction_budget_ratio }
-	multiply_variable = { ebf_economy_construction_budget_political_power_gain_modifier = 4 }
+	# multiply_variable = { ebf_economy_construction_budget_political_power_gain_modifier = 4 }
 
 	# Recrutible Population
 	set_variable = { ebf_economy_construction_budget_recrutible_population_modifier = ebf_economy_construction_budget_ratio }
-	multiply_variable = { ebf_economy_construction_budget_recrutible_population_modifier = 2 }
+	# multiply_variable = { ebf_economy_construction_budget_recrutible_population_modifier = 2 }
 }
 
+# Docs: Changed the way the budget is calculated
 calculate_construction_budget_ratio = {
 	set_variable = { ebf_economy_construction_budget_ratio = ebf_economy_construction_budget }
-	divide_variable = { ebf_economy_construction_budget_ratio = ebf_economy_monthly_income }
+	divide_variable = { ebf_economy_construction_budget_ratio = num_of_civilian_factories }
+	divide_variable = { ebf_economy_construction_budget_ratio = ebf_economy_needed_construction_budget_per_civ_for_full_efficiency }
+	
 	clamp_variable = {
 		var = ebf_economy_construction_budget_ratio
 		min = 0
-		max = 0.1
+		max = 2
 	}
 	# Percentage of the max effect the budget has on the modifier
-	set_variable = { ebf_economy_construction_budget_modifier_rate = ebf_economy_construction_budget }
-	multiply_variable = { ebf_economy_construction_budget_modifier_rate = 10 }
+	set_variable = { ebf_economy_construction_budget_modifier_rate = ebf_economy_construction_budget_ratio }
+	# multiply_variable = { ebf_economy_construction_budget_modifier_rate = 10 }
 }
 
 calculate_total_budget_cost = {
