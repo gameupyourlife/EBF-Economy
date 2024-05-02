@@ -51,36 +51,37 @@ inflation_happines_effect = {
 	divide_variable = { ebf_economy_happines_inflation_effect = ebf_economy_inflation }
 }
 
+
 healthcare_happines_effect = {
-	set_variable = { ebf_economy_happines_healthcare_effect = ebf_economy_healthcare_rate }
-	divide_variable = { ebf_economy_happines_healthcare_effect = ebf_economy_recommended_healthcare_rate }
+	set_variable = { ebf_economy_happines_healthcare_effect = manpower_k }
+	divide_variable = { ebf_economy_happines_healthcare_effect = 1000 }
+	divide_variable = { ebf_economy_happines_healthcare_effect = ebf_economy_population }
+	add_to_variable = { ebf_economy_happines_healthcare_effect = ebf_economy_pension_rate }
+
+	multiply_variable = { ebf_economy_happines_healthcare_effect = ebf_economy_healthcare_budget_modifier_rate }
+	add_to_variable = { ebf_economy_happines_healthcare_effect = 1 }
 }
 
-soldiers_healthcare_happines_effect = {
-	set_variable = { ebf_economy_happines_soldiers_healthcare_effect = ebf_economy_soldiers_healthcare_rate }
-	divide_variable = { ebf_economy_happines_soldiers_healthcare_effect = ebf_economy_recommended_soldiers_healthcare_rate }
+military_happines_effect = {
+	set_variable = { ebf_economy_happines_military_effect = manpower_k }
+	divide_variable = { ebf_economy_happines_military_effect = 1000 }
+	divide_variable = { ebf_economy_happines_military_effect = ebf_economy_population }
+
+	multiply_variable = { ebf_economy_happines_military_effect = ebf_economy_military_budget_modifier_rate }
+	add_to_variable = { ebf_economy_happines_military_effect = 1 }
 }
 
-pension_happines_effect = {
-	set_variable = { ebf_economy_happines_pension_effect = ebf_economy_pension_rate }
-	divide_variable = { ebf_economy_happines_pension_effect = ebf_economy_recommended_pension_rate }
-}
-
-saleries_happines_effect = {
-	set_variable = { ebf_economy_happines_saleries_effect = ebf_economy_saleries_rate }
-	divide_variable = { ebf_economy_happines_saleries_effect = ebf_economy_recommended_saleries_rate }
-}
-
+# 1 + (unemployed_percentage * social_welfare_budget_modifier_rate)
 social_welfare_happines_effect = {
-	set_variable = { ebf_economy_happines_social_welfare_effect = ebf_economy_social_welfare_rate}
-	divide_variable = { ebf_economy_happines_social_welfare_effect = ebf_economy_recommended_social_welfare_rate }
+	set_variable = { ebf_economy_happines_social_welfare_effect = ebf_economy_unemployed_percentage }
+	add_to_variable = { ebf_economy_happines_social_welfare_effect = ebf_economy_pensioner_ratio }
+	multiply_variable = { ebf_economy_happines_social_welfare_effect = ebf_economy_social_welfare_budget_modifier_rate }
+	add_to_variable = { ebf_economy_happines_social_welfare_effect = 1 }
 }
 
-expenses_happines_effect = {
+budgets_happines_effect = {
 	healthcare_happines_effect = yes
-	soldiers_healthcare_happines_effect = yes
-	pension_happines_effect = yes
-	saleries_happines_effect = yes
+	military_happines_effect = yes
 	social_welfare_happines_effect = yes
 	### Trying new calculation, multiplicatif instead of average
 
@@ -105,14 +106,12 @@ expenses_happines_effect = {
 
 	# divide_variable = { ebf_economy_happines_expenses_effect = 5 }
 
-	set_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_healthcare_effect }
-	multiply_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_soldiers_healthcare_effect }
-	multiply_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_pension_effect }
-	multiply_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_saleries_effect }
-	multiply_variable = { ebf_economy_happines_expenses_effect = ebf_economy_happines_social_welfare_effect }
-	multiply_variable = { ebf_economy_happines_expenses_effect = 1.1 }
+	set_variable = { ebf_economy_happines_budgets_effect = ebf_economy_happines_healthcare_effect }
+	multiply_variable = { ebf_economy_happines_budgets_effect = ebf_economy_happines_military_effect }
+	multiply_variable = { ebf_economy_happines_budgets_effect = ebf_economy_happines_social_welfare_effect }
+	multiply_variable = { ebf_economy_happines_budgets_effect = 1.1 }
 	clamp_variable = {
-		var = ebf_economy_happines_expenses_effect
+		var = ebf_economy_happines_budgets_effect
 		min = 0
 		max = 2
 	}
@@ -141,7 +140,7 @@ happines = {
 	war_happines_effect = yes
 	tax_happines_effect = yes
 	combined_inflation_happines_effect = yes
-	expenses_happines_effect = yes
+	budgets_happines_effect = yes
 	set_variable = { ebf_economy_happines = ebf_economy_happines_war_effect }
 	# add_to_variable = { ebf_economy_happines = ebf_economy_happines_tax_effect }
 	# add_to_variable = { ebf_economy_happines = ebf_economy_happines_combined_inflation_effect }
@@ -150,7 +149,7 @@ happines = {
 
 	multiply_variable = { ebf_economy_happines = ebf_economy_happines_tax_effect }
 	multiply_variable = { ebf_economy_happines = ebf_economy_happines_combined_inflation_effect }
-	multiply_variable = { ebf_economy_happines = ebf_economy_happines_expenses_effect }
+	multiply_variable = { ebf_economy_happines = ebf_economy_happines_budgets_effect }
 	clamp_variable = {
 		var = ebf_economy_happines
 		min = 0

@@ -25,19 +25,8 @@
 #
 #	can be added to countries, states or unit leaders
 #	will only updated daily, unless forced by force_update_dynamic_modifier effect
-
-ebf_economy_police_budget_dynamic_modifier = {
-	icon = GFX_modifiers_sabotaged_resource # TODO: find a better icon
-
-	stability_factor = ebf_economy_police_budget_stability_modifier
-	resistance_target = -ebf_economy_police_budget_resistance_target_modifier
-	command_power_gain  = ebf_economy_police_budget_command_power_gain_modifier
-	crypto_strength = ebf_economy_police_budget_encryption_modifier
-	foreign_subversive_activites = -ebf_economy_police_budget_foreign_activities_modifier
-}
-
 ebf_economy_research_budget_dynamic_modifier = {
-	icon = GFX_modifiers_sabotaged_resource # TODO: find a better icon
+	icon = GFX_generic_research_bonus 
 
 	research_speed_factor  = ebf_economy_research_budget_research_speed_modifier
 	experience_gain_army_factor  = ebf_economy_research_budget_experience_gain_modifier
@@ -46,33 +35,42 @@ ebf_economy_research_budget_dynamic_modifier = {
 }
 
 ebf_economy_healthcare_budget_dynamic_modifier = {
-	icon = GFX_modifiers_sabotaged_resource # TODO: find a better icon
+	icon = GFX_the_war_to_end_all_wars # TODO: find a better icon
 
 	monthly_population   = ebf_economy_healthcare_budget_pop_growth_modifier
 	army_org_factor  = ebf_economy_healthcare_budget_organisation_modifier
 	stability_factor = ebf_economy_healthcare_budget_stability_modifier
-	experience_loss_factor = -ebf_economy_healthcare_budget_organisation_modifier
+	experience_loss_factor = ebf_economy_healthcare_budget_experience_loss_modifier
 }
 
 ebf_economy_military_budget_dynamic_modifier = {
-	icon = GFX_modifiers_sabotaged_resource # TODO: find a better icon
+	icon = GFX_idea_SWE_let_fly_all_guns 
 
 	army_attack_factor   = ebf_economy_military_budget_attack_modifier
-	training_time_factor  = ebf_economy_healthcare_budget_organisation_modifier
+	army_defence_factor   = ebf_economy_military_budget_defence_modifier
+	air_attack_factor   = ebf_economy_military_budget_attack_modifier
+	air_defence_factor   = ebf_economy_military_budget_defence_modifier
+
+	training_time_factor  = ebf_economy_military_budget_training_time_modifier
+
 	experience_gain_army_factor = ebf_economy_military_budget_experience_gain_modifier
+	experience_gain_navy_factor = ebf_economy_military_budget_experience_gain_modifier
+	experience_gain_air_factor = ebf_economy_military_budget_experience_gain_modifier
 	experience_gain_army_unit_factor = ebf_economy_military_budget_experience_gain_modifier
 }
 
-ebf_economy_burocratic_budget_dynamic_modifier = {
-	icon = GFX_modifiers_sabotaged_resource # TODO: find a better icon
+ebf_economy_police_budget_dynamic_modifier = {
+	icon = GFX_idea_generic_secret_police 
 
-	political_power_factor = ebf_economy_burocratic_budget_political_power_gain_modifier
-	production_speed_buildings_factor = -ebf_economy_burocratic_budget_construction_speed_modifier
-	recruitable_population_factor = -ebf_economy_burocratic_budget_recrutible_population_modifier
+	stability_factor = ebf_economy_police_budget_stability_modifier
+	resistance_target = ebf_economy_police_budget_resistance_target_modifier
+	command_power_gain  = ebf_economy_police_budget_command_power_gain_modifier
 }
 
+
+
 ebf_economy_social_welfare_budget_dynamic_modifier = {
-	icon = GFX_modifiers_sabotaged_resource # TODO: find a better icon
+	icon = GFX_idea_ARG_social_welfare_fund_ns
 
 	stability_factor  = ebf_economy_social_welfare_stability_modifier
 	political_power_factor    = ebf_economy_social_welfare_political_power_gain_modifier
@@ -80,10 +78,23 @@ ebf_economy_social_welfare_budget_dynamic_modifier = {
 }
 
 ebf_economy_construction_budget_dynamic_modifier = {
-	icon = GFX_modifiers_sabotaged_resource # TODO: find a better icon
+	icon = GFX_idea_SOV_third_five_year_plan_civilian 
 
 	production_speed_buildings_factor = ebf_economy_construction_budget_construction_speed_modifier
-	political_power_factor = -ebf_economy_construction_budget_political_power_gain_modifier
-	recruitable_population_factor = -ebf_economy_construction_budget_recrutible_population_modifier
+}
+
+ebf_economy_intelligence_budget_dynamic_modifier = {
+	icon = GFX_generic_spy_intel 
+
+	encryption_factor = ebf_economy_construction_budget_construction_speed_modifier
+	decryption_factor = ebf_economy_intelligence_budget_decryption_factor_speed_modifier
+	decryption_power_factor = ebf_economy_intelligence_budget_decryption_power_factor_speed_modifier
+	intel_network_gain_factor = ebf_economy_intelligence_budget_intel_network_gain_factor_speed_modifier
+
+	operation_outcome = ebf_economy_intelligence_budget_operation_outcome_factor_speed_modifier
+	enemy_operative_capture_chance_factor = ebf_economy_intelligence_budget_enemy_operative_capture_chance_factor_speed_modifier
+	intelligence_agency_defense = ebf_economy_intelligence_budget_counter_intelligence_factor_speed_modifier
+	foreign_subversive_activites = ebf_economy_intelligence_budget_foreign_activities_factor_speed_modifier 
+
 }
 

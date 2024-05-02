@@ -295,7 +295,7 @@
  ECONOMY_RESEARCH_BUDGET_MODIFIER_RATE:0 "[?ebf_economy_research_budget_modifier_rate|%0]"
  ECONOMY_RESEARCH_BUDGET_RATE:0 "[?ebf_economy_research_budget_ratio|%0]"
  ECONOMY_RESEARCH_SPEED_MODIFIER:0 "[?ebf_economy_research_budget_research_speed_modifier|%0]"
- ECONOMY_RESEARCH_MIN_ADULT_AGE_MODIFIER:0 "[?ebf_economy_min_adult_age|%0]"
+ ECONOMY_RESEARCH_MIN_ADULT_AGE_MODIFIER:0 "[?ebf_economy_min_adult_age]"
  ECONOMY_RESEARCH_BUDGET_EXPERIENCE_GAIN_MODIFIER:0 "[?ebf_economy_research_budget_experience_gain_modifier|%0]"
 
 

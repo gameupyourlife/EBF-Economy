@@ -1,89 +1,3 @@
-#	Example:
-#
-#	example_effect = {
-#		add_political_power = 66
-#		add_popularity = {
-#			ideology = fascism
-#			popularity = 0.33
-#		}
-#	}
-#
-#
-#	In a script file:
-#
-#	effect = {
-#		example_effect = yes
-#	}
-#
-
-#####################################
-### emergency_factory_conversion ####
-#####################################
-
-healthcare_expenses = {
-	set_variable = { ebf_economy_non_soldiers_healthcare_expenses = ebf_economy_healthcare_rate }
-	multiply_variable = { ebf_economy_non_soldiers_healthcare_expenses = ebf_economy_population }
-	
-	set_variable = { ebf_economy_soldiers_healthcare_expenses = ebf_economy_soldiers_healthcare_rate }
-	multiply_variable = { ebf_economy_soldiers_healthcare_expenses = max_available_manpower_k }
-	divide_variable = { ebf_economy_soldiers_healthcare_expenses = 1000 }
-	round_variable = ebf_economy_soldiers_healthcare_expenses
-
-	set_variable = {
-		ebf_economy_healthcare_expenses = ebf_economy_non_soldiers_healthcare_expenses
-	}
-	add_to_variable = {
-		ebf_economy_healthcare_expenses = ebf_economy_soldiers_healthcare_expenses
-	}
-	multiply_variable = {
-		ebf_economy_healthcare_expenses = ebf_economy_inflation
-	}
-}
-
-pension_expenses = {
-	set_variable = {
-		ebf_economy_pension_expenses = ebf_economy_pension_rate
-	}
-	multiply_variable = {
-		ebf_economy_pension_expenses = ebf_economy_pensioner_population
-	}
-	multiply_variable = {
-		ebf_economy_pension_expenses = ebf_economy_inflation
-	}
-}
-
-saleries_expenses = {
-	set_variable = {
-		ebf_economy_saleries_expenses = ebf_economy_workforce
-	}
-	multiply_variable = {
-		ebf_economy_saleries_expenses = 0.01
-	}
-	set_temp_variable = { ebf_economy_soldiers = max_available_manpower_k }
-	divide_temp_variable = { ebf_economy_soldiers = 1000 }
-	add_to_variable = {
-		ebf_economy_saleries_expenses = ebf_economy_soldiers
-	}
-	multiply_variable = {
-		ebf_economy_saleries_expenses = ebf_economy_saleries_rate
-	}
-	multiply_variable = {
-		ebf_economy_saleries_expenses = ebf_economy_inflation
-	}
-}
-
-social_welfare_expenses = {
-	set_variable = {
-		ebf_economy_social_welfare_expenses = ebf_economy_social_welfare_rate
-	}
-	multiply_variable = {
-		ebf_economy_social_welfare_expenses = ebf_economy_unemployed_population
-	}
-	multiply_variable = {
-		ebf_economy_social_welfare_expenses = ebf_economy_inflation
-	}
-}
-
 # TODO
 building_expenses = {
 	set_variable = { ebf_economy_infrastructure_building_num = 0 }
@@ -233,15 +147,8 @@ trading_resources_expenses = {
 }
 
 total_expenses = {
-	healthcare_expenses = yes
-	pension_expenses = yes
-	saleries_expenses = yes
-	social_welfare_expenses = yes
 	building_expenses = yes
 	trading_resources_expenses = yes
 	set_variable = { ebf_economy_total_expenses = ebf_economy_resources_trading_expenses }
-	add_to_variable = { ebf_economy_total_expenses = ebf_economy_pension_expenses }
-	add_to_variable = { ebf_economy_total_expenses = ebf_economy_saleries_expenses }
-	add_to_variable = { ebf_economy_total_expenses = ebf_economy_social_welfare_expenses }
 	add_to_variable = { ebf_economy_total_expenses = ebf_economy_buildings_expenses }
 }

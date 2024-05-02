@@ -122,42 +122,41 @@ var_declariation = {
 	
 
 	##### Expenses
-	set_variable = { ebf_economy_healthcare_rate = 1.5 } # was 150
-	set_variable = { ebf_economy_soldiers_healthcare_rate = 1 } # was 100
-	set_variable = { ebf_economy_pension_rate = 1 } # was 1000
-	set_variable = { ebf_economy_saleries_rate = 2 } # was 2000
-	set_variable = { ebf_economy_social_welfare_rate = 1 } # was 1000
+	# set_variable = { ebf_economy_healthcare_rate = 1.5 } # was 150
+	# set_variable = { ebf_economy_soldiers_healthcare_rate = 1 } # was 100
+	# set_variable = { ebf_economy_pension_rate = 1 } # was 1000
+	# set_variable = { ebf_economy_saleries_rate = 2 } # was 2000
+	# set_variable = { ebf_economy_social_welfare_rate = 1 } # was 1000
 	set_variable = { ebf_economy_resources_exporting_price = 0.9 } # was 900
 	set_variable = { ebf_economy_resources_importing_price = 1.1 } # was 1100
 
 	# Budgets
-	set_variable = { ebf_economy_research_budget = 10 }
-	set_variable = { ebf_economy_recommended_research_budget = ebf_economy_research_budget }
-	set_variable = { ebf_economy_military_budget = 10 }
-	set_variable = { ebf_economy_recommended_military_budget = ebf_economy_military_budget }
-	set_variable = { ebf_economy_police_budget = 10 }
-	set_variable = { ebf_economy_recommended_police_budget = ebf_economy_police_budget }
-	set_variable = { ebf_economy_burocratic_budget = 10 }
-	set_variable = { ebf_economy_recommended_burocratic_budget = ebf_economy_burocratic_budget }
-	set_variable = { ebf_economy_construction_budget = 10 }
-	set_variable = { ebf_economy_recommended_construction_budget = ebf_economy_construction_budget }
+	calculate_all_expected_budgets = yes
+	set_variable = { ebf_economy_research_budget = ebf_economy_research_budget_expected }
+	set_variable = { ebf_economy_military_budget = ebf_economy_military_budget_expected }
+	set_variable = { ebf_economy_police_budget = ebf_economy_police_budget_expected }
+	set_variable = { ebf_economy_burocratic_budget = ebf_economy_burocratic_budget_expected }
+	set_variable = { ebf_economy_construction_budget = ebf_economy_construction_budget_expected }
+	set_variable = { ebf_economy_intelligence_budget = ebf_economy_intelligence_budget_expected }
+	set_variable = { ebf_economy_social_welfare_budget = ebf_economy_social_welfare_budget_expected }
+
 
 	# Dynamic Modifiers for the budgets
 	add_dynamic_modifier = { modifier = ebf_economy_police_budget_dynamic_modifier }
 	add_dynamic_modifier = { modifier = ebf_economy_research_budget_dynamic_modifier }
 	add_dynamic_modifier = { modifier = ebf_economy_healthcare_budget_dynamic_modifier }
 	add_dynamic_modifier = { modifier = ebf_economy_military_budget_dynamic_modifier }
-	add_dynamic_modifier = { modifier = ebf_economy_burocratic_budget_dynamic_modifier }
+	add_dynamic_modifier = { modifier = ebf_economy_intelligence_budget_dynamic_modifier }
 	add_dynamic_modifier = { modifier = ebf_economy_social_welfare_budget_dynamic_modifier }
 	add_dynamic_modifier = { modifier = ebf_economy_construction_budget_dynamic_modifier }
 
 		
 	# Rate at which the happines effect is 1 aka no effect - Can be changed by events, dynamicaly and country specific 
-	set_variable = { ebf_economy_recommended_healthcare_rate = ebf_economy_healthcare_rate }
-	set_variable = { ebf_economy_recommended_soldiers_healthcare_rate = ebf_economy_soldiers_healthcare_rate }
-	set_variable = { ebf_economy_recommended_pension_rate = ebf_economy_pension_rate }
-	set_variable = { ebf_economy_recommended_saleries_rate = ebf_economy_saleries_rate }
-	set_variable = { ebf_economy_recommended_social_welfare_rate = ebf_economy_social_welfare_rate }
+	# set_variable = { ebf_economy_recommended_healthcare_rate = ebf_economy_healthcare_rate }
+	# set_variable = { ebf_economy_recommended_soldiers_healthcare_rate = ebf_economy_soldiers_healthcare_rate }
+	# set_variable = { ebf_economy_recommended_pension_rate = ebf_economy_pension_rate }
+	# set_variable = { ebf_economy_recommended_saleries_rate = ebf_economy_saleries_rate }
+	# set_variable = { ebf_economy_recommended_social_welfare_rate = ebf_economy_social_welfare_rate }
 
 
 
