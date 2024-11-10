@@ -20,17 +20,26 @@ inflation_rate = {
 	printing_inflation = yes
 	set_variable = { ebf_economy_inflation_rate = ebf_economy_printing_inflation }
 	add_to_variable = { ebf_economy_inflation_rate = ebf_economy_economic_inflation }
-	add_to_variable = { ebf_economy_inflation_rate = ebf_economy_loan_inflation } # Not Used
-	add_to_variable = { ebf_economy_inflation_rate = ebf_economy_investment_inflation } # Not Used
+	# add_to_variable = { ebf_economy_inflation_rate = ebf_economy_loan_inflation } # Not Used
+	# add_to_variable = { ebf_economy_inflation_rate = ebf_economy_investment_inflation } # Not Used
 }
 
 economic_inflation = {
-	set_variable = { ebf_economy_economic_inflation = num_of_civilian_factories }
-	add_to_variable = { ebf_economy_economic_inflation = num_of_military_factories }
+	# Old calculation less aggressive
+	set_variable = { ebf_economy_economic_inflation = num_of_military_factories }
+	add_to_variable = { ebf_economy_economic_inflation = num_of_naval_factories }
 	multiply_variable = { ebf_economy_economic_inflation = 2 }
 	divide_variable = { ebf_economy_economic_inflation = num_of_civilian_factories }
 	subtract_from_variable = { ebf_economy_economic_inflation = 1 }
 	divide_variable = { ebf_economy_economic_inflation = 100 }
+
+	# New calculation with quad insted of times two -> Requires 2 : 1 Ration of mils to civs for 4% inflation with the upper that would be 2%
+	# 2% on the other hand will be achieved by having 10 : 7 ratio
+	# set_variable = { ebf_economy_economic_inflation = num_of_military_factories }
+	# add_to_variable = { ebf_economy_economic_inflation = num_of_naval_factories }
+	# divide_variable = { ebf_economy_economic_inflation = num_of_civilian_factories }
+	# multiply_variable = { ebf_economy_economic_inflation = ebf_economy_economic_inflation }
+	# divide_variable = { ebf_economy_economic_inflation = 100 }
 }
 
 printing_inflation = {

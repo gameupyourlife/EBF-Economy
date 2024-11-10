@@ -27,9 +27,12 @@ scripted_gui = {
 
 			### Income Tax Percentage Click
 			income_tax_sub_button_click = {
+				add_political_power = ebf_economy_pp_base_cost
+				
 				set_temp_variable = { ebf_economy_change_income_tax = 0.01 }
 				adjust_income_tax = yes
             }
+
 			income_tax_add_button_click = {
 				if = {
 					limit = {
@@ -37,6 +40,8 @@ scripted_gui = {
 							check_variable = { ebf_economy_income_tax > 0.99 }
 						}
 					}
+					add_political_power = ebf_economy_pp_base_cost
+
 					add_to_variable = { ebf_economy_income_tax = 0.01 }
 					rich_population = yes
 					combined_tax = yes
@@ -50,11 +55,18 @@ scripted_gui = {
 					limit = {
 						check_variable = { ebf_economy_income_tax < 0.05 }
 					}
+					
+					set_temp_variable = { ebf_economy_pp_cost = ebf_economy_income_tax }
+					multiply_temp_variable = { ebf_economy_pp_cost = 100 }
+					multiply_temp_variable = { ebf_economy_pp_cost = ebf_economy_pp_base_cost }
+					add_political_power = ebf_economy_pp_cost
+
 					set_variable = { ebf_economy_income_tax = 0.00 }
 					rich_population = yes
 					combined_tax = yes
 					monthly_balance = yes
 					happines = yes
+
 				}
 				if = {
 					limit = {
@@ -62,11 +74,17 @@ scripted_gui = {
 							check_variable = { ebf_economy_income_tax < 0.05 }
 						}
 					}
+					set_temp_variable = { ebf_economy_pp_cost = 5 }
+					multiply_temp_variable = { ebf_economy_pp_cost = ebf_economy_pp_base_cost }
+					add_political_power = ebf_economy_pp_cost
+
 					subtract_from_variable = { ebf_economy_income_tax = 0.05 }
 					rich_population = yes
 					combined_tax = yes
 					monthly_balance = yes
 					happines = yes
+
+				
 				}
             }
 			income_tax_add_button_control_click = {
@@ -74,11 +92,19 @@ scripted_gui = {
 					limit = {
 						check_variable = { ebf_economy_income_tax > 0.95 }
 					}
+					set_temp_variable = { ebf_economy_pp_cost = 1 }
+					subtract_from_temp_variable = { ebf_economy_pp_cost = ebf_economy_income_tax }
+					multiply_temp_variable = { ebf_economy_pp_cost = 100 }
+					multiply_temp_variable = { ebf_economy_pp_cost = ebf_economy_pp_base_cost }
+					add_political_power = ebf_economy_pp_cost
+
 					set_variable = { ebf_economy_income_tax = 1.00 }
 					rich_population = yes
 					combined_tax = yes
 					monthly_balance = yes
 					happines = yes
+
+					
 				}
 				if = {
 					limit = {
@@ -86,11 +112,17 @@ scripted_gui = {
 							check_variable = { ebf_economy_income_tax > 0.95 }
 						}
 					}
+					set_temp_variable = { ebf_economy_pp_cost = 5 }
+					multiply_temp_variable = { ebf_economy_pp_cost = ebf_economy_pp_base_cost }
+					add_political_power = ebf_economy_pp_cost
+
 					add_to_variable = { ebf_economy_income_tax = 0.05 }
 					rich_population = yes
 					combined_tax = yes
 					monthly_balance = yes
 					happines = yes
+
+			
 				}
             }
 
@@ -99,11 +131,18 @@ scripted_gui = {
 					limit = {
 						check_variable = { ebf_economy_income_tax < 0.1 }
 					}
+					set_temp_variable = { ebf_economy_pp_cost = ebf_economy_income_tax }
+					multiply_temp_variable = { ebf_economy_pp_cost = 100 }
+					multiply_temp_variable = { ebf_economy_pp_cost = ebf_economy_pp_base_cost }
+					add_political_power = ebf_economy_pp_cost
+
 					set_variable = { ebf_economy_income_tax = 0.00 }
 					rich_population = yes
 					combined_tax = yes
 					monthly_balance = yes
 					happines = yes
+
+				
 				}
 				if = {
 					limit = {
@@ -111,11 +150,16 @@ scripted_gui = {
 							check_variable = { ebf_economy_income_tax < 0.1 }
 						}
 					}
+					set_temp_variable = { ebf_economy_pp_cost = 10 }
+					multiply_temp_variable = { ebf_economy_pp_cost = ebf_economy_pp_base_cost }
+					add_political_power = ebf_economy_pp_cost
+
 					subtract_from_variable = { ebf_economy_income_tax = 0.1 }
 					rich_population = yes
 					combined_tax = yes
 					monthly_balance = yes
 					happines = yes
+
 				}
             }
 			income_tax_add_button_shift_click = {
@@ -123,11 +167,18 @@ scripted_gui = {
 					limit = {
 						check_variable = { ebf_economy_income_tax > 0.90 }
 					}
+					set_temp_variable = { ebf_economy_pp_cost = 1 }
+					subtract_from_temp_variable = { ebf_economy_pp_cost = ebf_economy_income_tax }
+					multiply_temp_variable = { ebf_economy_pp_cost = 100 }
+					multiply_temp_variable = { ebf_economy_pp_cost = ebf_economy_pp_base_cost }
+					add_political_power = ebf_economy_pp_cost
+
 					set_variable = { ebf_economy_income_tax = 1.00 }
 					rich_population = yes
 					combined_tax = yes
 					monthly_balance = yes
 					happines = yes
+
 				}
 				if = {
 					limit = {
@@ -135,15 +186,33 @@ scripted_gui = {
 							check_variable = { ebf_economy_income_tax > 0.90 }
 						}
 					}
+					set_temp_variable = { ebf_economy_pp_cost = 10 }
+					multiply_temp_variable = { ebf_economy_pp_cost = ebf_economy_pp_base_cost }
+					add_political_power = ebf_economy_pp_cost
+
 					add_to_variable = { ebf_economy_income_tax = 0.1 }
 					rich_population = yes
 					combined_tax = yes
 					monthly_balance = yes
 					happines = yes
+
+				
 				}
             }
 
 			income_tax_sub_button_right_click = {
+				set_temp_variable = { ebf_economy_pp_cost = ebf_economy_default_income_tax }
+				subtract_from_temp_variable = { ebf_economy_pp_cost = ebf_economy_income_tax }
+				if = {
+					limit = {
+						check_variable = { ebf_economy_pp_cost < 0 }
+					}
+					multiply_temp_variable = { ebf_economy_pp_cost = -1 }
+				}
+				multiply_temp_variable = { ebf_economy_pp_cost = 100 }
+				multiply_temp_variable = { ebf_economy_pp_cost = ebf_economy_pp_base_cost }
+				add_political_power = ebf_economy_pp_cost
+
 				set_variable = { ebf_economy_income_tax = ebf_economy_default_income_tax }
 				rich_population = yes
 				combined_tax = yes
@@ -152,6 +221,18 @@ scripted_gui = {
 
             }
 			income_tax_add_button_right_click = {
+				set_temp_variable = { ebf_economy_pp_cost = ebf_economy_default_income_tax }
+				subtract_from_temp_variable = { ebf_economy_pp_cost = ebf_economy_income_tax }
+				if = {
+					limit = {
+						check_variable = { ebf_economy_pp_cost < 0 }
+					}
+					multiply_temp_variable = { ebf_economy_pp_cost = -1 }
+				}
+				multiply_temp_variable = { ebf_economy_pp_cost = 100 }
+				multiply_temp_variable = { ebf_economy_pp_cost = ebf_economy_pp_base_cost }
+				add_political_power = ebf_economy_pp_cost
+				
 				set_variable = { ebf_economy_income_tax = ebf_economy_default_income_tax }
 				rich_population = yes
 				combined_tax = yes

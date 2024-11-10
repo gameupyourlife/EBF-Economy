@@ -357,6 +357,13 @@
  ECONOMY_TOTAL_HAPPINES_CALCULATION:0 "([?ebf_economy_happines_war_effect|%0] + [?ebf_economy_happines_tax_effect|%0] + [?ebf_economy_happines_combined_inflation_effect|%0] + [?ebf_economy_happines_expenses_effect|%0]) / 4"
  ECONOMY_TOTAL_HAPPINES_AMOUNT:0 "[?ebf_economy_happines|%0]"
 
+ ECONOMY_INFLATION_RATE_TITLE:0 "Inflation Rate"
+ ECONOMY_INFLATION_RATE_PRINTING_TITLE:0 "Printing Inflation Rate"
+ ECONOMY_INFLATION_RATE_ECONOMIC_TITLE:0 "Economic Inflation Rate"
+ ECONOMY_INFLATION_RATE_VALUE:0 "[?ebf_economy_inflation_rate|%0]"
+ ECONOMY_INFLATION_RATE_PRINTING_VALUE:0 "[?ebf_economy_printing_inflation|%0]"
+ ECONOMY_INFLATION_RATE_ECONOMIC_VALUE:0 "[?ebf_economy_economic_inflation|%0]"
+ ECONOMY_TOTAL_INFLATION_TITLE:0 "Total Price Index [?ebf_economy_inflation|%0]"
  # BUILDINGS
  ECONOMY_BUILDING_EXPENSES_CALCULATION:0 "[?ebf_economy_building_expenses|%0] * [?ebf_economy_building_expenses_modifier|%0]"
 
