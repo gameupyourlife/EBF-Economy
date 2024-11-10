@@ -1,7 +1,16 @@
 spriteTypes = {	
 
 	spriteType = {
-		name = "GFX_no_order_texticon"
+		name = "GFX_resistance_icon_old"
+		texturefile = "gfx/interface/resistance_icon_old.dds"
+	}
+
+
+	########################
+
+
+	spriteType = {
+		name = "GFX_encryption_texticon"
 		texturefile = "gfx/interface/mapicons/mapicon_unit_no_orders.dds"
 	}
 

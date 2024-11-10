@@ -283,19 +283,19 @@
  ECONOMY_POLICE_BUDGET:0 "Police Budget"
  ECONOMY_POLICE_BUDGET_AMOUNT:0 "[?ebf_economy_police_budget] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
  ECONOMY_POLICE_BUDGET_MODIFIER_RATE:0 "[?ebf_economy_police_budget_modifier_rate|%0]"
- ECONOMY_POLICE_STABILITY_MODIFIER:0 "[?ebf_economy_police_budget_stability_modifier|%0]"
- ECONOMY_POLICE_RATE:0 "[?ebf_economy_police_budget_ratio|%0]"
- ECONOMY_POLICE_RESISTANCE_MODIFIER:0 "[?ebf_economy_police_budget_resistance_target_modifier|%0]"
- ECONOMY_POLICE_COMMAND_POWER_MODIFIER:0 "[?ebf_economy_police_budget_command_power_gain_modifier|%0]"
- ECONOMY_POLICE_ENCRYPTION_MODIFIER:0 "[?ebf_economy_police_budget_encryption_modifier|0]"
- ECONOMY_POLICE_FORGEIN_ACTIVITES_MODIFIER:0 "[?ebf_economy_police_budget_foreign_activities_modifier|%0]"
-
+ ECONOMY_POLICE_BUDGET_STABILITY_MODIFIER:0 "[?ebf_economy_police_budget_stability_modifier|%0]"
+ ECONOMY_POLICE_BUDGET_RATE:0 "[?ebf_economy_police_budget_ratio|%0]"
+ ECONOMY_POLICE_BUDGET_RESISTANCE_MODIFIER:0 "[?ebf_economy_police_budget_resistance_target_modifier|%0]"
+ ECONOMY_POLICE_BUDGET_COMMAND_POWER_MODIFIER:0 "[?ebf_economy_police_budget_command_power_gain_modifier|%0]"
+ ECONOMY_POLICE_BUDGET_ENCRYPTION_MODIFIER:0 "[?ebf_economy_police_budget_encryption_modifier|0]"
+ ECONOMY_POLICE_BUDGET_FOREIGN_ACTIVITIES_MODIFIER:0 "[?ebf_economy_police_budget_foreign_activities_modifier|%0]"
+ 
  ECONOMY_RESEARCH_BUDGET:0 "Education Budget"
  ECONOMY_RESEARCH_BUDGET_AMOUNT:0 "[?ebf_economy_research_budget] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
  ECONOMY_RESEARCH_BUDGET_MODIFIER_RATE:0 "[?ebf_economy_research_budget_modifier_rate|%0]"
  ECONOMY_RESEARCH_BUDGET_RATE:0 "[?ebf_economy_research_budget_ratio|%0]"
- ECONOMY_RESEARCH_SPEED_MODIFIER:0 "[?ebf_economy_research_budget_research_speed_modifier|%0]"
- ECONOMY_RESEARCH_MIN_ADULT_AGE_MODIFIER:0 "[?ebf_economy_min_adult_age]"
+ ECONOMY_RESEARCH_BUDGET_SPEED_MODIFIER:0 "[?ebf_economy_research_budget_research_speed_modifier|%0]"
+ ECONOMY_RESEARCH_BUDGET_MIN_ADULT_AGE_MODIFIER:0 "[?ebf_economy_min_adult_age]"
  ECONOMY_RESEARCH_BUDGET_EXPERIENCE_GAIN_MODIFIER:0 "[?ebf_economy_research_budget_experience_gain_modifier|%0]"
 
 
@@ -327,13 +327,9 @@
  ECONOMY_HEALTHCARE_BUDGET_AMOUNT:0 "[?ebf_economy_healthcare_budget] [GETEBF_ECONOMY_FACTOR][GETEBF_ECONOMY_CURRENCY]"
  ECONOMY_HEALTHCARE_BUDGET_MODIFIER_RATE:0 "[?ebf_economy_healthcare_budget_modifier_rate|%0]"
  ECONOMY_HEALTHCARE_BUDGET_RATE:0 "[?ebf_economy_healthcare_budget_ratio|%0]"
- ECONOMY_HEALTHCARE_BUDGET_POPULATION_GROWTH_MODIFIER_TOOLTIP:0 "Population Growth Modifier"
  ECONOMY_HEALTHCARE_BUDGET_POPULATION_GROWTH_MODIFIER:0 "[?ebf_economy_healthcare_budget_pop_growth_modifier|%0]"
- ECONOMY_HEALTHCARE_BUDGET_WAR_SUPPORT_MODIFIER_TOOLTIP:0 "War Support Modifier"
  ECONOMY_HEALTHCARE_BUDGET_WAR_SUPPORT_MODIFIER:0 "[?ebf_economy_healthcare_budget_war_support_modifier|%0]"
- ECONOMY_HEALTHCARE_BUDGET_STABILITY_MODIFIER_TOOLTIP:0 "Stability Modifier"
  ECONOMY_HEALTHCARE_BUDGET_STABILITY_MODIFIER:0 "[?ebf_economy_healthcare_budget_stability_modifier|%0]"
- ECONOMY_HEALTHCARE_BUDGET_EXPERIENCE_LOSS_MODIFIER_TOOLTIP:0 "Experience Loss Modifier"
  ECONOMY_HEALTHCARE_BUDGET_EXPERIENCE_LOSS_MODIFIER:0 "[?ebf_economy_healthcare_budget_experience_loss_modifier|%0]"
  
  ECONOMY_SOCIAL_WELFARE_BUDGET:0 "Social Welfare Budget"
@@ -348,6 +344,60 @@
  ECONOMY_SOCIAL_WELFARE_BUDGET_STABILITY_MODIFIER:0 "[?ebf_economy_social_welfare_stability_modifier|%0]"
  ECONOMY_SOCIAL_WELFARE_BUDGET_POLITICAL_POWER_GAIN_MODIFIER:0 "[?ebf_economy_social_welfare_political_power_gain_modifier|%0]"
  ECONOMY_SOCIAL_WELFARE_BUDGET_POPULATION_GROWTH_MODIFIER:0 "[?ebf_economy_social_welfare_population_growth_modifier|%0]"
+
+ 
+ ################
+ # Budget Tooltips
+ ################
+ # Research Budget Tooltips
+ ECONOMY_RESEARCH_BUDGET_SPEED_MODIFIER_TOOLTIP:0 "Research Speed Modifier"
+ ECONOMY_RESEARCH_BUDGET_MIN_ADULT_AGE_MODIFIER_TOOLTIP:0 "Minimum Adult Age"
+ ECONOMY_RESEARCH_BUDGET_EXPERIENCE_GAIN_MODIFIER_TOOLTIP:0 "Experience Gain Modifier"
+ 
+ # Military Budget Tooltips
+ ECONOMY_MILITARY_BUDGET_ATTACK_MODIFIER_TOOLTIP:0 "Attack Modifier"
+ ECONOMY_MILITARY_BUDGET_TRAINING_TIME_MODIFIER_TOOLTIP:0 "Training Time Modifier"
+ ECONOMY_MILITARY_BUDGET_EXPERIENCE_GAIN_MODIFIER_TOOLTIP:0 "Experience Gain Modifier"
+ 
+ # Construction Budget Tooltips
+ ECONOMY_CONSTRUCTION_BUDGET_CONSTRUCTION_SPEED_MODIFIER_TOOLTIP:0 "Construction Speed Modifier"
+ 
+ # Healthcare Budget Tooltips
+ ECONOMY_HEALTHCARE_BUDGET_POPULATION_GROWTH_MODIFIER_TOOLTIP:0 "Population Growth Modifier"
+ ECONOMY_HEALTHCARE_BUDGET_WAR_SUPPORT_MODIFIER_TOOLTIP:0 "War Support Modifier"
+ ECONOMY_HEALTHCARE_BUDGET_STABILITY_MODIFIER_TOOLTIP:0 "Stability Modifier"
+ ECONOMY_HEALTHCARE_BUDGET_EXPERIENCE_LOSS_MODIFIER_TOOLTIP:0 "Experience Loss Modifier"
+ 
+ # Intelligence Budget Tooltips
+ ECONOMY_INTELLIGENCE_BUDGET_CRYPTION_MODIFIER_TOOLTIP:0 "Encryption Factor Speed Modifier"
+ ECONOMY_INTELLIGENCE_BUDGET_NETWORK_GAIN_MODIFIER_TOOLTIP:0 "Intelligence Network Gain Factor Speed Modifier"
+ ECONOMY_INTELLIGENCE_BUDGET_RECRUTIBLE_POPULATION_FACTOR_MODIFIER_TOOLTIP:0 "Recruitable Population Factor Modifier"
+ 
+ # Social Welfare Budget Tooltips
+ ECONOMY_SOCIAL_WELFARE_BUDGET_STABILITY_MODIFIER_TOOLTIP:0 "Stability Modifier"
+ ECONOMY_SOCIAL_WELFARE_BUDGET_POLITICAL_POWER_GAIN_MODIFIER_TOOLTIP:0 "Political Power Gain Modifier"
+ ECONOMY_SOCIAL_WELFARE_BUDGET_POPULATION_GROWTH_MODIFIER_TOOLTIP:0 "Population Growth Modifier"
+ ECONOMY_SOCIAL_WELFARE_BUDGET_RECRUTIBLE_POPULATION_FACTOR_MODIFIER_TOOLTIP:0 "Recruitable Population Factor Modifier"
+ 
+ # Police Budget Tooltips
+ ECONOMY_POLICE_BUDGET_STABILITY_MODIFIER_TOOLTIP:0 "Stability Modifier"
+ ECONOMY_POLICE_BUDGET_RESISTANCE_MODIFIER_TOOLTIP:0 "Resistance Target Modifier"
+ ECONOMY_POLICE_BUDGET_COMMAND_POWER_MODIFIER_TOOLTIP:0 "Command Power Gain Modifier"
+ ECONOMY_POLICE_BUDGET_ENCRYPTION_MODIFIER_TOOLTIP:0 "Encryption Modifier"
+ ECONOMY_POLICE_BUDGET_FOREIGN_ACTIVITIES_MODIFIER_TOOLTIP:0 "Foreign Activities Modifier"
+ 
+ # Healthcare Budget Tooltips
+ ECONOMY_HEALTHCARE_BUDGET_POPULATION_GROWTH_MODIFIER_TOOLTIP:0 "Population Growth Modifier"
+ ECONOMY_HEALTHCARE_BUDGET_WAR_SUPPORT_MODIFIER_TOOLTIP:0 "War Support Modifier"
+ ECONOMY_HEALTHCARE_BUDGET_STABILITY_MODIFIER_TOOLTIP:0 "Stability Modifier"
+ ECONOMY_HEALTHCARE_BUDGET_EXPERIENCE_LOSS_MODIFIER_TOOLTIP:0 "Experience Loss Modifier"
+
+ 
+
+
+ ################
+ # Happiness
+ ################
 
 
  ECONOMY_HAPPINES_TITLE:0 "Happiness"
@@ -371,6 +421,11 @@
  ECONOMY_TOTAL_HAPPINES_CALCULATION:0 "([?ebf_economy_happines_war_effect|%0] + [?ebf_economy_happines_tax_effect|%0] + [?ebf_economy_happines_combined_inflation_effect|%0] + [?ebf_economy_happines_expenses_effect|%0]) / 4"
  ECONOMY_TOTAL_HAPPINES_AMOUNT:0 "[?ebf_economy_happines|%0]"
 
+ ################
+ # Inflation
+ ################
+
+ ECONOMY_INFLATION_WINDOW_TITLE:0 "Inflation"
  ECONOMY_INFLATION_RATE_TITLE:0 "Inflation Rate"
  ECONOMY_INFLATION_RATE_PRINTING_TITLE:0 "Printing Inflation Rate"
  ECONOMY_INFLATION_RATE_ECONOMIC_TITLE:0 "Economic Inflation Rate"
@@ -378,6 +433,12 @@
  ECONOMY_INFLATION_RATE_PRINTING_VALUE:0 "[?ebf_economy_printing_inflation|%0]"
  ECONOMY_INFLATION_RATE_ECONOMIC_VALUE:0 "[?ebf_economy_economic_inflation|%0]"
  ECONOMY_TOTAL_INFLATION_TITLE:0 "Total Price Index [?ebf_economy_inflation|%0]"
+
+
+
+
+
+
  # BUILDINGS
  ECONOMY_BUILDING_EXPENSES_CALCULATION:0 "[?ebf_economy_building_expenses|%0] * [?ebf_economy_building_expenses_modifier|%0]"
 
