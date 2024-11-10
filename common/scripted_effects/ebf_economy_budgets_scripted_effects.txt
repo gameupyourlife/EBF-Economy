@@ -21,9 +21,16 @@ calculate_research_budget_ratio = {
 	set_variable = { ebf_economy_research_budget_expected = amount_research_slots }
 	multiply_variable = { ebf_economy_research_budget_expected = 25 }
 
-
-	set_variable = { ebf_economy_research_budget_ratio = ebf_economy_research_budget }
-	divide_variable = { ebf_economy_research_budget_ratio = ebf_economy_research_budget_expected }
+	if = {
+		limit = {
+			check_variable = { ebf_economy_research_budget_expected > 0 }
+		}
+		set_variable = { ebf_economy_research_budget_ratio = ebf_economy_research_budget }
+		divide_variable = { ebf_economy_research_budget_ratio = ebf_economy_research_budget_expected }
+	}
+	else = {
+		set_variable = { ebf_economy_research_budget_ratio = 1 }
+	}
 
 	
 	
@@ -56,8 +63,8 @@ calculate_healthcare_budget_modifiers = {
 	set_variable = { ebf_economy_healthcare_budget_pop_growth_modifier = ebf_economy_healthcare_budget_modifier_rate }
 
 	# War Support
-	set_variable = { ebf_economy_healthcare_budget_organisation_modifier = ebf_economy_healthcare_budget_modifier_rate }
-	divide_variable = { ebf_economy_healthcare_budget_organisation_modifier = 2 }
+	set_variable = { ebf_economy_healthcare_budget_war_support_modifier = ebf_economy_healthcare_budget_modifier_rate }
+	divide_variable = { ebf_economy_healthcare_budget_war_support_modifier = 2 }
 
 	#  Stability
 	set_variable = { ebf_economy_healthcare_budget_stability_modifier = ebf_economy_healthcare_budget_modifier_rate }
@@ -73,8 +80,11 @@ calculate_healthcare_budget_ratio = {
 	set_variable = { ebf_economy_non_soldiers_healthcare_budget_expected = 1000 }
 	multiply_variable = { ebf_economy_non_soldiers_healthcare_budget_expected = ebf_economy_population } # Pop in Millions
 	
-	set_variable = { ebf_economy_soldiers_healthcare_budget_expected = 10 }
-	multiply_variable = { ebf_economy_soldiers_healthcare_budget_expected = max_available_manpower_k }
+	set_variable = { ebf_economy_soldiers_healthcare_budget_expected = deployed_army_manpower_k }
+	add_to_variable = { ebf_economy_soldiers_healthcare_budget_expected = deployed_navy_manpower_k }
+	add_to_variable = { ebf_economy_soldiers_healthcare_budget_expected = deployed_airforce_manpower_k }
+	add_to_variable = { ebf_economy_soldiers_healthcare_budget_expected = amount_manpower_in_deployment_queue }
+	multiply_variable = { ebf_economy_soldiers_healthcare_budget_expected = 10 }
 	
 	set_variable = { ebf_economy_pensioneres_healthcare_budget_expected = 5000 }
 	multiply_variable = { ebf_economy_pensioneres_healthcare_budget_expected = ebf_economy_pensioner_population } # Pop in Millions
@@ -83,8 +93,17 @@ calculate_healthcare_budget_ratio = {
 	add_to_variable = { ebf_economy_healthcare_budget_expected = ebf_economy_soldiers_healthcare_budget_expected }
 	add_to_variable = { ebf_economy_healthcare_budget_expected = ebf_economy_pensioneres_healthcare_budget_expected }
 
-	set_variable = { ebf_economy_healthcare_budget_ratio = ebf_economy_healthcare_budget }
-	divide_variable = { ebf_economy_healthcare_budget_ratio = ebf_economy_healthcare_budget_expected }
+
+	if = {
+		limit = {
+			check_variable = { ebf_economy_healthcare_budget_expected > 0 }
+		}
+		set_variable = { ebf_economy_healthcare_budget_ratio = ebf_economy_healthcare_budget }
+		divide_variable = { ebf_economy_healthcare_budget_ratio = ebf_economy_healthcare_budget_expected }
+	}
+	else = {
+		set_variable = { ebf_economy_healthcare_budget_ratio = 1 }
+	}
 
 
 
@@ -125,12 +144,22 @@ calculate_military_budget_modifiers = {
 }
 
 calculate_military_budget_ratio = {
-	set_variable = { ebf_economy_military_budget_expected = manpower_k }
+	set_variable = { ebf_economy_military_budget_expected = deployed_army_manpower_k }
+	add_to_variable = { ebf_economy_military_budget_expected = deployed_navy_manpower_k }
+	add_to_variable = { ebf_economy_military_budget_expected = deployed_airforce_manpower_k }
+	add_to_variable = { ebf_economy_military_budget_expected = amount_manpower_in_deployment_queue }
 	multiply_variable = { ebf_economy_military_budget_expected = 10 }
 
-
-	set_variable = { ebf_economy_military_budget_ratio = ebf_economy_military_budget }
-	divide_variable = { ebf_economy_military_budget_ratio = ebf_economy_military_budget_expected }
+	if = {
+		limit = {
+			check_variable = { ebf_economy_military_budget_expected > 0 }
+		}
+		set_variable = { ebf_economy_military_budget_ratio = ebf_economy_military_budget }
+		divide_variable = { ebf_economy_military_budget_ratio = ebf_economy_military_budget_expected }
+	}
+	else = {
+		set_variable = { ebf_economy_military_budget_ratio = 1 }
+	}
 
 	# Percentage of the max effect the budget has on the modifier
 	set_variable = { ebf_economy_military_budget_modifier_rate = ebf_economy_military_budget_ratio }
@@ -176,8 +205,16 @@ calculate_police_budget_ratio = {
 	set_temp_variable = { ebf_economy_police_budget_expected = ebf_economy_police_budget_expected_for_garrison }
 	add_to_temp_variable = { ebf_economy_police_budget_expected = ebf_economy_police_budget_expected_for_states }
 	
-	set_variable = { ebf_economy_police_budget_ratio = ebf_economy_police_budget }
-	divide_variable = { ebf_economy_police_budget_ratio = ebf_economy_police_budget_expected }
+	if = {
+		limit = {
+			check_variable = { ebf_economy_police_budget_expected > 0 }
+		}
+		set_variable = { ebf_economy_police_budget_ratio = ebf_economy_police_budget }
+		divide_variable = { ebf_economy_police_budget_ratio = ebf_economy_police_budget_expected }
+	}
+	else = {
+		set_variable = { ebf_economy_police_budget_ratio = 1 }
+	}
 
 	# Percentage of the max effect the budget has on the modifier
 	set_variable = { ebf_economy_police_budget_modifier_rate = ebf_economy_police_budget_ratio }
@@ -203,8 +240,8 @@ calculate_police_budget_ratio = {
 # Per 1k non working population 10k for 100% effect, Per 1k elderly 5k for 100% effect
 # Stability, Political Power Gain, Population Growth
 # Happines impact
-calculate_social_welfare_modifiers = {
-	calculate_social_welfare_ratio = yes
+calculate_social_welfare_budget_modifiers = {
+	calculate_social_welfare_budget_ratio = yes
 	social_welfare_happines_effect = yes
 	# Stability
 	set_variable = { ebf_economy_social_welfare_stability_modifier = ebf_economy_social_welfare_budget_modifier_rate }
@@ -218,7 +255,7 @@ calculate_social_welfare_modifiers = {
 	multiply_variable = { ebf_economy_social_welfare_population_growth_modifier = 0.99 }
 }
 
-calculate_social_welfare_ratio = {
+calculate_social_welfare_budget_ratio = {
 	set_temp_variable = { ebf_economy_social_welfare_expected_for_non_working = ebf_economy_unemployed_population }
 	multiply_temp_variable = { ebf_economy_social_welfare_expected_for_non_working = 10000 }
 	
@@ -228,8 +265,21 @@ calculate_social_welfare_ratio = {
 	set_temp_variable = { ebf_economy_social_welfare_expected = ebf_economy_social_welfare_expected_for_non_working }
 	add_to_temp_variable = { ebf_economy_social_welfare_expected = ebf_economy_social_welfare_expected_for_elderly }
 	
-	set_variable = { ebf_economy_social_welfare_ratio = ebf_economy_social_welfare_budget }
-	divide_variable = { ebf_economy_social_welfare_ratio = ebf_economy_social_welfare_expected }
+	if = {
+		limit = {
+			check_variable = { ebf_economy_social_welfare_expected > 0 }
+		}
+		set_variable = { ebf_economy_social_welfare_ratio = ebf_economy_social_welfare_budget }
+		divide_variable = { ebf_economy_social_welfare_ratio = ebf_economy_social_welfare_expected }
+	}
+	else = {
+		set_variable = { ebf_economy_social_welfare_ratio = 1 }
+	}
+
+	# ToDo: Anti Proprtional scaling to welfare ratio
+	# set_variable = { ebf_economy_social_welfare_workforce_impact = ebf_economy_social_welfare_ratio }
+
+
 
 	# Percentage of the max effect the budget has on the modifier
 	set_variable = { ebf_economy_social_welfare_budget_modifier_rate = ebf_economy_social_welfare_ratio }
@@ -261,10 +311,17 @@ calculate_construction_budget_modifiers = {
 calculate_construction_budget_ratio = {
 	set_variable = { ebf_economy_construction_budget_expected = num_of_civilian_factories }
 	multiply_variable = { ebf_economy_construction_budget_expected = 10 }
-	
-	set_variable = { ebf_economy_construction_budget_ratio = ebf_economy_construction_budget }
-	divide_variable = { ebf_economy_construction_budget_ratio = ebf_economy_construction_budget_expected }
 
+	if = {
+		limit = {
+			check_variable = { ebf_economy_construction_budget_expected > 0 }
+		}
+		set_variable = { ebf_economy_construction_budget_ratio = ebf_economy_construction_budget }
+		divide_variable = { ebf_economy_construction_budget_ratio = ebf_economy_construction_budget_expected }
+	}
+	else = {
+		set_variable = { ebf_economy_construction_budget_ratio = 1 }
+	}
 
 	# Percentage of the max effect the budget has on the modifier
 	set_variable = { ebf_economy_construction_budget_modifier_rate = ebf_economy_construction_budget_ratio }
@@ -323,11 +380,18 @@ calculate_intelligence_budget_ratio = {
 	multiply_variable = { ebf_economy_intelligence_budget_expected_for_upgrades = 10 }
 
 	set_variable = { ebf_economy_intelligence_budget_expected = ebf_economy_intelligence_budget_expected_for_operatives }
-	set_variable = { ebf_economy_intelligence_budget_expected = ebf_economy_intelligence_budget_expected_for_upgrades }
+	add_to_variable = { ebf_economy_intelligence_budget_expected = ebf_economy_intelligence_budget_expected_for_upgrades }
 
-
-	set_variable = { ebf_economy_intelligence_budget_ratio = ebf_economy_intelligence_budget }
-	divide_variable = { ebf_economy_intelligence_budget_ratio = ebf_economy_intelligence_budget_expected }
+	if = {
+		limit = {
+			check_variable = { ebf_economy_intelligence_budget_expected > 0 }
+		}
+		set_variable = { ebf_economy_intelligence_budget_ratio = ebf_economy_intelligence_budget }
+		divide_variable = { ebf_economy_intelligence_budget_ratio = ebf_economy_intelligence_budget_expected }
+	}
+	else = {
+		set_variable = { ebf_economy_intelligence_budget_ratio = 1 }
+	}
 
 
 	# Percentage of the max effect the budget has on the modifier
@@ -351,7 +415,7 @@ calculate_all_expected_budgets = {
 	calculate_healthcare_budget_ratio = yes
 	calculate_military_budget_ratio = yes
 	calculate_police_budget_ratio = yes
-	calculate_social_welfare_ratio = yes
+	calculate_social_welfare_budget_ratio = yes
 	calculate_construction_budget_ratio = yes
 	calculate_intelligence_budget_ratio = yes
 }

@@ -1613,94 +1613,94 @@ scripted_gui = {
 			}
 			
 			### Bureacracy Budget
-			bureaucracy_budget_add_button_click = {
-				add_to_variable = { ebf_economy_bureaucracy_budget = 1 }
-				calculate_burocratic_budget_modifiers = yes
+			intelligence_budget_add_button_click = {
+				add_to_variable = { ebf_economy_intelligence_budget = 1 }
+				calculate_intelligence_budget_modifiers = yes
 				calculate_total_budget_cost = yes
 				monthly_balance = yes
 				happines = yes # Will have to wait for a Happines Rework
 			}
 
-			bureaucracy_budget_add_button_control_click = {
-				add_to_variable = { ebf_economy_bureaucracy_budget = 10 }
-				calculate_burocratic_budget_modifiers = yes
+			intelligence_budget_add_button_control_click = {
+				add_to_variable = { ebf_economy_intelligence_budget = 10 }
+				calculate_intelligence_budget_modifiers = yes
 				calculate_total_budget_cost = yes
 				monthly_balance = yes
 				happines = yes # Will have to wait for a Happines Rework
 			}
 
-			bureaucracy_budget_add_button_shift_click = {
-				add_to_variable = { ebf_economy_bureaucracy_budget = 100 }
-				calculate_burocratic_budget_modifiers = yes
+			intelligence_budget_add_button_shift_click = {
+				add_to_variable = { ebf_economy_intelligence_budget = 100 }
+				calculate_intelligence_budget_modifiers = yes
 				calculate_total_budget_cost = yes
 				monthly_balance = yes
 				happines = yes # Will have to wait for a Happines Rework
 			}
 
-			bureaucracy_budget_add_button_right_click = {
-				set_variable = { ebf_economy_bureaucracy_budget = ebf_economy_recommended_bureaucracy_budget }
-				calculate_burocratic_budget_modifiers = yes
+			intelligence_budget_add_button_right_click = {
+				set_variable = { ebf_economy_intelligence_budget = ebf_economy_intelligence_budget_expecteds }
+				calculate_intelligence_budget_modifiers = yes
 				calculate_total_budget_cost = yes
 				monthly_balance = yes
 				happines = yes # Will have to wait for a Happines Rework
 			}
 
-			bureaucracy_budget_sub_button_click = {
+			intelligence_budget_sub_button_click = {
 				if = {
 					limit = {
-						check_variable = { ebf_economy_bureaucracy_budget > 0 }
+						check_variable = { ebf_economy_intelligence_budget > 0 }
 					}
-					subtract_from_variable = { ebf_economy_bureaucracy_budget = 1 }
-					calculate_burocratic_budget_modifiers = yes
+					subtract_from_variable = { ebf_economy_intelligence_budget = 1 }
+					calculate_intelligence_budget_modifiers = yes
 					calculate_total_budget_cost = yes
 					monthly_balance = yes
 					happines = yes # Will have to wait for a Happines Rework
 				}
 			}
 
-			bureaucracy_budget_sub_button_control_click = {
+			intelligence_budget_sub_button_control_click = {
 				if = {
 					limit = {
-						check_variable = { ebf_economy_bureaucracy_budget < 9 }
+						check_variable = { ebf_economy_intelligence_budget < 9 }
 					}
-					set_variable = { ebf_economy_bureaucracy_budget = 0 }
-					calculate_burocratic_budget_modifiers = yes
+					set_variable = { ebf_economy_intelligence_budget = 0 }
+					calculate_intelligence_budget_modifiers = yes
 					calculate_total_budget_cost = yes
 					monthly_balance = yes
 					happines = yes # Will have to wait for a Happines Rework
 				}
 				else = {
-					subtract_from_variable = { ebf_economy_bureaucracy_budget = 10 }
-					calculate_burocratic_budget_modifiers = yes
+					subtract_from_variable = { ebf_economy_intelligence_budget = 10 }
+					calculate_intelligence_budget_modifiers = yes
 					calculate_total_budget_cost = yes
 					monthly_balance = yes
 					happines = yes # Will have to wait for a Happines Rework	
 				}
 			}
 
-			bureaucracy_budget_sub_button_shift_click = {
+			intelligence_budget_sub_button_shift_click = {
 				if = {
 					limit = {
-						check_variable = { ebf_economy_bureaucracy_budget < 99 }
+						check_variable = { ebf_economy_intelligence_budget < 99 }
 					}
-					set_variable = { ebf_economy_bureaucracy_budget = 0 }
-					calculate_burocratic_budget_modifiers = yes
+					set_variable = { ebf_economy_intelligence_budget = 0 }
+					calculate_intelligence_budget_modifiers = yes
 					calculate_total_budget_cost = yes
 					monthly_balance = yes
 					happines = yes # Will have to wait for a Happines Rework	
 				}
 				else = {
-					subtract_from_variable = { ebf_economy_bureaucracy_budget = 100 }
-					calculate_burocratic_budget_modifiers = yes
+					subtract_from_variable = { ebf_economy_intelligence_budget = 100 }
+					calculate_intelligence_budget_modifiers = yes
 					calculate_total_budget_cost = yes
 					monthly_balance = yes
 					happines = yes # Will have to wait for a Happines Rework	
 				}
 			}
 
-			bureaucracy_budget_sub_button_right_click = {
-				set_variable = { ebf_economy_bureaucracy_budget = ebf_economy_recommended_bureaucracy_budget }
-				calculate_burocratic_budget_modifiers = yes
+			intelligence_budget_sub_button_right_click = {
+				set_variable = { ebf_economy_intelligence_budget = ebf_economy_intelligence_budget_expected }
+				calculate_intelligence_budget_modifiers = yes
 				calculate_total_budget_cost = yes
 				monthly_balance = yes
 				happines = yes # Will have to wait for a Happines Rework	
@@ -1709,7 +1709,7 @@ scripted_gui = {
 			### Construction Budget
 			construction_budget_add_button_click = {
 				add_to_variable = { ebf_economy_construction_budget = 1 }
-				calculate_burocratic_budget_modifiers = yes
+				calculate_construction_budget_modifiers = yes
 				calculate_total_budget_cost = yes
 				monthly_balance = yes
 				happines = yes # Will have to wait for a Happines Rework
@@ -1717,7 +1717,7 @@ scripted_gui = {
 
 			construction_budget_add_button_control_click = {
 				add_to_variable = { ebf_economy_construction_budget = 10 }
-				calculate_burocratic_budget_modifiers = yes
+				calculate_construction_budget_modifiers = yes
 				calculate_total_budget_cost = yes
 				monthly_balance = yes
 				happines = yes # Will have to wait for a Happines Rework
@@ -1725,7 +1725,7 @@ scripted_gui = {
 
 			construction_budget_add_button_shift_click = {
 				add_to_variable = { ebf_economy_construction_budget = 100 }
-				calculate_burocratic_budget_modifiers = yes
+				calculate_construction_budget_modifiers = yes
 				calculate_total_budget_cost = yes
 				monthly_balance = yes
 				happines = yes # Will have to wait for a Happines Rework
@@ -1733,7 +1733,7 @@ scripted_gui = {
 
 			construction_budget_add_button_right_click = {
 				set_variable = { ebf_economy_construction_budget = ebf_economy_recommended_construction_budget }
-				calculate_burocratic_budget_modifiers = yes
+				calculate_construction_budget_modifiers = yes
 				calculate_total_budget_cost = yes
 				monthly_balance = yes
 				happines = yes # Will have to wait for a Happines Rework
@@ -1745,7 +1745,7 @@ scripted_gui = {
 						check_variable = { ebf_economy_construction_budget > 0 }
 					}
 					subtract_from_variable = { ebf_economy_construction_budget = 1 }
-					calculate_burocratic_budget_modifiers = yes
+					calculate_construction_budget_modifiers = yes
 					calculate_total_budget_cost = yes
 					monthly_balance = yes
 					happines = yes # Will have to wait for a Happines Rework
@@ -1758,14 +1758,14 @@ scripted_gui = {
 						check_variable = { ebf_economy_construction_budget < 9 }
 					}
 					set_variable = { ebf_economy_construction_budget = 0 }
-					calculate_burocratic_budget_modifiers = yes
+					calculate_construction_budget_modifiers = yes
 					calculate_total_budget_cost = yes
 					monthly_balance = yes
 					happines = yes # Will have to wait for a Happines Rework
 				}
 				else = {
 					subtract_from_variable = { ebf_economy_construction_budget = 10 }
-					calculate_burocratic_budget_modifiers = yes
+					calculate_construction_budget_modifiers = yes
 					calculate_total_budget_cost = yes
 					monthly_balance = yes
 					happines = yes # Will have to wait for a Happines Rework	
@@ -1778,14 +1778,14 @@ scripted_gui = {
 						check_variable = { ebf_economy_construction_budget < 99 }
 					}
 					set_variable = { ebf_economy_construction_budget = 0 }
-					calculate_burocratic_budget_modifiers = yes
+					calculate_construction_budget_modifiers = yes
 					calculate_total_budget_cost = yes
 					monthly_balance = yes
 					happines = yes # Will have to wait for a Happines Rework	
 				}
 				else = {
 					subtract_from_variable = { ebf_economy_construction_budget = 100 }
-					calculate_burocratic_budget_modifiers = yes
+					calculate_construction_budget_modifiers = yes
 					calculate_total_budget_cost = yes
 					monthly_balance = yes
 					happines = yes # Will have to wait for a Happines Rework	
@@ -1794,12 +1794,200 @@ scripted_gui = {
 
 			construction_budget_sub_button_right_click = {
 				set_variable = { ebf_economy_construction_budget = ebf_economy_recommended_construction_budget }
-				calculate_burocratic_budget_modifiers = yes
+				calculate_construction_budget_modifiers = yes
+				calculate_total_budget_cost = yes
+				monthly_balance = yes
+				happines = yes # Will have to wait for a Happines Rework	
+			}
+			
+			### Social Welfare Budget
+			social_welfare_budget_add_button_click = {
+				add_to_variable = { ebf_economy_social_welfare_budget = 1 }
+				calculate_social_welfare_budget_modifiers = yes
+				calculate_total_budget_cost = yes
+				monthly_balance = yes
+				happines = yes # Will have to wait for a Happines Rework
+			}
+
+			social_welfare_budget_add_button_control_click = {
+				add_to_variable = { ebf_economy_social_welfare_budget = 10 }
+				calculate_social_welfare_budget_modifiers = yes
+				calculate_total_budget_cost = yes
+				monthly_balance = yes
+				happines = yes # Will have to wait for a Happines Rework
+			}
+
+			social_welfare_budget_add_button_shift_click = {
+				add_to_variable = { ebf_economy_social_welfare_budget = 100 }
+				calculate_social_welfare_budget_modifiers = yes
+				calculate_total_budget_cost = yes
+				monthly_balance = yes
+				happines = yes # Will have to wait for a Happines Rework
+			}
+
+			social_welfare_budget_add_button_right_click = {
+				set_variable = { ebf_economy_social_welfare_budget = ebf_economy_recommended_social_welfare_budget }
+				calculate_social_welfare_budget_modifiers = yes
+				calculate_total_budget_cost = yes
+				monthly_balance = yes
+				happines = yes # Will have to wait for a Happines Rework
+			}
+
+			social_welfare_budget_sub_button_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_social_welfare_budget > 0 }
+					}
+					subtract_from_variable = { ebf_economy_social_welfare_budget = 1 }
+					calculate_social_welfare_budget_modifiers = yes
+					calculate_total_budget_cost = yes
+					monthly_balance = yes
+					happines = yes # Will have to wait for a Happines Rework
+				}
+			}
+
+			social_welfare_budget_sub_button_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_social_welfare_budget < 9 }
+					}
+					set_variable = { ebf_economy_social_welfare_budget = 0 }
+					calculate_social_welfare_budget_modifiers = yes
+					calculate_total_budget_cost = yes
+					monthly_balance = yes
+					happines = yes # Will have to wait for a Happines Rework
+				}
+				else = {
+					subtract_from_variable = { ebf_economy_social_welfare_budget = 10 }
+					calculate_social_welfare_budget_modifiers = yes
+					calculate_total_budget_cost = yes
+					monthly_balance = yes
+					happines = yes # Will have to wait for a Happines Rework	
+				}
+			}
+
+			social_welfare_budget_sub_button_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_social_welfare_budget < 99 }
+					}
+					set_variable = { ebf_economy_social_welfare_budget = 0 }
+					calculate_social_welfare_budget_modifiers = yes
+					calculate_total_budget_cost = yes
+					monthly_balance = yes
+					happines = yes # Will have to wait for a Happines Rework	
+				}
+				else = {
+					subtract_from_variable = { ebf_economy_social_welfare_budget = 100 }
+					calculate_social_welfare_budget_modifiers = yes
+					calculate_total_budget_cost = yes
+					monthly_balance = yes
+					happines = yes # Will have to wait for a Happines Rework	
+				}
+			}
+
+			social_welfare_budget_sub_button_right_click = {
+				set_variable = { ebf_economy_social_welfare_budget = ebf_economy_recommended_social_welfare_budget }
+				calculate_social_welfare_budget_modifiers = yes
 				calculate_total_budget_cost = yes
 				monthly_balance = yes
 				happines = yes # Will have to wait for a Happines Rework	
 			}
 
+			### Healthcare Budget
+			healthcare_budget_add_button_click = {
+				add_to_variable = { ebf_economy_healthcare_budget = 1 }
+				calculate_healthcare_budget_modifiers = yes
+				calculate_total_budget_cost = yes
+				monthly_balance = yes
+				happines = yes # Will have to wait for a Happines Rework
+			}
+
+			healthcare_budget_add_button_control_click = {
+				add_to_variable = { ebf_economy_healthcare_budget = 10 }
+				calculate_healthcare_budget_modifiers = yes
+				calculate_total_budget_cost = yes
+				monthly_balance = yes
+				happines = yes # Will have to wait for a Happines Rework
+			}
+
+			healthcare_budget_add_button_shift_click = {
+				add_to_variable = { ebf_economy_healthcare_budget = 100 }
+				calculate_healthcare_budget_modifiers = yes
+				calculate_total_budget_cost = yes
+				monthly_balance = yes
+				happines = yes # Will have to wait for a Happines Rework
+			}
+
+			healthcare_budget_add_button_right_click = {
+				set_variable = { ebf_economy_healthcare_budget = ebf_economy_recommended_healthcare_budget }
+				calculate_healthcare_budget_modifiers = yes
+				calculate_total_budget_cost = yes
+				monthly_balance = yes
+				happines = yes # Will have to wait for a Happines Rework
+			}
+
+			healthcare_budget_sub_button_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_healthcare_budget > 0 }
+					}
+					subtract_from_variable = { ebf_economy_healthcare_budget = 1 }
+					calculate_healthcare_budget_modifiers = yes
+					calculate_total_budget_cost = yes
+					monthly_balance = yes
+					happines = yes # Will have to wait for a Happines Rework
+				}
+			}
+
+			healthcare_budget_sub_button_control_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_healthcare_budget < 9 }
+					}
+					set_variable = { ebf_economy_healthcare_budget = 0 }
+					calculate_healthcare_budget_modifiers = yes
+					calculate_total_budget_cost = yes
+					monthly_balance = yes
+					happines = yes # Will have to wait for a Happines Rework
+				}
+				else = {
+					subtract_from_variable = { ebf_economy_healthcare_budget = 10 }
+					calculate_healthcare_budget_modifiers = yes
+					calculate_total_budget_cost = yes
+					monthly_balance = yes
+					happines = yes # Will have to wait for a Happines Rework	
+				}
+			}
+
+			healthcare_budget_sub_button_shift_click = {
+				if = {
+					limit = {
+						check_variable = { ebf_economy_healthcare_budget < 99 }
+					}
+					set_variable = { ebf_economy_healthcare_budget = 0 }
+					calculate_healthcare_budget_modifiers = yes
+					calculate_total_budget_cost = yes
+					monthly_balance = yes
+					happines = yes # Will have to wait for a Happines Rework	
+				}
+				else = {
+					subtract_from_variable = { ebf_economy_healthcare_budget = 100 }
+					calculate_healthcare_budget_modifiers = yes
+					calculate_total_budget_cost = yes
+					monthly_balance = yes
+					happines = yes # Will have to wait for a Happines Rework	
+				}
+			}
+
+			healthcare_budget_sub_button_right_click = {
+				set_variable = { ebf_economy_healthcare_budget = ebf_economy_recommended_healthcare_budget }
+				calculate_healthcare_budget_modifiers = yes
+				calculate_total_budget_cost = yes
+				monthly_balance = yes
+				happines = yes # Will have to wait for a Happines Rework	
+			}
+			
 			######### Society
 
 			### Full Age
