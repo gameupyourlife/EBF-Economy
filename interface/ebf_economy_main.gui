@@ -3265,7 +3265,7 @@ guiTypes = {
 				
 						# Container which will hold each of our line segments
 						gridboxtype = {
-							name = "line_segments"
+							name = "loan_cap_line_segments"
 							position = { x = 50 y = 46 }
 							size = { width = 0 height = 200 }
 							slotsize = { width = 10 height = 200 }
@@ -4527,6 +4527,31 @@ guiTypes = {
 		# Line segment progress bar, using our custom asset with custom shader
 		iconType = {
 			name = "intrest_rate_graph_segment"
+			spriteType = "GFX_Line_Segment"
+			position = { x = 0 y = 0 }
+			frame = 57
+		}
+
+		# Optional, x-axis label which corresponds to the value of this segment
+		# instantTextboxType = {
+		# 	name = "label"
+		# 	position = { x = -15 y = 112}
+		# 	font = "garamond_14"
+		# 	text = "line_graph_data_label"
+		# 	maxWidth = 30
+		# 	format = center
+		# }
+	}
+
+	containerWindowType = {
+		name = "loan_cap_graph_line_segment"
+		size = { width = 10 height = 200 }
+		position = { x = 0 y = 0 }
+
+
+		# Line segment progress bar, using our custom asset with custom shader
+		iconType = {
+			name = "loan_cap_graph_segment"
 			spriteType = "GFX_Line_Segment"
 			position = { x = 0 y = 0 }
 			frame = 57

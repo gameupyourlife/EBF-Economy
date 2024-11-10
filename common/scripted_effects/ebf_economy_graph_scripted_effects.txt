@@ -69,3 +69,32 @@ intrest_rate_graph_add_new_segment = {
 	add_to_temp_variable = { ebf_economy_intrest_rate_graph_diff = 50 }
 	add_to_array = { ebf_economy_intrest_rate_graph_slopes = ebf_economy_intrest_rate_graph_diff }
 }
+
+loan_cap_graph_add_new_segment = {
+	add_to_variable = { ebf_economy_loan_cap_graph_count = 1 }
+	set_variable = { ebf_economy_loan_cap_graph_last_y_position = ebf_economy_intrest_rate_graph_y_position }
+	
+	set_variable = { ebf_economy_loan_cap_graph_y_position = ebf_economy_loan_cap } # Here the value is beeing assigned
+
+	# Prune arrays so they hold at most 20 elements
+	if = {
+		limit = {
+			check_variable = { ebf_economy_loan_cap_graph_count > 20 }
+		}
+		remove_from_array = { array = ebf_economy_loan_cap_graph_offsets index = 0 }
+		remove_from_array = { array = ebf_economy_loan_cap_graph_slopes index = 0 }
+	}
+
+	# The y position offset is the inverse of the y position
+	set_temp_variable = { ebf_economy_loan_cap_graphoffset = ebf_economy_loan_cap_graph_last_y_position }
+	multiply_temp_variable = { ebf_economy_loan_cap_graphoffset = -1 }
+	add_to_array = { ebf_economy_loan_cap_graph_offsets = ebf_economy_loan_cap_graphoffset }
+
+	# The 'slope' here is simply the difference between the current y value and the last one, divided by 2 plus 50
+	# These last two changes are needed for the shader
+	set_temp_variable = { ebf_economy_loan_cap_graph_diff = ebf_economy_loan_cap_graph_y_position }
+	subtract_from_temp_variable = { ebf_economy_loan_cap_graph_diff = ebf_economy_loan_cap_graph_last_y_position }
+	divide_temp_variable = { ebf_economy_loan_cap_graph_diff = 2 }
+	add_to_temp_variable = { ebf_economy_loan_cap_graph_diff = 50 }
+	add_to_array = { ebf_economy_loan_cap_graph_slopes = ebf_economy_loan_cap_graph_diff }
+}

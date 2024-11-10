@@ -141,6 +141,7 @@ var_declariation = {
 	set_variable = { ebf_economy_social_welfare_budget = ebf_economy_social_welfare_budget_expected }
 	set_variable = { ebf_economy_healthcare_budget = ebf_economy_healthcare_budget_expected }
 
+	set_variable = { ebf_economy_needed_construction_budget_per_civ_for_full_efficiency = 10 }
 
 	# Dynamic Modifiers for the budgets
 	add_dynamic_modifier = { modifier = ebf_economy_police_budget_dynamic_modifier }
